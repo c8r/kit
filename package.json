@@ -8,7 +8,8 @@
     "dist"
   ],
   "scripts": {
-    "test": "ava -v"
+    "test": "ava -v",
+    "dev": "x0 dev src/Styleguide.js"
   },
   "repository": "c8r/styleguide",
   "keywords": [
