@@ -1,0 +1,57 @@
+{
+  "name": "styleguide",
+  "description": "Generate a styleguide from Compositor Lab configs",
+  "author": "Compositor",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "ava -v"
+  },
+  "repository": "c8r/styleguide",
+  "keywords": [
+    "styleguide",
+    "design",
+    "system",
+    "react",
+    "compositor",
+    "lab"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@compositor/atomic-classify": "0.0.9-0",
+    "@compositor/atomic-generator": "0.0.9-0",
+    "@compositor/get-jsx-props": "0.0.1",
+    "@compositor/lab": "^1.0.0-33",
+    "@compositor/mono": "0.0.3",
+    "@compositor/pluck-extension-tree": "0.0.3",
+    "@compositor/publish": "0.0.10",
+    "@compositor/qp": "^1.2.1",
+    "@compositor/x0": "^2.0.0-17",
+    "dxs": "^3.0.0",
+    "glamor": "^2.20.40",
+    "glamorous": "^4.11.0",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "styled-api": "0.0.1-1",
+    "styled-system": "^1.0.8"
+  },
+  "devDependencies": {
+    "@compositor/bold": "0.0.1-0",
+    "ava": "*",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0"
+  },
+  "ava": {
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  }
+}
