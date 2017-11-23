@@ -36,6 +36,7 @@
     "glamorous": "^4.11.0",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
+    "react-live": "^1.7.1",
     "styled-api": "0.0.1-1",
     "styled-system": "^1.0.8"
   },
