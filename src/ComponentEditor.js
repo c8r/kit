@@ -5,6 +5,8 @@ import {
   ThemeProvider
 } from 'glamorous'
 
+import EditorCss from './ComponentEditorCss'
+
 import {
   LiveProvider,
   LiveEditor,
@@ -51,6 +53,8 @@ const ComponentEditor = ({
         <LiveEditor />
         <LiveError />
         <LivePreview />
+
+				<style dangerouslySetInnerHTML={{ __html: EditorCss }} />
       </LiveProvider>
 
       Examples:
