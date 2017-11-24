@@ -1,15 +1,9 @@
 import React from 'react'
+import connect from 'refunk'
 
 import {
   ThemeProvider
 } from 'glamorous'
-
-import {
-  LiveProvider,
-  LiveEditor,
-  LiveError,
-  LivePreview
-} from 'react-live'
 
 import {
   H1,
@@ -19,33 +13,48 @@ import {
 
 import * as library from '../library'
 
+import ComponentEditor from './ComponentEditor'
+
 const config = require('@compositor/bold/lab.json')
 const theme = require('@compositor/bold/theme.json')
+const components = config.components
 
-export default () =>
+const initialState = {
+  components,
+  config,
+  theme,
+  editors: components.reduce((acc, c) =>
+   Object.assign({}, acc, {
+      [c.name]: {
+        examples: c.examples || [`<${c.name} />`],
+        currentExample: 0
+      }
+    })
+  , {})
+}
+
+const Styleguide = ({
+  components,
+  editors,
+  config,
+  theme
+}) =>
   <ThemeProvider theme={theme}>
     <Container>
       <H1 children='Components' />
 
-      {config.components.map(c =>
-        <Div my={4}>
-          <LiveProvider
-            key={c}
-            scope={Object.assign({}, library, { ThemeProvider, theme })}
-            code={c.examples[0] || `<${c.name} />`}
-            transformCode={code => `
-              <ThemeProvider theme={${JSON.stringify(theme)}}>
-                <div>
-                  ${code}
-                </div>
-              </ThemeProvider>
-            `}
-          >
-            <LiveEditor />
-            <LiveError />
-            <LivePreview />
-          </LiveProvider>
-        </Div>
+      {components.map(c =>
+        <ComponentEditor
+          key={c.name}
+          theme={theme}
+          component={c}
+          library={library}
+          editor={editors[c.name]}
+        />
       )}
     </Container>
   </ThemeProvider>
+
+Styleguide.getInitialProps = () => initialState
+
+export default connect(Styleguide)
