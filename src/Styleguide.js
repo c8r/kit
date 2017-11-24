@@ -1,5 +1,4 @@
 import React from 'react'
-import dxs from 'dxs'
 
 import {
   ThemeProvider
@@ -14,25 +13,39 @@ import {
 
 import {
   H1,
+  Div,
   Container
 } from '@compositor/mono'
+
+import * as library from '../library'
 
 const config = require('@compositor/bold/lab.json')
 const theme = require('@compositor/bold/theme.json')
 
-const Components = dxs(config.components, { theme })
-
 export default () =>
   <ThemeProvider theme={theme}>
     <Container>
-      <H1 children='hi' />
+      <H1 children='Components' />
 
-      {Object.keys(Components).map(c =>
-        <LiveProvider scope={Object.assign({}, Components, { theme })} code='<strong>h</strong>'>
-          <LiveEditor />
-          <LiveError />
-          <LivePreview />
-        </LiveProvider>
+      {config.components.map(c =>
+        <Div my={4}>
+          <LiveProvider
+            key={c}
+            scope={Object.assign({}, library, { ThemeProvider, theme })}
+            code={c.examples[0] || `<${c.name} />`}
+            transformCode={code => `
+              <ThemeProvider theme={${JSON.stringify(theme)}}>
+                <div>
+                  ${code}
+                </div>
+              </ThemeProvider>
+            `}
+          >
+            <LiveEditor />
+            <LiveError />
+            <LivePreview />
+          </LiveProvider>
+        </Div>
       )}
     </Container>
   </ThemeProvider>

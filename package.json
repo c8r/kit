@@ -9,7 +9,8 @@
   ],
   "scripts": {
     "test": "ava -v",
-    "dev": "x0 dev src/Styleguide.js"
+    "dev": "x0 dev src/Styleguide.js",
+    "predev": "lab --pkg -d library ./node_modules/@compositor/bold/lab.json"
   },
   "repository": "c8r/styleguide",
   "keywords": [
@@ -41,7 +42,7 @@
     "styled-system": "^1.0.8"
   },
   "devDependencies": {
-    "@compositor/bold": "0.0.1-0",
+    "@compositor/bold": "0.0.2-0",
     "ava": "*",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
