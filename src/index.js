@@ -1,22 +1,10 @@
 import React from 'react'
 
-import {
-  renderToString
-} from 'react-dom/server'
+import Layout from './Layout'
 
-import {
-  H1,
-  Container
-} from '@compositor/mono'
-
-module.exports = ({ config, theme }) =>
-  renderToString(
-    <Container
-      children={config.components.map(c =>
-        <H1
-          key={c.name}
-          children={c.name || 'lolzzzz'}
-        />
-      )}
-    />
-  )
+module.exports = () =>
+  <Layout>
+    <h1>
+      Welcome
+    </h1>
+  </Layout>

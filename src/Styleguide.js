@@ -11,6 +11,8 @@ import {
 
 import Router from '@compositor/x0/lib/Router'
 
+import Layout from './Layout'
+import Index from './Index'
 import ComponentEditor from './ComponentEditor'
 
 const Styleguide = props =>
@@ -19,23 +21,25 @@ const Styleguide = props =>
       <Route
         exact
         path='/'
-        render={() => <Div>hi</Div>}
+        render={() => <Index {...props} />}
       />
 
       <Route
         path='/components'
         render={() =>
-          <Div
-            children={props.components.slice(0, 1).map(c =>
-              <ComponentEditor
-                key={c.name}
-                theme={props.theme}
-                component={c}
-                library={props.library}
-                editor={props.editors[c.name]}
-              />
-            )}
-          />
+          <Layout>
+            <Div
+              children={props.components.slice(0, 1).map(c =>
+                <ComponentEditor
+                  key={c.name}
+                  theme={props.theme}
+                  component={c}
+                  library={props.library}
+                  editor={props.editors[c.name]}
+                />
+              )}
+            />
+          </Layout>
         }
       />
     </Router>
