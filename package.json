@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "test": "ava -v",
-    "dev": "x0 dev src/Styleguide.js",
+    "dev": "x0 dev src/App.js",
     "predev": "lab --pkg -d library ./node_modules/@compositor/bold/lab.json",
     "build": "x0 build src/Styleguide.js -ud out"
   },

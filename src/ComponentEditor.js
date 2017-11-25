@@ -18,6 +18,9 @@ import {
   Div
 } from '@compositor/mono'
 
+import Box from './Box'
+import Flex from './Flex'
+
 const transform = (theme, code) => `
   <ThemeProvider theme={${JSON.stringify(theme)}}>
     <div>
@@ -50,9 +53,32 @@ const ComponentEditor = ({
         code={code}
         transformCode={newCode => transform(theme, newCode)}
       >
-        <LiveEditor />
-        <LiveError />
-        <LivePreview />
+        <Flex
+          wrap
+          flexDirection={['column', 'row', 'row']}
+        >
+          <Box
+            py={[3, 4, 4]}
+            w={[1, 1/2, 1/2]}
+          >
+            <LivePreview />
+          </Box>
+          <Box
+            w={[1, 1/2, 1/2]}
+          >
+            <LiveEditor />
+          </Box>
+          <Box w={1}>
+            <LiveError
+              style={{
+                backgroundColor: theme.colors.red,
+                color: 'white',
+                padding: '.5rem',
+                height: 'auto'
+              }}
+            />
+          </Box>
+        </Flex>
 
 				<style dangerouslySetInnerHTML={{ __html: EditorCss }} />
       </LiveProvider>

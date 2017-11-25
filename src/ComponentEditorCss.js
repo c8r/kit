@@ -2,10 +2,12 @@ export default `
 .prism-code {
   display: block;
   white-space: pre;
-  background-color: #fff;
+  background-color: #fafafa;
   color: #222;
   padding: 0.5rem;
   margin: 0;
+  height: 100%;
+  overflow-x: scroll;
   box-sizing: border-box;
   vertical-align: baseline;
   outline: none;
