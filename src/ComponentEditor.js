@@ -36,7 +36,7 @@ const ComponentEditor = ({
   editor,
   update
 }) => {
-  const scope = Object.assign({}, library, {
+  const scope = Object.assign({}, { Flex, Box }, library, {
     ThemeProvider,
     theme
   })
