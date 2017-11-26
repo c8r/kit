@@ -1,31 +1,31 @@
 export default {
   Overview: [
     {
-      to: '/lab',
+      to: '/overview/lab',
       children: 'Lab'
     },
     {
-      to: '/theme',
+      to: '/overview/theme',
       children: 'Theme'
     },
     {
-      to: '/system',
+      to: '/overview/system',
       children: 'System'
     },
     {
-      to: '/scales',
+      to: '/overview/scales',
       children: 'Scales'
     },
     {
-      to: '/responsive',
+      to: '/overview/responsive',
       children: 'Responsive'
     },
     {
-      to: '/css-in-js',
+      to: '/overview/css-in-js',
       children: 'Css in JavaScript'
     },
     {
-      to: '/functional-styles',
+      to: '/overview/functional-styles',
       children: 'Functional Styles'
     }
   ],

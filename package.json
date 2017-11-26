@@ -41,6 +41,8 @@
     "react-live": "^1.7.1",
     "react-router-dom": "^4.2.2",
     "refunk": "^2.0.0",
+    "remark": "^8.0.0",
+    "remark-react": "^4.0.1",
     "styled-api": "0.0.1-1",
     "styled-system": "^1.0.8"
   },

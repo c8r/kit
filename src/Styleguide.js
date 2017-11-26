@@ -13,6 +13,7 @@ import Router from '@compositor/x0/lib/Router'
 
 import Layout from './Layout'
 import Index from './Index'
+import MarkdownPage from './MarkdownPage'
 import ComponentEditor from './ComponentEditor'
 
 const Styleguide = props =>
@@ -22,6 +23,11 @@ const Styleguide = props =>
         exact
         path='/'
         render={() => <Index {...props} />}
+      />
+
+      <Route
+        path='/overview/:page'
+        component={MarkdownPage}
       />
 
       <Route
