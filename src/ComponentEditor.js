@@ -127,6 +127,25 @@ const ComponentEditor = ({
           children={ext.name}
         />
       )}
+
+      Props:
+
+      <table>
+        <thead>
+          <tr>
+            <th>Prop</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody
+          children={Object.keys(component.props || {}).map(prop =>
+            <tr key={prop}>
+              <td>{prop}</td>
+              <td>{JSON.stringify(component.props[prop])}</td>
+            </tr>
+          )}
+        />
+      </table>
     </Div>
   )
 }
