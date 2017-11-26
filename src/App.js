@@ -27,7 +27,11 @@ const initialState = {
         currentExample: 0
       }
     })
-  , {})
+  , {}),
+  sideNav: {
+    currSection: null,
+    currPage: null // TODO: wire up with router
+  }
 }
 
 const App = props =>

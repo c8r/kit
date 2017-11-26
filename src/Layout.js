@@ -8,24 +8,23 @@ import {
   Container
 } from '@compositor/mono'
 
+import connect from 'refunk'
+
 import Box from './Box'
 import Flex from './Flex'
+import SideNav from './SideNav'
 
-export default ({ children }) =>
+const Layout = ({
+  children,
+  sideNav,
+  update
+}) =>
   <Flex flexDirection='row'>
     <Box w='400px'>
-      <Box w={1}>
-        <Link
-          to='/'
-          children='Home'
-        />
-      </Box>
-      <Box w={1}>
-        <Link
-          to='/components'
-          children='Components'
-        />
-      </Box>
+      <SideNav
+        update={update}
+        {...sideNav}
+      />
     </Box>
     <Box flex='auto'>
       <Container
@@ -33,3 +32,5 @@ export default ({ children }) =>
       />
     </Box>
   </Flex>
+
+export default connect(Layout)
