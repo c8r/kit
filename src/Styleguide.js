@@ -29,7 +29,7 @@ const Styleguide = props =>
         render={() =>
           <Layout>
             <Div
-              children={props.components.slice(0, 1).map(c =>
+              children={props.components.map(c =>
                 <ComponentEditor
                   key={c.name}
                   theme={props.theme}
