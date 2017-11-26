@@ -5,6 +5,8 @@ import {
   ThemeProvider
 } from 'glamorous'
 
+import pluckExtensions from '@compositor/pluck-extension-tree'
+
 import EditorCss from './ComponentEditorCss'
 
 import {
@@ -33,6 +35,7 @@ const ComponentEditor = ({
   theme,
   library,
   component,
+  components,
   editor,
   update
 }) => {
@@ -114,6 +117,15 @@ const ComponentEditor = ({
             />
           )}
         </Div>
+      )}
+
+      Extended from:
+
+      {pluckExtensions(component.name, components).map(ext =>
+        <Div
+          key={ext.name}
+          children={ext.name}
+        />
       )}
     </Div>
   )

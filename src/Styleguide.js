@@ -41,6 +41,7 @@ const Styleguide = props =>
                   theme={props.theme}
                   component={c}
                   library={props.library}
+                  components={props.components}
                   editor={props.editors[c.name]}
                 />
               )}
