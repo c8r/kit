@@ -124,6 +124,16 @@ const ComponentEditor = ({
         />
       )}
 
+      Extended by:
+
+      {pluckExtensions(component.name, components, { descendents: true }).map(ext =>
+        <Div
+          key={ext.name}
+          children={ext.name}
+        />
+      )}
+
+
       Props:
 
       <table>
