@@ -35,8 +35,8 @@ export default {
       children: 'Color'
     },
     {
-      to: '/theme/type-scale',
-      children: 'Type Scale'
+      to: '/theme/typography',
+      children: 'Typography'
     },
     {
       to: '/theme/spacing',
@@ -45,14 +45,6 @@ export default {
     {
       to: '/theme/measure',
       children: 'Measure'
-    },
-    {
-      to: '/theme/font-family',
-      children: 'Font Family'
-    },
-    {
-      to: '/theme/line-height',
-      children: 'Line Height'
     }
   ]
 }

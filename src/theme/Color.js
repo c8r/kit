@@ -10,7 +10,6 @@ import {
 
 import Box from '../Box'
 import Flex from '../Flex'
-import Layout from '../Layout'
 
 export default ({
   config,
@@ -19,7 +18,7 @@ export default ({
   },
   ...props
 }) =>
-  <Layout {...props}>
+  <Box>
     <Box ml={3} py={4}>
       <Heading>Color</Heading>
       <Text color='gray5'>
@@ -91,4 +90,4 @@ export default ({
             </Box>
         )}
       />
-  </Layout>
+  </Box>

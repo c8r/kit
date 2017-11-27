@@ -9,9 +9,9 @@ import Router from '@compositor/x0/lib/Router'
 
 import Layout from './Layout'
 import Index from './Index'
+import ThemePage from './ThemePage'
 import MarkdownPage from './MarkdownPage'
-import ComponentEditor from './ComponentEditor'
-import Color from './theme/Color'
+import ComponentPage from './ComponentPage'
 
 const Styleguide = props =>
   <Div>
@@ -22,31 +22,16 @@ const Styleguide = props =>
         render={() => <Index {...props} />}
       />
       <Route
-        path='/theme/color'
-        render={() => <Color {...props} />}
+        path='/theme/:theme'
+        component={ThemePage}
       />
       <Route
         path='/overview/:page'
         component={MarkdownPage}
       />
       <Route
-        path='/components'
-        render={() =>
-          <Layout>
-            <Div
-              children={props.components.map(c =>
-                <ComponentEditor
-                  key={c.name}
-                  theme={props.theme}
-                  component={c}
-                  library={props.library}
-                  components={props.components}
-                  editor={props.editors[c.name]}
-                />
-              )}
-            />
-          </Layout>
-        }
+        path='/components/:component'
+        component={ComponentPage}
       />
     </Router>
   </Div>
