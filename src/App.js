@@ -8,13 +8,12 @@ import {
   Div
 } from '@compositor/mono'
 
+import * as library from '../library'
 import Styleguide from './Styleguide'
 
 const config = require('@compositor/bold/lab.json')
 const theme = require('@compositor/bold/theme.json')
 const components = config.components
-
-import * as library from '../library'
 
 const initialState = {
   components,

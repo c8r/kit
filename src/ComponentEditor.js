@@ -19,9 +19,12 @@ import {
   Div
 } from '@compositor/mono'
 
+import {
+  editorCss
+} from './constants'
+
 import Box from './Box'
 import Flex from './Flex'
-import EditorCss from './ComponentEditorCss'
 
 const transform = (theme, code) => `
   <ThemeProvider theme={${JSON.stringify(theme)}}>
@@ -83,7 +86,7 @@ const ComponentEditor = ({
           </Box>
         </Flex>
 
-				<style dangerouslySetInnerHTML={{ __html: EditorCss }} />
+				<style dangerouslySetInnerHTML={{ __html: editorCss }} />
       </LiveProvider>
 
       Examples:
