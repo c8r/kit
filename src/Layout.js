@@ -14,13 +14,15 @@ import SideNav from './SideNav'
 const Layout = ({
   children,
   sideNav,
-  update
+  update,
+  theme
 }) =>
   <Flex flexDirection='row'>
     <Style>{layoutCss}</Style>
 
     <Box w='200px'>
       <SideNav
+        theme={theme}
         update={update}
         {...sideNav}
       />

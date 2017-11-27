@@ -29,7 +29,7 @@ export default {
       children: 'Functional Styles'
     }
   ],
-  Primitives: [
+  Theme: [
     {
       to: '/color',
       children: 'Color'
