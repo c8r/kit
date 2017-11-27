@@ -38,6 +38,8 @@
     "dxs": "^3.0.0",
     "glamor": "^2.20.40",
     "glamorous": "^4.11.0",
+    "is-blank": "^2.1.0",
+    "is-present": "^1.0.0",
     "lodash.uniqby": "^4.7.0",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
