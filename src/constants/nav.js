@@ -31,27 +31,27 @@ export default {
   ],
   Theme: [
     {
-      to: '/color',
+      to: '/theme/color',
       children: 'Color'
     },
     {
-      to: '/type-scale',
+      to: '/theme/type-scale',
       children: 'Type Scale'
     },
     {
-      to: '/spacing',
+      to: '/theme/spacing',
       children: 'Spacing'
     },
     {
-      to: '/measure',
+      to: '/theme/measure',
       children: 'Measure'
     },
     {
-      to: '/font-family',
+      to: '/theme/font-family',
       children: 'Font Family'
     },
     {
-      to: '/line-height',
+      to: '/theme/line-height',
       children: 'Line Height'
     }
   ]

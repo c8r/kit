@@ -11,6 +11,7 @@ import Layout from './Layout'
 import Index from './Index'
 import MarkdownPage from './MarkdownPage'
 import ComponentEditor from './ComponentEditor'
+import Color from './theme/Color'
 
 const Styleguide = props =>
   <Div>
@@ -20,12 +21,14 @@ const Styleguide = props =>
         path='/'
         render={() => <Index {...props} />}
       />
-
+      <Route
+        path='/theme/color'
+        render={() => <Color {...props} />}
+      />
       <Route
         path='/overview/:page'
         component={MarkdownPage}
       />
-
       <Route
         path='/components'
         render={() =>
