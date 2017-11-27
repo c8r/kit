@@ -1,6 +1,4 @@
-import React, {
-  Component
-} from 'react'
+import React, { Component } from 'react'
 
 import remark from 'remark'
 import remarkReact from 'remark-react'

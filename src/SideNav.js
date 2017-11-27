@@ -1,18 +1,17 @@
-import React, {
-  Component
-} from 'react'
+import React, { Component } from 'react'
 
-import {
-  Link
-} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-import styled from 'glamorous'
-
-import {
-  nav
-} from './constants'
-
+import { nav } from './constants'
 import Box from './Box'
+
+const toggleSection = (update, section) =>
+  update(state => {
+    const newState = Object.assign({}, state)
+    newState.sideNav.currSection = section
+
+    return newState
+  })
 
 const SideNav = ({
   currSection,
@@ -27,12 +26,7 @@ const SideNav = ({
       <Box key={section}>
         <p
           children={section}
-          onClick={() => update(state => {
-            const newState = Object.assign({}, state)
-            newState.sideNav.currSection = section
-
-            return newState
-          })}
+          onClick={() => toggleSection(update, section)}
         />
         {section === currSection && (
           <ul

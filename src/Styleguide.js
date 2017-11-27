@@ -1,13 +1,9 @@
 import React from 'react'
+
 import connect from 'refunk'
 
-import {
-  Route
-} from 'react-router-dom'
-
-import {
-  Div
-} from '@compositor/mono'
+import { Route } from 'react-router-dom'
+import { Div } from '@compositor/mono'
 
 import Router from '@compositor/x0/lib/Router'
 

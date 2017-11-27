@@ -1,12 +1,7 @@
 import React from 'react'
 
-import {
-  ThemeProvider
-} from 'glamorous'
-
-import {
-  Div
-} from '@compositor/mono'
+import { ThemeProvider } from 'glamorous'
+import { Div } from '@compositor/mono'
 
 import * as library from '../library'
 import Styleguide from './Styleguide'

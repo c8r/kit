@@ -1,12 +1,10 @@
 import React from 'react'
-import connect from 'refunk'
 
-import getProps from './util/get-props'
+import connect from 'refunk'
 import pluckExtensions from '@compositor/pluck-extension-tree'
 
-import {
-  ThemeProvider
-} from 'glamorous'
+import { ThemeProvider } from 'glamorous'
+import { Div } from '@compositor/mono'
 
 import {
   LiveProvider,
@@ -15,14 +13,9 @@ import {
   LivePreview
 } from 'react-live'
 
-import {
-  Div
-} from '@compositor/mono'
+import { editorCss } from './constants'
 
-import {
-  editorCss
-} from './constants'
-
+import getProps from './util/get-props'
 import Box from './Box'
 import Flex from './Flex'
 

@@ -1,14 +1,8 @@
 import React from 'react'
 
-import {
-  Link
-} from 'react-router-dom'
-
-import {
-  Container
-} from '@compositor/mono'
-
 import connect from 'refunk'
+import { Link } from 'react-router-dom'
+import { Container } from '@compositor/mono'
 
 import Box from './Box'
 import Flex from './Flex'
