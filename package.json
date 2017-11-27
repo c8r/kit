@@ -26,7 +26,7 @@
   "dependencies": {
     "@compositor/atomic-classify": "0.0.9-0",
     "@compositor/atomic-generator": "0.0.9-0",
-    "@compositor/get-jsx-props": "0.0.1",
+    "@compositor/get-jsx-props": "0.0.3",
     "@compositor/lab": "^1.0.0-33",
     "@compositor/mono": "0.0.3",
     "@compositor/pluck-extension-tree": "0.0.3",
@@ -36,7 +36,7 @@
     "dxs": "^3.0.0",
     "glamor": "^2.20.40",
     "glamorous": "^4.11.0",
-    "lodash.uniq": "^4.5.0",
+    "lodash.uniqby": "^4.7.0",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-live": "^1.7.1",

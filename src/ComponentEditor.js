@@ -1,13 +1,12 @@
 import React from 'react'
 import connect from 'refunk'
 
+import getProps from './util/get-props'
+import pluckExtensions from '@compositor/pluck-extension-tree'
+
 import {
   ThemeProvider
 } from 'glamorous'
-
-import pluckExtensions from '@compositor/pluck-extension-tree'
-
-import EditorCss from './ComponentEditorCss'
 
 import {
   LiveProvider,
@@ -22,6 +21,7 @@ import {
 
 import Box from './Box'
 import Flex from './Flex'
+import EditorCss from './ComponentEditorCss'
 
 const transform = (theme, code) => `
   <ThemeProvider theme={${JSON.stringify(theme)}}>
@@ -142,6 +142,25 @@ const ComponentEditor = ({
             <tr key={prop}>
               <td>{prop}</td>
               <td>{JSON.stringify(component.props[prop])}</td>
+            </tr>
+          )}
+        />
+      </table>
+
+      Example Props:
+
+      <table>
+        <thead>
+          <tr>
+            <th>Prop</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody
+          children={getProps(component.examples).map(prop =>
+            <tr key={`${prop.prop}-${prop.value}`}>
+              <td>{prop.prop}</td>
+              <td>{prop.value}</td>
             </tr>
           )}
         />
