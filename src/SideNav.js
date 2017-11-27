@@ -20,11 +20,19 @@ const SideNav = ({
 }) =>
   <Box
     w={1}
+    mr={[0, 2, 3]}
     borderRight
+    borderWidth={1}
     borderColor='gray1'
+    style={{
+      width: '200px',
+      position: 'fixed',
+      minHeight: '100%'
+    }}
     children={Object.keys(nav).map(section =>
-      <Box key={section}>
+      <Box mt={0} key={section}>
         <p
+          mt={0}
           children={section}
           onClick={() => toggleSection(update, section)}
         />

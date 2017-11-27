@@ -4,8 +4,11 @@ import connect from 'refunk'
 import { Link } from 'react-router-dom'
 import { Container } from '@compositor/mono'
 
+import { layoutCss } from './constants'
+
 import Box from './Box'
 import Flex from './Flex'
+import Style from './Style'
 import SideNav from './SideNav'
 
 const Layout = ({
@@ -14,7 +17,9 @@ const Layout = ({
   update
 }) =>
   <Flex flexDirection='row'>
-    <Box w='400px'>
+    <Style>{layoutCss}</Style>
+
+    <Box w='200px'>
       <SideNav
         update={update}
         {...sideNav}

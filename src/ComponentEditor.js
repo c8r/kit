@@ -18,6 +18,7 @@ import { editorCss } from './constants'
 import getProps from './util/get-props'
 import Box from './Box'
 import Flex from './Flex'
+import Style from './Style'
 
 const transform = (theme, code) => `
   <ThemeProvider theme={${JSON.stringify(theme)}}>
@@ -79,7 +80,7 @@ const ComponentEditor = ({
           </Box>
         </Flex>
 
-				<style dangerouslySetInnerHTML={{ __html: editorCss }} />
+        <Style>{editorCss}</Style>
       </LiveProvider>
 
       Examples:
