@@ -123,6 +123,27 @@ const ComponentEditor = ({
         </Div>
       )}
 
+      {component.imports && (
+        <Div>
+          <H4 fontSize={1} mb={2}>Imports</H4>
+          {component.imports.map(comp =>
+            <Link
+              style={{
+                textDecoration: 'none',
+                color: 'black'
+              }}
+              to={`/components/${comp.toLowerCase()}`}
+            >
+              <code
+                key={comp}
+                children={comp}
+                style={{ display: 'block', lineHeight: 1.5 }}
+              />
+            </Link>
+          )}
+        </Div>
+      )}
+
       <H4 fontSize={1} mb={2}>Extended from</H4>
       {pluckExtensions(component.name, components).map(ext =>
         <Link
