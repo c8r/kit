@@ -1,10 +1,13 @@
 import React from 'react'
+import { renderToString } from 'react-dom/server'
 
 import { ThemeProvider } from 'glamorous'
+import { renderStatic } from 'glamor/server'
 import { Div } from '@compositor/mono'
 
 import * as library from '../library'
 import Styleguide from './Styleguide'
+import Style from './Style'
 
 const config = require('@compositor/bold/lab.json')
 const theme = require('@compositor/bold/theme.json')
@@ -28,13 +31,17 @@ const initialState = {
   }
 }
 
-const App = props =>
+const App = ({ css, ...props }) =>
   <ThemeProvider theme={theme}>
     <Div
       style={{
         fontFamily: theme.fonts[0] || 'sans-serif'
       }}
     >
+      {css && (
+        <Style>{css}</Style>
+      )}
+
       <Styleguide
         {...props}
         library={library}
@@ -42,6 +49,11 @@ const App = props =>
     </Div>
   </ThemeProvider>
 
-App.getInitialProps = () => initialState
+App.getInitialProps = ({ Component }) => {
+  const el = React.createElement(Component, initialState)
+  const { css } = renderStatic(() => renderToString(el))
+
+  return Object.assign({}, initialState, { css })
+}
 
 export default App
