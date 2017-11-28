@@ -43,62 +43,68 @@ const SideNav = ({
 
   return (
     <Box
-      w={1}
+      w={200}
       mr={[0, 2, 3]}
       borderRight
       borderWidth={1}
       borderColor='gray1'
       style={{
-        width: '200px',
         position: 'fixed',
-        minHeight: '100%'
+        height: '100%'
       }}
-      children={Object.keys(fullNav).map(section =>
-        <Box
-          mt={0}
-          borderColor='gray1'
-          borderWidth={1}
-          borderBottom
-          key={section}
-          style={{
-            cursor: 'pointer'
-          }}
-        >
-          <nav>
-            <Text
-              my={0}
-              p={3}
-              children={section}
-              onClick={() => toggleSection(update, section)}
-            />
-            {section === currSection && (
-              <Ul
-                py={3}
-                bg='gray0'
-                borderTop
-                borderWidth={1}
-                borderColor='gray1'
-                children={fullNav[section].map(page =>
-                  <Li
-                    px={4}
-                    py={1}
-                    key={page.to}
-                  >
-                    <Link
-                      style={{
-                        textDecoration: 'none',
-                        color: theme.colors.gray5
-                      }}
-                      {...page}
-                    />
-                  </Li>
-                )}
+    >
+      <Box
+        style={{
+          height: '100%',
+          overflow: 'auto'
+        }}
+        children={Object.keys(fullNav).map(section =>
+          <Box
+            mt={0}
+            borderColor='gray1'
+            borderWidth={1}
+            borderBottom
+            key={section}
+            style={{
+              cursor: 'pointer'
+            }}
+          >
+            <nav>
+              <Text
+                my={0}
+                p={3}
+                children={section}
+                onClick={() => toggleSection(update, section)}
               />
-            )}
-          </nav>
-        </Box>
-      )}
-    />
+              {section === currSection && (
+                <Ul
+                  py={3}
+                  bg='gray0'
+                  borderTop
+                  borderWidth={1}
+                  borderColor='gray1'
+                  children={fullNav[section].map(page =>
+                    <Li
+                      px={4}
+                      py={1}
+                      key={page.to}
+                    >
+                      <Link
+                        style={{
+                          textDecoration: 'none',
+                          color: theme.colors.gray5
+                        }}
+                        {...page}
+                      />
+                    </Li>
+                  )}
+                />
+              )}
+            </nav>
+          </Box>
+        )}
+      />
+    </Box>
   )
 }
 

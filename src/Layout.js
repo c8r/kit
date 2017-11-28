@@ -21,7 +21,7 @@ const Layout = ({
   <Flex flexDirection='row'>
     <Style>{layoutCss}</Style>
 
-    <Box w='200px'>
+    <Box w={200}>
       <SideNav
         theme={theme}
         config={config}
