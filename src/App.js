@@ -42,6 +42,6 @@ const App = props =>
     </Div>
   </ThemeProvider>
 
-App.defaultProps = initialState
+App.getInitialProps = () => initialState
 
 export default App
