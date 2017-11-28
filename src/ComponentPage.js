@@ -2,6 +2,11 @@ import React from 'react'
 
 import connect from 'refunk'
 
+import {
+  Heading,
+  Text
+} from '@compositor/mono'
+
 import Layout from './Layout'
 import ComponentEditor from './ComponentEditor'
 
@@ -20,6 +25,9 @@ const ComponentPage = ({
 
   return (
     <Layout>
+      <Heading>{c.name}</Heading>
+      {c.description && <Text>{c.description}</Text>}
+
       <ComponentEditor
         key={c.name}
         theme={theme}
