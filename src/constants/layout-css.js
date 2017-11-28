@@ -4,4 +4,8 @@ export default `
     margin: 0;
     min-height: 100vh;
   }
+
+  * {
+    box-sizing: border-box;
+  }
 `
