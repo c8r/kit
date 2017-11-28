@@ -4,6 +4,7 @@ import connect from 'refunk'
 import pluckExtensions from '@compositor/pluck-extension-tree'
 
 import { ThemeProvider } from 'glamorous'
+import { Link } from 'react-router-dom'
 import { Div, H4 } from '@compositor/mono'
 
 import {
@@ -124,20 +125,36 @@ const ComponentEditor = ({
 
       <H4 fontSize={1} mb={2}>Extended from</H4>
       {pluckExtensions(component.name, components).map(ext =>
-        <code
-          key={ext.name}
-          children={ext.name}
-          style={{ display: 'block', lineHeight: 1.5 }}
-        />
+        <Link
+          style={{
+            textDecoration: 'none',
+            color: 'black'
+          }}
+          to={`/components/${ext.name.toLowerCase()}`}
+        >
+          <code
+            key={ext.name}
+            children={ext.name}
+            style={{ display: 'block', lineHeight: 1.5 }}
+          />
+        </Link>
       )}
 
       <H4 fontSize={1} mb={2}>Extended by</H4>
       {pluckExtensions(component.name, components, { descendents: true }).map(ext =>
-        <code
-          key={ext.name}
-          children={ext.name}
-          style={{ display: 'block', lineHeight: 1.5 }}
-        />
+        <Link
+          style={{
+            textDecoration: 'none',
+            color: 'black'
+          }}
+          to={`/components/${ext.name.toLowerCase()}`}
+        >
+          <code
+            key={ext.name}
+            children={ext.name}
+            style={{ display: 'block', lineHeight: 1.5 }}
+          />
+        </Link>
       )}
       <H4 fontSize={1}>Props</H4>
       <table style={{ cellspacing: 0, borderCollapse: 'collapse'}}>
