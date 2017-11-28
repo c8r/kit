@@ -144,6 +144,25 @@ const ComponentEditor = ({
         </Div>
       )}
 
+      <Div>
+        <H4 fontSize={1} mb={2}>Imported by</H4>
+        {components.filter(c => c.imports && c.imports.includes(component.name)).map(comp =>
+          <Link
+            style={{
+              textDecoration: 'none',
+              color: 'black'
+            }}
+            to={`/components/${comp.name.toLowerCase()}`}
+          >
+            <code
+              key={comp.name}
+              children={comp.name}
+              style={{ display: 'block', lineHeight: 1.5 }}
+            />
+          </Link>
+        )}
+      </Div>
+
       <H4 fontSize={1} mb={2}>Extended from</H4>
       {pluckExtensions(component.name, components).map(ext =>
         <Link
