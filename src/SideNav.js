@@ -22,7 +22,9 @@ const toNavObject = component => ({
 const toggleSection = (update, section) =>
   update(state => {
     const newState = Object.assign({}, state)
-    newState.sideNav.currSection = section
+    const currSection = newState.sideNav.currSection
+
+    newState.sideNav.currSection = currSection === section ? null : section
 
     return newState
   })
