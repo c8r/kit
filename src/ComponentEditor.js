@@ -4,7 +4,7 @@ import connect from 'refunk'
 import pluckExtensions from '@compositor/pluck-extension-tree'
 
 import { ThemeProvider } from 'glamorous'
-import { Div } from '@compositor/mono'
+import { Div, H4 } from '@compositor/mono'
 
 import {
   LiveProvider,
@@ -22,9 +22,9 @@ import Style from './Style'
 
 const transform = (theme, code) => `
   <ThemeProvider theme={${JSON.stringify(theme)}}>
-    <div>
+    <Box>
       ${code}
-    </div>
+    </Box>
   </ThemeProvider>
 `
 
@@ -56,15 +56,18 @@ const ComponentEditor = ({
         <Flex
           wrap
           flexDirection={['column', 'row', 'row']}
+          style={{ alignItems: 'center' }}
         >
           <Box
-            py={[3, 4, 4]}
-            w={[1, 1/2, 1/2]}
+            px={4}
+            py={5}
+            w={[1]}
           >
             <LivePreview />
           </Box>
           <Box
-            w={[1, 1/2, 1/2]}
+            p={4}
+            w={[1]}
           >
             <LiveEditor />
           </Box>
@@ -83,13 +86,15 @@ const ComponentEditor = ({
         <Style>{editorCss}</Style>
       </LiveProvider>
 
-      Examples:
+      <Box px={4} pt={4} style={{ borderTop: '1px solid #eee' }}>
+        <H4 fontSize={1} mt={0}>Examples</H4>
 
       {editor.examples.length > 1 && (
         <Div>
           <a
             href='#!'
             children='All'
+            style={{ fontSize: 12, textDecoration: 'none', outline: '1px solid black', display: 'inline-block', marginRight: '16px', color: 'black', padding: '4px 16px'  }}
             onClick={() => update(state => {
               const newState = Object.assign({}, state)
 
@@ -104,6 +109,7 @@ const ComponentEditor = ({
               key={i}
               href='#!'
               children={i}
+              style={{ fontSize: 12, textDecoration: 'none', outline: '1px solid black', display: 'inline-block', marginRight: '16px', color: 'black', padding: '4px 16px'  }}
               onClick={() => update(state => {
                 const newState = Object.assign({}, state)
 
@@ -116,30 +122,27 @@ const ComponentEditor = ({
         </Div>
       )}
 
-      Extended from:
-
+      <H4 fontSize={1} mb={2}>Extended from</H4>
       {pluckExtensions(component.name, components).map(ext =>
-        <Div
+        <code
           key={ext.name}
           children={ext.name}
+          style={{ display: 'block', lineHeight: 1.5 }}
         />
       )}
 
-      Extended by:
-
+      <H4 fontSize={1} mb={2}>Extended by</H4>
       {pluckExtensions(component.name, components, { descendents: true }).map(ext =>
-        <Div
+        <code
           key={ext.name}
           children={ext.name}
+          style={{ display: 'block', lineHeight: 1.5 }}
         />
       )}
-
-
-      Props:
-
-      <table>
-        <thead>
-          <tr>
+      <H4 fontSize={1}>Props</H4>
+      <table style={{ cellspacing: 0, borderCollapse: 'collapse'}}>
+        <thead style={{ textAlign: 'left' }}>
+          <tr style={{fontSize: '12px', textTransform: 'uppercase' }}>
             <th>Prop</th>
             <th>Value</th>
           </tr>
@@ -147,18 +150,16 @@ const ComponentEditor = ({
         <tbody
           children={Object.keys(component.props || {}).map(prop =>
             <tr key={prop}>
-              <td>{prop}</td>
-              <td>{JSON.stringify(component.props[prop])}</td>
+              <td style={{ paddingRight: '32px'}}><code>{prop}</code></td>
+              <td><code>{JSON.stringify(component.props[prop])}</code></td>
             </tr>
           )}
         />
       </table>
-
-      Example Props:
-
+      <H4 fontSize={1}>Example Props</H4>
       <table>
         <thead>
-          <tr>
+          <tr style={{fontSize: '12px', textTransform: 'uppercase', textAlign: 'left' }}>
             <th>Prop</th>
             <th>Value</th>
           </tr>
@@ -166,12 +167,13 @@ const ComponentEditor = ({
         <tbody
           children={getProps(component.examples).map(prop =>
             <tr key={`${prop.prop}-${prop.value}`}>
-              <td>{prop.prop}</td>
-              <td>{prop.value}</td>
+              <td style={{ paddingRight: '32px' }}><code>{prop.prop}</code></td>
+              <td><code>{prop.value}</code></td>
             </tr>
           )}
         />
       </table>
+    </Box>
     </Div>
   )
 }
