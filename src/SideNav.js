@@ -30,15 +30,15 @@ const toggleSection = (update, section) =>
   })
 
 const SideNav = ({
-  config,
+  components = [],
   currSection,
   currPage,
   update,
   theme
 }) => {
   const componentNav = {
-    Primitives: config.components.filter(c => isBlank(c.imports)).map(toNavObject),
-    Composites: config.components.filter(c => isPresent(c.imports)).map(toNavObject)
+    Primitives: components.filter(c => isBlank(c.imports)).map(toNavObject),
+    Composites: components.filter(c => isPresent(c.imports)).map(toNavObject)
   }
 
   const fullNav = Object.assign({}, nav, componentNav)
