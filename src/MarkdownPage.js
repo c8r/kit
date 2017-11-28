@@ -21,7 +21,7 @@ const MarkdownPage = ({
   <Layout>
     <Box p={4}>
       <Markdown
-        style={{ lineHeight: 1.5 }} 
+        style={{ lineHeight: 1.5 }}
         children={getMarkdown(page)}
       />
     </Box>

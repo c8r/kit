@@ -16,7 +16,7 @@ const Layout = ({
   sideNav,
   update,
   theme,
-  config
+  components
 }) =>
   <Flex flexDirection='row'>
     <Style>{layoutCss}</Style>
@@ -24,7 +24,7 @@ const Layout = ({
     <Box w={200}>
       <SideNav
         theme={theme}
-        config={config}
+        components={components}
         update={update}
         {...sideNav}
       />
