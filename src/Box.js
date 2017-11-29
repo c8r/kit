@@ -14,9 +14,7 @@ import {
 } from 'styled-system'
 
 const Box = styled('div')(
-  props => ({
-    boxSizing: 'border-box'
-  }),
+  props => ({}),
   space,
   width,
   borderColor,

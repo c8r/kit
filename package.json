@@ -38,6 +38,7 @@
     "dxs": "^3.0.0",
     "glamor": "^2.20.40",
     "glamorous": "^4.11.0",
+    "humanize-list": "^1.0.1",
     "is-blank": "^2.1.0",
     "is-present": "^1.0.0",
     "lodash.uniqby": "^4.7.0",
@@ -48,11 +49,11 @@
     "refunk": "^2.0.0",
     "remark": "^8.0.0",
     "remark-react": "^4.0.1",
-    "styled-api": "0.0.1-1",
+    "styled-api": "0.0.1-2",
     "styled-system": "^1.0.8"
   },
   "devDependencies": {
-    "@compositor/bold": "0.0.4-0",
+    "@compositor/bold": "0.0.8-0",
     "ava": "*",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",

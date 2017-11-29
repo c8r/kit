@@ -34,7 +34,7 @@ const SideNav = ({
   currSection,
   currPage,
   update,
-  theme
+  theme = { colors: {} }
 }) => {
   const componentNav = {
     Primitives: components.filter(c => isBlank(c.imports)).map(toNavObject),
@@ -49,7 +49,7 @@ const SideNav = ({
       mr={[0, 2, 3]}
       borderRight
       borderWidth={1}
-      borderColor='gray1'
+      borderColor={theme.colors.gray1}
       style={{
         position: 'fixed',
         height: '100%'
@@ -63,7 +63,7 @@ const SideNav = ({
         children={Object.keys(fullNav).map(section =>
           <Box
             mt={0}
-            borderColor='gray1'
+            borderColor={theme.colors.gray1}
             borderWidth={1}
             borderBottom
             key={section}
@@ -81,10 +81,10 @@ const SideNav = ({
               {section === currSection && (
                 <Ul
                   py={3}
-                  bg='gray0'
+                  bg={theme.colors.gray0}
                   borderTop
                   borderWidth={1}
-                  borderColor='gray1'
+                  borderColor={theme.colors.gray1}
                   children={fullNav[section].map(page =>
                     <Li
                       px={4}
