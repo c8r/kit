@@ -1,6 +1,7 @@
 import React from 'react'
 
 import connect from 'refunk'
+import humanizeList from 'humanize-list'
 import { xProduct } from 'styled-api'
 
 import {
@@ -26,20 +27,26 @@ const ComponentPage = ({
 
   const Component = library[c.name]
 
+  if (!c.api) {
+    return (
+      <Layout>
+        <Heading>{c.name} does not have a styled api</Heading>
+      </Layout>
+    )
+  }
+
   return (
     <Layout>
       <Heading>{c.name} Styled API</Heading>
       <Text>
-        The border radius and box shadow are configurable.
+        {humanizeList(Object.keys(c.api))}
+        {Object.keys(c.api).length > 1 ? 'are' : 'is'} configurable
       </Text>
 
       {xProduct(c.api, theme).map((props, i) =>
         <Component
           key={i}
           children='Hello'
-          style={{
-            boxShadow: props.shadow,
-          }}
           m={2}
           p={4}
           {...c.props}

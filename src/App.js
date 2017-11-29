@@ -9,11 +9,14 @@ import * as library from '../library'
 import Styleguide from './Styleguide'
 import Style from './Style'
 
-const config = require('@compositor/bold/lab.json')
-const theme = require('@compositor/bold/theme.json')
+import config from '@compositor/bold/lab.json'
+import theme from '@compositor/bold/theme.json'
 const components = config.components
 
+import sgTheme from '@compositor/mono/theme.json'
+
 const initialState = {
+  sgTheme,
   components,
   config,
   theme,
@@ -38,9 +41,7 @@ const App = ({ css, ...props }) =>
         fontFamily: theme.fonts[0] || 'sans-serif'
       }}
     >
-      {css && (
-        <Style>{css}</Style>
-      )}
+      <Style>{css}</Style>
 
       <Styleguide
         {...props}

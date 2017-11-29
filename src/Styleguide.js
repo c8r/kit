@@ -1,11 +1,10 @@
 import React from 'react'
 
 import connect from 'refunk'
+import Router from '@compositor/x0/lib/Router'
 
 import { Route } from 'react-router-dom'
 import { Div } from '@compositor/mono'
-
-import Router from '@compositor/x0/lib/Router'
 
 import Layout from './Layout'
 import Index from './Index'
@@ -35,7 +34,7 @@ const Styleguide = props =>
         component={ComponentPage}
       />
       <Route
-        path='/components/:component/styled-api'
+        path='/styled-api/:component'
         component={StyledApiPage}
       />
     </Router>
