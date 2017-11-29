@@ -12,6 +12,7 @@ import Index from './Index'
 import ThemePage from './ThemePage'
 import MarkdownPage from './MarkdownPage'
 import ComponentPage from './ComponentPage'
+import StyledApiPage from './StyledApiPage'
 
 const Styleguide = props =>
   <Div>
@@ -32,6 +33,10 @@ const Styleguide = props =>
       <Route
         path='/components/:component'
         component={ComponentPage}
+      />
+      <Route
+        path='/components/:component/styled-api'
+        component={StyledApiPage}
       />
     </Router>
   </Div>
