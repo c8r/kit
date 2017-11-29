@@ -25,7 +25,7 @@ const ComponentPage = ({
 
   return (
     <Layout>
-      <Heading>{c.name}</Heading>
+      <Heading mt={4} pb={2} style={{ borderBottom: '1px solid black' }}>{c.name}</Heading>
       {c.description && <Text>{c.description}</Text>}
 
       <ComponentEditor

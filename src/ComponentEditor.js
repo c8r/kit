@@ -70,8 +70,11 @@ const ComponentEditor = ({
             p={4}
             w={[1]}
           >
-            <LiveEditor />
           </Box>
+          <LiveEditor style={{
+            width: '100%',
+            padding: '32px'
+          }}/>
           <Box w={1}>
             <LiveError
               style={{

@@ -20,7 +20,7 @@ export default ({
 }) =>
   <Box>
     <Box ml={3} py={4}>
-      <Heading>Color</Heading>
+      <Heading mt={4} mb={2}>Color</Heading>
       <Text color='gray5'>
         The following colors are part of the palette.
       </Text>
@@ -31,13 +31,14 @@ export default ({
       children={Object.keys(colors).map(color =>
         <Box
           key={color}
-          p={3}
+          py={2}
+          px={3}
           w={[1, 1/3, 1/4]}
         >
           <Div
             bg={color}
             style={{
-              height: '15vh'
+              height: '8vh'
             }}
           />
 
@@ -52,8 +53,8 @@ export default ({
       )}
     />
 
-    <Box ml={3} py={4}>
-      <Heading>Accessible Combinations</Heading>
+    <Box ml={3} py={4} mt={4}>
+      <Heading mb={2}>Accessible Combinations</Heading>
       <Text color='gray5'>
         The following colors are all a11y color combinations.
       </Text>
@@ -77,10 +78,12 @@ export default ({
                 f={4}
                 color={combo.base}
                 bg={combo.name}
+                style={{fontWeight: 700}}
                 children='Aa'
               />
 
               <Flex
+                style={{ display: 'none' }}
                 align='center'
                 justify='space-between'
               >
