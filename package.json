@@ -28,7 +28,7 @@
     "@compositor/atomic-generator": "0.0.9-0",
     "@compositor/get-jsx-props": "0.0.3",
     "@compositor/lab": "^1.0.0-33",
-    "@compositor/mono": "0.1.2",
+    "@compositor/mono": "0.1.3",
     "@compositor/pluck-colors": "0.0.1",
     "@compositor/pluck-extension-tree": "0.0.4",
     "@compositor/publish": "0.0.10",
