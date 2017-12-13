@@ -46,6 +46,7 @@ const SideNav = ({
   return (
     <Box
       w={200}
+      pt={3}
       mr={[0, 2, 3]}
       borderRight
       borderWidth={1}
@@ -63,9 +64,7 @@ const SideNav = ({
         children={Object.keys(fullNav).map(section =>
           <Box
             mt={0}
-            borderColor={theme.colors.gray1}
-            borderWidth={1}
-            borderBottom
+            py={3}
             key={section}
             style={{
               cursor: 'pointer'
@@ -74,17 +73,12 @@ const SideNav = ({
             <nav>
               <Text
                 my={0}
-                p={3}
+                px={3}
+                fontWeight={600}
                 children={section}
-                onClick={() => toggleSection(update, section)}
               />
-              {section === currSection && (
                 <Ul
-                  py={3}
-                  bg={theme.colors.gray0}
-                  borderTop
-                  borderWidth={1}
-                  borderColor={theme.colors.gray1}
+                  pt={1}
                   children={fullNav[section].map(page =>
                     <Li
                       px={4}
@@ -101,7 +95,6 @@ const SideNav = ({
                     </Li>
                   )}
                 />
-              )}
             </nav>
           </Box>
         )}
