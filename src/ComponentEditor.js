@@ -20,7 +20,11 @@ import getProps from './util/get-props'
 import Box from './Box'
 import Flex from './Flex'
 import Style from './Style'
+
+import ComponentExtensions from './ComponentExtensions'
 import ComponentExamples from './ComponentExamples'
+import ComponentImports from './ComponentImports'
+import ExampleProps from './ExampleProps'
 
 const transform = (theme, code) => `
   <ThemeProvider theme={${JSON.stringify(theme)}}>
@@ -104,113 +108,19 @@ const ComponentEditor = ({
           })}
         />
 
-      {component.imports && (
-        <Div>
-          <H4 fontSize={1} mb={2}>Imports</H4>
-          {component.imports.map(comp =>
-            <Link
-              style={{
-                textDecoration: 'none',
-                color: 'black'
-              }}
-              to={`/components/${comp.toLowerCase()}`}
-            >
-              <code
-                key={comp}
-                children={comp}
-                style={{ display: 'block', lineHeight: 1.5 }}
-              />
-            </Link>
-          )}
-        </Div>
-      )}
-
-      <Div>
-        <H4 fontSize={1} mb={2}>Imported by</H4>
-        {components.filter(c => c.imports && c.imports.includes(component.name)).map(comp =>
-          <Link
-            style={{
-              textDecoration: 'none',
-              color: 'black'
-            }}
-            to={`/components/${comp.name.toLowerCase()}`}
-          >
-            <code
-              key={comp.name}
-              children={comp.name}
-              style={{ display: 'block', lineHeight: 1.5 }}
-            />
-          </Link>
-        )}
-      </Div>
-
-      <H4 fontSize={1} mb={2}>Extended from</H4>
-      {pluckExtensions(component.name, components).map(ext =>
-        <Link
-          style={{
-            textDecoration: 'none',
-            color: 'black'
-          }}
-          to={`/components/${ext.name.toLowerCase()}`}
-        >
-          <code
-            key={ext.name}
-            children={ext.name}
-            style={{ display: 'block', lineHeight: 1.5 }}
-          />
-        </Link>
-      )}
-
-      <H4 fontSize={1} mb={2}>Extended by</H4>
-      {pluckExtensions(component.name, components, { descendents: true }).map(ext =>
-        <Link
-          style={{
-            textDecoration: 'none',
-            color: 'black'
-          }}
-          to={`/components/${ext.name.toLowerCase()}`}
-        >
-          <code
-            key={ext.name}
-            children={ext.name}
-            style={{ display: 'block', lineHeight: 1.5 }}
-          />
-        </Link>
-      )}
-      <H4 fontSize={1}>Props</H4>
-      <table style={{ cellspacing: 0, borderCollapse: 'collapse'}}>
-        <thead style={{ textAlign: 'left' }}>
-          <tr style={{fontSize: '12px', textTransform: 'uppercase' }}>
-            <th>Prop</th>
-            <th>Value</th>
-          </tr>
-        </thead>
-        <tbody
-          children={Object.keys(component.props || {}).map(prop =>
-            <tr key={prop}>
-              <td style={{ paddingRight: '32px'}}><code>{prop}</code></td>
-              <td><code>{JSON.stringify(component.props[prop])}</code></td>
-            </tr>
-          )}
+        <ComponentImports
+          component={component}
+          components={components}
         />
-      </table>
-      <H4 fontSize={1}>Example Props</H4>
-      <table>
-        <thead>
-          <tr style={{fontSize: '12px', textTransform: 'uppercase', textAlign: 'left' }}>
-            <th>Prop</th>
-            <th>Value</th>
-          </tr>
-        </thead>
-        <tbody
-          children={getProps(component.examples).map(prop =>
-            <tr key={`${prop.prop}-${prop.value}`}>
-              <td style={{ paddingRight: '32px' }}><code>{prop.prop}</code></td>
-              <td><code>{prop.value}</code></td>
-            </tr>
-          )}
+
+        <ComponentExtensions
+          component={component}
+          components={components}
         />
-      </table>
+
+        <ExampleProps
+          component={component}
+        />
     </Box>
     </Div>
   )
