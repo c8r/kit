@@ -1,0 +1,601 @@
+{
+  "name": "landing",
+  "library": "styled-components",
+  "components": [
+    {
+      "name": "Title",
+      "type": "h1",
+      "props": {
+        "m": 0,
+        "fontSize": 56
+      },
+      "style": {
+        "lineHeight": "1"
+      },
+      "examples": [
+        "<Title>\n  Title\n</Title>",
+        "<Title>\n  Lab\n</Title>",
+        "<Title>\n  Iso\n</Title>",
+        "<Title>\n  Zero\n</Title>"
+      ],
+      "system": [],
+      "description": "Page-level title for large H1s"
+    },
+    {
+      "name": "Heading",
+      "type": "h2",
+      "props": {
+        "fontSize": 5,
+        "m": 0
+      },
+      "style": {
+        "fontWeight": "bold",
+        "lineHeight": "1.125"
+      },
+      "examples": [
+        "<Heading>Hello</Heading>"
+      ],
+      "system": []
+    },
+    {
+      "name": "Subhead",
+      "type": "h3",
+      "props": {
+        "m": 0,
+        "fontSize": 4
+      },
+      "style": {
+        "lineHeight": "1.25"
+      },
+      "examples": [
+        "<Subhead>Hello</Subhead>"
+      ],
+      "system": []
+    },
+    {
+      "name": "Text",
+      "type": "div",
+      "props": {
+        "fontSize": null
+      },
+      "style": {},
+      "examples": [
+        "<Text>Hello</Text>"
+      ],
+      "system": []
+    },
+    {
+      "name": "Caps",
+      "type": "span",
+      "props": {
+        "fontSize": 0,
+        "fontWeight": "600"
+      },
+      "style": {
+        "textTransform": "uppercase",
+        "letterSpacing": "0.1875em"
+      },
+      "examples": [
+        "<Caps>Hello</Caps>"
+      ],
+      "system": [
+        "fontWeight"
+      ]
+    },
+    {
+      "name": "Small",
+      "type": "div",
+      "props": {
+        "fontSize": 0
+      },
+      "style": {},
+      "examples": [
+        "<Small>Hello</Small>"
+      ],
+      "system": []
+    },
+    {
+      "name": "FormButton",
+      "type": "button",
+      "props": {
+        "fontSize": 0,
+        "px": 3,
+        "py": 2,
+        "color": "white",
+        "bg": "blue",
+        "fontWeight": "600",
+        "borderRadius": 4
+      },
+      "style": {
+        "display": "inline-block",
+        "fontFamily": "inherit",
+        "webkitTextDecoration": "none",
+        "textDecoration": "none",
+        "borderWidth": "0px",
+        "webkitAppearance": "none",
+        "mozAppearance": "none",
+        "appearance": "none",
+        "webkitTextTransform": "uppercase",
+        "letterSpacing": "0em",
+        "lineHeight": "1.25",
+        "whiteSpace": "nowrap"
+      },
+      "examples": [
+        "<FormButton>Hello</FormButton>"
+      ],
+      "system": [
+        "fontWeight",
+        "borderRadius"
+      ]
+    },
+    {
+      "name": "Button",
+      "type": "a",
+      "props": {
+        "fontSize": 0,
+        "px": 3,
+        "py": 2,
+        "color": "white",
+        "bg": "blue",
+        "fontWeight": "600",
+        "borderRadius": 4
+      },
+      "style": {
+        "display": "inline-block",
+        "fontFamily": "inherit",
+        "webkitTextDecoration": "none",
+        "textDecoration": "none",
+        "borderWidth": "0px",
+        "webkitAppearance": "none",
+        "mozAppearance": "none",
+        "appearance": "none",
+        "webkitTextTransform": "uppercase",
+        "letterSpacing": "0em",
+        "lineHeight": "1.25",
+        "whiteSpace": "nowrap"
+      },
+      "examples": [
+        "<Button>Hello</Button>"
+      ],
+      "system": [
+        "fontWeight",
+        "borderRadius"
+      ]
+    },
+    {
+      "name": "ButtonOutline",
+      "type": "Button",
+      "props": {
+        "bg": "transparent",
+        "color": "blue",
+        "pt": 2
+      },
+      "style": {
+        "boxShadow": "inset 0 0 0 2px"
+      },
+      "examples": [
+        "<ButtonOutline href='#!'>\n  Beep\n</ButtonOutline>"
+      ],
+      "system": [
+        "borderWidth"
+      ]
+    },
+    {
+      "name": "BigButton",
+      "type": "Button",
+      "props": {
+        "py": 12,
+        "px": 18,
+        "fontSize": 2
+      },
+      "style": {
+        "lineHeight": "1.25"
+      },
+      "examples": [
+        "<BigButton>\n  Hello\n</BigButton>"
+      ],
+      "system": [
+        "borderRadius"
+      ]
+    },
+    {
+      "name": "Image",
+      "type": "img",
+      "props": {},
+      "style": {
+        "display": "block",
+        "maxWidth": "100%",
+        "height": "auto"
+      },
+      "examples": [
+        "<Image src='https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=2048&q=20' width={320} />"
+      ],
+      "system": []
+    },
+    {
+      "name": "Link",
+      "type": "a",
+      "props": {
+        "color": "blue"
+      },
+      "style": {},
+      "examples": [
+        "<Link>Hello</Link>"
+      ]
+    },
+    {
+      "name": "NavLink",
+      "type": "a",
+      "props": {
+        "fontWeight": "600",
+        "color": "inherit",
+        "hover": {
+          "color": "#009eef"
+        },
+        "fontSize": 10
+      },
+      "style": {
+        "webkitTextDecoration": "none",
+        "textDecoration": "none",
+        "webkitTextTransform": "uppercase",
+        "textTransform": "uppercase",
+        "letterSpacing": "0.1875em",
+        "lineHeight": "1",
+        "display": "inline-flex",
+        "webkitAlignItems": "center",
+        "webkitBoxAlign": "center",
+        "msFlexAlign": "center",
+        "alignItems": "center"
+      },
+      "examples": [
+        "<NavLink href='#!'>Hello</NavLink>"
+      ],
+      "system": [
+        "fontWeight",
+        "hover"
+      ]
+    },
+    {
+      "name": "Divider",
+      "type": "hr",
+      "props": {
+        "color": "gray"
+      },
+      "style": {
+        "height": "0",
+        "borderStyle": "solid",
+        "borderWidth": "0",
+        "borderBottomWidth": "1px"
+      },
+      "examples": [
+        "<Divider />"
+      ],
+      "system": [
+        "borderWidth",
+        "borderColor"
+      ]
+    },
+    {
+      "name": "Input",
+      "type": "input",
+      "props": {
+        "m": 0,
+        "w": 1,
+        "px": 2,
+        "py": 1,
+        "color": "inherit",
+        "bg": "transparent",
+        "borderRadius": 4,
+        "borderColor": "muted",
+        "borderWidth": 1,
+        "focus": {
+          "outline": "none",
+          "borderColor": "#0093ef"
+        }
+      },
+      "style": {
+        "display": "block",
+        "fontFamily": "inherit",
+        "fontSize": "inherit"
+      },
+      "examples": [
+        "<Input />"
+      ],
+      "system": [
+        "borderRadius",
+        "borderColor",
+        "borderWidth",
+        "focus"
+      ]
+    },
+    {
+      "name": "Label",
+      "type": "label",
+      "props": {
+        "fontSize": 0
+      },
+      "style": {},
+      "examples": [
+        "<Label>Hello</Label>"
+      ],
+      "system": []
+    },
+    {
+      "name": "ImageRounded",
+      "type": "Image",
+      "props": {
+        "borderRadius": 16
+      },
+      "style": {},
+      "examples": [
+        "<ImageRounded\n  src='https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=2048&q=20'\n  width={320}\n/>"
+      ],
+      "system": [
+        "borderRadius"
+      ]
+    },
+    {
+      "name": "Avatar",
+      "type": "img",
+      "props": {
+        "width": 48,
+        "height": 48,
+        "borderRadius": 99999
+      },
+      "style": {},
+      "examples": [
+        "<Avatar\n  src='https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_reasonably_small.jpg'\n/>"
+      ],
+      "system": [
+        "borderRadius",
+        "borderWidth",
+        "borderColor"
+      ]
+    },
+    {
+      "name": "Dit",
+      "type": "hr",
+      "props": {
+        "m": 0,
+        "borderWidth": 0,
+        "bg": "black"
+      },
+      "style": {
+        "width": "64px",
+        "height": "4px"
+      },
+      "examples": [
+        "<Dit />"
+      ],
+      "system": [
+        "borderWidth"
+      ]
+    },
+    {
+      "name": "Logo",
+      "type": "img",
+      "props": {
+        "m": 0,
+        "width": 32,
+        "src": "https://compositor.io/logo/dist/compositor.svg"
+      },
+      "style": {},
+      "examples": [
+        "<Logo />"
+      ],
+      "system": [
+        "borderWidth",
+        "borderColor"
+      ]
+    },
+    {
+      "name": "Container",
+      "type": "div",
+      "props": {
+        "mx": "auto",
+        "px": [
+          3,
+          4
+        ]
+      },
+      "style": {
+        "maxWidth": "80em"
+      },
+      "examples": [
+        "<Container>\nHello Container\n</Container>"
+      ],
+      "system": []
+    },
+    {
+      "name": "Measure",
+      "type": "div",
+      "props": {},
+      "style": {
+        "maxWidth": "32em"
+      },
+      "examples": [
+        "<Measure>Hello</Measure>"
+      ],
+      "system": [],
+      "description": "For keeping typographic measure in check"
+    },
+    {
+      "name": "Box",
+      "type": "div",
+      "props": {},
+      "style": {},
+      "examples": [
+        "<Box>Hello</Box>"
+      ]
+    },
+    {
+      "name": "Flex",
+      "type": "div",
+      "props": {},
+      "style": {
+        "display": "flex"
+      },
+      "examples": [
+        "<Flex>Hello</Flex>"
+      ],
+      "system": [
+        "alignItems",
+        "justifyContent",
+        "flexWrap",
+        "flexDirection"
+      ]
+    },
+    {
+      "name": "NavBar",
+      "imports": [
+        "Flex",
+        "Box",
+        "Logo",
+        "NavLink"
+      ],
+      "jsx": "<header>\n  <Flex\n    align=\"center\"\n    wrap\n    px={3}\n    py={3}>\n    <NavLink ml={-2} href='https://compositor.io'>\n      <Logo />\n      Compositor\n    </NavLink>\n    <Box mx=\"auto\" />\n    {props.children}\n  </Flex>\n</header>",
+      "examples": [
+        "<NavBar>\n  <a>\n    Features\n  </a>\n</NavBar>"
+      ],
+      "system": []
+    },
+    {
+      "name": "HeroLeft",
+      "imports": [
+        "Flex",
+        "Box",
+        "Container",
+        "Image",
+        "Title",
+        "Caps",
+        "Subhead",
+        "BigButton",
+        "Text"
+      ],
+      "jsx": "  <Container>\n    <Flex\n      flexDirection={[ 'column', 'row' ]}\n      mx={-3}\n      py={4}\n      align=\"center\">\n      <Box\n        px={3}\n        py={4}\n        width={[ 1, 384, 448 ]}\n        style={{ flex: 'none' }}>\n        {props.children}\n      </Box>\n      <Box\n        px={3}\n        py={2}\n        mr={[ 0, -6 ]}\n        width={[ 1 ]}\n      >\n        <Image src={props.image} />\n      </Box>\n    </Flex>\n  </Container>\n",
+      "examples": [
+        "<HeroLeft\n  image='https://images.unsplash.com/photo-1457364887197-9150188c107b?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=f49c6be98fb0be96b002f7ad4771dacf'>\n    <h2>Hello</h2>\n  </HeroLeft>"
+      ],
+      "system": []
+    },
+    {
+      "name": "ProductLockUp",
+      "imports": [
+        "Title",
+        "Subhead",
+        "Caps"
+      ],
+      "jsx": "<div>\n  <Title mb={3}>\n    {props.title}\n    {props.beta && (\n      <Caps ml={2} color=\"muted\">\n        Beta\n      </Caps>\n    )}\n  </Title>\n  <Subhead>\n    {props.description}\n  </Subhead>\n</div>",
+      "examples": [
+        "<ProductLockUp\n  title='Iso'\n  beta\n  description='Build pages and prototypes with Lab UI components. No configuration or build setup required.'\n/>"
+      ],
+      "system": []
+    },
+    {
+      "name": "SectionLeft",
+      "imports": [
+        "Container",
+        "Flex",
+        "Box",
+        "Image"
+      ],
+      "jsx": "<Container>\n  <Flex\n    flexDirection={[ 'column', 'row' ]}\n    mx={-3}\n    py={5}\n    align=\"center\">\n    <Box\n      px={3}\n      py={4}\n      width={[ 1, 384, 448, 512 ]}\n      style={{ flex: 'none' }}>\n      {props.children}\n    </Box>\n    <Box\n      px={3}\n      py={2}\n      width={[ 1 ]}\n    >\n      <Image src={props.image} />\n    </Box>\n  </Flex>\n</Container>\n",
+      "examples": [
+        "<SectionLeft\n  image='https://images.unsplash.com/photo-1457364887197-9150188c107b?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=f49c6be98fb0be96b002f7ad4771dacf'>\n  <h2>Hello</h2>\n</SectionLeft>"
+      ],
+      "system": []
+    },
+    {
+      "name": "SectionRight",
+      "imports": [
+        "Container",
+        "Flex",
+        "Box",
+        "Image"
+      ],
+      "jsx": "<Container>\n  <Flex\n    flexDirection={[ 'column', 'row' ]}\n    mx={-3}\n    py={5}\n    align=\"center\">\n    <Box\n      px={3}\n      py={2}\n      width={[ 1 ]}\n    >\n      <Image src={props.image} />\n    </Box>\n    <Box\n      px={3}\n      py={4}\n      width={[ 1, 384, 448, 512 ]}\n      style={{ flex: 'none' }}>\n      {props.children}\n    </Box>\n  </Flex>\n</Container>\n",
+      "examples": [
+        "<SectionRight\n  image='https://images.unsplash.com/photo-1457364887197-9150188c107b?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=f49c6be98fb0be96b002f7ad4771dacf'>\n  <h2>Hello</h2>\n</SectionRight>"
+      ],
+      "system": []
+    },
+    {
+      "name": "LogoBlack",
+      "type": "img",
+      "props": {
+        "m": 0,
+        "width": 32,
+        "src": "https://compositor.io/logo/dist/compositor-black.png"
+      },
+      "style": {},
+      "examples": [
+        "<LogoBlack />"
+      ],
+      "system": []
+    },
+    {
+      "name": "InputDark",
+      "type": "Input",
+      "props": {
+        "m": 0,
+        "w": 1,
+        "px": 1,
+        "py": 1,
+        "color": "inherit",
+        "bg": "transparent",
+        "borderColor": "midgray",
+        "borderWidth": 1
+      },
+      "style": {
+        "display": "block",
+        "fontFamily": "inherit",
+        "fontSize": "inherit",
+        "borderRadius": "4px"
+      },
+      "examples": [
+        "<InputDark />"
+      ],
+      "system": [
+        "borderColor",
+        "borderWidth"
+      ]
+    },
+    {
+      "name": "MegaFooter",
+      "imports": [
+        "Box",
+        "Container",
+        "Flex",
+        "NavLink",
+        "Image",
+        "Label",
+        "InputDark",
+        "FormButton",
+        "Text",
+        "Link"
+      ],
+      "jsx": "  <footer>\n    <Box bg=\"black\" color=\"white\">\n      <Container py={4}>\n        <Flex align=\"flex-end\" mx={-3} wrap>\n          <Box px={3} py={3} width={[1, 0.5, 0.25]}>\n            <Box>\n              <NavLink href=\"https://compositor.io/\">Compositor</NavLink>\n            </Box>\n            <Box>\n              <NavLink href=\"https://compositor.io/lab/\">Lab</NavLink>\n            </Box>\n            <Box>\n              <NavLink href=\"https://compositor.io/iso/\">Iso</NavLink>\n            </Box>\n            <div>\n            </div>\n          </Box>\n          <Box ml=\"auto\" px={3} py={3} width={[1, 0.5, 0.5, 0.25]}>\n            <Flex>\n              <Box mx=\"auto\" />\n              <NavLink href=\"https://twitter.com/getcompositor/\" mr={3}>\n                <Image src=\"https://icon.now.sh/twitter/fff\" />\n              </NavLink>\n              <NavLink href=\"https://github.com/c8r/\">\n                <Image src=\"https://icon.now.sh/github/fff\" />\n              </NavLink>\n            </Flex>\n            <form\n              action=\"https://compositor.us1.list-manage.com/subscribe/post?u=80f1aa1145b57607ff718c03d&id=042073b294\"\n              method=\"post\"\n            >\n              <Label>Email Address</Label>\n              <Flex>\n                <InputDark mr={1} name=\"EMAIL\" />\n                <FormButton px={2} bg=\"white\" color=\"black\">\n                  Sign Up\n                </FormButton>\n              </Flex>\n            </form>\n          </Box>\n        </Flex>\n        <Flex align=\"baseline\" py={3} wrap>\n              <Link href='mailto:support@compositor.io'\n                f={0}\n                mr={3}\n                mb={3}\n                color='white'>\n                support@compositor.io\n              </Link>\n          <Box mx=\"auto\" />\n          <Text fontSize={0} mr={3}>© 2017 Compositor, Inc.</Text>\n          <Link color=\"white\" f={0} href=\"/terms\" mr={3}>\n            Terms\n          </Link>\n          <Link color=\"white\" f={0} href=\"/privacy\">\n            Privacy Policy\n          </Link>\n        </Flex>\n      </Container>\n    </Box>\n  </footer>\n",
+      "system": [],
+      "examples": [
+        "<MegaFooter />"
+      ]
+    },
+    {
+      "name": "GA",
+      "imports": [],
+      "jsx": "<script\n  dangerouslySetInnerHTML={{\n    __html:\n      '(function(i, s, o, g, r, a, m) { i[\"GoogleAnalyticsObject\"] = r i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date() a = s.createElement(o), m = s.getElementsByTagName(o)[0] a.async = 1 a.src = g m.parentNode.insertBefore(a, m) })(window, document, \"script\", \"//www.google-analytics.com/analytics.js\", \"ga\") ga(\"create\", \"UA-78113757-1\", \"auto\") ga(\"send\", \"pageview\")'\n  }}\n/>\n",
+      "examples": [
+        "<GA />"
+      ],
+      "system": []
+    },
+    {
+      "name": "StripeStyles",
+      "imports": [],
+      "jsx": "<style\n  dangerouslySetInnerHTML={{\n    __html: '.stripe-button-el { margin-right: 16px; padding: 0; box-shadow: none!important;} .stripe-button-el.stripe-button-el span { font-size:16px; line-height: inherit!important; height:auto!important;box-shadow: none!important; background: #0093ef!important; padding-right: 18px; padding-left: 18px; padding-bottom: 12px; padding-top: 12px;text-shadow: none!important; }'\n  }}\n/>\n",
+      "examples": [
+        "<StripeStyles>Hello</StripeStyles>"
+      ]
+    }
+  ]
+}

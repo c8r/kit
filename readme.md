@@ -1,33 +1,44 @@
-# styleguide
+# Styleguide
 
 Generate a styleguide from Compositor Lab configs.
 
 ## Installation
 
 ```bash
-npm install --save-dev @compositor/styleguide
+npm install -g @compositor/styleguide
 ```
 
 ## Usage
 
 ```js
-const styleguide = require('@compositor/styleguide')
+import styleguide from '@compositor/styleguide'
 
-const config = require('./lab.json')
-const theme = require('./theme.json')
-
-styleguide({
-  config,
-  theme,
-  includes: {
-    atomic: true
-  }
-})
+styleguide()
 ```
 
-## License
+```sh
+styleguide -h
+```
 
-MIT
+### Options
+
+| Name | Default | Description |
+| ---- | ------- | ----------- |
+| `lab` | `path.join(__dirname, 'lab.json')` | Location of Lab config file |
+| `theme` | `path.join(__dirname, 'theme.json')` | Location of theme file |
+| `logo` | `undefined` | Url for the logo to be shown in the nav |
+
+### Included components
+
+In addition the components you pass into the generator, there are styleguide specific components added to the scope.
+
+#### `<SGExamples />`
+
+#### `<SGColorCard color='red' />`
+
+#### `<SGPropsTable />`
+
+#### `<SGStyledApi />`
 
 ## Contributing
 
@@ -37,8 +48,8 @@ MIT
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
 
-Crafted with <3 by Compositor ([@getcompositor](https://twitter.com/getcompositor)).
-
 ***
 
-> This package was initially generated with [yeoman](http://yeoman.io) and the [p generator](https://github.com/johnotander/generator-p.git).
+[Made by Compositor](https://compositor.io/)
+|
+[MIT License](license)
