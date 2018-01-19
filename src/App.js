@@ -1,42 +1,28 @@
 import React from 'react'
-import { renderToString } from 'react-dom/server'
+import fs from 'fs'
 
+import { renderToString } from 'react-dom/server'
 import { ThemeProvider } from 'glamorous'
 import { renderStatic } from 'glamor/server'
-import { Div } from '@compositor/mono'
 
-import * as library from '../library'
+import * as Components from '../library'
+import theme from '../library/theme.json'
 import Styleguide from './Styleguide'
 import Style from './Style'
 
-import config from '@compositor/bold/lab.json'
-import theme from '@compositor/bold/theme.json'
-const components = config.components
+console.log(Components)
 
 import sgTheme from '@compositor/mono/theme.json'
 
 const initialState = {
   sgTheme,
-  components,
-  config,
-  theme,
-  editors: components.reduce((acc, c) =>
-   Object.assign({}, acc, {
-      [c.name]: {
-        examples: c.examples || [`<${c.name} />`],
-        currentExample: 0
-      }
-    })
-  , {}),
-  sideNav: {
-    currSection: null,
-    currPage: null // TODO: wire up with router
-  }
+  Components,
+  theme
 }
 
 const App = ({ css, ...props }) =>
   <ThemeProvider theme={theme}>
-    <Div
+    <div
       style={{
         fontFamily: theme.fonts[0] || 'sans-serif'
       }}
@@ -47,14 +33,20 @@ const App = ({ css, ...props }) =>
         {...props}
         library={library}
       />
-    </Div>
+    </div>
   </ThemeProvider>
 
 App.getInitialProps = ({ Component }) => {
   const el = React.createElement(Component, initialState)
   const { css } = renderStatic(() => renderToString(el))
 
-  return Object.assign({}, initialState, { css })
+  const Button = fs.readFileSync('docs/Button.md', 'utf8')
+  return Object.assign({}, initialState, {
+    css,
+    md: {
+      Button
+    }
+  })
 }
 
 export default App

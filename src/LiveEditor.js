@@ -1,11 +1,7 @@
 import React from 'react'
-
 import connect from 'refunk'
-import pluckExtensions from '@compositor/pluck-extension-tree'
 
 import { ThemeProvider } from 'glamorous'
-import { Link } from 'react-router-dom'
-import { Div, H4 } from '@compositor/mono'
 
 import {
   LiveProvider,
@@ -14,17 +10,11 @@ import {
   LivePreview
 } from 'react-live'
 
-import { editorCss } from './constants'
-
-import getProps from './util/get-props'
 import Box from './Box'
 import Flex from './Flex'
 import Style from './Style'
 
-import ComponentExtensions from './ComponentExtensions'
 import ComponentExamples from './ComponentExamples'
-import ComponentImports from './ComponentImports'
-import ExampleProps from './ExampleProps'
 
 const transform = (theme, code) => `
   <ThemeProvider theme={${JSON.stringify(theme)}}>
@@ -34,7 +24,7 @@ const transform = (theme, code) => `
   </ThemeProvider>
 `
 
-const ComponentEditor = ({
+const Editor = ({
   sgTheme,
   theme,
   library,
@@ -53,7 +43,7 @@ const ComponentEditor = ({
     : editor.examples[editor.currentExample]
 
   return (
-    <Div my={4}>
+    <Box my={4}>
       <LiveProvider
         key={component.name}
         scope={scope}
@@ -85,8 +75,6 @@ const ComponentEditor = ({
             />
           </Box>
         </Flex>
-
-        <Style>{editorCss}</Style>
       </LiveProvider>
 
       <Box
@@ -107,23 +95,9 @@ const ComponentEditor = ({
             return newState
           })}
         />
-
-        <ComponentImports
-          component={component}
-          components={components}
-        />
-
-        <ComponentExtensions
-          component={component}
-          components={components}
-        />
-
-        <ExampleProps
-          component={component}
-        />
+      </Box>
     </Box>
-    </Div>
   )
 }
 
-export default connect(ComponentEditor)
+export default connect(Editor)

@@ -1,14 +1,7 @@
 import React from 'react'
-
 import connect from 'refunk'
 
-import {
-  Heading,
-  Text
-} from '@compositor/mono'
-
-import Layout from './Layout'
-import ComponentEditor from './ComponentEditor'
+import LiveEditor from './LiveEditor'
 
 const ComponentPage = ({
   match: {
@@ -25,32 +18,11 @@ const ComponentPage = ({
   const c = components.find(c => c.name.toLowerCase() === component)
 
   return (
-    <Layout>
-      <Heading
-        my={0}
-        py={4}
-        pl={4}
-        style={{
-          borderBottom: `1px solid ${sgTheme.colors.gray1}`
-        }}
-        children={c.name}
-      />
+    <div>
+      <h1>{c.name}</h1>
+      <p>{c.description}</p>
 
-      {c.description && (
-        <Text
-          my={0}
-          py={3}
-          pl={4}
-          color={sgTheme.colors.gray5}
-          style={{
-            lineHeight: 1.5,
-            width: '32em'
-          }}
-          children={c.description}
-        />
-      )}
-
-      <ComponentEditor
+      <LiveEditor
         key={c.name}
         theme={theme}
         component={c}
@@ -58,7 +30,7 @@ const ComponentPage = ({
         components={components}
         editor={editors[c.name]}
       />
-    </Layout>
+    </div>
   )
 }
 
