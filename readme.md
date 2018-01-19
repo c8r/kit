@@ -1,6 +1,7 @@
 # Styleguide
 
-Generate a styleguide from Compositor Lab configs.
+Generate a styleguide for React components, including those built with [Lab](https://compositor.io/lab).
+Include other types of documentation as well, using a nifty superset of [Markdown](https://github.com/c8r/markdown).
 
 ## Installation
 
@@ -10,23 +11,20 @@ npm install -g @compositor/styleguide
 
 ## Usage
 
-```js
-import styleguide from '@compositor/styleguide'
-
-styleguide()
-```
-
 ```sh
-styleguide -h
+styleguide -md docs -lib library
 ```
 
 ### Options
 
 | Name | Default | Description |
 | ---- | ------- | ----------- |
-| `lab` | `path.join(__dirname, 'lab.json')` | Location of Lab config file |
-| `theme` | `path.join(__dirname, 'theme.json')` | Location of theme file |
+| `library` | `library` | Directory location of components |
+| `docs` | `docs` | Directory location of markdown files |
 | `logo` | `undefined` | Url for the logo to be shown in the nav |
+| `out-dir` | `dist` | Where the static build is output |
+
+`styleguide` will also look in the `package.json` for configuration as well.
 
 ### Included components
 
@@ -40,6 +38,8 @@ In addition the components you pass into the generator, there are styleguide spe
 
 #### `<SGStyledApi />`
 
+#### `<SGLiveEditor />`
+
 ## Contributing
 
 1. Fork it
@@ -48,7 +48,7 @@ In addition the components you pass into the generator, there are styleguide spe
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
 
-***
+---
 
 [Made by Compositor](https://compositor.io/)
 |

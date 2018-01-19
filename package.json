@@ -8,10 +8,10 @@
     "dist"
   ],
   "scripts": {
-    "test": "ava -v",
+    "build": "x0 build src/App.js -d out",
     "dev": "x0 dev src/App.js",
     "predev": "lab --pkg -d library ./node_modules/@compositor/bold/lab.json",
-    "build": "x0 build src/App.js -d out"
+    "test": "ava -v"
   },
   "repository": "c8r/styleguide",
   "keywords": [
@@ -24,15 +24,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@compositor/atomic-classify": "0.0.9-0",
-    "@compositor/atomic-generator": "0.0.9-0",
-    "@compositor/get-jsx-props": "0.0.3",
-    "@compositor/lab": "^1.0.0-33",
-    "@compositor/mono": "0.1.3",
-    "@compositor/pluck-colors": "0.0.1",
-    "@compositor/pluck-extension-tree": "0.0.4",
-    "@compositor/publish": "0.0.10",
-    "@compositor/qp": "^1.2.1",
+    "@compositor/markdown": "0.0.17",
     "@compositor/x0": "^2.0.0-18",
     "colorable": "^1.0.5",
     "dxs": "^3.1.0",
@@ -47,21 +39,10 @@
     "react-live": "^1.7.1",
     "react-router-dom": "^4.2.2",
     "refunk": "^2.0.0",
-    "remark": "^8.0.0",
-    "remark-react": "^4.0.1",
     "styled-api": "0.0.1-2",
     "styled-system": "^1.0.8"
   },
-  "devDependencies": {
-    "@compositor/bold": "0.0.11-0",
-    "ava": "*",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "babel-register": "^6.26.0"
-  },
+  "devDependencies": {},
   "ava": {
     "require": [
       "babel-register"
