@@ -49,15 +49,15 @@ styleguide -md docs -lib library
 In addition the components you pass into the generator, there are styleguide specific components added to the scope.
 You can use these in your markdown or in your React components/examples.
 
-#### `<Flex />`
+#### `<SGFlex />`
 
-#### `<Box />`
+#### `<SGBox />`
 
-#### `<Nav />`
+#### `<SGNav />`
 
-#### `<Logo />`
+#### `<SGLogo />`
 
-#### `<Footer />`
+#### `<SGFooter />`
 
 #### `<SGExamples />`
 
@@ -68,6 +68,15 @@ You can use these in your markdown or in your React components/examples.
 #### `<SGStyledApi />`
 
 #### `<SGLiveEditor />`
+
+## Related
+
+- @compositor/markdown
+- @compositor/gen
+- react-live
+- react-docgen
+- styled-system
+- styled-parser
 
 ## Contributing
 

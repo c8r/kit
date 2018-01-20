@@ -1,25 +1,33 @@
 import React from 'react'
-import connect from 'refunk'
 
-import {
-  Route,
-  StaticRouter,
-  BrowserRouter
-} from 'react-router-dom'
+import DefaultLayout from './Layout'
+import DefaultContent from './DefaultContent'
+import SGFlex from './Flex'
+import SGBox from './Box'
+import SGLiveEditor from './LiveEditor'
 
-import Layout from './Layout'
-import ComponentPage from './ComponentPage'
+const defaultScope = {
+  Box,
+  Flex,
+  LiveEditor
+}
 
-const Router = typeof document === 'undefined' ? StaticRouter : BrowserRouter
+export default ({
+  scope,
+  Component,
+  Content = DefaultContent,
+  Layout = DefaultLayout,
+  ...props
+}) => {
+  const fullScope = Object.assign({}, defaultScope, scope)
 
-const Styleguide = props =>
-  <Layout {...props}>
-    <Router>
-      <Route
-        path='/components/:component'
-        component={ComponentPage}
+  return (
+    <DefaultLayout>
+      <Content
+        Component={Component}
+        scope={fullScope}
+        {...props}
       />
-    </Router>
-  </Layout>
-
-export default connect(Styleguide)
+    </DefaultLayout>
+  )
+}
