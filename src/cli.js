@@ -17,10 +17,11 @@ const log = (...msgs) => {
 
 const cli = meow(`
   Usage:
-    $ styleguide . -d dist
+    $ styleguide .
 
     Options:
-      --out-dir, -d   Output directory
+      --out-dir, -d   Output directory (default ./dist)
+      --library, -l   Location of component library (default ./library)
       --dev, -D       Start development server
 `, {
   flags: {
@@ -40,9 +41,12 @@ const [
 ] = cli.input
 const userPkg = readPkgUp.sync(dirname) || {}
 const opts = Object.assign({}, dot.get(userPkg, 'pkg.styleguide'), cli.flags, {
-  outDir: path.join(process.cwd(), cli.flags.outDir || '')
+  outDir: path.join(process.cwd(), cli.flags.outDir || 'dist'),
+  library: path.join(process.cwd(), cli.flags.library || 'library')
 })
 
 log('@compositor/styleguide')
 
 styleguide(dirname, opts)
+  .then(() => console.log('done'))
+  .catch(e => console.log(e))

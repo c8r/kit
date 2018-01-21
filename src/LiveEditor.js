@@ -26,7 +26,7 @@ export default ({
   theme,
   scope,
   Component
-}) => {
+}) =>
   <Box my={4}>
     <LiveProvider
       key={'Hello'}

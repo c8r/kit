@@ -9,9 +9,9 @@ test('styleguide logs to stdout', async t => {
 })
 
 test('styleguide writes an html file', async t => {
-  await execa('./dist/cli.js', ['docs', '-d', 'out'])
+  await execa('./dist/cli.js', 'docs/components', ['-d out'])
 
-  const result = fs.readFileSync('./out/components/button', 'utf8')
+  const result = fs.readFileSync('./out/components/box', 'utf8')
 
   t.snapshot(result)
 })

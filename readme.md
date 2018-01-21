@@ -35,6 +35,8 @@ styleguide -md docs -lib library
 
 ### Options
 
+NOT YET IMPLEMENTED
+
 | Name | Default | Description |
 | ---- | ------- | ----------- |
 | `library` | `library` | Directory location of components |
@@ -43,6 +45,17 @@ styleguide -md docs -lib library
 | `out-dir` | `dist` | Where the static build is output |
 
 `styleguide` will also look in the `package.json` for configuration as well.
+
+### Frontmatter
+
+NOT YET IMPLEMENTED
+
+| Name | Default | Description |
+| ---- | ------- | ----------- |
+| `name` | `filename` | Directory location of components |
+| `path` | `src/filename.js` | Location of the component code, set to false if there's no associated component |
+| `generate` | `false` | Generate documentation by parsing code (will ignore any markdown or jsx in the file) |
+| `navIndex` | `null` | Specify index in navigation |
 
 ### Included components
 
@@ -65,7 +78,9 @@ You can use these in your markdown or in your React components/examples.
 
 #### `<SGPropsTable />`
 
-#### `<SGStyledApi />`
+#### `<SGImportsTable />`
+
+#### `<SGStyledSystem />`
 
 #### `<SGLiveEditor />`
 
