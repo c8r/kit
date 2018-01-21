@@ -10,6 +10,8 @@ require('babel-register')({
   ]
 })
 
+import path from 'path'
+
 import {
   getData,
   render,
@@ -21,10 +23,14 @@ import processMetadata from './process-metadata'
 export default async (dir, opts = {}) => {
   dir = 'docs/components'
   const scope = require(opts.library)
-  opts.components = scope
-  const metadata = await processMetadata(dir, scope, opts)
+  const theme = require(path.join(opts.library, 'theme.json'))
 
+  const metadata = await processMetadata(dir, scope, opts)
   const data = await getData(dir, opts)
+
+  opts.components = scope
+  data.theme = theme
+
   const pages = await render(data, opts)
   const result = await writePages(pages, opts)
 

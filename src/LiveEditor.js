@@ -29,7 +29,6 @@ export default ({
 }) =>
   <Box my={4}>
     <LiveProvider
-      key={'Hello'}
       scope={scope}
       code={code}
       transformCode={newCode => transform(theme, newCode)}

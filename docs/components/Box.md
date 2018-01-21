@@ -8,8 +8,8 @@ categories:
 
 Primitive for controlling width, margin, padding and more.
 
-```!jsx
-<BigButton>Hi</BigButton>
+```.jsx
+<Button>Hi!!!!</Button>
 ```
 
 ```.jsx
