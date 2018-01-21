@@ -21,6 +21,7 @@ import processMetadata from './process-metadata'
 export default async (dir, opts = {}) => {
   dir = 'docs/components'
   const scope = require(opts.library)
+  opts.components = scope
   const metadata = await processMetadata(dir, scope, opts)
 
   const data = await getData(dir, opts)
