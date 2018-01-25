@@ -10,7 +10,7 @@
   "scripts": {
     "build": "babel src -d dist",
     "comp": "lab --pkg -d library",
-    "dev": "npm run build && ./dist/cli docs -d out",
+    "dev": "rm -rf out && npm run build && ./dist/cli.js docs/components -d out && superstatic out",
     "prepublish": "npm run build",
     "pretest": "npm run build",
     "test": "ava -v"

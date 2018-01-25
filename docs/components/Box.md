@@ -1,4 +1,5 @@
 ---
+title: Box
 name: Box
 categories:
   - layout
