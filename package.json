@@ -8,6 +8,7 @@
     "dist"
   ],
   "scripts": {
+    "demo": "x0 dev src/Page.js",
     "build": "babel src -d dist",
     "comp": "lab --pkg -d library",
     "dev": "rm -rf out && npm run build && ./dist/cli.js docs/components -d out && superstatic out",
@@ -29,6 +30,7 @@
     "@compositor/gen": "github:c8r/gen#md",
     "@compositor/globb": "^0.1.7",
     "@compositor/markdown": "0.0.18",
+    "@compositor/x0": "github:c8r/x0#raw-loader",
     "chalk": "^2.3.0",
     "dot-prop": "^4.2.0",
     "glamor": "^2.20.40",
@@ -38,6 +40,7 @@
     "react-docgen": "^2.20.0",
     "react-dom": "^16.2.0",
     "react-live": "^1.7.1",
+    "react-x-ray": "^1.0.0-4",
     "styled-parser": "^1.0.0-0",
     "styled-system": "^1.1.1"
   },

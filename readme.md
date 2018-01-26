@@ -1,25 +1,15 @@
 # Styleguide
 
 Generate a styleguide for React components, including those built with [Lab](https://compositor.io/lab).
-Include other types of documentation as well, using a nifty superset of [Markdown](https://github.com/c8r/markdown).
+Uses a nifty superset of [Markdown](https://github.com/c8r/markdown) which allows you to render components and even a live editor playground.
 
-#### TODO
+## Why?
 
-1. import theme and components
-1. glob docs directory
-1. construct sitemap/nav
-1. grab sg overriding components and assign to defaults
-1. render components (use md if found)
-1. render all additional
-1. examples component
+Communication and information architecture are the most important aspects of documenting a design system and living styleguide.
+This library seeks to handle the boring implementation details, allowing you to work on building your components and writing your documentation.
 
-#### Next steps
-
-- allow react component docs
-- override layout
-- parse additional data from component
-- theme provider configuration
-- nav ordering
+Styleguide was originally created to document projects built using Compositor products.
+We then realized that this could be useful for any project, so we open sourced it for all to enjoy and use.
 
 ## Installation
 
@@ -30,7 +20,7 @@ npm install -g @compositor/styleguide
 ## Usage
 
 ```sh
-styleguide -md docs -lib library
+styleguide .
 ```
 
 ### Options
@@ -44,45 +34,73 @@ NOT YET IMPLEMENTED
 | `logo` | `undefined` | Url for the logo to be shown in the nav |
 | `out-dir` | `dist` | Where the static build is output |
 
-`styleguide` will also look in the `package.json` for configuration as well.
+### Components as Configuration
 
-### Frontmatter
+```jsx
+import React from 'react'
+import {
+  withSiteMap,
+  Styleguide
+} from '@compositor/styleguide'
 
-NOT YET IMPLEMENTED
+import Components from './components'
 
-| Name | Default | Description |
-| ---- | ------- | ----------- |
-| `name` | `filename` | Directory location of components |
-| `path` | `src/filename.js` | Location of the component code, set to false if there's no associated component |
-| `generate` | `false` | Generate documentation by parsing code (will ignore any markdown or jsx in the file) |
-| `navIndex` | `null` | Specify index in navigation |
+const MyStyleguide = props =>
+  <Styleguide
+    Components={Components}
+    {...props}
+  />
 
-### Included components
+export default withSiteMap(MyStyleguide)
+```
 
-In addition the components you pass into the generator, there are styleguide specific components added to the scope.
-You can use these in your markdown or in your React components/examples.
+#### `withSiteMap`
 
-#### `<SGFlex />`
+`withSiteMap` is a HOC that builds the navigation, generates documentation where appropriate, and interacts with the filesystem to set the initial, global properties for the styleguide.
+It only does this work on the initial build, and is a noop when on the client.
 
-#### `<SGBox />`
+#### `Styleguide`
 
-#### `<SGNav />`
+The `Styleguide` component handles routing, rendering markdown, and other features like the playground.
+This is where you pass in your components and other aspects you'd like to configure.
+Though, we've tried to come up with the most sensible defaults possible.
+Hopefully your entrypoint will remain somewhat similar to the example above.
 
-#### `<SGLogo />`
+### Documentation Components
 
-#### `<SGFooter />`
+Styleguide provides a collection of components that you can use in your documentation.
+This can be achieved by using JSX rendering/playground syntax in your markdown.
+If desired, you can also export documentation as React components themselves.
 
-#### `<SGExamples />`
+#### `<Playground />`
 
-#### `<SGColorCard color='red' />`
+#### `<XRay />`
 
-#### `<SGPropsTable />`
+#### `<DeviceSelector />`
 
-#### `<SGImportsTable />`
+#### `<Examples />`
 
-#### `<SGStyledSystem />`
+#### `<PropsTable />`
 
-#### `<SGLiveEditor />`
+#### `<ColorPalette />`
+
+#### `<Colorable />`
+
+#### `<StyledSystem />`
+
+#### `<Spacing />`
+
+### Layout Components
+
+You can customize the layout and design of the styleguide by overriding the default components with your own.
+
+#### `<Content />`
+
+#### `<Nav />`
+
+#### `<Logo />`
+
+#### `<Footer />`
 
 ## Related
 

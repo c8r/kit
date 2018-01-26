@@ -1,5 +1,5 @@
 import React from 'react'
-
+import XRay from 'react-x-ray'
 import { ThemeProvider } from 'glamorous'
 
 import {
@@ -15,21 +15,20 @@ import Style from './Style'
 
 const transform = (theme, code) => `
   <ThemeProvider theme={${JSON.stringify(theme)}}>
-    <Box>
-      ${code}
-    </Box>
+    ${code}
   </ThemeProvider>
 `
 
 export default ({
   code,
   theme,
-  scope,
-  Component
+  components,
+  Component,
+  ...props
 }) =>
   <Box my={4}>
     <LiveProvider
-      scope={scope}
+      scope={Object.assign({ ThemeProvider, XRay, props }, components)}
       code={code}
       transformCode={newCode => transform(theme, newCode)}
     >

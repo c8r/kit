@@ -1,5 +1,4 @@
 import React from 'react'
-import connect from 'refunk'
 
 import Box from './Box'
 import Flex from './Flex'
