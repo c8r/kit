@@ -6,6 +6,10 @@ import { Markdown } from '@compositor/markdown'
 import LiveEditor from './LiveEditor'
 import * as components from '../library'
 
+LiveEditor.defaultProps = {
+  components: Object.assign({}, components, { XRay, LiveEditor })
+}
+
 const Page = ({ text }) =>
   <Markdown
     LiveEditor={LiveEditor}
