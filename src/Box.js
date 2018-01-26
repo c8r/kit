@@ -1,6 +1,7 @@
 import styled from 'glamorous'
 
 import {
+  color,
   space,
   width,
   borderColor,
@@ -15,6 +16,7 @@ import {
 
 const Box = styled('div')(
   props => ({}),
+  color,
   space,
   width,
   borderColor,
