@@ -11,7 +11,7 @@ const Page = ({ text }) =>
     LiveEditor={LiveEditor}
     Component={components.Button}
     components={components}
-    scope={Object.assign({}, components, { XRay })}
+    scope={Object.assign({}, components, { XRay, LiveEditor })}
     text={text}
   />
 

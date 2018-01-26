@@ -3,13 +3,15 @@ import React from 'react'
 import Box from './Box'
 import Flex from './Flex'
 import Layout from './Layout'
+import LiveEditor from './LiveEditor'
 
 import getMetadata from './get-metadata'
 
 const defaultScope = {
   Box,
   Flex,
-  Layout
+  Layout,
+  LiveEditor
 }
 
 const Styleguide = ({
