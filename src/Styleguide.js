@@ -1,4 +1,5 @@
 import React from 'react'
+import path from 'path'
 
 import {
   BrowserRouter,
@@ -13,8 +14,6 @@ import Flex from './Flex'
 import Layout from './Layout'
 import LiveEditor from './LiveEditor'
 
-import getMetadata from './get-metadata'
-
 const Router = typeof document === 'undefined' ? StaticRouter : BrowserRouter
 
 const defaultScope = {
@@ -24,9 +23,7 @@ const defaultScope = {
   LiveEditor
 }
 
-const Styleguide = ({
-  docsSrc = 'doc',
-  componentsSrc = 'src',
+export default ({
   Components,
   ...props
 }) => {
@@ -42,8 +39,8 @@ const Styleguide = ({
             render={() => <h1>hi</h1>}
           />
 
-          {Object.keys(props.styleguide).map(name => {
-            const component = props.styleguide[name]
+          {Object.keys(props.styleguide.components).map(name => {
+            const component = props.styleguide.components[name]
 
             return (
               <Route
@@ -51,6 +48,8 @@ const Styleguide = ({
                 path={component.route}
                 render={() =>
                   <Markdown
+                    components={Components}
+                    scope={Components}
                     text={component.content}
                   />
                 }
@@ -66,11 +65,3 @@ const Styleguide = ({
     </Layout>
   )
 }
-
-Styleguide.getInitialProps = async props => {
-  const metadata = await getMetadata(props)
-
-  return Object.assign({}, props, { styleguide: metadata })
-}
-
-export default Styleguide

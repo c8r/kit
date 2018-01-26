@@ -1,32 +1,21 @@
-require('babel-register')({
-  presets: [
-    [ require.resolve('babel-preset-env'), {
-      targets: {
-        node: '8'
-      }
-    }],
-    require.resolve('babel-preset-stage-0'),
-    require.resolve('babel-preset-react')
-  ]
-})
-
-import path from 'path'
-
-import { DIR, LIBRARY } from './constants'
+import React from 'react'
 import getMetadata from './get-metadata'
 
-export default async ({
-  dir = DIR,
-  library = LIBRARY,
-  ...opts
-}) => {
-  const scope = require(library)
-  const theme = require(path.join(library, 'theme.json'))
-  const metadata = getMetadata({ ...opts, dir, library })
+import theme from '../theme.json'
+import Box from './Box'
+import Flex from './Flex'
 
-  return {
-    scope,
-    theme,
-    metadata
-  }
+import Styleguide from './Styleguide'
+
+const Example = props =>
+  <Styleguide
+    Components={{ Box, Flex, props, theme }}
+    {...props}
+  />
+
+Example.getInitialProps = async props => {
+  const metadata = await getMetadata(props)
+  return Object.assign({}, props, { styleguide: metadata })
 }
+
+export default Example
