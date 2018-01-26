@@ -1,6 +1,7 @@
 {
-  "name": "landing",
-  "library": "styled-components",
+  "name": "styleguide",
+  "library": "glamorous",
+  "harmony": true,
   "components": [
     {
       "name": "Title",
@@ -588,14 +589,338 @@
         "<GA />"
       ],
       "system": []
+    }
+  ],
+  "layout": [
+    {
+      "name": "Title",
+      "i": "0",
+      "w": 3,
+      "h": 4,
+      "x": 0,
+      "y": 0,
+      "moved": false,
+      "static": false
     },
     {
-      "name": "StripeStyles",
-      "imports": [],
-      "jsx": "<style\n  dangerouslySetInnerHTML={{\n    __html: '.stripe-button-el { margin-right: 16px; padding: 0; box-shadow: none!important;} .stripe-button-el.stripe-button-el span { font-size:16px; line-height: inherit!important; height:auto!important;box-shadow: none!important; background: #0093ef!important; padding-right: 18px; padding-left: 18px; padding-bottom: 12px; padding-top: 12px;text-shadow: none!important; }'\n  }}\n/>\n",
-      "examples": [
-        "<StripeStyles>Hello</StripeStyles>"
-      ]
+      "name": "Heading",
+      "i": "1",
+      "w": 3,
+      "h": 4,
+      "x": 3,
+      "y": 24,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "Subhead",
+      "i": "2",
+      "w": 3,
+      "h": 4,
+      "x": 6,
+      "y": 28,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "Text",
+      "i": "3",
+      "w": 3,
+      "h": 4,
+      "x": 9,
+      "y": 12,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "Caps",
+      "i": "4",
+      "w": 3,
+      "h": 4,
+      "x": 0,
+      "y": 8,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "Small",
+      "i": "5",
+      "w": 3,
+      "h": 4,
+      "x": 3,
+      "y": 4,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "FormButton",
+      "i": "6",
+      "w": 3,
+      "h": 4,
+      "x": 6,
+      "y": 20,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "Button",
+      "i": "7",
+      "w": 3,
+      "h": 4,
+      "x": 9,
+      "y": 28,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "ButtonOutline",
+      "i": "8",
+      "w": 3,
+      "h": 4,
+      "x": 0,
+      "y": 16,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "BigButton",
+      "i": "9",
+      "w": 3,
+      "h": 4,
+      "x": 3,
+      "y": 0,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "Image",
+      "i": "10",
+      "w": 3,
+      "h": 4,
+      "x": 6,
+      "y": 8,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "Link",
+      "i": "11",
+      "w": 3,
+      "h": 4,
+      "x": 9,
+      "y": 24,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "NavLink",
+      "i": "12",
+      "w": 3,
+      "h": 4,
+      "x": 0,
+      "y": 24,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "Divider",
+      "i": "13",
+      "w": 3,
+      "h": 4,
+      "x": 3,
+      "y": 16,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "Input",
+      "i": "14",
+      "w": 3,
+      "h": 4,
+      "x": 6,
+      "y": 0,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "Label",
+      "i": "15",
+      "w": 3,
+      "h": 4,
+      "x": 9,
+      "y": 16,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "ImageRounded",
+      "i": "16",
+      "w": 3,
+      "h": 4,
+      "x": 0,
+      "y": 32,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "Avatar",
+      "i": "17",
+      "w": 3,
+      "h": 4,
+      "x": 3,
+      "y": 28,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "Dit",
+      "i": "18",
+      "w": 3,
+      "h": 4,
+      "x": 6,
+      "y": 12,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "Logo",
+      "i": "19",
+      "w": 3,
+      "h": 4,
+      "x": 9,
+      "y": 0,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "Container",
+      "i": "20",
+      "w": 3,
+      "h": 4,
+      "x": 0,
+      "y": 28,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "Measure",
+      "i": "21",
+      "w": 3,
+      "h": 4,
+      "x": 3,
+      "y": 8,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "Box",
+      "i": "22",
+      "w": 3,
+      "h": 4,
+      "x": 6,
+      "y": 4,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "Flex",
+      "i": "23",
+      "w": 3,
+      "h": 4,
+      "x": 9,
+      "y": 8,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "NavBar",
+      "i": "24",
+      "w": 3,
+      "h": 4,
+      "x": 0,
+      "y": 20,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "HeroLeft",
+      "i": "25",
+      "w": 3,
+      "h": 4,
+      "x": 3,
+      "y": 20,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "ProductLockUp",
+      "i": "26",
+      "w": 3,
+      "h": 4,
+      "x": 6,
+      "y": 16,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "SectionLeft",
+      "i": "27",
+      "w": 3,
+      "h": 4,
+      "x": 9,
+      "y": 4,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "SectionRight",
+      "i": "28",
+      "w": 3,
+      "h": 4,
+      "x": 0,
+      "y": 12,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "LogoBlack",
+      "i": "29",
+      "w": 3,
+      "h": 4,
+      "x": 3,
+      "y": 12,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "InputDark",
+      "i": "30",
+      "w": 3,
+      "h": 4,
+      "x": 6,
+      "y": 24,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "MegaFooter",
+      "i": "31",
+      "w": 3,
+      "h": 4,
+      "x": 9,
+      "y": 20,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "GA",
+      "i": "32",
+      "w": 3,
+      "h": 4,
+      "x": 0,
+      "y": 4,
+      "moved": false,
+      "static": false
     }
   ]
 }
