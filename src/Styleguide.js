@@ -1,13 +1,23 @@
 import React from 'react'
 
-import DefaultLayout from './Layout'
+import Box from './Box'
+import Flex from './Flex'
+import Layout from './Layout'
+
+import getMetadata from './get-metadata'
+
+const defaultScope = {
+  Box,
+  Flex,
+  Layout
+}
 
 const Styleguide = ({
   docsSrc = 'doc',
   componentsSrc = 'src',
   Components
 }) => {
-  const fullScope = Object.assign({}, defaultScope, scope)
+  const scope = Object.assign({}, defaultScope, Components)
 
   return (
     <DefaultLayout>
@@ -19,3 +29,12 @@ const Styleguide = ({
     </DefaultLayout>
   )
 }
+
+Styleguide.getInitialProps = async props => {
+  console.log(props)
+  const metadata = {}
+
+  return props
+}
+
+export default Styleguide

@@ -33,6 +33,7 @@ export default async ({ dir, library }) => {
       }
 
       return {
+        name: parsedPath.name,
         file,
         content,
         srcPath,
@@ -43,4 +44,7 @@ export default async ({ dir, library }) => {
         info
       }
     })
+    .reduce((acc, curr) =>
+      Object.assign(acc, { [curr.name]: curr })
+    , {})
 }
