@@ -12,11 +12,12 @@ require('babel-register')({
 
 import path from 'path'
 
+import { DIR, LIBRARY } from './constants'
 import getMetadata from './get-metadata'
 
 export default async ({
-  dir = 'docs',
-  library = 'src',
+  dir = DIR,
+  library = LIBRARY,
   ...opts
 }) => {
   const scope = require(library)

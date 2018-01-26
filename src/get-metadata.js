@@ -8,8 +8,15 @@ import {
   log,
   toSrcPath
 } from './util'
+import {
+  DIR,
+  LIBRARY
+} from './constants'
 
-export default async ({ dir, library }) => {
+export default async ({
+  dir = DIR,
+  library = LIBRARY
+}) => {
   const files = await glob(dir, {
     filter: /\.(js|jsx|md)$/i
   })

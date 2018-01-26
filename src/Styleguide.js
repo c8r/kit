@@ -15,26 +15,24 @@ const defaultScope = {
 const Styleguide = ({
   docsSrc = 'doc',
   componentsSrc = 'src',
-  Components
+  Components,
+  ...props
 }) => {
   const scope = Object.assign({}, defaultScope, Components)
 
   return (
-    <DefaultLayout>
-      <Content
-        Component={Component}
-        scope={fullScope}
-        {...props}
-      />
-    </DefaultLayout>
+    <Layout {...scope}>
+      <pre>
+        {JSON.stringify(props, null, 2)}
+      </pre>
+    </Layout>
   )
 }
 
 Styleguide.getInitialProps = async props => {
-  console.log(props)
-  const metadata = {}
+  const metadata = await getMetadata(props)
 
-  return props
+  return Object.assign({}, props, { styleguide: metadata })
 }
 
 export default Styleguide

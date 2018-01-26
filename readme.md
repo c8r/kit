@@ -38,33 +38,22 @@ NOT YET IMPLEMENTED
 
 ```jsx
 import React from 'react'
-import {
-  withSiteMap,
-  Styleguide
-} from '@compositor/styleguide'
+import { Styleguide } from '@compositor/styleguide'
 
 import Components from './components'
 
-const MyStyleguide = props =>
+export default () =>
   <Styleguide
     Components={Components}
-    {...props}
+    other='config'
   />
-
-export default withSiteMap(MyStyleguide)
 ```
-
-#### `withSiteMap`
-
-`withSiteMap` is a HOC that builds the navigation, generates documentation where appropriate, and interacts with the filesystem to set the initial, global properties for the styleguide.
-It only does this work on the initial build, and is a noop when on the client.
-
-#### `Styleguide`
 
 The `Styleguide` component handles routing, rendering markdown, and other features like the playground.
 This is where you pass in your components and other aspects you'd like to configure.
 Though, we've tried to come up with the most sensible defaults possible.
-Hopefully your entrypoint will remain somewhat similar to the example above.
+
+It interacts with the filesystem to set the initial, global properties for the styleguide, but it only does this work on the initial build, and is a noop when on the client.
 
 ### Documentation Components
 
