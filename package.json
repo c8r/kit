@@ -11,7 +11,7 @@
     "dist"
   ],
   "scripts": {
-    "demo": "x0 dev src/Page.js",
+    "demo": "x0 dev src",
     "babel": "babel src -d dist",
     "build": "npm run babel && npm run comp",
     "comp": "lab --pkg -d library",
