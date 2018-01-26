@@ -1,15 +1,15 @@
+import path from 'path'
 import { readFileSync } from 'fs'
 import styledParser from 'styled-parser'
-import { parse as docGen} from 'react-docgen'
+import { parse as docGen } from 'react-docgen'
 import glob from '@compositor/globb'
 
 import {
   log,
-  toRoute,
   toSrcPath
 } from './util'
 
-export default async (dir, scope, opts) => {
+export default async ({ dir, library }) => {
   const files = await glob(dir, {
     filter: /\.(js|jsx|md)$/i
   })
@@ -22,7 +22,8 @@ export default async (dir, scope, opts) => {
       const srcPath = toSrcPath(dir, file)
       const src = readFileSync(srcPath, 'utf8')
       const styled = styledParser(src)
-      const route = toRoute(file)
+      const parsedPath = path.parse(file)
+      const route = path.join(parsedPath.dir, parsedPath.name).replace(dir, '')
 
       let info = null
       try {
@@ -35,6 +36,7 @@ export default async (dir, scope, opts) => {
         file,
         content,
         srcPath,
+        parsedPath,
         src,
         styled,
         route,

@@ -21,7 +21,7 @@ export default async ({
 }) => {
   const scope = require(library)
   const theme = require(path.join(library, 'theme.json'))
-  const metadata = getMetadata(dir, scope, opts)
+  const metadata = getMetadata({ ...opts, dir, library })
 
   return {
     scope,

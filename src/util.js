@@ -1,5 +1,4 @@
 const log = msg => process.env.VERBOSE && console.log(msg)
-const toRoute = path => path.toLowerCase()
 const toSrcPath = (docsDir, path) =>
   path
     .replace(/\md$/, 'js')
@@ -8,6 +7,5 @@ const toSrcPath = (docsDir, path) =>
 
 export {
   log,
-  toRoute,
   toSrcPath
 }

@@ -1,6 +1,3 @@
----
----
-
 # Flex
 
 Component layout primitive with `display: flex`.
