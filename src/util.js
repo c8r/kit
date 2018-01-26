@@ -1,3 +1,4 @@
+const log = msg => process.env.VERBOSE && console.log(msg)
 const toRoute = path => path.toLowerCase()
 const toSrcPath = (docsDir, path) =>
   path
@@ -6,6 +7,7 @@ const toSrcPath = (docsDir, path) =>
     .replace('components/', '')
 
 export {
+  log,
   toRoute,
   toSrcPath
 }

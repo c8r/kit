@@ -17,11 +17,11 @@ const log = (...msgs) => {
 
 const cli = meow(`
   Usage:
-    $ styleguide .
+    $ styleguide dev .
+    $ styleguide build .
 
     Options:
       --out-dir, -d   Output directory (default ./dist)
-      --library, -l   Location of component library (default ./library)
       --dev, -D       Start development server
 `, {
   flags: {
@@ -45,8 +45,11 @@ const opts = Object.assign({}, dot.get(userPkg, 'pkg.styleguide'), cli.flags, {
   library: path.join(process.cwd(), cli.flags.library || 'library')
 })
 
+// TODO: Make configurable
+process.env.VERBOSE = true
+
 log('@compositor/styleguide')
 
 styleguide(dirname, opts)
-  .then(() => console.log('done'))
+  .then(() => log('done'))
   .catch(e => console.log(e))

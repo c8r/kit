@@ -4,6 +4,7 @@ import { parse as docGen} from 'react-docgen'
 import glob from '@compositor/globb'
 
 import {
+  log,
   toRoute,
   toSrcPath
 } from './util'
@@ -15,6 +16,8 @@ export default async (dir, scope, opts) => {
 
   return files
     .map(file => {
+      log(`Processing metadata for ${file}`)
+
       const content = readFileSync(file, 'utf8')
       const srcPath = toSrcPath(dir, file)
       const src = readFileSync(srcPath, 'utf8')
@@ -25,10 +28,8 @@ export default async (dir, scope, opts) => {
       try {
         info = docGen(src)
       } catch (e) {
-        console.log(`Error parsing component metadata for ${file}`)
+        log(`react-docgen couldn't parse ${file}`)
       }
-
-      console.log(`Processed ${file}`)
 
       return {
         file,

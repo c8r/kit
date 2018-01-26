@@ -76,9 +76,9 @@ If desired, you can also export documentation as React components themselves.
 
 #### `<XRay />`
 
-#### `<DeviceSelector />`
-
 #### `<Examples />`
+
+#### `<Viewports />`
 
 #### `<PropsTable />`
 
@@ -89,6 +89,8 @@ If desired, you can also export documentation as React components themselves.
 #### `<StyledSystem />`
 
 #### `<Spacing />`
+
+#### `<Typography />`
 
 ### Layout Components
 
