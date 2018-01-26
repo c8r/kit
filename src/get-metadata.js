@@ -21,7 +21,7 @@ export default async ({
     filter: /\.(js|jsx|md)$/i
   })
 
-  return files
+  const components = files
     .map(file => {
       log(`Processing metadata for ${file}`)
 
@@ -54,4 +54,6 @@ export default async ({
     .reduce((acc, curr) =>
       Object.assign(acc, { [curr.name]: curr })
     , {})
+
+  return { components }
 }
