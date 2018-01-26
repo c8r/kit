@@ -37,6 +37,7 @@
     "dot-prop": "^4.2.0",
     "meow": "^4.0.0",
     "react-docgen": "^2.20.0",
+    "react-router-dom": "^4.2.2",
     "react-x-ray": "^1.0.0-4",
     "styled-parser": "^1.0.0-0",
     "styled-system": "^1.1.1"
