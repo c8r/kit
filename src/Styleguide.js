@@ -16,6 +16,7 @@ import Flex from './Flex'
 import Debug from './Debug'
 import Layout from './Layout'
 import LiveEditor from './LiveEditor'
+import StyledSystem from './StyledSystem'
 
 import { layoutCss } from './constants'
 
@@ -25,8 +26,10 @@ const defaultScope = {
   Box,
   Flex,
   Nav,
+  Debug,
   Layout,
-  LiveEditor
+  LiveEditor,
+  StyledSystem
 }
 
 export default ({
@@ -34,7 +37,7 @@ export default ({
   ...props
 }) => {
   const scope = Object.assign({}, defaultScope, Components)
-
+  Components.StyledSystem = StyledSystem
   return (
     <ThemeProvider theme={scope.theme}>
       <Router
@@ -58,7 +61,7 @@ export default ({
                 render={props =>
                   <Markdown
                     components={Components}
-                    scope={Components}
+                    scope={scope}
                     text={component.content}
                     {...props}
                   />
@@ -67,7 +70,7 @@ export default ({
             )
           })}
 
-          <Debug>{props}</Debug>
+          <Debug>{Object.assign({}, { scope }, { Components }, props)}</Debug>
         </Layout>
       </Router>
     </ThemeProvider>

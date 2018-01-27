@@ -1,58 +1,41 @@
 import React, { Component } from 'react'
 
+import { titleize } from './util'
+
 import Box from './Box'
-
-const NavGroupInner = ({ routes = [] }) =>
-  routes.map(route =>
-    <a
-      key={route}
-      href={route.route}
-      children={route.name}
-    />
-  )
-
-class NavGroup extends Component {
-  state = { isOpen: false }
-
-  render () {
-    const { isOpen } = this.state
-    const { name, routes } = this.props
-
-    return (
-      <Box>
-        <div>
-          <div
-            onClick={() => {
-              this.setState({
-                isOpen: !isOpen
-              })
-            }}
-            children={name}
-          />
-
-          {isOpen && (
-            <NavGroupInner routes={routes} />
-          )}
-        </div>
-      </Box>
-    )
-  }
-}
+import {
+  Link,
+  Caps
+} from '../library'
 
 export default ({ navGroups = [] }) =>
   <Box
     w={[0, 200, 250]}
     flex='none'
+    p={3}
   >
     {Object.keys(navGroups).map(group => {
       const routes = navGroups[group]
+      const name = group
 
       return (
-        <NavGroup
-          key={group}
-          name={group}
-          routes={routes}
-        />
+        <Box pt={1} pb={3} key={name}>
+          <Box pb={2}>
+            <Caps>{titleize(name)}</Caps>
+          </Box>
+
+          {routes.map(route =>
+            <Box>
+              <Link
+                pb={2}
+                color='black'
+                key={route.name}
+                href={route.route}
+                children={titleize(route.name)}
+              />
+            </Box>
+          )}
+        </Box>
       )
     })}
   </Box>

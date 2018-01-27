@@ -3,15 +3,18 @@
 Primitive for controlling width, margin, padding and more.
 
 ```.jsx
-<Button>hi</Button>
-```
-
-```.jsx
-<LiveEditor
-  code='<h1>hi</h1>'
-/>
+<Box p={3} bg='green'>
+  <h1>Hello, world!</h1>
+</Box>
 ```
 
 ```!jsx
-<Button>OMG</Button>
+<StyledSystem
+  styleguide={props.styleguide}
+  component='Box'
+/>
 ```
+
+## Related
+
+- [Flex](Flex.md)
