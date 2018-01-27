@@ -71,5 +71,21 @@ export default async ({
       Object.assign(acc, { [curr.name]: curr })
     , {})
 
-  return { components }
+  const nav = Object
+    .keys(components)
+    .reduce((acc, curr) => {
+      const obj = components[curr]
+      const group = obj.parsedPath.dir.replace(dir, '').replace(/^\//, '')
+
+      acc[group] = acc[group] || []
+      acc[group].push({
+        group,
+        name: obj.name,
+        route: obj.route
+      })
+
+      return acc
+    }, {})
+
+  return { components, nav }
 }

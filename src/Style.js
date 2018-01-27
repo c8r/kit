@@ -1,11 +1,8 @@
 import React from 'react'
 
-export default ({ children }) => {
-  console.log(children)
-  return (
+export default ({ children }) =>
   <style
     dangerouslySetInnerHTML={{
       __html: children
     }}
   />
-)}

@@ -2,16 +2,16 @@ import React, { Component } from 'react'
 
 import Box from './Box'
 
-const NavSectionInner = (routes = []) =>
+const NavGroupInner = ({ routes = [] }) =>
   routes.map(route =>
     <a
       key={route}
-      href={route.href}
+      href={route.route}
       children={route.name}
     />
   )
 
-class NavSection extends Component {
+class NavGroup extends Component {
   state = { isOpen: false }
 
   render () {
@@ -31,7 +31,7 @@ class NavSection extends Component {
           />
 
           {isOpen && (
-            <NavSectionInner routes={routes} />
+            <NavGroupInner routes={routes} />
           )}
         </div>
       </Box>
@@ -44,10 +44,15 @@ export default ({ navGroups = [] }) =>
     w={[0, 200, 250]}
     flex='none'
   >
-    {navGroups.map(group =>
-      <NavGroup
-        key={group.name}
-        {...group}
-      />
-    )}
+    {Object.keys(navGroups).map(group => {
+      const routes = navGroups[group]
+
+      return (
+        <NavGroup
+          key={group}
+          name={group}
+          routes={routes}
+        />
+      )
+    })}
   </Box>

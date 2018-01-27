@@ -37,37 +37,39 @@ export default ({
 
   return (
     <ThemeProvider theme={scope.theme}>
-      <Layout {...props} {...scope}>
-        <Router>
-          <div>
-            <Route
-              exact
-              path='/'
-              render={() => <h1>hi</h1>}
-            />
+      <Router
+        basename={props.basename}
+        location={props.pathname || '/'}
+      >
+        <Layout {...props} {...scope}>
+          <Route
+            exact
+            path='/'
+            render={() => <h1>hi</h1>}
+          />
 
-            {Object.keys(props.styleguide.components).map(name => {
-              const component = props.styleguide.components[name]
+          {Object.keys(props.styleguide.components).map(name => {
+            const component = props.styleguide.components[name]
 
-              return (
-                <Route
-                  key={component.name}
-                  path={component.route}
-                  render={() =>
-                    <Markdown
-                      components={Components}
-                      scope={Components}
-                      text={component.content}
-                    />
-                  }
-                />
-              )
-            })}
+            return (
+              <Route
+                key={component.name}
+                path={component.route}
+                render={props =>
+                  <Markdown
+                    components={Components}
+                    scope={Components}
+                    text={component.content}
+                    {...props}
+                  />
+                }
+              />
+            )
+          })}
 
-            <Debug>{props}</Debug>
-          </div>
-        </Router>
-      </Layout>
+          <Debug>{props}</Debug>
+        </Layout>
+      </Router>
     </ThemeProvider>
   )
 }
