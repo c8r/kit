@@ -18,6 +18,7 @@ Example.getInitialProps = async props => {
   const env = {
     DEBUG: process.env.DEBUG,
   }
+
   return Object.assign({}, props, env, { styleguide: metadata })
 }
 

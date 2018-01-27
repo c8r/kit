@@ -11,16 +11,20 @@ import { ThemeProvider } from 'glamorous'
 import { Markdown } from '@compositor/markdown'
 
 import Box from './Box'
+import Nav from './Nav'
 import Flex from './Flex'
 import Debug from './Debug'
 import Layout from './Layout'
 import LiveEditor from './LiveEditor'
+
+import { layoutCss } from './constants'
 
 const Router = typeof document === 'undefined' ? StaticRouter : BrowserRouter
 
 const defaultScope = {
   Box,
   Flex,
+  Nav,
   Layout,
   LiveEditor
 }
@@ -33,7 +37,7 @@ export default ({
 
   return (
     <ThemeProvider theme={scope.theme}>
-      <Layout {...scope}>
+      <Layout {...props} {...scope}>
         <Router>
           <div>
             <Route

@@ -26,11 +26,27 @@ export default async ({
       log(`Processing metadata for ${file}`)
 
       const content = readFileSync(file, 'utf8')
-      const srcPath = toSrcPath(dir, file)
-      const src = readFileSync(srcPath, 'utf8')
-      const styled = styledParser(src)
       const parsedPath = path.parse(file)
-      const route = path.join(parsedPath.dir, parsedPath.name).replace(dir, '')
+      const name = parsedPath.name
+      const route = path.join(parsedPath.dir, name).replace(dir, '')
+
+      const srcPath = toSrcPath(dir, file)
+
+      let src = null
+      try {
+        src = readFileSync(srcPath, 'utf8')
+      } catch (e) {
+        return {
+          name,
+          content,
+          file,
+          parsedPath,
+          route,
+          component: false
+        }
+      }
+
+      const styled = styledParser(src)
 
       let info = null
       try {

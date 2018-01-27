@@ -9,10 +9,12 @@ import {
   editorCss
 } from './constants'
 
-export default ({ children }) =>
-  <Flex flexDirection='row'>
-    <Style>{layoutCss}</Style>
-    <Box w={200}></Box>
-    <Box flex='auto'>{children}</Box>
+export default ({ children, theme, styleguide, Nav }) =>
+  <div>
+    <Style>{layoutCss(theme)}</Style>
+    <Flex flexDirection='row'>
+      <Nav navGroups={styleguide.nav} />
+      <Box flex='1 1 auto'>{children}</Box>
+    </Flex>
     <Style>{editorCss}</Style>
-  </Flex>
+  </div>
