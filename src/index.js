@@ -15,7 +15,10 @@ const Example = props =>
 
 Example.getInitialProps = async props => {
   const metadata = await getMetadata(props)
-  return Object.assign({}, props, { styleguide: metadata })
+  const env = {
+    DEBUG: process.env.DEBUG,
+  }
+  return Object.assign({}, props, env, { styleguide: metadata })
 }
 
 export default Example

@@ -7,10 +7,12 @@ import {
   Route
 } from 'react-router-dom'
 
+import { ThemeProvider } from 'glamorous'
 import { Markdown } from '@compositor/markdown'
 
 import Box from './Box'
 import Flex from './Flex'
+import Debug from './Debug'
 import Layout from './Layout'
 import LiveEditor from './LiveEditor'
 
@@ -30,38 +32,38 @@ export default ({
   const scope = Object.assign({}, defaultScope, Components)
 
   return (
-    <Layout {...scope}>
-      <Router>
-        <div>
-          <Route
-            exact
-            path='/'
-            render={() => <h1>hi</h1>}
-          />
+    <ThemeProvider theme={scope.theme}>
+      <Layout {...scope}>
+        <Router>
+          <div>
+            <Route
+              exact
+              path='/'
+              render={() => <h1>hi</h1>}
+            />
 
-          {Object.keys(props.styleguide.components).map(name => {
-            const component = props.styleguide.components[name]
+            {Object.keys(props.styleguide.components).map(name => {
+              const component = props.styleguide.components[name]
 
-            return (
-              <Route
-                key={component.name}
-                path={component.route}
-                render={() =>
-                  <Markdown
-                    components={Components}
-                    scope={Components}
-                    text={component.content}
-                  />
-                }
-              />
-            )
-          })}
+              return (
+                <Route
+                  key={component.name}
+                  path={component.route}
+                  render={() =>
+                    <Markdown
+                      components={Components}
+                      scope={Components}
+                      text={component.content}
+                    />
+                  }
+                />
+              )
+            })}
 
-          <pre>
-            {JSON.stringify(props, null, 2)}
-          </pre>
-        </div>
-      </Router>
-    </Layout>
+            <Debug>{props}</Debug>
+          </div>
+        </Router>
+      </Layout>
+    </ThemeProvider>
   )
 }

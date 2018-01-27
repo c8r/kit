@@ -81,6 +81,8 @@ If desired, you can also export documentation as React components themselves.
 
 #### `<Typography />`
 
+#### `<Debug />`
+
 ### Layout Components
 
 You can customize the layout and design of the styleguide by overriding the default components with your own.
