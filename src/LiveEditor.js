@@ -37,24 +37,24 @@ export default ({
         align='center'
         flexDirection={['column', 'row', 'row']}
       >
-        <Box p={4}>
+        <Box p={4} borderWidth={1} borderColor='lightgray'>
           <LivePreview />
-        </Box>
-        <LiveEditor
-          style={{
-            width: '100%',
-            padding: '32px'
-          }}
-        />
-        <Box w={1}>
-          <LiveError
+          <LiveEditor
             style={{
-              backgroundColor: 'red',
-              color: 'white',
-              padding: '.5rem',
-              height: 'auto'
+              width: '100%',
+              padding: '32px'
             }}
           />
+          <Box w={1}>
+            <LiveError
+              style={{
+                backgroundColor: 'red',
+                color: 'white',
+                padding: '.5rem',
+                height: 'auto'
+              }}
+            />
+          </Box>
         </Box>
       </Flex>
     </LiveProvider>

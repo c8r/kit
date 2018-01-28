@@ -7,7 +7,6 @@ const toSrcPath = (docsDir, path) =>
 
 // Adapted from: https://github.com/sindresorhus/titleize/blob/master/index.js
 const titleize = str => str
-  .toLowerCase()
   .replace(/(?:^|\s|-)\S/g, m => m.toUpperCase())
   .replace(/(-|_)/g, ' ')
 

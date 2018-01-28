@@ -36,6 +36,7 @@ export default async ({
       try {
         src = readFileSync(srcPath, 'utf8')
       } catch (e) {
+        log(`  no src file found for ${file}`)
         return {
           name,
           content,
@@ -46,13 +47,18 @@ export default async ({
         }
       }
 
-      const styled = styledParser(src)
+      let styled = null
+      try {
+        styled = styledParser(src)
+      } catch (e) {
+        log(`  styled-parser couldn't parse ${file}`)
+      }
 
       let info = null
       try {
         info = docGen(src)
       } catch (e) {
-        log(`react-docgen couldn't parse ${file}`)
+        log(`  react-docgen couldn't parse ${file}`)
       }
 
       return {
