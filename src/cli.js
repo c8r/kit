@@ -23,6 +23,7 @@ const cli = meow(`
     Options:
       --out-dir, -d   Output directory (default ./dist)
       --dev, -D       Start development server
+      --verbose       Enable extra logging for debugging
 `, {
   flags: {
     outDir: {
@@ -32,6 +33,9 @@ const cli = meow(`
     dev: {
       type: 'boolean',
       alias: 'D'
+    },
+    verbose: {
+      type: 'boolean'
     }
   }
 })
@@ -45,8 +49,7 @@ const opts = Object.assign({}, dot.get(userPkg, 'pkg.styleguide'), cli.flags, {
   library: path.join(process.cwd(), cli.flags.library || 'library')
 })
 
-// TODO: Make configurable
-process.env.VERBOSE = true
+process.env.VERBOSE = cli.flags.verbose
 
 log('@compositor/styleguide')
 
