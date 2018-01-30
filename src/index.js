@@ -4,12 +4,27 @@ import getMetadata from './get-metadata'
 import theme from '../theme.json'
 import Box from './Box'
 import Flex from './Flex'
-
 import Styleguide from './Styleguide'
+
+import {
+  Title,
+  Heading,
+  Subhead,
+  LongText,
+  Link
+} from '../library'
 
 const Example = props =>
   <Styleguide
-    Components={{ Box, Flex, props, theme }}
+    Components={{
+      a: Link,
+      p: LongText,
+      h1: Title,
+      h2: Heading,
+      h3: Subhead,
+      theme // TODO: We shouldn't need to pass theme in here
+    }}
+    scope={{ Box, Flex, props, theme }}
     {...props}
   />
 
