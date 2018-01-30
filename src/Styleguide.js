@@ -38,10 +38,6 @@ export default ({
 }) => {
   const scope = Object.assign({}, defaultScope, Components)
 
-  // TODO: Remove need for this manual assignment
-  Components.StyledSystem = StyledSystem
-  Components.Debug = Debug
-
   return (
     <ThemeProvider theme={scope.theme}>
       <Router

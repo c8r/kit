@@ -31,7 +31,7 @@
   "license": "MIT",
   "dependencies": {
     "@compositor/globb": "^0.1.7",
-    "@compositor/markdown": "0.0.18",
+    "@compositor/markdown": "0.0.20",
     "@compositor/x0": "^3.1.1",
     "chalk": "^2.3.0",
     "dot-prop": "^4.2.0",
@@ -43,7 +43,7 @@
     "styled-system": "^1.1.1"
   },
   "devDependencies": {
-    "ava": "^0.24.0",
+    "ava": "^0.25.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
