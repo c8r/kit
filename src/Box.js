@@ -1,4 +1,4 @@
-import styled from 'glamorous'
+import styled from 'styled-components'
 
 import {
   color,
@@ -15,6 +15,7 @@ import {
 } from 'styled-system'
 
 const Box = styled('div')(
+  [],
   props => ({}),
   color,
   space,

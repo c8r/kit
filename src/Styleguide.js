@@ -7,7 +7,7 @@ import {
   Route
 } from 'react-router-dom'
 
-import { ThemeProvider } from 'glamorous'
+import { ThemeProvider } from 'styled-components'
 import { Markdown } from '@compositor/markdown'
 
 import Box from './Box'

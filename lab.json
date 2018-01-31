@@ -1,6 +1,7 @@
 {
   "name": "styleguide",
-  "library": "glamorous",
+  "library": "styled-components",
+  "harmony": true,
   "components": [
     {
       "name": "Title",

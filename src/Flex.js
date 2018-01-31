@@ -1,4 +1,4 @@
-import styled from 'glamorous'
+import styled from 'styled-components'
 
 import {
   space,
@@ -12,6 +12,7 @@ import {
 } from 'styled-system'
 
 const Flex = styled('div')(
+  [],
   props => ({
     display: 'flex'
   }),
