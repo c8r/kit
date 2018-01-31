@@ -218,7 +218,10 @@
       "name": "Link",
       "type": "a",
       "props": {
-        "color": "blue"
+        "color": "blue",
+        "hover": {
+          "opacity": 0.8
+        }
       },
       "style": {
         "textDecoration": "none"
@@ -226,7 +229,9 @@
       "examples": [
         "<Link>Hello</Link>"
       ],
-      "system": []
+      "system": [
+        "hover"
+      ]
     },
     {
       "name": "NavLink",
@@ -458,7 +463,7 @@
         "Logo",
         "NavLink"
       ],
-      "jsx": "<header>\n  <Flex\n    align=\"center\"\n    wrap\n    px={3}\n    py={3}>\n    <NavLink ml={-2} href='https://compositor.io'>\n      <Logo />\n      Compositor\n    </NavLink>\n    <Box mx=\"auto\" />\n    {props.children}\n  </Flex>\n</header>",
+      "jsx": "<header>\n  <Flex\n    align=\"center\"\n    wrap\n    px={3}\n    py={3}>\n    <NavLink ml={-2} href='/'>\n      <Logo />\n      Compositor\n    </NavLink>\n    <Box mx=\"auto\" />\n    {props.children}\n  </Flex>\n</header>",
       "examples": [
         "<NavBar>\n  <a>\n    Features\n  </a>\n</NavBar>"
       ],
@@ -579,7 +584,7 @@
         "Text",
         "Link"
       ],
-      "jsx": "  <footer>\n    <Box bg=\"black\" color=\"white\">\n      <Container py={4}>\n        <Flex align=\"flex-end\" mx={-3} wrap>\n          <Box px={3} py={3} width={[1, 0.5, 0.25]}>\n            <Box>\n              <NavLink href=\"https://compositor.io/\">Compositor</NavLink>\n            </Box>\n            <Box>\n              <NavLink href=\"https://compositor.io/lab/\">Lab</NavLink>\n            </Box>\n            <Box>\n              <NavLink href=\"https://compositor.io/iso/\">Iso</NavLink>\n            </Box>\n            <div>\n            </div>\n          </Box>\n          <Box ml=\"auto\" px={3} py={3} width={[1, 0.5, 0.5, 0.25]}>\n            <Flex>\n              <Box mx=\"auto\" />\n              <NavLink href=\"https://twitter.com/getcompositor/\" mr={3}>\n                <Image src=\"https://icon.now.sh/twitter/fff\" />\n              </NavLink>\n              <NavLink href=\"https://github.com/c8r/\">\n                <Image src=\"https://icon.now.sh/github/fff\" />\n              </NavLink>\n            </Flex>\n            <form\n              action=\"https://compositor.us1.list-manage.com/subscribe/post?u=80f1aa1145b57607ff718c03d&id=042073b294\"\n              method=\"post\"\n            >\n              <Label>Email Address</Label>\n              <Flex>\n                <InputDark mr={1} name=\"EMAIL\" />\n                <FormButton px={2} bg=\"white\" color=\"black\">\n                  Sign Up\n                </FormButton>\n              </Flex>\n            </form>\n          </Box>\n        </Flex>\n        <Flex align=\"baseline\" py={3} wrap>\n              <Link href='mailto:support@compositor.io'\n                f={0}\n                mr={3}\n                mb={3}\n                color='white'>\n                support@compositor.io\n              </Link>\n          <Box mx=\"auto\" />\n          <Text fontSize={0} mr={3}>© 2017 Compositor, Inc.</Text>\n          <Link color=\"white\" f={0} href=\"/terms\" mr={3}>\n            Terms\n          </Link>\n          <Link color=\"white\" f={0} href=\"/privacy\">\n            Privacy Policy\n          </Link>\n        </Flex>\n      </Container>\n    </Box>\n  </footer>\n",
+      "jsx": "  <footer>\n    <Box bg=\"black\" color=\"white\">\n      <Container py={4}>\n        <Flex align=\"flex-end\" mx={-3} wrap>\n          <Box px={3} py={3} width={[1, 0.5, 0.25]}>\n            <Box>\n              <NavLink href=\"https://compositor.io\">Compositor</NavLink>\n            </Box>\n            <Box>\n              <NavLink href=\"https://github.com/c8r\">GitHub</NavLink>\n            </Box>\n            <Box>\n              <NavLink href=\"https://twitter.com/getcompositor\">Twitter</NavLink>\n            </Box>\n            <Box>\n              <NavLink href=\"https://compositor.io/blog/\">Blog</NavLink>\n            </Box>\n            <Box>\n            </Box>\n            <div>\n            </div>\n          </Box>\n          <Box ml=\"auto\" px={3} py={3} width={[1, 0.5, 0.5, 0.25]}>\n          </Box>\n        </Flex>\n        <Flex align=\"baseline\" py={3} wrap>\n              <Link href='mailto:support@compositor.io'\n                f={0}\n                mr={3}\n                mb={3}\n                color='white'>\n                support@compositor.io\n              </Link>\n          <Box mx=\"auto\" />\n          <Text fontSize={0} mr={3}>© 2018 Compositor, Inc.</Text>\n        </Flex>\n      </Container>\n    </Box>\n  </footer>\n",
       "system": [],
       "examples": [
         "<MegaFooter />"
@@ -599,10 +604,47 @@
       "type": "Text",
       "props": {},
       "style": {
-        "maxWidth": "40em"
+        "maxWidth": "40em",
+        "lineHeight": "1.8"
       },
       "examples": [
         "<LongText />"
+      ],
+      "system": []
+    },
+    {
+      "name": "Code",
+      "type": "code",
+      "props": {
+        "fontWeight": "500",
+        "bg": "gray",
+        "borderRadius": 4,
+        "pl": 1,
+        "pr": 1,
+        "fontSize": 1,
+        "pt": 0,
+        "pb": 0
+      },
+      "style": {
+        "fontFamily": "Monaco, monospace"
+      },
+      "examples": [
+        "<Code>Hello</Code>"
+      ],
+      "system": [
+        "fontWeight",
+        "borderRadius"
+      ]
+    },
+    {
+      "name": "Li",
+      "type": "li",
+      "props": {},
+      "style": {
+        "lineHeight": "1.6"
+      },
+      "examples": [
+        "<Li>Hello</Li>"
       ],
       "system": []
     }
@@ -624,7 +666,7 @@
       "w": 3,
       "h": 4,
       "x": 3,
-      "y": 24,
+      "y": 28,
       "moved": false,
       "static": false
     },
@@ -744,7 +786,7 @@
       "w": 3,
       "h": 4,
       "x": 3,
-      "y": 16,
+      "y": 20,
       "moved": false,
       "static": false
     },
@@ -784,7 +826,7 @@
       "w": 3,
       "h": 4,
       "x": 3,
-      "y": 28,
+      "y": 32,
       "moved": false,
       "static": false
     },
@@ -824,7 +866,7 @@
       "w": 3,
       "h": 4,
       "x": 3,
-      "y": 8,
+      "y": 12,
       "moved": false,
       "static": false
     },
@@ -864,7 +906,7 @@
       "w": 3,
       "h": 4,
       "x": 3,
-      "y": 20,
+      "y": 24,
       "moved": false,
       "static": false
     },
@@ -904,7 +946,7 @@
       "w": 3,
       "h": 4,
       "x": 3,
-      "y": 12,
+      "y": 16,
       "moved": false,
       "static": false
     },
@@ -935,6 +977,16 @@
       "h": 4,
       "x": 0,
       "y": 4,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "LongText",
+      "i": "33",
+      "w": 3,
+      "h": 4,
+      "x": 3,
+      "y": 8,
       "moved": false,
       "static": false
     }

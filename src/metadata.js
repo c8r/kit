@@ -10,7 +10,8 @@ import {
 } from './util'
 import {
   DIR,
-  LIBRARY
+  LIBRARY,
+  ROOT_LEVEL_FILE
 } from './constants'
 
 export default async ({
@@ -81,7 +82,7 @@ export default async ({
     .keys(components)
     .reduce((acc, curr) => {
       const obj = components[curr]
-      const group = obj.parsedPath.dir.replace(dir, '').replace(/^\//, '')
+      const group = obj.parsedPath.dir.replace(dir, '').replace(/^\//, '') || ROOT_LEVEL_FILE
 
       acc[group] = acc[group] || []
       acc[group].push({

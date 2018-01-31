@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 
-import { titleize } from './util'
-
 import Box from './Box'
+import { ROOT_LEVEL_FILE } from './constants'
+import { titleize } from './util'
 import {
-  Link,
-  Caps
+  Link
 } from '../library'
+
 
 export default ({ navGroups = [] }) =>
   <Box
@@ -15,26 +15,43 @@ export default ({ navGroups = [] }) =>
     p={3}
   >
     {Object.keys(navGroups).map(group => {
+      if (group === ROOT_LEVEL_FILE) return null
+
       const routes = navGroups[group]
       const name = group
 
       return (
         <Box pt={1} pb={3} key={name}>
           <Box pb={2}>
-            <Caps>{titleize(name)}</Caps>
+            {titleize(name)}
           </Box>
 
           {routes.map(route =>
-            <Box>
+            <Box pb={1} pl={2}>
               <Link
-                pb={2}
-                color='black'
+                color='midgray'
                 key={route.name}
                 href={route.route}
                 children={titleize(route.name)}
               />
             </Box>
           )}
+        </Box>
+      )
+    })}
+
+    {navGroups[ROOT_LEVEL_FILE] && navGroups[ROOT_LEVEL_FILE].map(route => {
+      if (route.name === 'introduction') return null
+
+      return (
+        <Box pt={1} pb={3} key={route.name}>
+          <Box pb={2}>
+            <Link
+              color='black'
+              href={route.route}
+              children={titleize(route.name)}
+            />
+          </Box>
         </Box>
       )
     })}

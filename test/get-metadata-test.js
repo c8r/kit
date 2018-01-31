@@ -1,6 +1,6 @@
 import test from 'ava'
 
-import getsMetadata from '../src/get-metadata'
+import getsMetadata from '../src/metadata'
 
 test('gets metadata', async t => {
   const result = await getsMetadata({

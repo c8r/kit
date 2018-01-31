@@ -4,8 +4,6 @@ import Box from './Box'
 
 export default ({ children }) =>
   <Box w={1}>
-    <h3>Debug</h3>
-
     <pre
       style={{
         maxHeight: '400px',

@@ -17,28 +17,31 @@ import {
 } from './constants'
 
 export default ({ children, theme, styleguide, Nav }) =>
-  <div>
-    <NavBar>
-      <Link
-        mr={3}
-        color='black'
-        href='https://compositor.io'
-      >
-        <Caps>Website</Caps>
-      </Link>
-      <Link
-        color='black'
-        href='https://github.com/c8r/styleguide'
-      >
-        <Caps>Github</Caps>
-      </Link>
-    </NavBar>
-
+  <Flex
+    wrap
+    flex='column'
+    style={{
+      minHeight: '100vh'
+    }}
+  >
     <Style>{layoutCss(theme)}</Style>
-    <Flex flexDirection='row'>
-      <Nav navGroups={styleguide.nav} />
-      <Box flex='1 1 auto'>{children}</Box>
-    </Flex>
+    <Box w={1}>
+      <NavBar>
+        <Link
+          color='black'
+          href='https://github.com/c8r/styleguide'
+        >
+          <Caps>Github</Caps>
+        </Link>
+      </NavBar>
+
+      <Flex>
+        <Nav navGroups={styleguide.nav} />
+        <Box flex='1 1 auto'>{children}</Box>
+      </Flex>
+    </Box>
     <Style>{editorCss}</Style>
-    <MegaFooter />
-  </div>
+    <Box flex={1} alignSelf='flex-end' w={1}>
+      <MegaFooter />
+    </Box>
+  </Flex>

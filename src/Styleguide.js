@@ -48,7 +48,19 @@ export default ({
           <Route
             exact
             path='/'
-            render={() => <h1>hi</h1>}
+            render={routeProps => {
+              const intro = props.styleguide.components.introduction
+
+              return (
+                <Markdown
+                  components={Components}
+                  scope={scope}
+                  text={intro.content}
+                  {...routeProps}
+                  {...props}
+                />
+              )
+            }}
           />
 
           {Object.keys(props.styleguide.components).map(name => {
