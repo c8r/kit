@@ -34,6 +34,8 @@ Example.getInitialProps = async props => ({
   styleguide: await metadata(props),
   ...props
 })
+
+export default Example
 ```
 
 ## Related

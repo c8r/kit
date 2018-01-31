@@ -32,7 +32,7 @@ const defaultScope = {
   StyledSystem
 }
 
-export default ({
+const Styleguide = ({
   Components,
   ...props
 }) => {
@@ -86,3 +86,5 @@ export default ({
     </ThemeProvider>
   )
 }
+
+export default Styleguide

@@ -14,6 +14,7 @@ import {
   LongText,
   Link,
   Code,
+  Pre,
   Li
 } from '../library'
 
@@ -24,6 +25,7 @@ ext(Heading, { mt: 4, mb: 3 })
 ext(Subhead, { mt: 4, mb: 3 })
 ext(LongText, { mt: 0, mb: 3 })
 ext(Code, { f: 1 })
+ext(Pre, { f: 1 })
 
 const Example = props =>
   <Styleguide
@@ -34,6 +36,7 @@ const Example = props =>
       h2: Heading,
       h3: Subhead,
       code: Code,
+      pre: Pre,
       li: Li,
       theme // TODO: We shouldn't need to pass theme in here
     }}

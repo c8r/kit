@@ -57,7 +57,7 @@ export default `
 .language-css .token.string,
 .style .token.string,
 .token.variable {
-  color: hsl(40, 90%, 60%);
+  color: #555;
 }
 .token.atrule,
 .token.attr-value,
