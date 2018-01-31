@@ -38,9 +38,9 @@ const Example = props =>
       code: Code,
       pre: Pre,
       li: Li,
-      theme // TODO: We shouldn't need to pass theme in here
+      theme
     }}
-    scope={{ Box, Flex, Debug, props, theme }}
+    scope={{ props }}
     {...props}
   />
 

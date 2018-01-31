@@ -67,7 +67,7 @@ export default class Editor extends Component {
 
     return (
       <Box my={4}>
-        <Flex>
+        <Flex flexDirection='row-reverse'>
           {options.xray && (
             <ButtonReset onClick={() => this.toggle('xray')}>
               <img src='https://icon.now.sh/grid' alt='Toggle X Ray' />
