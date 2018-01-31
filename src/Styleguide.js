@@ -36,7 +36,7 @@ export default ({
   Components,
   ...props
 }) => {
-  const scope = Object.assign({}, defaultScope, Components)
+  const scope = Object.assign({}, defaultScope, Components, { props })
 
   return (
     <ThemeProvider theme={scope.theme}>
