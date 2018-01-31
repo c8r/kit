@@ -695,12 +695,102 @@
       "system": [
         "borderColor"
       ]
+    },
+    {
+      "name": "Table",
+      "type": "table",
+      "props": {
+        "w": 1
+      },
+      "style": {
+        "borderCollapse": "collapse",
+        "textAlign": "left"
+      },
+      "examples": [
+        "<Table>Hello</Table>"
+      ],
+      "system": []
+    },
+    {
+      "name": "Th",
+      "type": "th",
+      "props": {
+        "pl": 2,
+        "pt": 2,
+        "pb": 2,
+        "pr": 2,
+        "fontWeight": "500",
+        "bg": "transparent",
+        "borderWidth": 1,
+        "borderColor": "gray",
+        "borderTop": true,
+        "borderBottom": true
+      },
+      "style": {},
+      "examples": [
+        "<Th>Hello</Th>"
+      ],
+      "system": [
+        "fontWeight",
+        "borderWidth",
+        "borderColor"
+      ]
+    },
+    {
+      "name": "Td",
+      "type": "td",
+      "props": {
+        "pl": 2,
+        "pt": 2,
+        "pb": 2,
+        "pr": 2,
+        "bg": "transparent",
+        "borderWidth": 1,
+        "borderColor": "gray",
+        "borderBottom": true
+      },
+      "style": {},
+      "examples": [
+        "<Td>Hello</Td>"
+      ],
+      "system": [
+        "fontWeight",
+        "borderWidth",
+        "borderColor"
+      ]
+    },
+    {
+      "name": "Thead",
+      "type": "thead",
+      "props": {},
+      "style": {},
+      "examples": [
+        "<Thead>Hello</Thead>"
+      ]
+    },
+    {
+      "name": "Tbody",
+      "type": "tbody",
+      "props": {},
+      "style": {},
+      "examples": [
+        "<Tbody>Hello</Tbody>"
+      ]
+    },
+    {
+      "name": "Tr",
+      "type": "tr",
+      "props": {},
+      "style": {},
+      "examples": [
+        "<Tr>Hello</Tr>"
+      ]
     }
   ],
   "layout": [
     {
-      "i": "0",
       "name": "Title",
+      "i": "0",
       "w": 3,
       "h": 4,
       "x": 0,
@@ -709,48 +799,48 @@
       "static": false
     },
     {
-      "i": "1",
       "name": "Heading",
+      "i": "1",
       "w": 3,
       "h": 4,
       "x": 3,
-      "y": 28,
+      "y": 32,
       "moved": false,
       "static": false
     },
     {
-      "i": "2",
       "name": "Subhead",
+      "i": "2",
       "w": 3,
       "h": 4,
       "x": 6,
-      "y": 28,
+      "y": 36,
       "moved": false,
       "static": false
     },
     {
-      "i": "3",
       "name": "Text",
+      "i": "3",
       "w": 3,
       "h": 4,
       "x": 9,
-      "y": 12,
+      "y": 20,
       "moved": false,
       "static": false
     },
     {
-      "i": "4",
       "name": "Caps",
+      "i": "4",
       "w": 3,
       "h": 4,
       "x": 0,
-      "y": 8,
+      "y": 12,
       "moved": false,
       "static": false
     },
     {
-      "i": "5",
       "name": "Small",
+      "i": "5",
       "w": 3,
       "h": 4,
       "x": 3,
@@ -759,148 +849,68 @@
       "static": false
     },
     {
-      "i": "6",
       "name": "FormButton",
+      "i": "6",
       "w": 3,
       "h": 4,
       "x": 6,
-      "y": 20,
+      "y": 28,
       "moved": false,
       "static": false
     },
     {
-      "i": "7",
       "name": "Button",
+      "i": "7",
       "w": 3,
       "h": 4,
       "x": 9,
-      "y": 28,
+      "y": 36,
       "moved": false,
       "static": false
     },
     {
-      "i": "8",
       "name": "ButtonOutline",
+      "i": "8",
       "w": 3,
       "h": 4,
       "x": 0,
-      "y": 16,
-      "moved": false,
-      "static": false
-    },
-    {
-      "i": "9",
-      "name": "BigButton",
-      "w": 3,
-      "h": 4,
-      "x": 3,
-      "y": 0,
-      "moved": false,
-      "static": false
-    },
-    {
-      "i": "10",
-      "name": "Image",
-      "w": 3,
-      "h": 4,
-      "x": 6,
-      "y": 8,
-      "moved": false,
-      "static": false
-    },
-    {
-      "i": "11",
-      "name": "Link",
-      "w": 3,
-      "h": 4,
-      "x": 9,
-      "y": 24,
-      "moved": false,
-      "static": false
-    },
-    {
-      "i": "12",
-      "name": "NavLink",
-      "w": 3,
-      "h": 4,
-      "x": 0,
-      "y": 24,
-      "moved": false,
-      "static": false
-    },
-    {
-      "i": "13",
-      "name": "Divider",
-      "w": 3,
-      "h": 4,
-      "x": 3,
       "y": 20,
       "moved": false,
       "static": false
     },
     {
-      "i": "14",
-      "name": "Input",
+      "name": "BigButton",
+      "i": "9",
       "w": 3,
       "h": 4,
-      "x": 6,
+      "x": 3,
       "y": 0,
       "moved": false,
       "static": false
     },
     {
-      "i": "15",
-      "name": "Label",
+      "name": "Image",
+      "i": "10",
       "w": 3,
       "h": 4,
-      "x": 9,
+      "x": 6,
       "y": 16,
       "moved": false,
       "static": false
     },
     {
-      "i": "16",
-      "name": "ImageRounded",
-      "w": 3,
-      "h": 4,
-      "x": 0,
-      "y": 32,
-      "moved": false,
-      "static": false
-    },
-    {
-      "i": "17",
-      "name": "Avatar",
-      "w": 3,
-      "h": 4,
-      "x": 3,
-      "y": 32,
-      "moved": false,
-      "static": false
-    },
-    {
-      "i": "18",
-      "name": "Dit",
-      "w": 3,
-      "h": 4,
-      "x": 6,
-      "y": 12,
-      "moved": false,
-      "static": false
-    },
-    {
-      "i": "19",
-      "name": "Logo",
+      "name": "Link",
+      "i": "11",
       "w": 3,
       "h": 4,
       "x": 9,
-      "y": 0,
+      "y": 32,
       "moved": false,
       "static": false
     },
     {
-      "i": "20",
-      "name": "Container",
+      "name": "NavLink",
+      "i": "12",
       "w": 3,
       "h": 4,
       "x": 0,
@@ -909,18 +919,98 @@
       "static": false
     },
     {
-      "i": "21",
+      "name": "Divider",
+      "i": "13",
+      "w": 3,
+      "h": 4,
+      "x": 3,
+      "y": 24,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "Input",
+      "i": "14",
+      "w": 3,
+      "h": 4,
+      "x": 6,
+      "y": 0,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "Label",
+      "i": "15",
+      "w": 3,
+      "h": 4,
+      "x": 9,
+      "y": 24,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "ImageRounded",
+      "i": "16",
+      "w": 3,
+      "h": 4,
+      "x": 0,
+      "y": 36,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "Avatar",
+      "i": "17",
+      "w": 3,
+      "h": 4,
+      "x": 3,
+      "y": 36,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "Dit",
+      "i": "18",
+      "w": 3,
+      "h": 4,
+      "x": 6,
+      "y": 20,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "Logo",
+      "i": "19",
+      "w": 3,
+      "h": 4,
+      "x": 9,
+      "y": 0,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "Container",
+      "i": "20",
+      "w": 3,
+      "h": 4,
+      "x": 0,
+      "y": 32,
+      "moved": false,
+      "static": false
+    },
+    {
       "name": "Measure",
+      "i": "21",
       "w": 3,
       "h": 4,
       "x": 3,
-      "y": 12,
+      "y": 16,
       "moved": false,
       "static": false
     },
     {
-      "i": "22",
       "name": "Box",
+      "i": "22",
       "w": 3,
       "h": 4,
       "x": 6,
@@ -929,8 +1019,8 @@
       "static": false
     },
     {
-      "i": "23",
       "name": "Flex",
+      "i": "23",
       "w": 3,
       "h": 4,
       "x": 9,
@@ -939,38 +1029,38 @@
       "static": false
     },
     {
-      "i": "24",
       "name": "NavBar",
+      "i": "24",
       "w": 3,
       "h": 4,
       "x": 0,
-      "y": 20,
-      "moved": false,
-      "static": false
-    },
-    {
-      "i": "25",
-      "name": "HeroLeft",
-      "w": 3,
-      "h": 4,
-      "x": 3,
       "y": 24,
       "moved": false,
       "static": false
     },
     {
-      "i": "26",
-      "name": "ProductLockUp",
+      "name": "HeroLeft",
+      "i": "25",
       "w": 3,
       "h": 4,
-      "x": 6,
-      "y": 16,
+      "x": 3,
+      "y": 28,
       "moved": false,
       "static": false
     },
     {
-      "i": "27",
+      "name": "ProductLockUp",
+      "i": "26",
+      "w": 3,
+      "h": 4,
+      "x": 6,
+      "y": 24,
+      "moved": false,
+      "static": false
+    },
+    {
       "name": "SectionLeft",
+      "i": "27",
       "w": 3,
       "h": 4,
       "x": 9,
@@ -979,48 +1069,88 @@
       "static": false
     },
     {
-      "i": "28",
       "name": "SectionRight",
+      "i": "28",
       "w": 3,
       "h": 4,
       "x": 0,
+      "y": 16,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "LogoBlack",
+      "i": "29",
+      "w": 3,
+      "h": 4,
+      "x": 3,
+      "y": 20,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "InputDark",
+      "i": "30",
+      "w": 3,
+      "h": 4,
+      "x": 6,
+      "y": 32,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "MegaFooter",
+      "i": "31",
+      "w": 3,
+      "h": 4,
+      "x": 9,
+      "y": 28,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "GA",
+      "i": "32",
+      "w": 3,
+      "h": 4,
+      "x": 0,
+      "y": 8,
+      "moved": false,
+      "static": false
+    },
+    {
+      "name": "LongText",
+      "i": "33",
+      "w": 3,
+      "h": 4,
+      "x": 3,
       "y": 12,
       "moved": false,
       "static": false
     },
     {
-      "i": "29",
-      "name": "LogoBlack",
-      "w": 3,
-      "h": 4,
-      "x": 3,
-      "y": 16,
-      "moved": false,
-      "static": false
-    },
-    {
-      "i": "30",
-      "name": "InputDark",
+      "name": "Code",
+      "i": "34",
       "w": 3,
       "h": 4,
       "x": 6,
-      "y": 24,
+      "y": 12,
       "moved": false,
       "static": false
     },
     {
-      "i": "31",
-      "name": "MegaFooter",
+      "name": "Li",
+      "i": "35",
       "w": 3,
       "h": 4,
       "x": 9,
-      "y": 20,
+      "y": 12,
       "moved": false,
       "static": false
     },
     {
-      "i": "32",
-      "name": "GA",
+      "name": "Pre",
+      "i": "36",
       "w": 3,
       "h": 4,
       "x": 0,
@@ -1029,8 +1159,8 @@
       "static": false
     },
     {
-      "i": "33",
-      "name": "LongText",
+      "name": "ButtonReset",
+      "i": "37",
       "w": 3,
       "h": 4,
       "x": 3,
@@ -1039,28 +1169,24 @@
       "static": false
     },
     {
-      "i": "34",
-      "name": "Code",
+      "name": "Table",
+      "i": "38",
       "w": 3,
       "h": 4,
       "x": 6,
-      "y": 8
+      "y": 8,
+      "moved": false,
+      "static": false
     },
     {
-      "i": "35",
-      "name": "Li",
+      "name": "Th",
+      "i": "39",
       "w": 3,
       "h": 4,
       "x": 9,
-      "y": 12
-    },
-    {
-      "i": "36",
-      "name": "Pre",
-      "w": 3,
-      "h": 4,
-      "x": 0,
-      "y": 0
+      "y": 16,
+      "moved": false,
+      "static": false
     }
   ]
 }

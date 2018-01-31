@@ -15,6 +15,7 @@ import Nav from './Nav'
 import Flex from './Flex'
 import Debug from './Debug'
 import Layout from './Layout'
+import Docgen from './Docgen'
 import LiveEditor from './LiveEditor'
 import StyledSystem from './StyledSystem'
 
@@ -28,6 +29,7 @@ const defaultScope = {
   Nav,
   Debug,
   Layout,
+  Docgen,
   LiveEditor,
   StyledSystem
 }

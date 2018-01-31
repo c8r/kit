@@ -31,7 +31,8 @@
     "magenta": "#ff349d",
     "muted": "rgba(0, 0, 0, 0.5)",
     "gray": "#f6f6f6",
-    "midgray": "#555"
+    "midgray": "#555",
+    "gray2": "#f3f3f3"
   },
   "lineHeight": "1.5",
   "textColor": "black"

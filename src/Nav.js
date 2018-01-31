@@ -27,10 +27,13 @@ export default ({ navGroups = [] }) =>
           </Box>
 
           {routes.map(route =>
-            <Box pb={1} pl={2}>
+            <Box
+              pb={1}
+              pl={2}
+              key={route.name}
+            >
               <Link
                 color='midgray'
-                key={route.name}
                 href={route.route}
                 children={titleize(route.name)}
               />
