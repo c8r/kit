@@ -108,6 +108,11 @@ class Editor extends Component {
   }
 }
 
+Editor.defaultProps = {
+  theme: {},
+  scope: {}
+}
+
 Editor.propTypes = {
   /**
    * JSX code to be embedded in the editor and rendered

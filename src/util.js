@@ -7,6 +7,12 @@ const toSrcPath = (docsDir, path) =>
     .replace(docsDir, 'src')
     .replace('components/', '')
 
+const displayObj = obj =>
+  Object
+    .keys(obj)
+    .map(k => `${k}=${obj[k]}`)
+    .join(',')
+
 // Adapted from: https://github.com/sindresorhus/titleize/blob/master/index.js
 const titleize = str => str
   .replace(/(?:^|\s|-)\S/g, m => m.toUpperCase())
@@ -25,5 +31,6 @@ export {
   isIndex,
   titleize,
   toSrcPath,
+  displayObj,
   extendDefaultProps
 }

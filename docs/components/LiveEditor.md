@@ -1,5 +1,5 @@
 # Live Editor
 
-```.jsx
-<Debug>{props}</Debug>
+```!jsx
+<Docgen {...props.styleguide.components.LiveEditor.info} />
 ```
