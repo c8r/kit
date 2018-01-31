@@ -14,6 +14,13 @@ import {
   Link
 } from '../library'
 
+import { extendDefaultProps as ext } from './util'
+
+ext(Title, { my: 3 })
+ext(Heading, { mt: 4, mb: 3 })
+ext(Subhead, { mt: 4, mb: 3 })
+ext(LongText, { mt: 0, mb: 3 })
+
 const Example = props =>
   <Styleguide
     Components={{

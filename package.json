@@ -31,7 +31,7 @@
   "license": "MIT",
   "dependencies": {
     "@compositor/globb": "^0.1.7",
-    "@compositor/markdown": "0.0.20",
+    "@compositor/markdown": "0.0.21",
     "@compositor/x0": "^3.1.1",
     "chalk": "^2.3.0",
     "dot-prop": "^4.2.0",

@@ -10,8 +10,13 @@ const titleize = str => str
   .replace(/(?:^|\s|-)\S/g, m => m.toUpperCase())
   .replace(/(-|_)/g, ' ')
 
+const extendDefaultProps = (Component, props) => {
+  Component.defaultProps = Object.assign({}, Component.defaultProps || {}, props)
+}
+
 export {
   log,
   titleize,
-  toSrcPath
+  toSrcPath,
+  extendDefaultProps
 }

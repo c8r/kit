@@ -1,4 +1,4 @@
-# StyledSystem
+# Styled System
 
 If your component uses [`styled-system`](https://github.com/jxnblk/styled-system), you can use the `StyledSystem` component to document the functions that are exposed.
 The `styled-system` functions are extracted with [`styled-parser`](https://github.com/jxnblk/styled-parser).
