@@ -121,7 +121,7 @@ Editor.propTypes = {
   /**
    * Theme config object that is used in ThemeProvider transform
    */
-  theme: PropTypes.object.isRequired,
+  theme: PropTypes.object,
   /**
    * Components available to the editor
    */
