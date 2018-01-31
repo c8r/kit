@@ -15,12 +15,6 @@ import Flex from './Flex'
 import Style from './Style'
 import { ButtonReset } from '../library'
 
-const transform = (theme, code, options = {}) => ([
-  options.xray ? '<XRay>' : '',
-  `<ThemeProvider theme={${JSON.stringify(theme)}}>${code}</ThemeProvider>`,
-  options.xray ? '</XRay>' : ''
-].join(' '))
-
 export default class Editor extends Component {
   constructor (props) {
     super()
@@ -56,6 +50,12 @@ export default class Editor extends Component {
     this.setState({ [attr]: !this.state[attr] })
   }
 
+  transform = code => ([
+    this.state.xray ? '<XRay>' : '',
+    `<ThemeProvider theme={${JSON.stringify(this.props.theme)}}>${code}</ThemeProvider>`,
+    this.state.xray ? '</XRay>' : ''
+  ].join(' '))
+
   render () {
     const {
       rawCode,
@@ -67,16 +67,18 @@ export default class Editor extends Component {
 
     return (
       <Box my={4}>
-        {options.xray && (
-          <ButtonReset onClick={() => this.toggle('xray')}>
-            <img src='https://icon.now.sh/grid' alt='Toggle X Ray' />
-          </ButtonReset>
-        )}
+        <Flex>
+          {options.xray && (
+            <ButtonReset onClick={() => this.toggle('xray')}>
+              <img src='https://icon.now.sh/grid' alt='Toggle X Ray' />
+            </ButtonReset>
+          )}
+        </Flex>
 
         <LiveProvider
           scope={fullScope}
           code={rawCode}
-          transformCode={newCode => transform(fullScope.theme, newCode, this.state)}
+          transformCode={newCode => this.transform(newCode)}
         >
           <Box>
             <LivePreview />
