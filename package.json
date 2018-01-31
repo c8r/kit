@@ -35,6 +35,7 @@
     "@compositor/x0": "^3.1.1",
     "chalk": "^2.3.0",
     "dot-prop": "^4.2.0",
+    "gray-matter": "^3.1.1",
     "meow": "^4.0.0",
     "react-docgen": "^2.20.0",
     "react-router-dom": "^4.2.2",

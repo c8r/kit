@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { Component } from 'react'
 import XRay from 'react-x-ray'
+import matter from 'gray-matter'
 import { ThemeProvider } from 'styled-components'
 
 import {
@@ -12,50 +13,87 @@ import {
 import Box from './Box'
 import Flex from './Flex'
 import Style from './Style'
+import { ButtonReset } from '../library'
 
-const transform = (theme, code) => `
-  <ThemeProvider theme={${JSON.stringify(theme)}}>
-    ${code}
-  </ThemeProvider>
-`
+const transform = (theme, code, options = {}) => ([
+  options.xray ? '<XRay>' : '',
+  `<ThemeProvider theme={${JSON.stringify(theme)}}>${code}</ThemeProvider>`,
+  options.xray ? '</XRay>' : ''
+].join(' '))
 
-export default ({
-  code,
-  theme,
-  components,
-  Component,
-  ...props
-}) =>
-  <Box my={4}>
-    <LiveProvider
-      scope={Object.assign({ ThemeProvider, XRay, props }, components)}
-      code={code}
-      transformCode={newCode => transform(theme, newCode)}
-    >
-      <Flex
-        wrap
-        align='center'
-        flexDirection={['column', 'row', 'row']}
-      >
-        <Box p={4} borderWidth={1} borderColor='lightgray'>
-          <LivePreview />
-          <LiveEditor
-            style={{
-              width: '100%',
-              padding: '32px'
-            }}
-          />
-          <Box w={1}>
-            <LiveError
-              style={{
-                backgroundColor: 'red',
-                color: 'white',
-                padding: '.5rem',
-                height: 'auto'
-              }}
-            />
+export default class Editor extends Component {
+  constructor (props) {
+    super()
+
+    const {
+      code,
+      theme,
+      components,
+      scope
+    } = props
+
+    const { content, data = {} } = matter(code)
+
+    const defaultScope = {
+      ThemeProvider,
+      XRay,
+      props,
+      theme
+    }
+
+    const fullScope = Object.assign(defaultScope, components, scope)
+
+    this.state = {
+      fullScope,
+      rawCode: content,
+      options: data,
+      xray: false,
+      viewport: data.viewport
+    }
+  }
+
+  toggle = attr => {
+    this.setState({ [attr]: !this.state[attr] })
+  }
+
+  render () {
+    const {
+      rawCode,
+      options,
+      fullScope,
+      xray,
+      viewport
+    } = this.state
+
+    return (
+      <Box my={4}>
+        {options.xray && (
+          <ButtonReset onClick={() => this.toggle('xray')}>
+            <img src='https://icon.now.sh/grid' alt='Toggle X Ray' />
+          </ButtonReset>
+        )}
+
+        <LiveProvider
+          scope={fullScope}
+          code={rawCode}
+          transformCode={newCode => transform(fullScope.theme, newCode, this.state)}
+        >
+          <Box>
+            <LivePreview />
+            <LiveEditor />
+            <Box w={1}>
+              <LiveError
+                style={{
+                  backgroundColor: 'red',
+                  color: 'white',
+                  padding: '.5rem',
+                  height: 'auto'
+                }}
+              />
+            </Box>
           </Box>
-        </Box>
-      </Flex>
-    </LiveProvider>
-  </Box>
+        </LiveProvider>
+      </Box>
+    )
+  }
+}

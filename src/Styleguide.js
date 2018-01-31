@@ -54,6 +54,7 @@ const Styleguide = ({
               return (
                 <Markdown
                   components={Components}
+                  LiveEditor={LiveEditor}
                   scope={scope}
                   text={intro.content}
                   {...routeProps}
@@ -73,6 +74,7 @@ const Styleguide = ({
                 render={props =>
                   <Markdown
                     components={Components}
+                    LiveEditor={LiveEditor}
                     scope={scope}
                     text={component.content}
                     {...props}
