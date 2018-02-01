@@ -38,6 +38,8 @@ class Editor extends Component {
 
     const fullScope = Object.assign(defaultScope, components, scope)
 
+
+    console.log(fullScope)
     this.state = {
       fullScope,
       rawCode: content,

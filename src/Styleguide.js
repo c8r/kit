@@ -17,6 +17,7 @@ import Debug from './Debug'
 import Layout from './Layout'
 import Docgen from './Docgen'
 import LiveEditor from './LiveEditor'
+import ColorPalette from './ColorPalette'
 import StyledSystem from './StyledSystem'
 
 import { layoutCss } from './constants'
@@ -31,6 +32,7 @@ const defaultScope = {
   Layout,
   Docgen,
   LiveEditor,
+  ColorPalette,
   StyledSystem
 }
 

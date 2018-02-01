@@ -44,22 +44,24 @@ export default ({
       </Tbody>
     </Table>
 
-    <Table mt={4}>
-      <Thead>
-        <Tr>
-          <Th>Functions</Th>
-          <Th>Params</Th>
-          <Th w={2/3}>Description</Th>
-        </Tr>
-      </Thead>
-      <Tbody>
-        {methods.map(method =>
-          <Tr key={method.name}>
-            <Td><Code>{method.name}</Code></Td>
-            <Td><Code>{method.params.map(p => p.name).join(', ')}</Code></Td>
-            <Td>{method.docblock || 'No description provided'}</Td>
+    {methods.length ? (
+      <Table mt={4}>
+        <Thead>
+          <Tr>
+            <Th>Functions</Th>
+            <Th>Params</Th>
+            <Th w={2/3}>Description</Th>
           </Tr>
-        )}
-      </Tbody>
-    </Table>
+        </Thead>
+        <Tbody>
+          {methods.map(method =>
+            <Tr key={method.name}>
+              <Td><Code>{method.name}</Code></Td>
+              <Td><Code>{method.params.map(p => p.name).join(', ')}</Code></Td>
+              <Td>{method.docblock || 'No description provided'}</Td>
+            </Tr>
+          )}
+        </Tbody>
+      </Table>
+    ) : null}
   </Box>
