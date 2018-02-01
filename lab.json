@@ -789,8 +789,8 @@
   ],
   "layout": [
     {
-      "name": "Title",
       "i": "0",
+      "name": "Title",
       "w": 3,
       "h": 4,
       "x": 0,
@@ -799,8 +799,8 @@
       "static": false
     },
     {
-      "name": "Heading",
       "i": "1",
+      "name": "Heading",
       "w": 3,
       "h": 4,
       "x": 3,
@@ -809,8 +809,8 @@
       "static": false
     },
     {
-      "name": "Subhead",
       "i": "2",
+      "name": "Subhead",
       "w": 3,
       "h": 4,
       "x": 6,
@@ -819,8 +819,8 @@
       "static": false
     },
     {
-      "name": "Text",
       "i": "3",
+      "name": "Text",
       "w": 3,
       "h": 4,
       "x": 9,
@@ -829,8 +829,8 @@
       "static": false
     },
     {
-      "name": "Caps",
       "i": "4",
+      "name": "Caps",
       "w": 3,
       "h": 4,
       "x": 0,
@@ -839,8 +839,8 @@
       "static": false
     },
     {
-      "name": "Small",
       "i": "5",
+      "name": "Small",
       "w": 3,
       "h": 4,
       "x": 3,
@@ -849,8 +849,8 @@
       "static": false
     },
     {
-      "name": "FormButton",
       "i": "6",
+      "name": "FormButton",
       "w": 3,
       "h": 4,
       "x": 6,
@@ -859,8 +859,8 @@
       "static": false
     },
     {
-      "name": "Button",
       "i": "7",
+      "name": "Button",
       "w": 3,
       "h": 4,
       "x": 9,
@@ -869,8 +869,8 @@
       "static": false
     },
     {
-      "name": "ButtonOutline",
       "i": "8",
+      "name": "ButtonOutline",
       "w": 3,
       "h": 4,
       "x": 0,
@@ -879,8 +879,8 @@
       "static": false
     },
     {
-      "name": "BigButton",
       "i": "9",
+      "name": "BigButton",
       "w": 3,
       "h": 4,
       "x": 3,
@@ -889,8 +889,8 @@
       "static": false
     },
     {
-      "name": "Image",
       "i": "10",
+      "name": "Image",
       "w": 3,
       "h": 4,
       "x": 6,
@@ -899,8 +899,8 @@
       "static": false
     },
     {
-      "name": "Link",
       "i": "11",
+      "name": "Link",
       "w": 3,
       "h": 4,
       "x": 9,
@@ -909,8 +909,8 @@
       "static": false
     },
     {
-      "name": "NavLink",
       "i": "12",
+      "name": "NavLink",
       "w": 3,
       "h": 4,
       "x": 0,
@@ -919,8 +919,8 @@
       "static": false
     },
     {
-      "name": "Divider",
       "i": "13",
+      "name": "Divider",
       "w": 3,
       "h": 4,
       "x": 3,
@@ -929,8 +929,8 @@
       "static": false
     },
     {
-      "name": "Input",
       "i": "14",
+      "name": "Input",
       "w": 3,
       "h": 4,
       "x": 6,
@@ -939,8 +939,8 @@
       "static": false
     },
     {
-      "name": "Label",
       "i": "15",
+      "name": "Label",
       "w": 3,
       "h": 4,
       "x": 9,
@@ -949,8 +949,8 @@
       "static": false
     },
     {
-      "name": "ImageRounded",
       "i": "16",
+      "name": "ImageRounded",
       "w": 3,
       "h": 4,
       "x": 0,
@@ -959,8 +959,8 @@
       "static": false
     },
     {
-      "name": "Avatar",
       "i": "17",
+      "name": "Avatar",
       "w": 3,
       "h": 4,
       "x": 3,
@@ -969,8 +969,8 @@
       "static": false
     },
     {
-      "name": "Dit",
       "i": "18",
+      "name": "Dit",
       "w": 3,
       "h": 4,
       "x": 6,
@@ -979,8 +979,8 @@
       "static": false
     },
     {
-      "name": "Logo",
       "i": "19",
+      "name": "Logo",
       "w": 3,
       "h": 4,
       "x": 9,
@@ -989,8 +989,8 @@
       "static": false
     },
     {
-      "name": "Container",
       "i": "20",
+      "name": "Container",
       "w": 3,
       "h": 4,
       "x": 0,
@@ -999,8 +999,8 @@
       "static": false
     },
     {
-      "name": "Measure",
       "i": "21",
+      "name": "Measure",
       "w": 3,
       "h": 4,
       "x": 3,
@@ -1009,8 +1009,8 @@
       "static": false
     },
     {
-      "name": "Box",
       "i": "22",
+      "name": "Box",
       "w": 3,
       "h": 4,
       "x": 6,
@@ -1019,8 +1019,8 @@
       "static": false
     },
     {
-      "name": "Flex",
       "i": "23",
+      "name": "Flex",
       "w": 3,
       "h": 4,
       "x": 9,
@@ -1029,8 +1029,8 @@
       "static": false
     },
     {
-      "name": "NavBar",
       "i": "24",
+      "name": "NavBar",
       "w": 3,
       "h": 4,
       "x": 0,
@@ -1039,8 +1039,8 @@
       "static": false
     },
     {
-      "name": "HeroLeft",
       "i": "25",
+      "name": "HeroLeft",
       "w": 3,
       "h": 4,
       "x": 3,
@@ -1049,8 +1049,8 @@
       "static": false
     },
     {
-      "name": "ProductLockUp",
       "i": "26",
+      "name": "ProductLockUp",
       "w": 3,
       "h": 4,
       "x": 6,
@@ -1059,8 +1059,8 @@
       "static": false
     },
     {
-      "name": "SectionLeft",
       "i": "27",
+      "name": "SectionLeft",
       "w": 3,
       "h": 4,
       "x": 9,
@@ -1069,8 +1069,8 @@
       "static": false
     },
     {
-      "name": "SectionRight",
       "i": "28",
+      "name": "SectionRight",
       "w": 3,
       "h": 4,
       "x": 0,
@@ -1079,8 +1079,8 @@
       "static": false
     },
     {
-      "name": "LogoBlack",
       "i": "29",
+      "name": "LogoBlack",
       "w": 3,
       "h": 4,
       "x": 3,
@@ -1089,8 +1089,8 @@
       "static": false
     },
     {
-      "name": "InputDark",
       "i": "30",
+      "name": "InputDark",
       "w": 3,
       "h": 4,
       "x": 6,
@@ -1099,8 +1099,8 @@
       "static": false
     },
     {
-      "name": "MegaFooter",
       "i": "31",
+      "name": "MegaFooter",
       "w": 3,
       "h": 4,
       "x": 9,
@@ -1109,8 +1109,8 @@
       "static": false
     },
     {
-      "name": "GA",
       "i": "32",
+      "name": "GA",
       "w": 3,
       "h": 4,
       "x": 0,
@@ -1119,8 +1119,8 @@
       "static": false
     },
     {
-      "name": "LongText",
       "i": "33",
+      "name": "LongText",
       "w": 3,
       "h": 4,
       "x": 3,
@@ -1129,8 +1129,8 @@
       "static": false
     },
     {
-      "name": "Code",
       "i": "34",
+      "name": "Code",
       "w": 3,
       "h": 4,
       "x": 6,
@@ -1139,8 +1139,8 @@
       "static": false
     },
     {
-      "name": "Li",
       "i": "35",
+      "name": "Li",
       "w": 3,
       "h": 4,
       "x": 9,
@@ -1149,8 +1149,8 @@
       "static": false
     },
     {
-      "name": "Pre",
       "i": "36",
+      "name": "Pre",
       "w": 3,
       "h": 4,
       "x": 0,
@@ -1159,8 +1159,8 @@
       "static": false
     },
     {
-      "name": "ButtonReset",
       "i": "37",
+      "name": "ButtonReset",
       "w": 3,
       "h": 4,
       "x": 3,
@@ -1169,8 +1169,8 @@
       "static": false
     },
     {
-      "name": "Table",
       "i": "38",
+      "name": "Table",
       "w": 3,
       "h": 4,
       "x": 6,
@@ -1179,14 +1179,46 @@
       "static": false
     },
     {
-      "name": "Th",
       "i": "39",
+      "name": "Th",
       "w": 3,
       "h": 4,
       "x": 9,
       "y": 16,
       "moved": false,
       "static": false
+    },
+    {
+      "i": "40",
+      "name": "Td",
+      "w": 3,
+      "h": 4,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "i": "41",
+      "name": "Thead",
+      "w": 3,
+      "h": 4,
+      "x": 3,
+      "y": 4
+    },
+    {
+      "i": "42",
+      "name": "Tbody",
+      "w": 3,
+      "h": 4,
+      "x": 6,
+      "y": 8
+    },
+    {
+      "i": "43",
+      "name": "Tr",
+      "w": 3,
+      "h": 4,
+      "x": 9,
+      "y": 12
     }
   ]
 }
