@@ -3,6 +3,12 @@
 The `ColorPalette` component automatically documents the colors in your theme.
 You can optionally display all accessible color combinations as well.
 
+## Details
+
+```!jsx
+<Docgen {...props.styleguide.components.ColorPalette.info} />
+```
+
 ```.jsx
 ---
 xray: true
@@ -11,12 +17,6 @@ xray: true
   colors={theme.colors}
   colorable={true}
 />
-```
-
-## Details
-
-```!jsx
-<Docgen {...props.styleguide.components.ColorPalette.info} />
 ```
 
 ## Related
