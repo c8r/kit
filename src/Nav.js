@@ -29,7 +29,6 @@ export default ({ navGroups = [] }) =>
           {routes.map(route =>
             <Box
               pb={1}
-              pl={2}
               key={route.name}
             >
               <Link
