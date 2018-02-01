@@ -48,7 +48,6 @@ It supports the Markdown spec, but also contains a few additional syntactic nice
 
 Since this is intended to be a living styleguide for components, `.jsx` code blocks have additional features.
 If the code block language is specified as `.jsx` it will be rendered in React.
-
 `.jsx` code blocks can be configured using frontmatter:
 
 ```
@@ -57,6 +56,8 @@ editor: true
 ---
 <h1>Hello, world!</h1>
 ```
+
+The following options are available, and we'll be adding more all the time:
 
 | Option | Default | Description |
 | ------ | ------- | ----------- |

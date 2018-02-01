@@ -34,6 +34,7 @@ ext(Subhead, { mt: 4, mb: 3 })
 ext(LongText, { mt: 0, mb: 3 })
 ext(Code, { f: 1 })
 ext(Pre, { f: 1 })
+ext(Table, { mb: 3 })
 
 const Example = props =>
   <Styleguide
