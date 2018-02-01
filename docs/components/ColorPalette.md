@@ -7,7 +7,10 @@ You can optionally display all accessible color combinations as well.
 ---
 xray: true
 ---
-<ColorPalette colors={theme.colors} />
+<ColorPalette
+  colors={theme.colors}
+  colorable={true}
+/>
 ```
 
 ## Details

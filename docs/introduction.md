@@ -35,9 +35,9 @@ Styleguide uses [`x0`](https://github.com/c8r/x0) programmatically to bundle the
 The Styleguide component can be used without the preprocessing layer if desired.
 This component constructs the routes (via [`react-router`](https://github.com/ReactTraining/react-router)) and provides all desired components and props via the `StyleguideProvider`.
 
-### Routing
-
-### Styleguide Provider
+```!jsx
+<Docgen {...props.styleguide.components.Styleguide.info} />
+```
 
 ### Markdown
 
@@ -65,6 +65,10 @@ The following options are available, and we'll be adding more all the time:
 | `xray` | `false` | Add [`react-x-ray`](https://github.com/jxnblk/react-x-ray) toggle |
 
 Check out the project's [readme](https://github.com/c8r/markdown) for more a more in depth explainer.
+
+### Styleguide Provider
+
+### Routing
 
 ### JSX
 

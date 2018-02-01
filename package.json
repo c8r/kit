@@ -15,6 +15,7 @@
     "build": "npm run babel && npm run comp",
     "comp": "lab --pkg -d library",
     "prepublish": "npm run build",
+    "prestart": "npm run build",
     "pretest": "npm run build",
     "start": "x0 dev src",
     "test": "ava -v"
@@ -34,6 +35,7 @@
     "@compositor/markdown": "0.0.21",
     "@compositor/x0": "^3.1.1",
     "chalk": "^2.3.0",
+    "colorable": "^1.0.5",
     "dot-prop": "^4.2.0",
     "gray-matter": "^3.1.1",
     "meow": "^4.0.0",
