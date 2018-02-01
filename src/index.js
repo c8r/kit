@@ -12,10 +12,18 @@ import {
   Heading,
   Subhead,
   LongText,
+  Table,
+  Thead,
+  Tbody,
+  Tr,
+  Th,
+  Td,
   Link,
   Code,
   Pre,
-  Li
+  Li,
+  Ul,
+  Ol
 } from '../library'
 
 import { extendDefaultProps as ext } from './util'
@@ -38,6 +46,14 @@ const Example = props =>
       code: Code,
       pre: Pre,
       li: Li,
+      ul: Ul,
+      ol: Ol,
+      table: Table,
+      thead: Thead,
+      tbody: Tbody,
+      tr: Tr,
+      th: Th,
+      td: Td,
       theme
     }}
     scope={{ props }}
@@ -50,7 +66,10 @@ Example.getInitialProps = async props => {
     DEBUG: process.env.DEBUG,
   }
 
-  return Object.assign({}, props, env, { styleguide: metadata })
+  return Object.assign({}, props, env, {
+    toc: true,
+    styleguide: metadata
+  })
 }
 
 export default Example

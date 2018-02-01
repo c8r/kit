@@ -639,7 +639,9 @@
     {
       "name": "Li",
       "type": "li",
-      "props": {},
+      "props": {
+        "ml": 1
+      },
       "style": {
         "lineHeight": "1.6"
       },
@@ -785,6 +787,38 @@
       "examples": [
         "<Tr>Hello</Tr>"
       ]
+    },
+    {
+      "name": "Ul",
+      "type": "ul",
+      "props": {
+        "pl": 3
+      },
+      "style": {
+        "> li > p": {
+          "margin": 0
+        }
+      },
+      "examples": [
+        "<Ul>Hello</Ul>"
+      ],
+      "system": []
+    },
+    {
+      "name": "Ol",
+      "type": "ol",
+      "props": {
+        "pl": 3
+      },
+      "style": {
+        "> li > p": {
+          "margin": 0
+        }
+      },
+      "examples": [
+        "<Ol>Hello</Ol>"
+      ],
+      "system": []
     }
   ],
   "layout": [

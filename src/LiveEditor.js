@@ -20,6 +20,8 @@ class Editor extends Component {
   constructor (props) {
     super()
 
+    console.log(props)
+
     const {
       code,
       theme,
@@ -38,8 +40,6 @@ class Editor extends Component {
 
     const fullScope = Object.assign(defaultScope, components, scope)
 
-
-    console.log(fullScope)
     this.state = {
       fullScope,
       rawCode: content,
