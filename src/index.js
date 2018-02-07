@@ -1,13 +1,13 @@
 import React from 'react'
 import getMetadata from './metadata'
 
-import theme from '../theme.json'
 import Box from './Box'
 import Flex from './Flex'
 import Debug from './Debug'
 import Styleguide from './Styleguide'
 
 import {
+  theme,
   Title,
   Heading,
   Subhead,
