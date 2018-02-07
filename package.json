@@ -8,7 +8,8 @@
     "styleguide": "dist/cli.js"
   },
   "files": [
-    "dist"
+    "dist",
+    "library"
   ],
   "scripts": {
     "babel": "babel src -d dist",
