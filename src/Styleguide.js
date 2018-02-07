@@ -9,11 +9,11 @@ import {
 } from 'react-router-dom'
 
 import { ThemeProvider } from 'styled-components'
-import { Markdown } from '@compositor/markdown'
 
 import Box from './Box'
 import Nav from './Nav'
 import Flex from './Flex'
+import Page from './Page'
 import Debug from './Debug'
 import Layout from './Layout'
 import Docgen from './Docgen'
@@ -57,7 +57,8 @@ const Styleguide = ({
               const intro = props.styleguide.components.introduction
 
               return (
-                <Markdown
+                <Page
+                  Component={intro.Content}
                   components={Components}
                   LiveEditor={LiveEditor}
                   text={intro.content}
@@ -77,7 +78,8 @@ const Styleguide = ({
                 key={component.name}
                 path={component.route}
                 render={routeProps =>
-                  <Markdown
+                  <Page
+                    Component={component.Content}
                     components={Components}
                     LiveEditor={LiveEditor}
                     text={component.content}

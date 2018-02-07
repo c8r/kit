@@ -62,8 +62,13 @@ export default async ({
         log(`  react-docgen couldn't parse ${file}`)
       }
 
+      const Content = parsedPath.extName === '.js'
+        ? require(file)
+        : null
+
       return {
         name: parsedPath.name,
+        Content,
         file,
         content,
         srcPath,
