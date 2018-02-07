@@ -31,6 +31,10 @@ export default async ({
       const name = parsedPath.name
       const route = path.join(parsedPath.dir, name).replace(dir, '')
 
+      const Content = parsedPath.ext === '.js'
+        ? require(file).default
+        : null
+
       const srcPath = toSrcPath(dir, file)
 
       let src = null
@@ -41,6 +45,7 @@ export default async ({
         return {
           name,
           content,
+          Content,
           file,
           parsedPath,
           route,
@@ -61,10 +66,6 @@ export default async ({
       } catch (e) {
         log(`  react-docgen couldn't parse ${file}`)
       }
-
-      const Content = parsedPath.ext === '.js'
-        ? require(file)
-        : null
 
       return {
         name: parsedPath.name,
