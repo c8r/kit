@@ -28,6 +28,11 @@ import {
 
 import { extendDefaultProps as ext } from './util'
 
+export {
+  Styleguide,
+  getMetadata as metadata
+}
+
 ext(Title, { my: 3 })
 ext(Heading, { mt: 4, mb: 3 })
 ext(Subhead, { mt: 4, mb: 3 })
