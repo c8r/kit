@@ -5,10 +5,8 @@ import Flex from './Flex'
 import Style from './Style'
 
 import {
-  NavBar,
-  MegaFooter,
-  Link,
-  Caps
+  Logo,
+  NavLink
 } from '../library'
 
 import {
@@ -21,7 +19,8 @@ export default ({
   theme,
   styleguide,
   logoUrl,
-  navLinkColor,
+  navLinkColor = 'midgray',
+  Nav,
   title
 }) =>
   <Flex
@@ -34,14 +33,22 @@ export default ({
     <title>{title || 'Styleguide'}</title>
     <Style>{layoutCss(theme)}</Style>
     <Box w={1}>
-      <NavBar
-        navLinkColor={navLinkColor}
-        logoUrl={logoUrl}
-        title={title}
-      />
-
       <Flex>
-        <Nav navGroups={styleguide.nav} />
+        <Box
+          w={[0, 200, 250]}
+          flex='none'
+          p={4}
+        >
+          <Box align='center' w={1} pb={4}>
+            <NavLink w={1} borderBottom href='/'>
+              <Logo m='auto' src={logoUrl} />
+            </NavLink>
+          </Box>
+          <Nav
+            navGroups={styleguide.nav}
+            navLinkColor={navLinkColor}
+          />
+        </Box>
         <Box flex='1 1 auto'>{children}</Box>
       </Flex>
     </Box>

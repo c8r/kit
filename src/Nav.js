@@ -4,19 +4,17 @@ import Box from './Box'
 import { ROOT_LEVEL_FILE } from './constants'
 import { titleize } from './util'
 import {
-  Link
+  Link,
+  NavLink,
+  Logo
 } from '../library'
 
 
 export default ({
   navGroups = [],
-  navLinkColor = 'midgray'
+  navLinkColor
 }) =>
-  <Box
-    w={[0, 200, 250]}
-    flex='none'
-    p={3}
-  >
+  <div>
     {Object.keys(navGroups).map(group => {
       if (group === ROOT_LEVEL_FILE) return null
 
@@ -60,4 +58,4 @@ export default ({
         </Box>
       )
     })}
-  </Box>
+  </div>
