@@ -8,7 +8,10 @@ import {
 } from '../library'
 
 
-export default ({ navGroups = [] }) =>
+export default ({
+  navGroups = [],
+  navLinkColor = 'midgray'
+}) =>
   <Box
     w={[0, 200, 250]}
     flex='none'
@@ -32,7 +35,7 @@ export default ({ navGroups = [] }) =>
               key={route.name}
             >
               <Link
-                color='midgray'
+                color={navLinkColor}
                 href={route.route}
                 children={titleize(route.name)}
               />

@@ -20,8 +20,8 @@ export default ({
   children,
   theme,
   styleguide,
-  Nav,
   logoUrl,
+  navLinkColor,
   title
 }) =>
   <Flex
@@ -31,16 +31,14 @@ export default ({
       minHeight: '100vh'
     }}
   >
+    <title>{title || 'Styleguide'}</title>
     <Style>{layoutCss(theme)}</Style>
     <Box w={1}>
-      <NavBar logoUrl={logoUrl} title={title}>
-        <Link
-          color='black'
-          href='https://github.com/c8r/styleguide'
-        >
-          <Caps>Github</Caps>
-        </Link>
-      </NavBar>
+      <NavBar
+        navLinkColor={navLinkColor}
+        logoUrl={logoUrl}
+        title={title}
+      />
 
       <Flex>
         <Nav navGroups={styleguide.nav} />

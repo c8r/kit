@@ -250,8 +250,6 @@
       "style": {
         "webkitTextDecoration": "none",
         "textDecoration": "none",
-        "webkitTextTransform": "uppercase",
-        "textTransform": "uppercase",
         "letterSpacing": "0.1875em",
         "lineHeight": "1",
         "display": "inline-flex",
