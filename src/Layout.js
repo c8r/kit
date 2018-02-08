@@ -49,7 +49,11 @@ export default ({
             navLinkColor={navLinkColor}
           />
         </Box>
-        <Box flex='1 1 auto'>{children}</Box>
+        <Box
+          flex='1 1 auto'
+          pt={4}
+          children={children}
+        />
       </Flex>
     </Box>
     <Style>{editorCss}</Style>
