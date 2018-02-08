@@ -51,7 +51,7 @@ export default ({
         </Box>
         <Box
           flex='1 1 auto'
-          pt={4}
+          pt={3}
           children={children}
         />
       </Flex>
