@@ -466,7 +466,7 @@
         "Logo",
         "NavLink"
       ],
-      "jsx": "<header>\n  <Flex\n    align=\"center\"\n    wrap\n    px={3}\n    py={3}>\n    <NavLink ml={-2} href='/'>\n      <Logo src={props.logoUrl} />\n      {props.title || 'Compositor'}\n    </NavLink>\n    <Box mx=\"auto\" />\n    {props.children}\n  </Flex>\n</header>",
+      "jsx": "<header>\n  <Flex\n    align=\"center\"\n    wrap\n    px={3}\n    py={3}>\n    <NavLink ml={-2} href='/'>\n      <Logo mx={2} src={props.logoUrl} />\n      {props.title || 'Compositor'}\n    </NavLink>\n    <Box mx=\"auto\" />\n    {props.children}\n  </Flex>\n</header>",
       "examples": [
         "<NavBar>\n  <a>\n    Features\n  </a>\n</NavBar>"
       ],
