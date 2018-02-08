@@ -16,7 +16,14 @@ import {
   editorCss
 } from './constants'
 
-export default ({ children, theme, styleguide, Nav }) =>
+export default ({
+  children,
+  theme,
+  styleguide,
+  Nav,
+  logoUrl,
+  title
+}) =>
   <Flex
     wrap
     flex='column'
@@ -26,7 +33,7 @@ export default ({ children, theme, styleguide, Nav }) =>
   >
     <Style>{layoutCss(theme)}</Style>
     <Box w={1}>
-      <NavBar>
+      <NavBar logoUrl={logoUrl} companyName={title}>
         <Link
           color='black'
           href='https://github.com/c8r/styleguide'

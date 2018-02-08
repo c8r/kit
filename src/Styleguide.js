@@ -39,12 +39,13 @@ const defaultScope = {
 
 const Styleguide = ({
   Components,
+  theme,
   ...props
 }) => {
   const scope = Object.assign({}, defaultScope, Components, { props })
 
   return (
-    <ThemeProvider theme={scope.theme}>
+    <ThemeProvider theme={theme || scope.theme}>
       <Router
         basename={props.basename}
         location={props.pathname || '/'}
