@@ -33,7 +33,7 @@ export default ({
   >
     <Style>{layoutCss(theme)}</Style>
     <Box w={1}>
-      <NavBar logoUrl={logoUrl} companyName={title}>
+      <NavBar logoUrl={logoUrl} title={title}>
         <Link
           color='black'
           href='https://github.com/c8r/styleguide'
@@ -48,7 +48,4 @@ export default ({
       </Flex>
     </Box>
     <Style>{editorCss}</Style>
-    <Box flex={1} alignSelf='flex-end' w={1}>
-      <MegaFooter />
-    </Box>
   </Flex>
