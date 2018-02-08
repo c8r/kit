@@ -2,7 +2,7 @@
   "name": "@compositor/styleguide",
   "description": "Generate a styleguide from Compositor Lab configs",
   "author": "John Otander",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "main": "dist/index.js",
   "bin": {
     "styleguide": "dist/cli.js"
