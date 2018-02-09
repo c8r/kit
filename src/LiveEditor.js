@@ -20,8 +20,6 @@ class Editor extends Component {
   constructor (props) {
     super()
 
-    console.log(props)
-
     const {
       code,
       theme,

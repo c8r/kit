@@ -33,11 +33,11 @@ const Styleguide = ({
               return (
                 <Page
                   Component={intro.Content}
-                  components={Components}
                   LiveEditor={LiveEditor}
                   text={intro.content}
                   {...routeProps}
                   {...props}
+                  components={scope}
                   scope={scope}
                 />
               )
@@ -55,11 +55,11 @@ const Styleguide = ({
                   <Page
                     componentName={name}
                     Component={component.Content}
-                    components={Components}
                     LiveEditor={LiveEditor}
                     text={component.content}
                     {...routeProps}
                     {...props}
+                    components={scope}
                     scope={scope}
                   />
                 }
