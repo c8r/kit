@@ -6,7 +6,7 @@ You can optionally display all accessible color combinations as well.
 ## Details
 
 ```!jsx
-<Docgen {...props.styleguide.components.ColorPalette.info} />
+<Docgen component='ColorPalette' />
 ```
 
 ```.jsx
