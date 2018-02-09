@@ -4,7 +4,8 @@ import PropTypes from 'prop-types'
 class StyleguideProvider extends Component {
   getChildContext () {
     return {
-      styleguide: this.props.styleguide
+      styleguide: this.props.styleguide,
+      componentName: this.props.componentName
     }
   }
 
@@ -14,7 +15,8 @@ class StyleguideProvider extends Component {
 }
 
 StyleguideProvider.childContextTypes = {
-  styleguide: PropTypes.object.isRequired
+  styleguide: PropTypes.object.isRequired,
+  componentName: PropTypes.string
 }
 
 export default StyleguideProvider

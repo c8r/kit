@@ -13,6 +13,7 @@ const Styleguide = ({
   ...props
 }) => {
   const scope = Object.assign({}, defaultComponents, Components, { props })
+  const LiveEditor = scope.LiveEditor
   const Layout = scope.Layout
   const Page = scope.Page
 

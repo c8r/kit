@@ -22,7 +22,7 @@ export default () =>
 ### Details
 
 ```!jsx
-<Docgen {...props.styleguide.components.LiveEditor.info} />
+<Docgen />
 ```
 
 ## Related
