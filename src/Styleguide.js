@@ -2,50 +2,22 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import path from 'path'
 
-import {
-  BrowserRouter,
-  StaticRouter,
-  Route
-} from 'react-router-dom'
-
+import { Route } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 
-import Box from './Box'
-import Nav from './Nav'
-import Flex from './Flex'
-import Page from './Page'
-import Debug from './Debug'
-import Layout from './Layout'
-import Docgen from './Docgen'
-import LiveEditor from './LiveEditor'
-import ColorPalette from './ColorPalette'
-import StyledSystem from './StyledSystem'
-
-import { layoutCss } from './constants'
-
-const Router = typeof document === 'undefined' ? StaticRouter : BrowserRouter
-
-const defaultScope = {
-  Box,
-  Flex,
-  Nav,
-  Debug,
-  Layout,
-  Docgen,
-  LiveEditor,
-  ColorPalette,
-  StyledSystem
-}
+import Router from './Router'
+import * as defaultComponents from './defaultComponents'
 
 const Styleguide = ({
   Components,
-  theme,
   ...props
 }) => {
-  const scope = Object.assign({}, defaultScope, Components, { props })
+  const scope = Object.assign({}, defaultComponents, Components, { props })
+  const Layout = scope.Layout
+  const Page = scope.Page
 
   return (
-    <ThemeProvider theme={theme || scope.theme}>
+    <ThemeProvider theme={scope.theme}>
       <Router
         basename={props.basename}
         location={props.pathname || '/'}
@@ -80,6 +52,7 @@ const Styleguide = ({
                 path={component.route}
                 render={routeProps =>
                   <Page
+                    componentName={name}
                     Component={component.Content}
                     components={Components}
                     LiveEditor={LiveEditor}
