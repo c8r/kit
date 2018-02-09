@@ -14,13 +14,16 @@ import {
 } from '../library'
 
 export default withStyleguide(({
-  component,
+  componentName,
   styleguide
 }) => {
+  const componentData = styleguide.components[componentName] || {}
+  if (!componentData.info) return null
+
   const {
     props = {},
     methods = []
-  } = styleguide.components[component].info
+  } = componentData.info
 
   return (
     <Box>

@@ -4,11 +4,14 @@ import { Markdown } from '@compositor/markdown'
 import StyleguideProvider from './StyleguideProvider'
 
 export default ({
+  styleguide,
+  componentName,
   Content,
   ...props
 }) =>
   <StyleguideProvider
-    styleguide={props.styleguide}
+    styleguide={styleguide}
+    componentName={componentName}
     children={Content
       ? <Content {...props} />
       : <Markdown {...props} />
