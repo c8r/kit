@@ -10,4 +10,4 @@ export { default as XRay } from './XRay'
 export { default as LiveEditor } from './LiveEditor'
 export { default as Knobs } from './Knobs'
 export { default as Responsive } from './Responsive'
-
+export { default as Debug } from './Debug'

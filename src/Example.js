@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import nano from 'nano-style'
 import {
   CHANNEL,
@@ -30,6 +31,11 @@ const Label = nano('div')({
 
 class Example extends React.Component {
   static contextTypes = contextTypes
+
+  static propTypes = {
+    name: PropTypes.string.isRequired
+  }
+
   render () {
     const { update } = this.context[CHANNEL]
     const { name, children } = this.props
