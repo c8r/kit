@@ -6,6 +6,7 @@ import {
   XRay,
   Frame,
   LiveEditor,
+  Responsive,
 } from '../src'
 
 const Demo = props => (
@@ -29,6 +30,20 @@ const Demo = props => (
         <LiveEditor
           code='<button>hello</button>'
         />
+      </Example>
+      <Example name='Responsive'>
+        <Responsive zoom={0.75}>
+          <div
+            style={{
+              fontSize: 32,
+              fontWeight: 'bold',
+              padding: 16,
+              color: 'white',
+              backgroundColor: 'tomato'
+            }}>
+            Hello
+          </div>
+        </Responsive>
       </Example>
     </Library>
   </Provider>

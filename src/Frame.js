@@ -3,6 +3,13 @@ import { render } from 'react-dom'
 import nano from 'nano-style'
 
 class Frame extends React.Component {
+  static defaultProps = {
+    zoom: 1,
+    width: '100%',
+    height: '100%',
+    css: 'body{font-family:system-ui,sans-serif;line-height:1.5}'
+  }
+
   constructor () {
     super()
 
@@ -11,8 +18,8 @@ class Frame extends React.Component {
     this.div = null
 
     this.getSrc = () => {
-      const { css = '' } = this.props
-      return `<style>*{box-sizing:border-box}body{margin:0;min-height:100vh} ${css}</style>
+      const { zoom = 1, css = '' } = this.props
+      return `<style>*{box-sizing:border-box}body{margin:0;min-height:100vh;zoom:${zoom}} ${css}</style>
 <div id='app'></div>`
     }
 
@@ -36,16 +43,22 @@ class Frame extends React.Component {
   }
 
   render () {
-    const { children } = this.props
+    const {
+      width,
+      height,
+      zoom,
+      children
+    } = this.props
 
     return (
       <iframe
         ref={ref => this.root = ref}
         style={{
+          width,
+          height,
+          zoom,
           pointerEvents: 'none',
           display: 'block',
-          width: '100%',
-          height: '100%',
           margin: 0,
           overflow: 'scroll',
           backgroundColor: '#fff',
@@ -58,10 +71,6 @@ class Frame extends React.Component {
       />
     )
   }
-}
-
-Frame.defaultProps = {
-  css: 'body{font-family:system-ui,sans-serif;line-height:1.5}'
 }
 
 export default Frame

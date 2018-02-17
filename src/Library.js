@@ -24,6 +24,7 @@ const Main = nano('div')({
 
 const Sidebar = nano('div')({
   width: '192px',
+  flex: 'none',
   padding: '8px',
   overflowY: 'auto',
   WebkitOverflowScrolling: 'touch'

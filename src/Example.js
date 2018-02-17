@@ -42,7 +42,8 @@ class Example extends React.Component {
         <Flex
           flex='1 1 auto'
           alignItems='center'
-          justifyContent='center'>
+          justifyContent='center'
+          style={{ overflow: 'hidden' }}>
           {children}
         </Flex>
         <Label>
