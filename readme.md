@@ -1,102 +1,73 @@
-# Styleguide
+# Kit
 
-Generate a styleguide for React components, including those built with [Lab](https://compositor.io/lab).
-Uses a nifty superset of [Markdown](https://github.com/c8r/markdown) which allows you to render components and even a live editor playground.
-
-## Why?
-
-Communication and information architecture are the most important aspects of documenting a design system and living styleguide.
-This library seeks to handle the boring implementation details, allowing you to work on building your components and writing your documentation.
-
-Styleguide was originally created to document projects built using Compositor products.
-We then realized that this could be useful for any project, so we open sourced it for all to enjoy and use.
-
-## Installation
-
-```bash
-npm install -g @compositor/styleguide
-```
-
-## Usage
+Components for development environments, style guides, and demos
 
 ```sh
-styleguide .
+npm i @compositor/kit
 ```
-
-### Options
-
-NOT YET IMPLEMENTED
-
-| Name | Default | Description |
-| ---- | ------- | ----------- |
-| `library` | `library` | Directory location of components |
-| `docs` | `docs` | Directory location of markdown files |
-| `logo` | `undefined` | Url for the logo to be shown in the nav |
-| `out-dir` | `dist` | Where the static build is output |
-
-### Components as Configuration
 
 ```jsx
 import React from 'react'
-import { Styleguide } from '@compositor/styleguide'
+import {
+  Provider,
+  Library,
+  Example
+} from '@compositor/kit'
+import {
+  Heading,
+  Text,
+  Button
+} from './src'
 
-import Components from './components'
+const App = props => (
+  <Provider>
+    <Library>
+      <Example name='Heading'>
+        <Heading>Hello</Heading>
+      </Example>
+      <Example name='Text'>
+        <Text>Hello</Text>
+      </Example>
+      <Example name='Button'>
+        <Button>Hello</Button>
+      </Example>
+    </Library>
+  </Provider>
+)
 
-export default () =>
-  <Styleguide
-    Components={Components}
-    other='config'
-  />
+export default App
 ```
 
-The `Styleguide` component handles routing, rendering markdown, and other features like the playground.
-This is where you pass in your components and other aspects you'd like to configure.
-Though, we've tried to come up with the most sensible defaults possible.
+Kit was intended for use with [x0][x0], but any React application setup will work as well.
 
-It interacts with the filesystem to set the initial, global properties for the styleguide, but it only does this work on the initial build, and is a noop when on the client.
+```sh
+x0 dev App.js
+```
 
-### Documentation Components
+## Components
 
-Styleguide provides a collection of components that you can use in your documentation.
-This can be achieved by using JSX rendering/playground syntax in your markdown.
-If desired, you can also export documentation as React components themselves.
+### Provider
+### Library
+### Example
+### NavList
 
-#### `<Playground />`
+### `<Playground />`
+### `<XRay />`
+### `<Examples />`
+### `<Viewports />`
+### `<PropsTable />`
+### `<ColorPalette />`
+### `<Colorable />`
+### `<StyledSystem />`
+### `<Spacing />`
+### `<Typography />`
+### `<Debug />`
 
-#### `<XRay />`
 
-#### `<Examples />`
-
-#### `<Viewports />`
-
-#### `<PropsTable />`
-
-#### `<ColorPalette />`
-
-#### `<Colorable />`
-
-#### `<StyledSystem />`
-
-#### `<Spacing />`
-
-#### `<Typography />`
-
-#### `<Debug />`
-
-### Layout Components
-
-You can customize the layout and design of the styleguide by overriding the default components with your own.
-
-#### `<Content />`
-
-#### `<Nav />`
-
-#### `<Logo />`
-
-#### `<Footer />`
 
 ## Related
 
+- @compositor/x0
 - @compositor/markdown
 - @compositor/gen
 - react-live
@@ -117,3 +88,5 @@ You can customize the layout and design of the styleguide by overriding the defa
 [Made by Compositor](https://compositor.io/)
 |
 [MIT License](license)
+
+[x0]: https://github.com/c8r/x0

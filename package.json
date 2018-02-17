@@ -1,8 +1,8 @@
 {
-  "name": "@compositor/styleguide",
-  "description": "Generate a styleguide from Compositor Lab configs",
+  "name": "@compositor/kit",
+  "description": "Components for development environments, style guides, and demos",
   "author": "John Otander",
-  "version": "0.0.15",
+  "version": "1.0.0-0",
   "main": "dist/index.js",
   "bin": {
     "styleguide": "dist/cli.js"
@@ -13,14 +13,11 @@
   ],
   "scripts": {
     "babel": "babel src -d dist",
-    "build": "npm run babel && npm run comp",
-    "clean": "rm -rf dist && rm -rf library",
-    "comp": "lab --pkg -d library",
+    "build": "npm run babel",
+    "clean": "rm -rf dist",
     "prepare": "npm run clean && npm run build",
-    "prestart": "npm run build",
-    "pretest": "npm run build",
-    "start": "x0 dev src/StyleguideStyleguide.js",
-    "test": "ava -v"
+    "start": "x0 dev docs/Demo.js",
+    "test": "nyc ava"
   },
   "repository": "c8r/styleguide",
   "keywords": [
@@ -33,23 +30,15 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@compositor/globb": "^0.1.7",
-    "@compositor/markdown": "0.0.21",
-    "@compositor/x0": "^3.1.1",
-    "chalk": "^2.3.0",
-    "colorable": "^1.0.5",
-    "dot-prop": "^4.2.0",
-    "gray-matter": "^3.1.1",
+    "chalk": "^2.3.1",
     "meow": "^4.0.0",
+    "nano-style": "^1.0.0",
     "prop-types": "^15.6.0",
-    "react-docgen": "^2.20.0",
-    "react-router-dom": "^4.2.2",
-    "react-x-ray": "^1.0.0-4",
-    "styled-components": "^3.1.4",
-    "styled-parser": "^1.0.0-0",
-    "styled-system": "^1.1.1"
+    "react": "^16.2.0",
+    "react-docgen": "^2.20.0"
   },
   "devDependencies": {
+    "@compositor/x0": "^3.2.0",
     "ava": "^0.25.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
