@@ -1,7 +1,6 @@
 import React from 'react'
 
-import Box from './Box'
-import Flex from './Flex'
+import { Box, Flex } from './ui'
 import Style from './Style'
 
 import {

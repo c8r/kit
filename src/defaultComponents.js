@@ -1,6 +1,5 @@
-import Box from './Box'
 import Nav from './Nav'
-import Flex from './Flex'
+import { Box, Flex } from './ui'
 import Page from './Page'
 import Debug from './Debug'
 import Layout from './Layout'

@@ -1,11 +1,8 @@
 import nano from 'nano-style'
-
 import {
   color,
   space,
   width,
-  borderColor,
-  borderWidth,
   alignItems,
   justifyContent,
   flexWrap,
@@ -14,18 +11,27 @@ import {
   alignSelf
 } from 'styled-system'
 
-const Box = nano('div')(
+export const Box = nano('div')(
   color,
   space,
   width,
-  borderColor,
-  borderWidth,
+  flex,
+  alignSelf
+)
+Box.displayName = 'Box'
+
+export const Flex = nano(Box)({
+    display: 'flex'
+  },
   alignItems,
   justifyContent,
   flexWrap,
   flexDirection,
-  flex,
-  alignSelf
 )
+Flex.displayName = 'Flex'
 
-export default Box
+export default {
+  Box,
+  Flex,
+}
+

@@ -4,6 +4,7 @@ import {
   CHANNEL,
   contextTypes
 } from './constants'
+import { Flex } from './ui'
 
 const Root = nano('a')({
   display: 'flex',
@@ -22,13 +23,6 @@ const Root = nano('a')({
   }
 })
 
-const Flex = nano('div')({
-  display: 'flex',
-  flex: '1 1 auto',
-  alignItems: 'center',
-  justifyContent: 'center',
-})
-
 const Label = nano('div')({
   fontSize: '10px',
   paddingTop: '4px',
@@ -45,7 +39,10 @@ class Example extends React.Component {
         id={name}
         href={'#' + name}
         onClick={e => update({ component: name })}>
-        <Flex>
+        <Flex
+          flex='1 1 auto'
+          alignItems='center'
+          justifyContent='center'>
           {children}
         </Flex>
         <Label>

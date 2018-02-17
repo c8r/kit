@@ -8,4 +8,5 @@ export { default as Frame } from './Frame'
 export { default as Catch } from './Catch'
 export { default as XRay } from './XRay'
 export { default as LiveEditor } from './LiveEditor'
+export { default as Knobs } from './Knobs'
 

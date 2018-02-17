@@ -9,7 +9,7 @@ import {
   LivePreview
 } from 'react-live'
 import Catch from './Catch'
-import Box from './Box'
+import { Box } from './ui'
 
 class Editor extends Component {
   constructor (props) {
