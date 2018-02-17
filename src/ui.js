@@ -59,8 +59,64 @@ Grid.defaultProps = {
   height: 192,
 }
 
+export const Label = nano('label')({
+  display: 'block',
+  fontSize: '10px',
+}, space)
+Label.displayName = 'Label'
+
+export const Input = nano('input')({
+  display: 'block',
+  width: '100%',
+  fontFamily: 'inherit',
+  fontSize: 'inherit',
+  lineHeight: 1.25,
+  appearance: 'none',
+  padding: '4px',
+  color: 'inherit',
+  backgroundColor: 'transparent',
+  border: '1px solid #ddd',
+  borderRadius: '4px',
+  '&:focus': {}
+}, space)
+Input.displayName = 'Input'
+Input.defaultProps = {
+  m: 0
+}
+
+export const Select = nano('select')({
+  display: 'block',
+  width: '100%',
+  fontFamily: 'inherit',
+  fontSize: 'inherit',
+  lineHeight: 1.25,
+  // appearance: 'none',
+  padding: '4px',
+  color: 'inherit',
+  backgroundColor: 'transparent',
+  border: '1px solid #ddd',
+  borderRadius: '4px',
+  '&:focus': {}
+}, space)
+Select.displayName = 'Select'
+Select.defaultProps = {
+  m: 0
+}
+
+export const Divider = nano('hr')({
+  width: '100%',
+  margin: 0,
+  border: 0,
+  borderBottom: '1px solid #ddd'
+})
+Divider.displayName = 'Divider'
+
 export default {
   Box,
   Flex,
   Grid,
+  Label,
+  Input,
+  Select,
+  Divider,
 }

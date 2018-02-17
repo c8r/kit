@@ -6,6 +6,7 @@ import {
   XRay,
   Frame,
   LiveEditor,
+  Knobs,
   Responsive,
 } from '../src'
 
@@ -44,6 +45,18 @@ const Demo = props => (
             Hello
           </div>
         </Responsive>
+      </Example>
+      <Example name='Knobs'>
+        <Knobs>
+          <button color='tomato'>Hello</button>
+          <Knobs.Input name='children' />
+          <Knobs.Select name='color'>
+            <option></option>
+            <option>tomato</option>
+            <option>magenta</option>
+            <option>cyan</option>
+          </Knobs.Select>
+        </Knobs>
       </Example>
     </Library>
   </Provider>

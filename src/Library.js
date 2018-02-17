@@ -49,6 +49,11 @@ const NavItem = nano('a')({
 class Library extends React.Component {
   static contextTypes = contextTypes
 
+  componentDidMount () {
+    const { update } = this.context[CHANNEL]
+    update({ library: true })
+  }
+
   render () {
     const { update, component } = this.context[CHANNEL]
     const children = React.Children.toArray(this.props.children)

@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import nano from 'nano-style'
+import { CHANNEL, contextTypes } from './constants'
 import Frame from './Frame'
 import { Box, Flex } from './ui'
 
@@ -17,6 +18,8 @@ const Label = nano('div')({
 })
 
 class Responsive extends React.Component {
+  static contextTypes = contextTypes
+
   static defaultProps = {
     viewports: [
       { width: 375, height: 667 },
@@ -27,11 +30,14 @@ class Responsive extends React.Component {
   }
 
   render () {
+    const { library, component } = this.context[CHANNEL]
     const {
       viewports,
       zoom,
       children
     } = this.props
+
+    if (library && !component) return children
 
     return (
       <Root>
