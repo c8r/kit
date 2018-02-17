@@ -3,6 +3,7 @@ import {
   Provider,
   Library,
   Example,
+  XRay,
 } from '../src'
 
 const Demo = props => (
@@ -13,7 +14,9 @@ const Demo = props => (
     <Library>
       <Library.Nav />
       <Example name='h1'>
-        <h1>hello</h1>
+        <XRay>
+          <h1>hello</h1>
+        </XRay>
       </Example>
       <Example name='button'>
         <button>hello</button>
