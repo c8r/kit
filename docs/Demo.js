@@ -4,6 +4,7 @@ import {
   Library,
   Example,
   XRay,
+  Frame,
 } from '../src'
 
 const Demo = props => (
@@ -19,7 +20,9 @@ const Demo = props => (
         </XRay>
       </Example>
       <Example name='button'>
-        <button>hello</button>
+        <Frame>
+          <button>hello</button>
+        </Frame>
       </Example>
     </Library>
   </Provider>

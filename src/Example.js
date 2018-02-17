@@ -15,6 +15,8 @@ const Root = nano('a')({
   borderWidth: '1px',
   borderStyle: 'solid',
   borderColor: '#f6f6f6',
+  WebkitUserSelect: 'none',
+  userSelect: 'none',
   '&:hover': {
     borderColor: '#ddd'
   }

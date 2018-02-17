@@ -37,6 +37,8 @@ const NavItem = nano('a')({
   textDecoration: 'none',
   color: 'inherit',
   borderRadius: '4px',
+  WebkitUserSelect: 'none',
+  userSelect: 'none',
 }, props => props.active ? ({
   color: 'white',
   backgroundColor: 'var(--color, black)'
