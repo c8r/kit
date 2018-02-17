@@ -5,6 +5,7 @@ import {
   Example,
   XRay,
   Frame,
+  LiveEditor,
 } from '../src'
 
 const Demo = props => (
@@ -23,6 +24,11 @@ const Demo = props => (
         <Frame>
           <button>hello</button>
         </Frame>
+      </Example>
+      <Example name='Editable'>
+        <LiveEditor
+          code='<button>hello</button>'
+        />
       </Example>
     </Library>
   </Provider>

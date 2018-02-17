@@ -5,6 +5,7 @@ export { default as Library } from './Library'
 export { default as Example } from './Example'
 export { default as Grid } from './Grid'
 export { default as Frame } from './Frame'
-
+export { default as Catch } from './Catch'
 export { default as XRay } from './XRay'
+export { default as LiveEditor } from './LiveEditor'
 

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import nano from 'nano-style'
 
 import {
   space,
@@ -11,8 +11,7 @@ import {
   alignSelf
 } from 'styled-system'
 
-const Flex = styled('div')(
-  [],
+const Flex = nano('div')(
   props => ({
     display: 'flex'
   }),

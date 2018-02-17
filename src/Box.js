@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import nano from 'nano-style'
 
 import {
   color,
@@ -14,9 +14,7 @@ import {
   alignSelf
 } from 'styled-system'
 
-const Box = styled('div')(
-  [],
-  props => ({}),
+const Box = nano('div')(
   color,
   space,
   width,
