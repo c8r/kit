@@ -4,7 +4,7 @@ import {
   CHANNEL,
   contextTypes
 } from './constants'
-import Grid from './Grid'
+import { Grid } from './ui'
 import Example from './Example'
 
 const height = ({ height }) => height ? ({ height }) : null
