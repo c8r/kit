@@ -20,7 +20,8 @@ class Font extends React.Component {
           style={{
             fontFamily,
             lineHeight,
-            color
+            color,
+            '--color': color
           }}
         />
       </React.Fragment>

@@ -6,7 +6,10 @@ import {
 } from '../src'
 
 const Demo = props => (
-  <Provider>
+  <Provider
+    fontFamily='"Roboto Mono", monospace'
+    color='#236'
+  >
     <Library>
       <Library.Nav />
       <Example name='h1'>
