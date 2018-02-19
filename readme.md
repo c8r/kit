@@ -1,102 +1,240 @@
-# Styleguide
+# Kit
 
-Generate a styleguide for React components, including those built with [Lab](https://compositor.io/lab).
-Uses a nifty superset of [Markdown](https://github.com/c8r/markdown) which allows you to render components and even a live editor playground.
-
-## Why?
-
-Communication and information architecture are the most important aspects of documenting a design system and living styleguide.
-This library seeks to handle the boring implementation details, allowing you to work on building your components and writing your documentation.
-
-Styleguide was originally created to document projects built using Compositor products.
-We then realized that this could be useful for any project, so we open sourced it for all to enjoy and use.
-
-## Installation
-
-```bash
-npm install -g @compositor/styleguide
-```
-
-## Usage
+Components for development environments, style guides, and demos
 
 ```sh
-styleguide .
+npm i @compositor/kit
 ```
-
-### Options
-
-NOT YET IMPLEMENTED
-
-| Name | Default | Description |
-| ---- | ------- | ----------- |
-| `library` | `library` | Directory location of components |
-| `docs` | `docs` | Directory location of markdown files |
-| `logo` | `undefined` | Url for the logo to be shown in the nav |
-| `out-dir` | `dist` | Where the static build is output |
-
-### Components as Configuration
 
 ```jsx
 import React from 'react'
-import { Styleguide } from '@compositor/styleguide'
+import {
+  Provider,
+  Library,
+  Example
+} from '@compositor/kit'
+import {
+  Heading,
+  Text,
+  Button
+} from './src'
 
-import Components from './components'
+const App = props => (
+  <Provider>
+    <Library>
+      <Example name='Heading'>
+        <Heading>Hello</Heading>
+      </Example>
+      <Example name='Text'>
+        <Text>Hello</Text>
+      </Example>
+      <Example name='Button'>
+        <Button>Hello</Button>
+      </Example>
+    </Library>
+  </Provider>
+)
 
-export default () =>
-  <Styleguide
-    Components={Components}
-    other='config'
-  />
+export default App
 ```
 
-The `Styleguide` component handles routing, rendering markdown, and other features like the playground.
-This is where you pass in your components and other aspects you'd like to configure.
-Though, we've tried to come up with the most sensible defaults possible.
+Kit was intended for use with [x0][x0],
+a zero-config development server and static site generator,
+but any React application setup will work as well since Kit is simply a collection of React components.
 
-It interacts with the filesystem to set the initial, global properties for the styleguide, but it only does this work on the initial build, and is a noop when on the client.
+```sh
+x0 dev App.js
+```
 
-### Documentation Components
+## Features
 
-Styleguide provides a collection of components that you can use in your documentation.
-This can be achieved by using JSX rendering/playground syntax in your markdown.
-If desired, you can also export documentation as React components themselves.
+- React components for development
+- Works great for demos and style guides
+- No configuration
+- No custom plugins or APIs
 
-#### `<Playground />`
+## Components
 
-#### `<XRay />`
+- [Provider](#provider)
+- [Library](#library)
+- [Example](#example)
+- [XRay](#xray)
+- [Responsive](#responsive)
+- [Knobs](#knobs)
+- [Frame](#frame)
+- [LiveEditor](#liveeditor)
+- [Debug](#debug)
 
-#### `<Examples />`
+### Provider
 
-#### `<Viewports />`
+Wrap all Kit components with the Provider component to enable the Library navigation and other features.
 
-#### `<PropsTable />`
+Prop | Type | Description
+---|---|---
+css | string | Root CSS styles
+fontFamily | string | default font stack, adds a link tag for Google Fonts
+lineHeight | string or number | default line-height
+color | string | default color
 
-#### `<ColorPalette />`
+### Library
 
-#### `<Colorable />`
+The Library component manages a list of examples created with the Example component,
+showing a grid view by default and a detailed view when a component is clicked.
 
-#### `<StyledSystem />`
+Prop | Type | Description
+---|---|---
+height | string | CSS height of the whole Library component (default `100vh`)
+card | object | Object of `width`, `height`, and `gap` for the grid view cards
 
-#### `<Spacing />`
+The Library component includes a Library.Nav component that will appear as a sidebar navigation
+when passed as a child.
 
-#### `<Typography />`
+```jsx
+import React from 'react'
+import { Provider, Library } from '@compositor/kit'
 
-#### `<Debug />`
+const App = props => (
+  <Provider>
+    <Library>
+      <Library.Nav />
+    </Library>
+  </Provider>
+)
+```
 
-### Layout Components
+### Example
 
-You can customize the layout and design of the styleguide by overriding the default components with your own.
+Use the Example component with the Library component to add examples.
+Each Example component requires a unique `name` prop value.
 
-#### `<Content />`
+```jsx
+import React from 'react'
+import { Provider, Library, Example } from '@compositor/kit'
+import Button from '../src/Button'
 
-#### `<Nav />`
+const App = props => (
+  <Provider>
+    <Library>
+      <Example name='Button'>
+        <Button>
+          Hello
+        </Button>
+      </Example>
+    </Library>
+  </Provider>
+)
+```
 
-#### `<Logo />`
+Prop | Type | Description
+---|---|---
+name | string (required) | Unique identifier that will be used for navigation in the Library
 
-#### `<Footer />`
+### XRay
+
+Displays a grid and adds outlines to children
+
+```jsx
+import React from 'react'
+import { XRay } from '@compositor/kit'
+import PageHeader from '../src/PageHeader'
+
+const example = (
+  <XRay>
+    <PageHeader />
+  </XRay>
+)
+```
+
+Prop | Type | Description
+---|---|---
+color | string | base color for grid and outlines
+backgroundColor | string | background-color
+outline | boolean | shows outlines around all child elements
+grid | boolean or number | pixel size for grid background, `false` will disable the grid (default `8`)
+
+### Responsive
+
+Displays children in `<iframe>`s, using the Frame component, at multiple viewport sizes.
+
+```jsx
+import React from 'react'
+import { Responsive } from '@compositor/kit'
+import PageHeader from '../src/PageHeader'
+
+const example = (
+  <Responsive>
+    <PageHeader />
+  </Responsive>
+)
+```
+
+Prop | Type | Description
+---|---|---
+viewports | array | Array of `width` and `height` objects for each viewport size
+zoom | number | Zoom level for the Frame component
+
+### Knobs
+
+Renders the first child element with optional form elements to adjust prop values in browser.
+Default values are extracted from the first child's props
+
+```jsx
+import React from 'react'
+import { Knobs } from '@compositor/kit'
+import Button from '../src/Button'
+
+const example = (
+  <Knobs>
+    <Button color='blue'>Hello</Button>
+    <Knobs.Input name='color' />
+    <Knobs.Select name='size'>
+      <option>small</option>
+      <option>medium</option>
+      <option>large</option>
+    </Knobs.Select>
+  </Knobs>
+)
+```
+
+### Frame
+
+Renders children in an `<iframe>` – useful for testing responsive layouts and ensuring isolation from the parent document.
+
+### LiveEditor
+
+Renders code in [react-live][react-live] components with a live code editor.
+
+### Debug
+
+Renders children with `JSON.stringify` for debugging purposes
+
+```jsx
+import React from 'react'
+import { Debug } from '@compositor/kit'
+import someObject from '../src/someObject'
+
+const example = (
+  <Debug>{someObject}</Debug>
+)
+```
+
+<!--
+### `<Playground />`
+### `<Examples />`
+### `<Viewports />`
+### `<PropsTable />`
+### `<ColorPalette />`
+### `<Colorable />`
+### `<StyledSystem />`
+### `<Spacing />`
+### `<Typography />`
+-->
+
+
 
 ## Related
 
+- @compositor/x0
 - @compositor/markdown
 - @compositor/gen
 - react-live
@@ -117,3 +255,6 @@ You can customize the layout and design of the styleguide by overriding the defa
 [Made by Compositor](https://compositor.io/)
 |
 [MIT License](license)
+
+[x0]: https://github.com/c8r/x0
+[react-live]: https://github.com/FormidableLabs/react-live

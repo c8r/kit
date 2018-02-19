@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import XRay from 'react-x-ray'
 import matter from 'gray-matter'
-import { ThemeProvider } from 'styled-components'
 
 import {
   LiveProvider,
@@ -10,11 +8,8 @@ import {
   LiveError,
   LivePreview
 } from 'react-live'
-
-import Box from './Box'
-import Flex from './Flex'
-import Style from './Style'
-import { ButtonReset } from '../library'
+import Catch from './Catch'
+import { Box } from './ui'
 
 class Editor extends Component {
   constructor (props) {
@@ -30,8 +25,6 @@ class Editor extends Component {
     const { content, data = {} } = matter(code)
 
     const defaultScope = {
-      ThemeProvider,
-      XRay,
       props,
       theme
     }
@@ -42,52 +35,24 @@ class Editor extends Component {
       fullScope,
       rawCode: content,
       options: data,
-      xray: false,
       viewport: data.viewport
     }
   }
-
-  /**
-   * Turn an optional codemod, like xray, on/off
-   */
-  toggle = attr => {
-    this.setState({ [attr]: !this.state[attr] })
-  }
-
-  /**
-   * Wrap code in a theme provider and any other components based
-   * on frontmatter
-   */
-  transform = code => ([
-    this.state.xray ? '<XRay>' : '',
-    `<ThemeProvider theme={${JSON.stringify(this.props.theme)}}>${code}</ThemeProvider>`,
-    this.state.xray ? '</XRay>' : ''
-  ].join(' '))
 
   render () {
     const {
       rawCode,
       options,
       fullScope,
-      xray,
       viewport
     } = this.state
 
     return (
-      <Box my={4}>
-        <Flex flexDirection='row-reverse'>
-          {options.xray && (
-            <ButtonReset onClick={() => this.toggle('xray')}>
-              <img src='https://icon.now.sh/grid' alt='Toggle X Ray' />
-            </ButtonReset>
-          )}
-        </Flex>
-
+      <Catch>
         <LiveProvider
+          mountStylesheet={false}
           scope={fullScope}
-          code={rawCode}
-          transformCode={newCode => this.transform(newCode)}
-        >
+          code={rawCode}>
           <Box>
             <LivePreview />
             <LiveEditor />
@@ -103,7 +68,7 @@ class Editor extends Component {
             </Box>
           </Box>
         </LiveProvider>
-      </Box>
+      </Catch>
     )
   }
 }

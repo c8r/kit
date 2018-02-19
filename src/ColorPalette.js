@@ -2,8 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Colorable from 'colorable'
 
-import Box from './Box'
-import Flex from './Flex'
+import { Box, Flex } from './ui'
 import { Text, Code } from '../library'
 
 const Swatch = ({ color, value }) =>
