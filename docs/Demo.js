@@ -14,6 +14,7 @@ const Demo = props => (
   <Provider
     fontFamily='"Roboto Mono", monospace'
     color='#236'
+    scope={{ XRay }}
   >
     <Library>
       <Library.Nav />
@@ -23,6 +24,9 @@ const Demo = props => (
         </XRay>
       </Example>
       <Example name='button'>
+        <LiveEditor
+          code='<button>hello</button>'
+        />
         <Frame>
           <button>hello</button>
         </Frame>

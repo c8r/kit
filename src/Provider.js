@@ -7,7 +7,9 @@ class Provider extends React.Component {
   static childContextTypes = contextTypes
 
   static defaultProps = {
-    css: '*{box-sizing:border-box}body{margin:0}'
+    css: '*{box-sizing:border-box}body{margin:0}',
+    scope: {},
+    theme: {}
   }
 
   constructor () {
@@ -24,6 +26,8 @@ class Provider extends React.Component {
     return {
       [CHANNEL]: {
         update: this.update,
+        theme: this.props.theme,
+        scope: this.props.scope,
         ...this.state
       }
     }

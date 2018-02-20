@@ -6,6 +6,8 @@ export const contextTypes = {
   [CHANNEL]: PropTypes.shape({
     update: PropTypes.func.isRequired,
     library: PropTypes.bool,
-    component: PropTypes.string
+    component: PropTypes.string,
+    scope: PropTypes.object,
+    theme: PropTypes.object
   })
 }
