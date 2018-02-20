@@ -71,10 +71,12 @@ Wrap all Kit components with the Provider component to enable the Library naviga
 
 Prop | Type | Description
 ---|---|---
-css | string | Root CSS styles
+css | string | root CSS styles
 fontFamily | string | default font stack, adds a link tag for Google Fonts
 lineHeight | string or number | default line-height
 color | string | default color
+scope | object | components provided to [`LiveEditor`](#liveeditor) scope
+theme | object | theme object passed to `ThemeProvider` in [`LiveEditor`](#liveeditor)
 
 ### Library
 
