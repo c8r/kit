@@ -4,16 +4,11 @@
   "author": "John Otander",
   "version": "1.0.0-3",
   "main": "dist/index.js",
-  "bin": {
-    "styleguide": "dist/cli.js"
-  },
   "files": [
-    "dist",
-    "library"
+    "dist"
   ],
   "scripts": {
-    "babel": "babel src -d dist",
-    "build": "npm run babel",
+    "build": "babel src -d dist",
     "clean": "rm -rf dist",
     "prepare": "npm run clean && npm run build",
     "start": "x0 dev docs/Demo.js",
@@ -26,7 +21,8 @@
     "system",
     "react",
     "compositor",
-    "lab"
+    "lab",
+    "kit"
   ],
   "license": "MIT",
   "dependencies": {
@@ -42,6 +38,7 @@
     "react": "^16.2.0",
     "react-docgen": "^2.20.1",
     "react-live": "^1.9.2",
+    "styled-parser": "^1.0.0-0",
     "styled-system": "^2.1.0"
   },
   "devDependencies": {
@@ -54,7 +51,8 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.26.0",
-    "execa": "^0.9.0"
+    "execa": "^0.9.0",
+    "nyc": "^11.4.1"
   },
   "ava": {
     "require": [

@@ -1,4 +1,3 @@
-library/
-node_modules/
-out/
-dist/
+node_modules
+dist
+.nyc_output

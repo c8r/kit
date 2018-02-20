@@ -27,11 +27,6 @@ const Demo = props => (
           <button>hello</button>
         </Frame>
       </Example>
-      <Example name='Editable'>
-        <LiveEditor
-          code='<button>hello</button>'
-        />
-      </Example>
       <Example name='Responsive'>
         <Responsive zoom={0.75}>
           <div
