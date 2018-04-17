@@ -10,7 +10,7 @@ import {
   Font,
   Responsive,
   TypeScale
-} from '../src'
+} from '../core/src'
 
 const Demo = props => (
   <Provider
