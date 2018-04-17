@@ -7,6 +7,8 @@ import {
 } from './constants'
 import { Flex } from './ui'
 
+import { withDebug } from './Debug'
+
 const Root = nano('a')({
   display: 'flex',
   flexDirection: 'column',
@@ -60,4 +62,4 @@ class Example extends React.Component {
   }
 }
 
-export default Example
+export default withDebug(Example)

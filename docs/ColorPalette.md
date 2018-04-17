@@ -6,10 +6,7 @@ You can optionally display all accessible color combinations as well.
 ## Usage
 
 ```jsx
-<ColorPalette
-  colors={theme.colors}
-  colorable={true}
-/>
+<ColorPalette colors={theme.colors} />
 ```
 
 ## Related
