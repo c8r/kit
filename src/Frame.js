@@ -10,7 +10,7 @@ class Frame extends React.Component {
     css: 'body{font-family:system-ui,sans-serif;line-height:1.5}'
   }
 
-  constructor () {
+  constructor() {
     super()
 
     this.doc = null
@@ -36,23 +36,18 @@ class Frame extends React.Component {
     }
   }
 
-  componentWillReceiveProps (next) {
+  componentWillReceiveProps(next) {
     if (next.children !== this.props.children) {
       this.update(next)
     }
   }
 
-  render () {
-    const {
-      width,
-      height,
-      zoom,
-      children
-    } = this.props
+  render() {
+    const { width, height, zoom, children } = this.props
 
     return (
       <iframe
-        ref={ref => this.root = ref}
+        ref={ref => (this.root = ref)}
         style={{
           width,
           height,
@@ -66,7 +61,7 @@ class Frame extends React.Component {
           border: 0
         }}
         srcDoc={this.getSrc()}
-        scrolling='yes'
+        scrolling="yes"
         onLoad={this.onLoad}
       />
     )

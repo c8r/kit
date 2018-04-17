@@ -8,7 +8,8 @@ import {
   LiveEditor,
   Knobs,
   Font,
-  Responsive
+  Responsive,
+  TypeScale
 } from '../src'
 
 const Demo = props => (
@@ -25,13 +26,16 @@ const Demo = props => (
         </XRay>
       </Example>
       <Example name="font">
-          <Font fontFamily='"Ubuntu", sans-serif'>Font</Font>
+        <Font fontFamily="&quot;Ubuntu&quot;, sans-serif">Font</Font>
       </Example>
       <Example name="button">
         <LiveEditor code="<button>hello</button>" />
         <Frame>
           <button>hello</button>
         </Frame>
+      </Example>
+      <Example name="TypeScale">
+        <TypeScale value={[14, 16, 20, 24, 32, 48, 64, 80]} />
       </Example>
       <Example name="Responsive">
         <Responsive zoom={0.75}>
@@ -49,6 +53,18 @@ const Demo = props => (
         </Responsive>
       </Example>
       <Example name="Knobs">
+        <Knobs>
+          <button color="tomato">Hello</button>
+          <Knobs.Input name="children" />
+          <Knobs.Select name="color">
+            <option />
+            <option>tomato</option>
+            <option>magenta</option>
+            <option>cyan</option>
+          </Knobs.Select>
+        </Knobs>
+      </Example>
+      <Example name="Knobs2">
         <Knobs>
           <button color="tomato">Hello</button>
           <Knobs.Input name="children" />
