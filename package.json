@@ -10,7 +10,8 @@
     "clean": "lerna run clean",
     "format": "prettier --no-semi --single-quote --write '{docs,packages}/**/*.js'",
     "prepare": "lerna bootstrap && npm run clean && npm run build",
-    "start": "x0 dev docs/Demo.js"
+    "start": "x0 dev docs/Demo.js",
+    "test": "lerna run test"
   },
   "devDependencies": {
     "@compositor/x0": "^4.0.1",
