@@ -12,8 +12,7 @@
     "clean": "rm -rf dist",
     "format": "prettier --no-semi --single-quote --write '{docs,src}/**/*.js'",
     "prepare": "npm run clean && npm run build",
-    "start": "x0 dev docs/Demo.js",
-    "test": "nyc ava"
+    "start": "x0 dev docs/Demo.js"
   },
   "repository": "c8r/kit",
   "keywords": [
@@ -39,16 +38,8 @@
   },
   "devDependencies": {
     "@compositor/x0": "^4.0.1",
-    "ava": "^0.25.0",
     "babel-cli": "^6.26.0",
     "babel-register": "^6.26.0",
-    "nyc": "^11.6.0",
     "prettier": "^1.12.1"
-  },
-  "ava": {
-    "require": [
-      "babel-register"
-    ],
-    "babel": "inherit"
   }
 }
