@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
-export default ({ children, log }) => {
+export const Debug = ({ children, log }) => {
   if (log) {
     console.log(children)
   }
@@ -17,4 +17,10 @@ export default ({ children, log }) => {
       children={JSON.stringify(children, null, 2)}
     />
   )
+}
+
+export const withDebug = Component => props => {
+  console.log(props)
+
+  return <Component {...props} />
 }
