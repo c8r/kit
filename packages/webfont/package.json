@@ -1,0 +1,22 @@
+{
+  "name": "@compositor/webfont",
+  "version": "1.0.0-1",
+  "description": "Webfont loading utilities",
+  "main": "index.js",
+  "repository": "c8r/kit",
+  "author": "Brent Jackson",
+  "license": "MIT",
+  "scripts": {
+    "font-update": "node build.js",
+    "test": "nyc ava",
+    "cover": "nyc report --reporter=lcov --reporter=html"
+  },
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "got": "^8.3.0"
+  },
+  "devDependencies": {
+    "ava": "^0.24.0",
+    "nyc": "^11.3.0"
+  }
+}

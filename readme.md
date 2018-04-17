@@ -2,6 +2,8 @@
 
 Components for development environments, style guides, and demos.
 
+## Getting started
+
 ```sh
 npm i -S @compositor/kit
 ```
