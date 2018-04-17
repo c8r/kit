@@ -7,6 +7,7 @@ import {
   Frame,
   LiveEditor,
   Knobs,
+  Font,
   Responsive
 } from '../src'
 
@@ -22,6 +23,9 @@ const Demo = props => (
         <XRay>
           <h1>hello</h1>
         </XRay>
+      </Example>
+      <Example name="font">
+          <Font fontFamily='"Ubuntu", sans-serif'>Font</Font>
       </Example>
       <Example name="button">
         <LiveEditor code="<button>hello</button>" />
