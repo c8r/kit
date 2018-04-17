@@ -1,0 +1,5 @@
+.env
+build.js
+test.js*
+.nyc_output
+coverage

@@ -1,0 +1,4 @@
+.env
+fonts.json
+.nyc_output
+coverage
