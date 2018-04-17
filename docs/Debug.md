@@ -9,7 +9,7 @@ The `Debug` component takes an object as a `children` prop.
 This can be used to inspect data, props, or any object you might have in state.
 
 ```jsx
-import { Debug } from '@c8r/kit'
+import { Debug } from '@compositor/kit'
 
 export default () =>
   <Debug children={{ an: 'object' }} />
@@ -18,7 +18,7 @@ export default () =>
 ## Props
 
 Name | Type | Required | Description
----- | ---- | -------- | -----------
+---|---|---|---
 `log` | Boolean | `false` | Log object to the console
 
 ### `withDebug`
@@ -27,7 +27,7 @@ Sometimes it can be a pain to inspect the props of a component using an explicit
 `withDebug` is a HOC to log props to the console for inspection.
 
 ```jsx
-import { withDebug } from '@c8r/kit'
+import { withDebug } from '@compositor/kit'
 
 export default withDebug(props =>
   <MyComponent {...props}
@@ -37,5 +37,5 @@ export default withDebug(props =>
 ## Prop
 
 Name | Type | Required | Description
----- | ---- | -------- | -----------
+---|---|---|---
 `Component` | Function | `true` | The component whose props you'd like to log
