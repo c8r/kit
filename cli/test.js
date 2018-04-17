@@ -4,9 +4,8 @@ import test from 'ava'
 
 const Ui = importJsx('./ui')
 
-test('output', t => {
-  const actual = renderToString(<Ui />)
-  const expected = renderToString(<Text green>I love Ink</Text>)
+test('renders compositor text', t => {
+  const result = renderToString(<Ui />)
 
-  t.is(actual, expected)
+  t.regex(result, /Compositor/)
 })

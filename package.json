@@ -17,5 +17,8 @@
     "@compositor/x0": "^4.0.1",
     "lerna": "^2.5.1",
     "prettier": "^1.12.1"
+  },
+  "dependencies": {
+    "ink-big-text": "^0.2.0"
   }
 }
