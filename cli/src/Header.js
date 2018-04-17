@@ -4,7 +4,7 @@ const { h, Component, Text } = require('ink')
 const BigText = require('ink-big-text')
 const Box = require('ink-box')
 
-class UI extends Component {
+class Header extends Component {
   render() {
     return (
 			<div>
@@ -18,4 +18,4 @@ class UI extends Component {
   }
 }
 
-module.exports = UI
+module.exports = Header

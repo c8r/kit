@@ -5,20 +5,20 @@ const importJsx = require('import-jsx')
 const { h, render } = require('ink')
 const meow = require('meow')
 
-const Ui = importJsx('./ui')
+const App = importJsx('./src/App')
 
 const cli = meow(`
-	Usage
-	  $ kit-cli [input]
+  Usage
+    $ kit <command> [options]
 
-	Options
-	  --name  Lorem ipsum [Default: false]
+  Examples
+    $ kit init
+    $ kit dev
+`, {
+  alias: {
+    h: 'help',
+    v: 'version'
+  }
+})
 
-	Examples
-	  $ kit-cli
-	  I love Ink
-	  $ kit-cli --name=ponies
-	  I love ponies
-`)
-
-render(h(Ui, cli.flags))
+render(h(App, cli.flags))

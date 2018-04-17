@@ -1,7 +1,7 @@
 {
   "name": "kit-cli",
   "version": "0.0.0",
-  "description": "CLI for @compositor/kit",
+  "description": "Compositor Kit CLI",
   "license": "MIT",
   "repository": "c8r/kit-cli",
   "author": "Compositor",
