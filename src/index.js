@@ -11,4 +11,6 @@ export { default as XRay } from './XRay'
 export { default as Knobs } from './Knobs'
 export { default as Responsive } from './Responsive'
 export { default as Debug } from './Debug'
+export { default as TypeScale } from './TypeScale'
+
 export { contextTypes } from './constants'

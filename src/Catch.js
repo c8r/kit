@@ -1,23 +1,23 @@
 import React from 'react'
 
 class Catch extends React.Component {
-  constructor () {
+  constructor() {
     super()
 
     this.state = {}
   }
 
-  componentDidCatch (err) {
+  componentDidCatch(err) {
     this.setState({ err })
   }
 
-  componentWillReceiveProps (next) {
+  componentWillReceiveProps(next) {
     if (next.children !== this.props.children) {
       this.setState({ err: null })
     }
   }
 
-  render () {
+  render() {
     const { err } = this.state
 
     if (err) return <pre>{err.toString()}</pre>

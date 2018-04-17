@@ -10,7 +10,7 @@
   "scripts": {
     "build": "babel src -d dist",
     "clean": "rm -rf dist",
-    "format": "prettier --no-semi --single-quote --write '{docs, src}/**/*.js'",
+    "format": "prettier --no-semi --single-quote --write '{docs,src}/**/*.js'",
     "prepare": "npm run clean && npm run build",
     "start": "x0 dev docs/Demo.js",
     "test": "nyc ava"

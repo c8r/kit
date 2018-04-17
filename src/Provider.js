@@ -12,7 +12,7 @@ class Provider extends React.Component {
     theme: {}
   }
 
-  constructor () {
+  constructor() {
     super()
 
     this.state = {
@@ -22,7 +22,7 @@ class Provider extends React.Component {
     this.update = (...args) => this.setState(...args)
   }
 
-  getChildContext () {
+  getChildContext() {
     return {
       [CHANNEL]: {
         update: this.update,
@@ -33,26 +33,18 @@ class Provider extends React.Component {
     }
   }
 
-  componentDidMount () {
+  componentDidMount() {
     const component = window.location.hash.replace(/^#/, '')
     this.setState({ component })
   }
 
-  render () {
-    const {
-      css,
-      fontFamily,
-      lineHeight,
-      color
-    } = this.props
+  render() {
+    const { css, fontFamily, lineHeight, color } = this.props
 
     return (
       <React.Fragment>
         <Style children={css} />
-        <Font
-          fontFamily={fontFamily}
-          lineHeight={lineHeight}
-          color={color}>
+        <Font fontFamily={fontFamily} lineHeight={lineHeight} color={color}>
           {this.props.children}
         </Font>
       </React.Fragment>

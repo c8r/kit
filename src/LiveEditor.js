@@ -3,20 +3,12 @@ import PropTypes from 'prop-types'
 import matter from 'gray-matter'
 import { ThemeProvider } from 'styled-components'
 
-import {
-  LiveProvider,
-  LiveEditor,
-  LiveError,
-  LivePreview
-} from 'react-live'
+import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 
 import Provider from './Provider'
 import Catch from './Catch'
 import { Box } from './ui'
-import {
-  CHANNEL,
-  contextTypes
-} from './constants'
+import { CHANNEL, contextTypes } from './constants'
 
 class Editor extends Component {
   static contextTypes = contextTypes
@@ -25,7 +17,7 @@ class Editor extends Component {
     code: PropTypes.string.isRequired
   }
 
-  constructor (props, context) {
+  constructor(props, context) {
     super()
 
     const { code } = props
@@ -40,7 +32,7 @@ class Editor extends Component {
     }
   }
 
-  render () {
+  render() {
     return (
       <Catch>
         <LiveProvider

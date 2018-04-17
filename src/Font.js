@@ -8,13 +8,13 @@ class Font extends React.Component {
     color: '#000'
   }
 
-  render () {
+  render() {
     const { fontFamily, lineHeight, color, ...props } = this.props
     const url = webfont.getURL(fontFamily)
 
     return (
       <React.Fragment>
-        {url && <link rel='stylesheet' href={url} />}
+        {url && <link rel="stylesheet" href={url} />}
         <div
           {...props}
           style={{

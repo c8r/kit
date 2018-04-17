@@ -25,32 +25,22 @@ class Responsive extends React.Component {
       { width: 375, height: 667 },
       { width: 414, height: 736 },
       { width: 1024, height: 768 },
-      { width: 1366, height: 1024 },
+      { width: 1366, height: 1024 }
     ]
   }
 
-  render () {
+  render() {
     const { library, component } = this.context[CHANNEL]
-    const {
-      viewports,
-      zoom,
-      children
-    } = this.props
+    const { viewports, zoom, children } = this.props
 
     if (library && !component) return children
 
     return (
       <Root>
         {viewports.map(viewport => (
-          <Box
-            key={viewport.width + 'x' + viewport.height}
-            p={3}>
+          <Box key={viewport.width + 'x' + viewport.height} p={3}>
             <Card>
-              <Frame
-                {...viewport}
-                zoom={zoom}
-                children={children}
-              />
+              <Frame {...viewport} zoom={zoom} children={children} />
             </Card>
             <Label>
               {viewport.width} x {viewport.height} @{zoom}x

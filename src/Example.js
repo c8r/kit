@@ -1,17 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import nano from 'nano-style'
-import {
-  CHANNEL,
-  contextTypes
-} from './constants'
+import { CHANNEL, contextTypes } from './constants'
 import { Flex } from './ui'
 
 import { withDebug } from './Debug'
 
 const Root = nano('a')({
   display: 'flex',
-  flexDirection: 'column',
   color: 'inherit',
   textDecoration: 'none',
   overflow: 'hidden',
@@ -28,7 +24,7 @@ const Root = nano('a')({
 
 const Label = nano('div')({
   fontSize: '10px',
-  paddingTop: '4px',
+  paddingTop: '4px'
 })
 
 class Example extends React.Component {
@@ -38,7 +34,7 @@ class Example extends React.Component {
     name: PropTypes.string.isRequired
   }
 
-  render () {
+  render() {
     const { update } = this.context[CHANNEL]
     const { name, children } = this.props
 
@@ -46,17 +42,17 @@ class Example extends React.Component {
       <Root
         id={name}
         href={'#' + name}
-        onClick={e => update({ component: name })}>
+        onClick={e => update({ component: name })}
+      >
         <Flex
-          flex='1 1 auto'
-          alignItems='center'
-          justifyContent='center'
-          style={{ overflow: 'hidden' }}>
+          flex="1 1 auto"
+          alignItems="center"
+          justifyContent="center"
+          style={{ overflow: 'hidden' }}
+        >
           {children}
         </Flex>
-        <Label>
-          {name}
-        </Label>
+        <Label>{name}</Label>
       </Root>
     )
   }
