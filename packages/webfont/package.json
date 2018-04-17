@@ -7,7 +7,7 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "scripts": {
-    "prepublish": "node build.js",
+    "font-update": "node build.js",
     "test": "nyc ava",
     "cover": "nyc report --reporter=lcov --reporter=html"
   },
