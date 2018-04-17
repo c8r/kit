@@ -3,7 +3,7 @@
 Components for development environments, style guides, and demos.
 
 ```sh
-npm i @compositor/kit
+npm i -S @compositor/kit
 ```
 
 ```jsx
