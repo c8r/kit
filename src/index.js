@@ -12,5 +12,3 @@ export { default as Knobs } from './Knobs'
 export { default as Responsive } from './Responsive'
 export { default as Debug } from './Debug'
 export { contextTypes } from './constants'
-
-export { Markdown } from '@compositor/markdown'
