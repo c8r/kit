@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "name": "@compositor/kit-x0",
+  "description": "Kit + x0",
+  "scripts": {
+    "start": "x0 dev App.js",
+    "format": "prettier --write *.js"
+  },
+  "devDependencies": {
+    "@compositor/x0": "^4.0.1",
+    "@mdx-js/loader": "^0.7.0",
+    "@mdx-js/mdx": "^0.7.1",
+    "prettier": "^1.12.1"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "x0": {
+    "config": "x0.config.js"
+  }
+}
