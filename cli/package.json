@@ -1,0 +1,48 @@
+{
+  "name": "kit-cli",
+  "version": "0.0.0",
+  "description": "Compositor Kit CLI",
+  "license": "MIT",
+  "repository": "c8r/kit-cli",
+  "author": "Compositor",
+  "bin": "cli.js",
+  "scripts": {
+    "test": "ava -v"
+  },
+  "files": [
+    "cli.js",
+    "ui.js"
+  ],
+  "dependencies": {
+    "ink": "^0.2.1",
+    "ink-big-text": "^0.2.0",
+    "ink-box": "^0.1.0",
+    "meow": "^3.7.0",
+    "prop-types": "^15.5.10"
+  },
+  "devDependencies": {
+    "ava": "^0.20.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "eslint-config-xo-react": "^0.13.0",
+    "eslint-plugin-react": "^7.1.0",
+    "import-jsx": "^1.2.0",
+    "xo": "^0.18.2"
+  },
+  "ava": {
+    "babel": {
+      "presets": [
+        "@ava/stage-4"
+      ],
+      "plugins": [
+        [
+          "transform-react-jsx",
+          {
+            "pragma": "h",
+            "useBuiltIns": true,
+						"pragmaFrag": "h.Fragment"
+          }
+        ]
+      ]
+    }
+  }
+}

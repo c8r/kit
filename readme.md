@@ -52,6 +52,7 @@ x0 dev App.js
 
 - React components for development
 - Works great for demos and style guides
+- [MDX][mdx] support for expressive documentation
 - No configuration
 - No custom plugins or APIs
 
@@ -90,4 +91,5 @@ x0 dev App.js
 [MIT License](license)
 
 [x0]: https://github.com/c8r/x0
+[mdx]: https://github.com/mdx-js/mdx
 [react-live]: https://github.com/FormidableLabs/react-live

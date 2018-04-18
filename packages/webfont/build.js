@@ -11,12 +11,14 @@ const writeFile = util.promisify(fs.writeFile)
 const apikey = process.env.GOOGLE_FONTS_API_KEY
 
 const base = url.parse('https://www.googleapis.com/webfonts/v1/webfonts')
-const endpoint = url.format(Object.assign({}, base, {
-  query: {
-    key: apikey,
-    sort: 'popularity'
-  }
-}))
+const endpoint = url.format(
+  Object.assign({}, base, {
+    query: {
+      key: apikey,
+      sort: 'popularity'
+    }
+  })
+)
 
 const getData = async () => {
   const response = await got(endpoint)

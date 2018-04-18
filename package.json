@@ -8,7 +8,7 @@
   "scripts": {
     "build": "lerna run build",
     "clean": "lerna run clean",
-    "format": "prettier --no-semi --single-quote --write '{docs,packages}/**/*.js'",
+    "format": "prettier --no-semi --single-quote --write '{docs,packages,core,cli}/**/*.js'",
     "prepare": "lerna bootstrap && npm run clean && npm run build",
     "start": "x0 dev docs/Demo.js",
     "test": "lerna run test"
@@ -17,5 +17,8 @@
     "@compositor/x0": "^4.0.1",
     "lerna": "^2.5.1",
     "prettier": "^1.12.1"
+  },
+  "dependencies": {
+    "ink-big-text": "^0.2.0"
   }
 }

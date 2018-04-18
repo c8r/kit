@@ -31,7 +31,7 @@ test('getURL returns a formatted url', t => {
 })
 
 test('getURL adds font weight variants', t => {
-  const url = webfont.getURL('"Roboto Mono", monospace', [ '400', '600' ])
+  const url = webfont.getURL('"Roboto Mono", monospace', ['400', '600'])
   t.snapshot(url)
 })
 
@@ -49,4 +49,3 @@ test('getLinkTag returns false for non-webfonts', t => {
   const tag = webfont.getLinkTag('"Helvetica", sans-serif')
   t.false(tag)
 })
-
