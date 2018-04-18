@@ -2,13 +2,11 @@
 
 const { h, Component, Text } = require('ink')
 const importJsx = require('import-jsx')
-const Header = importJsx('./Header')
+const Init = importJsx('./Init')
 
 class App extends Component {
   render() {
-    return (
-			<Header />
-		)
+    return <Init />
   }
 }
 

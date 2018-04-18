@@ -7,18 +7,21 @@ const meow = require('meow')
 
 const App = importJsx('./src/App')
 
-const cli = meow(`
+const cli = meow(
+  `
   Usage
     $ kit <command> [options]
 
   Examples
     $ kit init
     $ kit dev
-`, {
-  alias: {
-    h: 'help',
-    v: 'version'
+`,
+  {
+    alias: {
+      h: 'help',
+      v: 'version'
+    }
   }
-})
+)
 
 render(h(App, cli.flags))
