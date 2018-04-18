@@ -1,5 +1,5 @@
 {
-  "name": "kit-cli",
+  "name": "@compositor/kit-cli",
   "version": "0.0.0",
   "description": "Compositor Kit CLI",
   "license": "MIT",

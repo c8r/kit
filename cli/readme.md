@@ -1,11 +1,11 @@
-# kit-cli
+# @compositor/kit-cli
 
 > CLI for @compositor/kit
 
 ## Install
 
 ```
-$ npm install --global kit-cli
+$ npm install --global @compositor/kit-cli
 ```
 
 ## Usage
