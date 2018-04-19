@@ -65,7 +65,11 @@ class Init extends Component {
             <br />
             <Text>Enter project name</Text>
             <br />
-            <Input value={name} onChange={this.handleNameChange} onSubmit={this.handleSubmit} />
+            <Input
+              value={name}
+              onChange={this.handleNameChange}
+              onSubmit={this.handleSubmit}
+            />
           </div>
         )}
         {step === 'summary' && (
