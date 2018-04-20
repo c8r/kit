@@ -6,7 +6,14 @@ const Init = importJsx('./Init')
 
 class App extends Component {
   render() {
-    return <Init />
+    const { cmd, help } = this.props
+
+    if (cmd === 'init') {
+      return <Init />
+    } else {
+      console.log(help)
+      process.exit(1)
+    }
   }
 }
 

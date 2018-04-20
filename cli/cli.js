@@ -24,4 +24,9 @@ const cli = meow(
   }
 )
 
-render(h(App, cli.flags))
+const props = {
+  cmd: cli.input[0],
+  ...cli
+}
+
+render(h(App, props))
