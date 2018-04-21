@@ -24,9 +24,11 @@ const cli = meow(
   }
 )
 
-const props = {
-  cmd: cli.input[0],
-  ...cli
-}
+const [ cmd, input ] = cli.input
+
+const props = Object.assign({}, cli, {
+  cmd,
+  input
+})
 
 render(h(App, props))
