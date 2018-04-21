@@ -30,6 +30,12 @@ test('App renders with routes', t => {
   t.snapshot(json)
 })
 
+test('App renders with a document', t => {
+  global.document = {}
+  const json = renderJSON(<App routes={routes} pathname='/hello' />)
+  t.snapshot(json)
+})
+
 test('DirectoryListing renders', t => {
   const json = renderJSON(<DirectoryListing />)
   t.snapshot(json)

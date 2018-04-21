@@ -8,7 +8,6 @@ module.exports = ({
   title = 'kit',
   meta = [],
   links = [],
-  stylesheets = [],
   static: staticBuild
 }) =>
 `<!DOCTYPE html>
