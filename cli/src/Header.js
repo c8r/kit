@@ -7,14 +7,14 @@ const Box = require('ink-box')
 class Header extends Component {
   render() {
     return (
-			<div>
-				<Box>
-					<BigText text='Kit' />
-				</Box>
-				<br />
-				<Text>by Compositor</Text>
-			</div>
-		)
+      <div>
+        <Box>
+          <BigText text="Kit" />
+        </Box>
+        <br />
+        <Text>by Compositor</Text>
+      </div>
+    )
   }
 }
 

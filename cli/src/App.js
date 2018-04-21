@@ -2,13 +2,18 @@
 
 const { h, Component, Text } = require('ink')
 const importJsx = require('import-jsx')
-const Header = importJsx('./Header')
+const Init = importJsx('./Init')
 
 class App extends Component {
   render() {
-    return (
-			<Header />
-		)
+    const { cmd, help } = this.props
+
+    if (cmd === 'init') {
+      return <Init />
+    } else {
+      console.log(help)
+      process.exit(1)
+    }
   }
 }
 
