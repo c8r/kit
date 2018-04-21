@@ -8,13 +8,16 @@ const index = filename
 
 const withCatch = Component => class extends React.Component {
   state = { err: null }
+
   static getDerivedStateFromProps (props, state) {
     if (!state.err) return null
     return { err: null }
   }
+
   componentDidCatch (err) {
     this.setState({ err })
   }
+
   render () {
     const { err } = this.state
     if (err) {
@@ -30,7 +33,7 @@ const withCatch = Component => class extends React.Component {
         />
       )
     }
-    console.log(this.props)
+
     return <Component {...this.props} />
   }
 }

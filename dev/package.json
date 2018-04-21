@@ -7,7 +7,9 @@
     "kit-dev": "./cli.js"
   },
   "scripts": {
-    "start": "./cli.js examples"
+    "start": "./cli.js examples",
+    "cover": "nyc report --reporter html",
+    "test": "nyc ava"
   },
   "author": "Brent Jackson",
   "license": "MIT",
@@ -44,9 +46,17 @@
   },
   "devDependencies": {
     "ava": "^0.25.0",
+    "babel-register": "^6.26.0",
+    "memory-fs": "^0.4.1",
     "nyc": "^11.7.1",
     "react-test-renderer": "^16.3.2",
     "rebass": "^2.0.0-0",
     "refunk": "^3.0.1"
+  },
+  "ava": {
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
   }
 }
