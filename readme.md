@@ -1,6 +1,6 @@
 # Kit
 
-Components for development environments, style guides, and demos.
+Components and tooling for development environments, style guides, and demos.
 
 ## Getting started
 

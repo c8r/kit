@@ -7,6 +7,7 @@
   "author": "Compositor",
   "bin": "cli.js",
   "scripts": {
+    "format": "prettier --write *.js '{src,lib}/**/*.js'",
     "test": "ava -v"
   },
   "files": [
@@ -17,6 +18,8 @@
     "ink": "^0.2.1",
     "ink-big-text": "^0.2.0",
     "ink-box": "^0.1.0",
+    "ink-select-input": "^1.1.0",
+    "ink-text-input": "^1.1.1",
     "meow": "^3.7.0",
     "prop-types": "^15.5.10"
   },
@@ -26,6 +29,7 @@
     "eslint-config-xo-react": "^0.13.0",
     "eslint-plugin-react": "^7.1.0",
     "import-jsx": "^1.2.0",
+    "prettier": "^1.12.1",
     "xo": "^0.18.2"
   },
   "ava": {
@@ -39,10 +43,14 @@
           {
             "pragma": "h",
             "useBuiltIns": true,
-						"pragmaFrag": "h.Fragment"
+            "pragmaFrag": "h.Fragment"
           }
         ]
       ]
     }
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
   }
 }
