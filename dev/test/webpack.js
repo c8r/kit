@@ -5,6 +5,7 @@ import getConfig from '../lib/config'
 import htmlTemplate from '../lib/html-template'
 
 const opts = {
+  input: '.',
   dirname: path.join(__dirname, './fixtures'),
   config: path.join(__dirname, './fixtures/config.js'),
 }

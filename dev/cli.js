@@ -56,31 +56,10 @@ const cli = meow(`
   }
 })
 
-const [ fileOrDir ] = cli.input
-const opts = Object.assign({}, (pkg ? pkg.kit : null), cli.flags)
+const [ input ] = cli.input
+const opts = Object.assign({ input }, (pkg ? pkg.kit : null), cli.flags)
 
-log(`starting dev server... (${fileOrDir})`)
-
-const fileOrDirPath = path.isAbsolute(fileOrDir) ? fileOrDir : path.join(process.cwd(), fileOrDir)
-const stats = fs.statSync(fileOrDirPath)
-
-opts.dirname = stats.isDirectory() ? fileOrDirPath : path.dirname(fileOrDirPath)
-opts.filename = stats.isDirectory() ? null : fileOrDirPath
-
-const getAbsolutePath = filename => filename
-  ? path.isAbsolute(filename)
-    ? filename : path.join(process.cwd(), filename)
-  : null
-
-if (!opts.config) {
-  opts.config = find.sync('kit.config.js', { cwd: opts.dirname })
-}
-opts.config = getAbsolutePath(opts.config)
-
-if (!opts.webpack) {
-  opts.webpack = find.sync('webpack.config.js', { cwd: opts.dirname })
-}
-opts.webpack = getAbsolutePath(opts.webpack)
+log(`starting dev server...`)
 
 dev(opts)
   .then(res => {

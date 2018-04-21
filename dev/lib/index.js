@@ -5,6 +5,7 @@ const serve = require('webpack-serve')
 const history = require('connect-history-api-fallback')
 const convert = require('koa-connect')
 
+const parseOptions = require('./parse-options')
 const getConfig = require('./config')
 
 const dev = {
@@ -16,6 +17,8 @@ const dev = {
 }
 
 const start = async (opts = {}) => {
+  opts = parseOptions(opts)
+
   const { port = 8000 } = opts
 
   if (opts.config) {
