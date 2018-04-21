@@ -2,7 +2,8 @@
   "lerna": "2.5.1",
   "packages": [
     "packages/*",
-    "core"
+    "core",
+    "dev"
   ],
   "version": "1.0.0"
 }
