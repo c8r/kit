@@ -13,7 +13,7 @@ import {
   XRay,
   Frame,
   LiveEditor,
-  Knobs,
+  PropsForm,
   Font,
   Responsive,
   TypeScale
@@ -65,17 +65,17 @@ const Demo = props => (
           </div>
         </Responsive>
       </Example>
-      <Example name="Knobs">
-        <Knobs>
+      <Example name="PropsForm">
+        <PropsForm>
           <Button bg="tomato">Hello</Button>
-          <Knobs.Input name="children" />
-          <Knobs.Select name="bg">
+          <PropsForm.Input name="children" />
+          <PropsForm.Select name="bg">
             <option />
             <option>tomato</option>
             <option>magenta</option>
             <option>cyan</option>
-          </Knobs.Select>
-        </Knobs>
+          </PropsForm.Select>
+        </PropsForm>
       </Example>
     </Library>
   </Provider>

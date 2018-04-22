@@ -1,4 +1,4 @@
-# Knobs
+# PropsForm
 
 Add form controls to adjust a component's props.
 
@@ -7,18 +7,18 @@ Default values are extracted from the first child's props
 
 ```jsx
 import React from 'react'
-import { Knobs } from '@compositor/kit'
+import { PropsForm } from '@compositor/kit'
 import Button from '../src/Button'
 
 const example = (
-  <Knobs>
+  <PropsForm>
     <Button color='blue'>Hello</Button>
-    <Knobs.Input name='color' />
-    <Knobs.Select name='size'>
+    <PropsForm.Input name='color' />
+    <PropsForm.Select name='size'>
       <option>small</option>
       <option>medium</option>
       <option>large</option>
-    </Knobs.Select>
-  </Knobs>
+    </PropsForm.Select>
+  </PropsForm>
 )
 ```
