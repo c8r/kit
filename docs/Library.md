@@ -5,39 +5,23 @@ showing a grid view by default and a detailed view when a component is clicked.
 
 Prop | Type | Description
 ---|---|---
-height | string | CSS height of the whole Library component (default `100vh`)
-card | object | Object of `width`, `height`, and `gap` for the grid view cards
+examples | array | Optional prop to pass examples in as an array of example objects instead of using children
+renderSideNav | function | render prop to customize side nav
 
-The Library component includes a Library.Nav component that will appear as a sidebar navigation
-when passed as a child.
 
 ```jsx
 import React from 'react'
-import { Provider, Library } from '@compositor/kit'
+import { Library, Example } from '@compositor/kit'
+import { Button } from '../src'
 
 const App = props => (
-  <Provider>
-    <Library>
-      <Library.Nav />
-    </Library>
-  </Provider>
+  <Library>
+    <Example name='Button'>
+      <Button>Beep</Button>
+    </Example>
+  </Library>
 )
 ```
-
-_Note_: that you must also use `Library.Nav` to render the navigation.
-
-## Provider
-
-Wrap all Kit components with the Provider component to enable the Library navigation and other features.
-
-Prop | Type | Description
----|---|---
-css | string | root CSS styles
-fontFamily | string | default font stack, adds a link tag for Google Fonts
-lineHeight | string or number | default line-height
-color | string | default color
-scope | object | components provided to [`LiveEditor`](#liveeditor) scope
-theme | object | theme object passed to `ThemeProvider` in [`LiveEditor`](#liveeditor)
 
 ## Example
 
@@ -46,22 +30,43 @@ Each Example component requires a unique `name` prop value.
 
 ```jsx
 import React from 'react'
-import { Provider, Library, Example } from '@compositor/kit'
+import { Library, Example } from '@compositor/kit'
 import Button from '../src/Button'
 
 const App = props => (
-  <Provider>
-    <Library>
-      <Example name='Button'>
-        <Button>
-          Hello
-        </Button>
-      </Example>
-    </Library>
-  </Provider>
+  <Library>
+    <Example name='Button'>
+      <Button>
+        Hello
+      </Button>
+    </Example>
+  </Library>
 )
 ```
 
 Prop | Type | Description
 ---|---|---
 name | string (required) | Unique identifier that will be used for navigation in the Library
+
+## Detail
+
+Use the Detail component to add additional elements when viewing the example detail view. Elements in the Detail component will not show up in the grid view of the Library.
+
+```jsx
+import React from 'react'
+import { Library, Example, Detail } from '@compositor/kit'
+
+const App = props => (
+  <Library>
+    <Example name='Button'>
+      <Button>Beep</Button>
+      <Detail>
+        <Button primary>Primary</Button>
+        <Button secondary>Secondary</Button>
+        <Button large>Large</Button>
+        <Button small>Small</Button>
+      </Detail>
+    </Example>
+  </Library>
+)
+```
