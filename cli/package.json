@@ -7,6 +7,7 @@
   "author": "Compositor",
   "bin": "cli.js",
   "scripts": {
+    "start": "./cli.js",
     "format": "prettier --write *.js '{src,lib}/**/*.js'",
     "test": "ava -v"
   },
