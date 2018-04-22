@@ -89,6 +89,7 @@ const LibraryApp = withRouter(class extends React.Component {
   getExampleChildren = ({ children }) => (
     React.Children.toArray(children)
       .filter(c => c.type === Example)
+      .filter(c => !!c.props.name)
       .map(c => ({
         name: c.props.name,
         element: c.props.children
@@ -153,7 +154,7 @@ const LibraryApp = withRouter(class extends React.Component {
   }
 })
 
-export class SideNav extends React.Component {
+class SideNav extends React.Component {
   static propTypes = {
     title: PropTypes.string,
     examples: PropTypes.array
@@ -188,6 +189,10 @@ export class SideNav extends React.Component {
 }
 
 export class Example extends React.Component {
+  static propTypes = {
+    name: PropTypes.string.isRequired
+  }
+
   render () {
     return (
       <React.Fragment {...this.props} />
