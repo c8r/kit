@@ -63,7 +63,7 @@ Kit includes a command line interface and development server.
 Install the CLI either as a global or local dependency in your project.
 
 ```sh
-npm i -g @compositor/kit
+npm i -g @compositor/kit-cli
 ```
 
 Run the dev server pointing to a directory of components or a single component file.
@@ -82,7 +82,7 @@ Alternatively, add a run script to your `package.json` file.
 
 ### Generator
 
-Kit also includes a CLI generator for quickly creating demos, style guides,
+Kit CLI also includes a generator for quickly creating demos, style guides,
 and other setups with no build configuration required.
 
 Run the `init` command to get started.
