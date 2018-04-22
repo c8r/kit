@@ -2,12 +2,13 @@ import React from 'react'
 import nano from 'nano-style'
 import {
   BrowserRouter,
-  HashRouter,
   StaticRouter,
   Route,
-  NavLink
+  NavLink,
+  Link,
+  withRouter,
 } from 'react-router-dom'
-import { Grid } from './ui'
+import { Grid, Box } from './ui'
 
 const Root = nano('div')({
   display: 'flex',
@@ -23,24 +24,32 @@ const Main = nano('div')({
   WebkitOverflowScrolling: 'touch'
 })
 
+const Card = nano(Link)({
+  display: 'block',
+  color: 'inherit',
+  textDecoration: 'none'
+})
+
 const SideBar = nano('div')({
   width: '192px',
   flex: 'none',
-  // padding: '8px',
   height: '100vh',
   overflowY: 'auto',
-  WebkitOverflowScrolling: 'touch'
+  WebkitOverflowScrolling: 'touch',
+  borderRight: '1px solid #f6f6f6'
 })
 
 const NavItem = nano(NavLink)(
   {
     display: 'block',
-    padding: '4px',
+    paddingLeft: '8px',
+    paddingRight: '8px',
+    paddingTop: '4px',
+    paddingBottom: '4px',
     fontSize: '12px',
     fontWeight: 'bold',
     textDecoration: 'none',
     color: 'inherit',
-    // borderRadius: '4px',
     WebkitUserSelect: 'none',
     userSelect: 'none',
     '&.active': {
@@ -49,9 +58,6 @@ const NavItem = nano(NavLink)(
     }
   }
 )
-
-const Context = React.createContext({
-})
 
 const Router = typeof document !== 'undefined'
   ? BrowserRouter
@@ -67,10 +73,7 @@ export class Library extends React.Component {
   }
 }
 
-class LibraryApp extends React.Component {
-  state = {}
-  update = fn => this.setState(fn)
-
+const LibraryApp = withRouter(class extends React.Component {
   getExampleChildren = ({ children }) => (
     React.Children.toArray(children)
       .filter(c => c.type === Example)
@@ -82,62 +85,66 @@ class LibraryApp extends React.Component {
       
   render() {
     const {
+      title,
       renderSideNav,
+      renderCard,
     } = this.props
 
     const examples = this.props.examples || this.getExampleChildren(this.props)
 
     const sidenav = typeof renderSideNav === 'function'
-      ? renderSideNav({ ...this.state, examples })
-      : <SideNav examples={examples} />
-
-    const context = {
-      ...this.state,
-      update: this.update
-    }
+      ? renderSideNav({ ...this.state, title, examples })
+      : <SideNav title={title} examples={examples} />
 
     return (
-      <Context.Provider value={context}>
-        <Root>
-          <SideBar>
-            {sidenav}
-          </SideBar>
-          <Main>
+      <Root>
+        <SideBar>
+          {sidenav}
+        </SideBar>
+        <Main>
+          <Route
+            exact
+            path='/'
+            render={() => (
+              <Grid>
+                {examples.map(example => (
+                  <Card
+                    key={example.name}
+                    to={'/' + example.name}>
+                    {typeof renderCard === 'function' ? renderCard(example) : example.element}
+                  </Card>
+                ))}
+              </Grid>
+            )}
+          />
+          {examples.map(example => (
             <Route
-              exact
-              path='/'
-              render={() => (
-                <Grid>
-                  {examples.map(example => (
-                    <div key={example.name}>
-                      {example.element}
-                    </div>
-                  ))}
-                </Grid>
-              )}
+              key={example.name}
+              path={'/' + example.name}
+              render={() => example.element}
             />
-            {examples.map(example => (
-              <Route
-                key={example.name}
-                path={'/' + example.name}
-                render={() => example.element}
-              />
-            ))}
-          </Main>
-        </Root>
-      </Context.Provider>
+          ))}
+        </Main>
+      </Root>
     )
   }
-}
+})
 
 export class SideNav extends React.Component {
+  static defaultProps = {
+    title: 'Kit'
+  }
+
   render() {
-    const { examples, update, component } = this.props
+    const {
+      examples,
+      title
+    } = this.props
 
     return (
       <React.Fragment>
         <NavItem exact to='/'>
-          Components
+          {title}
         </NavItem>
         {examples.map(example => (
           <NavItem

@@ -22,6 +22,7 @@ export default class extends React.Component {
   render () {
     return (
       <Library
+        title='Example Library'
         examples={examples}
       />
     )
