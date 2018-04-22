@@ -31,6 +31,7 @@ const Card = nano(Link)({
   overflow: 'hidden',
   border: '1px solid #f6f6f6',
   '&:hover': {
+    borderColor: '#ddd'
   }
 })
 
