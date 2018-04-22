@@ -8,7 +8,7 @@
     "dist"
   ],
   "scripts": {
-    "start": "kit examples",
+    "start": "kit-dev examples",
     "test": "nyc ava",
     "build": "babel src -d dist",
     "clean": "rm -rf dist",
