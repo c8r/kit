@@ -1,6 +1,13 @@
 # Kit
 
-Components and tooling for development environments, style guides, and demos.
+Development and documentation tools for React component libraries, style guides, and demos
+
+- Components for development and documentation
+- Library view for organizing examples
+- Prompt-based project generator
+- Zero-config development server
+- Compatible with any React setup
+
 
 ## Getting started
 
@@ -8,10 +15,14 @@ Components and tooling for development environments, style guides, and demos.
 npm i -S @compositor/kit
 ```
 
+### Components
+
+Kit includes several React components for development and documentation.
+The Library and Example components can be used to create a development environment separately from your application's code base.
+
 ```jsx
 import React from 'react'
 import {
-  Provider,
   Library,
   Example
 } from '@compositor/kit'
@@ -22,59 +33,73 @@ import {
 } from './src'
 
 const App = props => (
-  <Provider>
-    <Library>
-      <Example name='Heading'>
-        <Heading>Hello</Heading>
-      </Example>
-      <Example name='Text'>
-        <Text>Hello</Text>
-      </Example>
-      <Example name='Button'>
-        <Button>Hello</Button>
-      </Example>
-    </Library>
-  </Provider>
+  <Library>
+    <Example name='Heading'>
+      <Heading>Hello</Heading>
+    </Example>
+    <Example name='Text'>
+      <Text>Hello</Text>
+    </Example>
+    <Example name='Button'>
+      <Button>Hello</Button>
+    </Example>
+  </Library>
 )
 
 export default App
 ```
 
-Kit was intended for use with [x0][x0],
-a zero-config development server and static site generator,
-but any React application setup will work as well since Kit is simply a collection of React components.
-
-```sh
-x0 dev App.js
-```
-
-## Features
-
-- React components for development
-- Works great for demos and style guides
-- [MDX][mdx] support for expressive documentation
-- No configuration
-- No custom plugins or APIs
-
-## Components
+For more on using Kit components see the docs:
 
 - [Library](docs/Library.md)
-  * [Provider](docs/Library.md#provider)
-  * [Example](docs/Library.md#example)
+- [LiveEditor](docs/LiveEditor.md)
 - [XRay](docs/XRay.md)
 - [Responsive](docs/Responsive.md)
-- [Knobs](docs/Knob.md)
-- [Frame](docs/Frame.md)
-- [LiveEditor](docs/LiveEditor.md)
 - [Debug](docs/Debug.md)
+
+### Development Server
+
+Kit includes a command line interface and development server. 
+Install the CLI either as a global or local dependency in your project.
+
+```sh
+npm i -g @compositor/kit
+```
+
+Run the dev server pointing to a directory of components or a single component file.
+
+```sh
+kit examples/App.js
+```
+
+Alternatively, add a run script to your `package.json` file.
+
+```json
+"scripts": {
+  "start": "kit examples/App.js"
+}
+```
+
+### Generator
+
+Kit also includes a CLI generator for quickly creating demos, style guides,
+and other setups with no build configuration required.
+
+Run the `init` command to get started.
+
+```sh
+kit init
+```
+
 
 ## Related
 
-- @compositor/x0
-- @mdx-js/mdx
-- @compositor/gen
-- react-live
-- styled-system
+- [@compositor/x0][x0]
+- [@mdx-js/mdx][mdx]
+- [react-live][react-live]
+- [styled-system][styled-system]
+
+---
 
 ## Contributing
 
@@ -93,3 +118,4 @@ x0 dev App.js
 [x0]: https://github.com/c8r/x0
 [mdx]: https://github.com/mdx-js/mdx
 [react-live]: https://github.com/FormidableLabs/react-live
+[styled-system]: https://github.com/jxnblk/styled-system
