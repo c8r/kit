@@ -6,7 +6,9 @@ showing a grid view by default and a detailed view when a component is clicked.
 Prop | Type | Description
 ---|---|---
 examples | array | Optional prop to pass examples in as an array of example objects instead of using children
-renderSideNav | function | render prop to customize side nav
+title | string | Optional title to display in the side nav
+renderSideNav | function | Optional render prop to customize side nav
+renderCard | function | Optional render prop to customize card in the grid view 
 
 
 ```jsx
