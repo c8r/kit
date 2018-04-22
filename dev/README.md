@@ -2,7 +2,7 @@
 # Kit dev server
 
 ```sh
-npm i -g @compositor/kit
+npm i -g @compositor/kit-cli
 ```
 
 Start the dev server by passing a directory of components as the first argument.
