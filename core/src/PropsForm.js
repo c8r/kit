@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Flex, Label, Input, Select, Divider } from './ui'
 
-class Knobs extends React.Component {
+class PropsForm extends React.Component {
   constructor(props) {
     super()
     const [child] = React.Children.toArray(props.children)
@@ -23,7 +23,7 @@ class Knobs extends React.Component {
     const clone = React.cloneElement(child, this.state)
 
     const controls = children
-      .filter(c => c.type.knob === true)
+      .filter(c => c.type.isForm === true)
       .map(c =>
         React.cloneElement(c, { props: this.state, update: this.update })
       )
@@ -42,7 +42,7 @@ class Knobs extends React.Component {
   }
 }
 
-Knobs.Input = ({ update, name, props = {}, ...rest }) => (
+PropsForm.Input = ({ update, name, props = {}, ...rest }) => (
   <Box mb={2}>
     <Label>{name}</Label>
     <Input
@@ -56,9 +56,9 @@ Knobs.Input = ({ update, name, props = {}, ...rest }) => (
     />
   </Box>
 )
-Knobs.Input.knob = true
+PropsForm.Input.isForm = true
 
-Knobs.Select = ({ update, name, props = {}, ...rest }) => (
+PropsForm.Select = ({ update, name, props = {}, ...rest }) => (
   <Box mb={2}>
     <Label>{name}</Label>
     <Select
@@ -72,6 +72,6 @@ Knobs.Select = ({ update, name, props = {}, ...rest }) => (
     />
   </Box>
 )
-Knobs.Select.knob = true
+PropsForm.Select.isForm = true
 
-export default Knobs
+export default PropsForm
