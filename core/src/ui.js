@@ -125,7 +125,9 @@ export const Divider = nano('hr')({
 })
 Divider.displayName = 'Divider'
 
-export const Text = nano('p')({ typeScale })
+export const Text = nano('p')({
+  margin: 0
+}, typeScale)
 Text.displayName = 'Text'
 
 export default {

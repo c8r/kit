@@ -19,7 +19,6 @@ const Root = nano('div')({
 
 const Main = nano('div')({
   flex: '1 1 auto',
-  padding: '8px',
   height: '100vh',
   overflowY: 'auto',
   WebkitOverflowScrolling: 'touch'
@@ -28,7 +27,11 @@ const Main = nano('div')({
 const Card = nano(Link)({
   display: 'block',
   color: 'inherit',
-  textDecoration: 'none'
+  textDecoration: 'none',
+  overflow: 'hidden',
+  border: '1px solid #f6f6f6',
+  '&:hover': {
+  }
 })
 
 const SideBar = nano('div')({
@@ -119,7 +122,14 @@ const LibraryApp = withRouter(class extends React.Component {
                   <Card
                     key={example.name}
                     to={'/' + example.name}>
-                    {typeof renderCard === 'function' ? renderCard(example) : example.element}
+                    {typeof renderCard === 'function'
+                      ? renderCard(example)
+                      : (
+                        <Box p={2}>
+                          {example.element}
+                        </Box>
+                      )
+                    }
                   </Card>
                 ))}
               </Grid>
@@ -129,7 +139,11 @@ const LibraryApp = withRouter(class extends React.Component {
             <Route
               key={example.name}
               path={'/' + example.name}
-              render={() => example.element}
+              render={() => (
+                <Box p={2}>
+                  {example.element}
+                </Box>
+              )}
             />
           ))}
         </Main>
@@ -175,7 +189,7 @@ export class SideNav extends React.Component {
 export class Example extends React.Component {
   render () {
     return (
-      <div {...this.props} />
+      <React.Fragment {...this.props} />
     )
   }
 }
