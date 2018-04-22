@@ -30,6 +30,7 @@ const cli = meow(`
   Options:
     -o --open     Opens development server in default browser
     -p --port     Port for development server
+    -c --config   Path to configuration file
     --webpack     Path to custom webpack.config.js
 `, {
   flags: {
