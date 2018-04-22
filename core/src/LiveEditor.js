@@ -10,7 +10,9 @@ import { Box } from './ui'
 
 class Editor extends Component {
   static propTypes = {
-    code: PropTypes.string.isRequired
+    code: PropTypes.string.isRequired,
+    scope: PropTypes.object,
+    theme: PropTypes.object,
   }
 
   constructor(props, context) {
