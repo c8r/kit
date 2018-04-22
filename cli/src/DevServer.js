@@ -5,7 +5,7 @@ const dev = require('@compositor/kit-dev')
 const open = require('react-dev-utils/openBrowser')
 
 module.exports = class extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       server: null,
@@ -13,7 +13,7 @@ module.exports = class extends Component {
     }
   }
 
-  componentDidMount () {
+  componentDidMount() {
     dev(this.props)
       .then(server => {
         this.setState({ server })
@@ -23,7 +23,7 @@ module.exports = class extends Component {
       })
   }
 
-  render () {
+  render() {
     const { server, err } = this.state
     if (err) {
       return 'Error: ' + err.toString()

@@ -16,10 +16,13 @@
     "ui.js"
   ],
   "dependencies": {
+    "@compositor/kit-dev": "^1.0.0-0",
+    "execa": "^0.10.0",
     "ink": "^0.2.1",
     "ink-big-text": "^0.2.0",
     "ink-box": "^0.1.0",
     "ink-select-input": "^1.1.0",
+    "ink-spinner": "^1.0.0",
     "ink-text-input": "^1.1.1",
     "meow": "^3.7.0",
     "prop-types": "^15.5.10"

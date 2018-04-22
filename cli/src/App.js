@@ -7,24 +7,14 @@ const DevServer = require('./DevServer')
 
 class App extends Component {
   render() {
-    const {
-      cmd,
-      input,
-      flags,
-      help
-    } = this.props
+    const { cmd, input, flags, help } = this.props
 
     switch (cmd) {
       case 'init':
         return <Init />
       case 'dev':
       default:
-        return (
-          <DevServer
-            input={input || cmd}
-            {...flags}
-          />
-        )
+        return <DevServer input={input || cmd} {...flags} />
     }
   }
 }

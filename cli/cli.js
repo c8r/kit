@@ -24,7 +24,7 @@ const cli = meow(
   }
 )
 
-const [ cmd, input ] = cli.input
+const [cmd, input] = cli.input
 
 const props = Object.assign({}, cli, {
   cmd,
