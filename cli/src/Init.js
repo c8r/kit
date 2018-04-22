@@ -7,8 +7,10 @@ const Input = require('ink-text-input')
 const Spinner = require('ink-spinner')
 const execa = require('execa')
 
+const { log, error, complete } = require('../lib/log')
+
 const Item = importJsx('./ListItem')
-const { projectTemplates } = require('../lib/constants')
+const { projectTemplates, tarUrl } = require('../lib/constants')
 const items = projectTemplates.map(t => ({ label: t, value: t }))
 const ProjectSelect = ({ items, onSelect }) => (
   <div>
@@ -18,7 +20,6 @@ const ProjectSelect = ({ items, onSelect }) => (
   </div>
 )
 
-//mkdir foo && curl https://codeload.github.com/mdx-js/mdx/tar.gz/master | tar -xz -C foo --strip=3 mdx-master/examples/next
 class Init extends Component {
   constructor() {
     super()
@@ -36,7 +37,7 @@ class Init extends Component {
   }
 
   handleTemplateSelect({ label }) {
-    console.log(`✅ Template: ${label}`)
+    log(`Template: ${label}`)
 
     this.setState({
       template: label,
@@ -52,7 +53,7 @@ class Init extends Component {
     const { name } = this.state
     this.setState({ step: 'initializing' })
 
-    console.log(`✅ Project Name: ${name}`)
+    log(`Project Name: ${name}`)
     this.initialize()
   }
 
@@ -62,26 +63,26 @@ class Init extends Component {
     try {
       execa.shellSync(`mkdir ${name}`)
     } catch (e) {
-      console.log(e)
+      error(e, `Could not create ${name} dir`)
       process.exit(1)
     }
 
-    console.log('✅ Directory initialized')
+    complete(`${name} directory created`)
 
     try {
       const command = [
         // From: https://github.com/segmentio/create-next-app/blob/master/lib/utils/load-example.js
-        'curl https://codeload.github.com/mdx-js/mdx/tar.gz/master',
+        `curl ${tarUrl}`,
         `tar -xz -C ${name} --strip=3 mdx-master/examples/${template}`
       ].join(' | ')
 
       const result = execa.shellSync(command)
     } catch (e) {
-      console.log(e)
+      error(e, `Failed to initialize project`)
       process.exit(1)
     }
 
-    console.log(`✅ Initialized`)
+    complete('Initialized')
     this.setState({ step: 'installing' })
     this.install(name)
   }
@@ -90,13 +91,20 @@ class Init extends Component {
     try {
       execa.shellSync(`cd ${name} && npm i`)
     } catch (e) {
-      console.log(e)
+      error(e, `Failed to install dependencies`)
       process.exit(1)
     }
 
-    console.log(`✅ Installed`)
-    console.log(`Get started with $ cd ${name}`)
-    console.log('Done!')
+    complete(`Installed`)
+    log(`
+  ${name} is ready to go!
+
+  Get started with the following terminal commands:
+
+    cd ${name}
+    npm start
+    open localhost:3000
+`)
     process.exit(0)
   }
 
@@ -111,7 +119,7 @@ class Init extends Component {
         {step === 'name' && (
           <div>
             <br />
-            <Text>Enter project name</Text>
+            <Text>Enter project name:</Text>
             <br />
             <Input
               value={name}
