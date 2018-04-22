@@ -1,6 +1,7 @@
 import test from 'ava'
 import React from 'react'
 import { create as render } from 'react-test-renderer'
+import { StaticRouter } from 'react-router-dom'
 import {
   Library,
   Example,
@@ -15,11 +16,19 @@ test('Library renders', t => {
 })
 
 test('Example renders', t => {
-  const json = renderJSON(<Example />)
+  const json = renderJSON(
+    <Example name='Hello'>
+      <h1>Hello</h1>
+    </Example>
+  )
   t.snapshot(json)
 })
 
 test('Detail renders', t => {
-  const json = renderJSON(<Detail />)
+  const json = renderJSON(
+    <StaticRouter context={{}}>
+      <Detail />
+    </StaticRouter>
+  )
   t.snapshot(json)
 })
