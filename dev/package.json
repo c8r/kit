@@ -4,7 +4,7 @@
   "description": "Zero-config React component development server",
   "main": "lib/index.js",
   "bin": {
-    "kit-dev": "./cli.js"
+    "kit": "./cli.js"
   },
   "scripts": {
     "start": "./cli.js examples",

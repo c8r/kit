@@ -21,7 +21,7 @@ export const StepLabel = nano(Text)({
 
 export const Specimen = ({ text, value, n, fontFamily, color }) => (
   <Fragment>
-    <Row mb={2} align="flex-end">
+    <Row mb={2} align="baseline">
       <Step
         style={{
           fontFamily,
@@ -30,14 +30,14 @@ export const Specimen = ({ text, value, n, fontFamily, color }) => (
         }}
       >
         <StepLabel f={0} mr={2} children={n} />
+        {' '}
         {text}
       </Step>
-      <Flex w={96} style={{ alignSelf: 'center' }} align="baseline" ml="auto">
+      <Flex w={96} style={{ alignSelf: 'baseline' }} align="baseline" ml="auto">
         <Text mr={1}>{value}</Text>
         <Text f={0}>px</Text>
       </Flex>
     </Row>
-    <Divider />
   </Fragment>
 )
 

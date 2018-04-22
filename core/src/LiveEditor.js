@@ -5,14 +5,10 @@ import { ThemeProvider } from 'styled-components'
 
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 
-import Provider from './Provider'
 import Catch from './Catch'
 import { Box } from './ui'
-import { CHANNEL, contextTypes } from './constants'
 
 class Editor extends Component {
-  static contextTypes = contextTypes
-
   static propTypes = {
     code: PropTypes.string.isRequired
   }
@@ -20,9 +16,7 @@ class Editor extends Component {
   constructor(props, context) {
     super()
 
-    const { code } = props
-    const { scope, theme = {} } = context[CHANNEL]
-
+    const { code, scope, theme = {} } = props
     const { content, data = {} } = matter(code)
 
     this.state = {

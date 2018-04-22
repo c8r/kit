@@ -1,10 +1,7 @@
 import React from 'react'
-import { CHANNEL, contextTypes } from './constants'
 import { Box, Flex, Label, Input, Select, Divider } from './ui'
 
 class Knobs extends React.Component {
-  static contextTypes = contextTypes
-
   constructor(props) {
     super()
     const [child] = React.Children.toArray(props.children)
@@ -21,7 +18,6 @@ class Knobs extends React.Component {
   }
 
   render() {
-    const { library, component } = this.context[CHANNEL]
     const children = React.Children.toArray(this.props.children)
     const [child] = children
     const clone = React.cloneElement(child, this.state)
@@ -31,8 +27,6 @@ class Knobs extends React.Component {
       .map(c =>
         React.cloneElement(c, { props: this.state, update: this.update })
       )
-
-    if (library && !component) return clone
 
     return (
       <Flex flexDirection="column">
