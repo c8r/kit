@@ -1,6 +1,8 @@
 import React from 'react'
 import {
-  Library
+  Library,
+  Example,
+  Detail
 } from '../src'
 
 const examples = [

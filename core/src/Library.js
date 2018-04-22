@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import nano from 'nano-style'
 import {
   BrowserRouter,
@@ -74,6 +75,13 @@ export class Library extends React.Component {
 }
 
 const LibraryApp = withRouter(class extends React.Component {
+  static propTypes = {
+    title: PropTypes.string,
+    examples: PropTypes.array,
+    renderSideNav: PropTypes.func,
+    renderCard: PropTypes.func
+  }
+
   getExampleChildren = ({ children }) => (
     React.Children.toArray(children)
       .filter(c => c.type === Example)
@@ -131,8 +139,14 @@ const LibraryApp = withRouter(class extends React.Component {
 })
 
 export class SideNav extends React.Component {
+  static propTypes = {
+    title: PropTypes.string,
+    examples: PropTypes.array
+  }
+
   static defaultProps = {
-    title: 'Kit'
+    title: 'Kit',
+    examples: []
   }
 
   render() {
@@ -166,13 +180,16 @@ export class Example extends React.Component {
   }
 }
 
-export class Detail extends React.Component {
+export const Detail = withRouter(class extends React.Component {
   render () {
+    const { location } = this.props
+    if (location.pathname === '/') return false
+
     return (
       <div {...this.props} />
     )
   }
-}
+})
 
 
 export default Library
