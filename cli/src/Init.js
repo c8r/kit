@@ -6,6 +6,7 @@ const Select = require('ink-select-input')
 const Input = require('ink-text-input')
 const Spinner = require('ink-spinner')
 const execa = require('execa')
+const mkdir = require('mkdirp')
 
 const { log, error, complete } = require('../lib/log')
 
@@ -37,7 +38,7 @@ class Init extends Component {
   }
 
   handleTemplateSelect({ label }) {
-    log(`Template: ${label}`)
+    complete(`Template: ${label}`)
 
     this.setState({
       template: label,
@@ -53,7 +54,7 @@ class Init extends Component {
     const { name } = this.state
     this.setState({ step: 'initializing' })
 
-    log(`Project Name: ${name}`)
+    complete(`Project Name: ${name}`)
     this.initialize()
   }
 
@@ -61,50 +62,25 @@ class Init extends Component {
     const { name, template } = this.state
 
     try {
-      execa.shellSync(`mkdir ${name}`)
-    } catch (e) {
-      error(e, `Could not create ${name} dir`)
-      process.exit(1)
-    }
+      const commands = [
+        `mkdir -p ${name}`,
+        `curl ${tarUrl} | tar -xz -C ${name} --strip=3 mdx-master/examples/${template}`
+      ]
 
-    complete(`${name} directory created`)
+      const px = commands.map(c => execa.shell(c))
+      await Promise.all(px)
 
-    try {
-      const command = [
-        // From: https://github.com/segmentio/create-next-app/blob/master/lib/utils/load-example.js
-        `curl ${tarUrl}`,
-        `tar -xz -C ${name} --strip=3 mdx-master/examples/${template}`
-      ].join(' | ')
+      complete('Code scaffolding')
+      this.setState({ step: 'installing' })
 
-      const result = execa.shellSync(command)
+      await execa.shell(`cd ${name} && npm i`)
+      complete('Package install')
     } catch (e) {
       error(e, `Failed to initialize project`)
       process.exit(1)
     }
 
-    complete('Initialized')
-    this.setState({ step: 'installing' })
-    this.install(name)
-  }
-
-  async install(name) {
-    try {
-      execa.shellSync(`cd ${name} && npm i`)
-    } catch (e) {
-      error(e, `Failed to install dependencies`)
-      process.exit(1)
-    }
-
-    complete(`Installed`)
-    log(`
-  ${name} is ready to go!
-
-  Get started with the following terminal commands:
-
-    cd ${name}
-    npm start
-    open localhost:3000
-`)
+    this.setState({ step: 'done' })
     process.exit(0)
   }
 
@@ -137,6 +113,9 @@ class Init extends Component {
           <div>
             <Spinner /> Running <Text bold>npm i</Text>
           </div>
+        )}
+        {step === 'done' && (
+          <Text>Done!</Text>
         )}
       </div>
     )
