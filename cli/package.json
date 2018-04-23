@@ -1,6 +1,6 @@
 {
   "name": "@compositor/kit-cli",
-  "version": "0.0.0",
+  "version": "1.0.1",
   "description": "Compositor Kit CLI",
   "license": "MIT",
   "repository": "c8r/kit-cli",
@@ -16,7 +16,7 @@
     "ui.js"
   ],
   "dependencies": {
-    "@compositor/kit-dev": "^1.0.0-0",
+    "@compositor/kit-dev": "^1.0.1",
     "execa": "^0.10.0",
     "ink": "^0.2.1",
     "ink-big-text": "^0.2.0",
