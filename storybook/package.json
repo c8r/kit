@@ -1,6 +1,6 @@
 {
   "name": "@compositor/kit-storybook",
-  "version": "1.0.0-1",
+  "version": "1.0.0-2",
   "description": "",
   "main": "index.js",
   "bin": {
@@ -17,13 +17,14 @@
   "devDependencies": {
     "ava": "^0.25.0",
     "nyc": "^11.7.1",
-    "react": "^16.3.2",
     "repng": "^3.0.0"
   },
   "peerDependencies": {},
   "dependencies": {
     "@storybook/core": "^4.0.0-alpha.3",
     "@storybook/react": "^4.0.0-alpha.3",
-    "meow": "^4.0.0"
+    "meow": "^4.0.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
   }
 }
