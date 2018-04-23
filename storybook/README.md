@@ -1,6 +1,8 @@
 
 # Kit Storybook
 
+**Experimental**
+
 Create a [Storybook][storybook] dev environment with a folder of examples 
 
 ```sh
@@ -39,6 +41,7 @@ import { configure } from '@storybook/react'
 import loadExamples from '@compositor/kit-storybook'
 
 const req = require.context('../examples', false, /\.js$/)
+
 const examples = req.keys().forEach(key => ({
   name: path.basename(key, path.extname(key)),
   example: req(key).default || req(key)
