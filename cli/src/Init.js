@@ -6,7 +6,6 @@ const Select = require('ink-select-input')
 const Input = require('ink-text-input')
 const Spinner = require('ink-spinner')
 const execa = require('execa')
-const mkdir = require('mkdirp')
 
 const { log, error, complete } = require('../lib/log')
 

@@ -25,7 +25,6 @@
     "ink-spinner": "^1.0.0",
     "ink-text-input": "^1.1.1",
     "meow": "^3.7.0",
-    "mkdirp": "^0.5.1",
     "prop-types": "^15.5.10"
   },
   "devDependencies": {
