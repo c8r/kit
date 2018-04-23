@@ -1,8 +1,12 @@
 import path from 'path'
 import { configure } from '@storybook/react'
-import loadExamples from '../index'
+import loadExamples from './index'
 
 const req = require.context(DIRNAME, false, /\.js$/)
+
+const opts = {
+  name: KITNAME
+}
 
 const load = () => {
   const examples = req.keys().map(key => ({
@@ -14,7 +18,7 @@ const load = () => {
       ? example.module()
       : example.module
   }))
-  loadExamples(examples)
+  loadExamples(examples, opts)
 }
 
 configure(load, module)

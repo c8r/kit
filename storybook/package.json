@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "_start": "./cli.js --port 8000 --config-dir .storybook",
-    "start": "./cli.js examples",
+    "start": "./cli.js examples --name 'Hello Kit'",
     "icon": "repng Favicon.js -f favicon.png -w 32 -h 32",
     "test": "nyc ava"
   },

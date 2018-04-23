@@ -1,16 +1,17 @@
-const { storiesOf } = require('@storybook/react')
-
-const stories = storiesOf('Kit Examples', module)
+import { storiesOf } from '@storybook/react'
 
 const toArray = examples => Array.isArray(examples)
   ? examples
   : Object.keys(examples)
     .map(name => ({ name, element: examples[name] }))
 
-module.exports = (examples = {}, opts = {}) => {
+export default (examples = {}, opts = {}) => {
+  const {
+    name = 'Kit Examples'
+  } = opts
+  const stories = storiesOf(name, module)
   toArray(examples)
     .forEach(({ name, element }) => {
-      console.log(name, element)
       stories.add(name, () => element)
     })
 }

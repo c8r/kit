@@ -12,17 +12,30 @@ const defaultConfig = require('@storybook/react/dist/server/config/babel')
 const wrapBabelConfig = require('@storybook/react/dist/server/wrapBabelConfig').default
 const getBaseConfig = require('@storybook/react/dist/server/config/webpack.config').default
 
-// const getBaseConfig = require('.@storybook/react/dist/server/config/webpack.config')
-// const loadConfig = require('@storybook/react/dist/server/config')
-
 const cli = meow(`
   Usage
 
     $ kit-storybook examples
 
-`, {})
+  Options
+    -p --port   Port for Storybook development server
+    --name      Name displayed in storybook (default Kit Examples)
+`, {
+  flags: {
+    port: {
+      type: 'string',
+      alias: 'p'
+    },
+    name: {
+      type: 'string'
+    }
+  }
+})
 
 const [ dirname ] = cli.input
+const opts = Object.assign({
+  port: 8000,
+}, cli.flags)
 
 const DIRNAME = path.isAbsolute(dirname) ? dirname : path.join(process.cwd(), dirname)
 
@@ -30,6 +43,7 @@ const loadConfig = (...args) => {
   args[1].plugins.push(
     new webpack.DefinePlugin({
       DIRNAME: JSON.stringify(DIRNAME),
+      KITNAME: JSON.stringify(opts.name),
     })
   )
   const config = configLoaderCreator({
@@ -40,8 +54,8 @@ const loadConfig = (...args) => {
   return config
 }
 
-process.argv.push('--port', '9000')
-process.argv.push('--config-dir', path.join(__dirname, '.storybook'))
+process.argv.push('--port', opts.port)
+process.argv.push('--config-dir', __dirname)
 
 buildDev({
   // what is this for?
@@ -50,10 +64,3 @@ buildDev({
   loadConfig,
   defaultFavIcon: path.join(__dirname, 'favicon.png'),
 })
-
-// defaultFavIcon: path.join(__dirname, 'node_modules/@storybook/react/dist/server/public/favicon.ico'),
-
-// start dev server
-// not sure if this will work
-// process.argv.push('--port 9000')
-// require('@storybook/react/dist/server')
