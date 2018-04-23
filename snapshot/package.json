@@ -1,0 +1,21 @@
+{
+  "name": "@compositor/kit-snapshot",
+  "version": "1.0.0-0",
+  "description": "Jest snapshot testing utility for examples arrays",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest examples"
+  },
+  "keywords": [],
+  "author": "Compositor",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "jest": "^22.4.3",
+    "react": "^16.3.2",
+    "react-test-renderer": "^16.3.2",
+    "styled-components": "^3.2.6"
+  }
+}
