@@ -3,6 +3,9 @@
   "version": "1.0.0-0",
   "description": "",
   "main": "index.js",
+  "bin": {
+    "kit-storybook": "./cli.js"
+  },
   "scripts": {
     "start": "./cli.js examples --name 'Hello Kit'",
     "icon": "repng Favicon.js -f favicon.png -w 32 -h 32",
