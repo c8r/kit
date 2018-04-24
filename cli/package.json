@@ -13,7 +13,9 @@
   },
   "files": [
     "cli.js",
-    "ui.js"
+    "ui.js",
+    "lib",
+    "src"
   ],
   "dependencies": {
     "@compositor/kit-dev": "^1.0.1",
