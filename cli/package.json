@@ -5,7 +5,9 @@
   "license": "MIT",
   "repository": "c8r/kit-cli",
   "author": "Compositor",
-  "bin": "cli.js",
+  "bin": {
+    "kit": "cli.js"
+  },
   "scripts": {
     "start": "./cli.js",
     "format": "prettier --write *.js '{src,lib}/**/*.js'",
