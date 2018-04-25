@@ -2,12 +2,12 @@
 const fs = require('fs')
 const path = require('path')
 const meow = require('meow')
-const { pkg } = require('read-pkg-up').sync()
 const open = require('react-dev-utils/openBrowser')
 const ora = require('ora')
 const chalk = require('chalk')
-const find = require('find-up')
 const dev = require('./lib')
+
+const config = require('pkg-conf').sync('kit')
 
 require('update-notifier')({
   pkg: require('./package.json')
@@ -33,6 +33,7 @@ const cli = meow(`
     -c --config   Path to configuration file
     --webpack     Path to custom webpack.config.js
 `, {
+  booleanDefault: undefined,
   flags: {
     open: {
       type: 'boolean',
@@ -58,7 +59,7 @@ const cli = meow(`
 })
 
 const [ input ] = cli.input
-const opts = Object.assign({ input }, (pkg ? pkg.kit : null), cli.flags)
+const opts = Object.assign({ input }, config, cli.flags)
 
 log(`starting dev server...`)
 
