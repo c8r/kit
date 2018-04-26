@@ -60,5 +60,5 @@ export {
   toSrcPath,
   displayObj,
   extendDefaultProps,
-	cartesianProduct
+  cartesianProduct
 }
