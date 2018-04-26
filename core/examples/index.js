@@ -19,7 +19,8 @@ import {
   TypeScale,
   Cartesian,
   Matrix,
-  Detail
+  Detail,
+  Diff
 } from '../src'
 
 const Demo = props => (
@@ -104,6 +105,12 @@ const Demo = props => (
           bg={['blue', 'pink', 'tomato', 'purple']}
           children={['Hello, world!', 'Beep']}
           component={Button}
+        />
+      </Example>
+      <Example name="Diff">
+        <Diff
+          a={<Heading color='pink'>Hello</Heading>}
+          b={<Heading color='purple' fontSize={3} mt={1}>Hello</Heading>}
         />
       </Example>
     </Library>
