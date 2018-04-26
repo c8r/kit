@@ -2,10 +2,8 @@ import {
   map,
   pipe,
   xprod,
-  unfold,
   unnest,
   reduce,
-  concat,
   mergeAll
 } from 'ramda'
 
