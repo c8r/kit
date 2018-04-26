@@ -7,10 +7,10 @@ export default ({ component, ...props }) => {
   const Component = component
 
   return (
-    <Fragment>
+    <div>
       {combinations.map((props, i) =>
         <Component key={i} {...props} />
       )}
-    </Fragment>
+    </div>
   )
 }

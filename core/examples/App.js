@@ -1,4 +1,6 @@
 import React from 'react'
+import styled from 'styled-components'
+import { color, space, fontSize } from 'styled-system'
 import {
   Library,
   Example,
@@ -23,10 +25,12 @@ const examples = [
 export default class extends React.Component {
   render () {
     return (
-      <Library
-        title='Example Library'
-        examples={examples}
-      />
+      <div>
+        <Library
+          title='Example Library'
+          examples={examples}
+        />
+      </div>
     )
   }
 }
