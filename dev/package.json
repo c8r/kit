@@ -1,6 +1,6 @@
 {
   "name": "@compositor/kit-dev",
-  "version": "1.0.1",
+  "version": "1.0.8",
   "description": "Zero-config React component development server",
   "main": "lib/index.js",
   "bin": {
