@@ -1,5 +1,15 @@
-import { ROOT_LEVEL_FILE } from './constants'
+import {
+  map,
+  pipe,
+  xprod,
+  unfold,
+  unnest,
+  reduce,
+  concat,
+  mergeAll
+} from 'ramda'
 
+const arr = v => Array.isArray(v) ? v : [v]
 const log = msg => process.env.VERBOSE && console.log(msg)
 const toSrcPath = (docsDir, path) =>
   path
@@ -29,6 +39,21 @@ const extendDefaultProps = (Component, props) => {
   )
 }
 
+const cartesianProduct = ({ theme = {}, ...props }) => {
+   const xproduct = reduce(pipe(xprod, map(unnest)), [[]])
+
+   const parsedProps =
+     Object
+       .keys(props)
+       .reduce((acc, k) => {
+         return acc.concat(
+           [arr(props[k]).map(v => ({ [k]: v }))]
+         )
+       }, [])
+
+  return map(mergeAll, xproduct(parsedProps))
+}
+
 export {
   log,
   introPage,
@@ -36,5 +61,6 @@ export {
   titleize,
   toSrcPath,
   displayObj,
-  extendDefaultProps
+  extendDefaultProps,
+	cartesianProduct
 }
