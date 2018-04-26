@@ -69,7 +69,7 @@ const baseConfig = {
         ]
       },
       {
-        test: /\.mdx$/,
+        test: /\.mdx?$/,
         use: [
           {
             loader: require.resolve('babel-loader'),
