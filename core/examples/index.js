@@ -18,7 +18,8 @@ import {
   Responsive,
   TypeScale,
   Cartesian,
-  Matrix
+  Matrix,
+  Detail
 } from '../src'
 
 const Demo = props => (
@@ -35,6 +36,23 @@ const Demo = props => (
           value={2/3}
           color='tomato'
         />
+        <Detail>
+          <Matrix
+            x={[
+              { color: 'blue '},
+              { color: 'pink' },
+              { color: 'tomato' },
+              { color: 'purple' }
+            ]}
+            y={[
+              { value: 1/5 },
+              { value: 1/4 },
+              { value: 1/3 },
+              { value: 3/4 }
+            ]}
+            component={Donut}
+          />
+        </Detail>
       </Example>
       <Example name="XRay">
         <XRay>
@@ -86,23 +104,6 @@ const Demo = props => (
           bg={['blue', 'pink', 'tomato', 'purple']}
           children={['Hello, world!', 'Beep']}
           component={Button}
-        />
-      </Example>
-      <Example name="Matrix">
-        <Matrix
-          x={[
-            { color: 'blue '},
-            { color: 'pink' },
-            { color: 'tomato' },
-            { color: 'purple' }
-          ]}
-          y={[
-            { value: 1/5 },
-            { value: 1/4 },
-            { value: 1/3 },
-            { value: 3/4 }
-          ]}
-          component={Donut}
         />
       </Example>
     </Library>

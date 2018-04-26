@@ -95,7 +95,7 @@ const LibraryApp = withRouter(class extends React.Component {
         element: c.props.children
       }))
   )
-      
+
   render() {
     const {
       title,
