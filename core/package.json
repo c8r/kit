@@ -2,7 +2,7 @@
   "name": "@compositor/kit",
   "description": "Components for development environments, style guides, and demos",
   "author": "Compositor",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "dist/index.js",
   "files": [
     "dist"
