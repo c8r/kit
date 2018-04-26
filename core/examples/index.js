@@ -16,7 +16,8 @@ import {
   PropsForm,
   Font,
   Responsive,
-  TypeScale
+  TypeScale,
+  Cartesian
 } from '../src'
 
 const Demo = props => (
@@ -76,6 +77,15 @@ const Demo = props => (
             <option>cyan</option>
           </PropsForm.Select>
         </PropsForm>
+      </Example>
+      <Example name="Cartesian">
+        <Cartesian
+          m={4}
+          fontSize={[1, 2, 3]}
+          bg={['blue', 'pink', 'tomato', 'purple']}
+          children={['Hello, world!', 'Beep']}
+          component={Button}
+        />
       </Example>
     </Library>
   </Provider>
