@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react'
-
 import { cartesianProduct } from './util'
 
 export default ({ component, ...props }) => {
