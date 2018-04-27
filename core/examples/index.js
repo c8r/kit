@@ -20,7 +20,8 @@ import {
   Cartesian,
   Matrix,
   Detail,
-  Diff
+  Diff,
+  State
 } from '../src'
 
 const Demo = props => (
@@ -111,6 +112,25 @@ const Demo = props => (
         <Diff
           a={<Heading color='pink'>Hello</Heading>}
           b={<Heading color='purple' fontSize={3} mt={1}>Hello</Heading>}
+        />
+      </Example>
+      <Example name='State'>
+        <State
+          count={0}
+          render={({ count, update }) => (
+            <React.Fragment>
+              <pre>{'<State />'}</pre>
+              <samp>{count}</samp>
+              <button
+                onClick={e => update(s => ({ count: s.count - 1 }))}>
+                -
+              </button>
+              <button
+                onClick={e => update(s => ({ count: s.count + 1 }))}>
+                +
+              </button>
+            </React.Fragment>
+          )}
         />
       </Example>
     </Library>
