@@ -5,13 +5,9 @@ const meow = require('meow')
 const open = require('react-dev-utils/openBrowser')
 const ora = require('ora')
 const chalk = require('chalk')
-const dev = require('./lib')
+const dev = require('../lib')
 
 const config = require('pkg-conf').sync('kit')
-
-require('update-notifier')({
-  pkg: require('./package.json')
-}).notify()
 
 const log = (...msg) => {
   console.log(
@@ -74,3 +70,8 @@ dev(opts)
     log(err)
     process.exit(1)
   })
+
+require('update-notifier')({
+  pkg: require('../package.json')
+}).notify()
+
