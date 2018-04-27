@@ -1,16 +1,26 @@
-// placeholder for Kit Library mode
 import React from 'react'
+import { Library } from '@compositor/kit'
+import DefaultProvider from './Provider'
 
-class Library extends React.Component {
+class LibraryApp extends React.Component {
   render () {
     const { routes, components, theme } = this.props
 
+    const examples = routes.map(({ name, component }) => ({
+      name,
+      element: React.createElement(component)
+    }))
+
+    const Provider = this.props.Provider || DefaultProvider
+
     return (
-      <React.Fragment>
-        Library Mode
-      </React.Fragment>
+      <Provider>
+        <Library
+          examples={examples}
+        />
+      </Provider>
     )
   }
 }
 
-export default Library
+export default LibraryApp

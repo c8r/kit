@@ -8,12 +8,14 @@
   },
   "scripts": {
     "start": "./cli.js examples",
+    "library": "./cli.js examples --mode library",
     "cover": "nyc report --reporter html",
     "test": "nyc ava"
   },
   "author": "Brent Jackson",
   "license": "MIT",
   "dependencies": {
+    "@compositor/kit": "^1.0.1",
     "@mdx-js/mdx": "^0.7.1",
     "@mdx-js/tag": "^0.7.0",
     "babel-core": "^6.26.0",
