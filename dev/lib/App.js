@@ -3,16 +3,12 @@ import path from 'path'
 import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 import {
-  StaticRouter,
   BrowserRouter,
   Switch,
   Route
 } from 'react-router-dom'
 import DefaultProvider from './Provider'
 import DirectoryListing from './DirectoryListing'
-
-const IS_BROWSER = typeof document !== 'undefined'
-const Router = IS_BROWSER ? BrowserRouter : StaticRouter
 
 class App extends React.Component {
   static defaultProps = {
@@ -24,15 +20,17 @@ class App extends React.Component {
   state = this.props
 
   render () {
-    const { routes, ...config } = this.state
-    const Provider = config.Provider || DefaultProvider
+    const {
+      routes,
+      Provider = DefaultProvider,
+    } = this.state
 
     return (
       <React.Fragment>
-        <Router
+        <BrowserRouter
           context={{}}
           location={this.props.pathname}>
-          <Provider {...config}>
+          <Provider {...this.props}>
             <Switch>
               {routes.map(route => (
                 <Route
@@ -41,7 +39,6 @@ class App extends React.Component {
                   render={routeProps => (
                     React.createElement(route.component, {
                       ...this.props,
-                      ...config,
                       ...routeProps
                     })
                   )}
@@ -50,7 +47,7 @@ class App extends React.Component {
               <Route render={() => <DirectoryListing {...this.state} />} />
             </Switch>
           </Provider>
-        </Router>
+        </BrowserRouter>
       </React.Fragment>
     )
   }
