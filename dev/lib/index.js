@@ -1,5 +1,3 @@
-const fs = require('fs')
-const path = require('path')
 const webpack = require('webpack')
 const serve = require('webpack-serve')
 const history = require('connect-history-api-fallback')
@@ -10,16 +8,13 @@ const getConfig = require('./config')
 
 const dev = {
   hot: true,
-  overlay: true,
   logLevel: 'error',
   clientLogLevel: 'none',
-  stats: 'errors-only',
+  stats: 'errors-only'
 }
 
 const start = async (opts = {}) => {
   opts = parseOptions(opts)
-
-  const { port = 8000 } = opts
 
   if (opts.config) {
     opts._config = require(opts.config)
@@ -32,9 +27,7 @@ const start = async (opts = {}) => {
     dev,
     logLevel: 'error',
     port: opts.port,
-    hot: {
-      logLevel: 'error'
-    },
+    hot: { logLevel: 'error' },
     add: (app, middleware, options) => {
       app.use(convert(history({})))
     }
@@ -43,7 +36,7 @@ const start = async (opts = {}) => {
   return new Promise((resolve, reject) => {
     serve(serveOptions)
       .then(server => {
-        server.compiler.plugin('done', () => {
+        server.compiler.hooks.done.tap({ name: 'Kit' }, () => {
           resolve(server)
         })
       })

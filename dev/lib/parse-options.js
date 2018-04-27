@@ -9,20 +9,22 @@ const getAbsolutePath = filename => filename
 
 module.exports = opts => {
   const filepath = path.isAbsolute(opts.input) ? opts.input : path.join(process.cwd(), opts.input)
-  const stats = fs.statSync(filepath)
+  const isDir = fs.statSync(filepath).isDirectory()
+  const dirname =  isDir ? filepath : path.dirname(filepath)
+  const filename = isDir ? null : filepath
 
-  opts.dirname = stats.isDirectory() ? filepath : path.dirname(filepath)
-  opts.filename = stats.isDirectory() ? null : filepath
+  const config = opts.config 
+    ? getAbsolutePath(opts.config)
+    : find.sync('kit.config.js', { cwd: dirname })
 
-  if (!opts.config) {
-    opts.config = find.sync('kit.config.js', { cwd: opts.dirname })
-  }
-  opts.config = getAbsolutePath(opts.config)
+  const webpack = opts.webpack
+    ? getAbsolutePath(opts.webpack)
+    : find.sync('webpack.config.js', { cwd: dirname })
 
-  if (!opts.webpack) {
-    opts.webpack = find.sync('webpack.config.js', { cwd: opts.dirname })
-  }
-  opts.webpack = getAbsolutePath(opts.webpack)
-
-  return opts
+  return Object.assign({
+    dirname,
+    filename,
+    config,
+    webpack
+  }, opts)
 }

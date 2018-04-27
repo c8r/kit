@@ -19,9 +19,9 @@ const babel = {
 const baseConfig = {
   mode: 'development',
   stats: 'none',
-  entry: [ path.join(__dirname, './entry') ],
+  entry: path.join(__dirname, './entry'),
   output: {
-    path: process.cwd(),
+    path: path.join(process.cwd(), 'dev'),
     filename: 'dev.js'
   },
   resolve: {
@@ -100,21 +100,20 @@ const mergeConfigs = (config, opts) => {
   return merge(config, userConfig)
 }
 
-const getDevConfig = opts => {
+module.exports = opts => {
   const config = Object.assign({}, baseConfig)
   config.resolve.modules.unshift(
     opts.dirname,
-    path.join(process.cwd(), 'node_modules'),
     path.join(opts.dirname, 'node_modules'),
   )
 
-  const defs = new webpack.DefinePlugin({
-    DIRNAME: JSON.stringify(opts.dirname),
-    CONFIG: JSON.stringify(opts.config),
-    OPTIONS: JSON.stringify(opts),
-  })
-
-  config.plugins.push(defs)
+  config.plugins.push(
+    new webpack.DefinePlugin({
+      DIRNAME: JSON.stringify(opts.dirname),
+      CONFIG: JSON.stringify(opts.config),
+      OPTIONS: JSON.stringify(opts),
+    })
+  )
 
   config.plugins.push(
     new MiniHTMLWebpackPlugin({
@@ -132,5 +131,3 @@ const getDevConfig = opts => {
 
   return mergeConfigs(config, opts)
 }
-
-module.exports = getDevConfig

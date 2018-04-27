@@ -4,11 +4,11 @@
   "description": "Zero-config React component development server",
   "main": "lib/index.js",
   "bin": {
-    "kit": "./cli.js"
+    "kit": "./bin/cli.js"
   },
   "scripts": {
-    "start": "./cli.js examples",
-    "library": "./cli.js examples --mode library",
+    "start": "./bin/cli.js examples",
+    "library": "./bin/cli.js examples --mode library",
     "cover": "nyc report --reporter html",
     "test": "nyc ava"
   },
