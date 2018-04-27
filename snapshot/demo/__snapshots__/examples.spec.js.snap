@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button renders 1`] = `
+<button
+  className="sc-bdVaJa jRBkuY"
+>
+  Beep
+</button>
+`;
+
+exports[`Heading renders 1`] = `
+<h2
+  className="sc-bwzfXH dMnqfe"
+>
+  Hello
+</h2>
+`;
