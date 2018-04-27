@@ -16,7 +16,11 @@ import {
   PropsForm,
   Font,
   Responsive,
-  TypeScale
+  TypeScale,
+  Cartesian,
+  Matrix,
+  Detail,
+  Diff
 } from '../src'
 
 const Demo = props => (
@@ -33,6 +37,23 @@ const Demo = props => (
           value={2/3}
           color='tomato'
         />
+        <Detail>
+          <Matrix
+            x={[
+              { color: 'blue '},
+              { color: 'pink' },
+              { color: 'tomato' },
+              { color: 'purple' }
+            ]}
+            y={[
+              { value: 1/5 },
+              { value: 1/4 },
+              { value: 1/3 },
+              { value: 3/4 }
+            ]}
+            component={Donut}
+          />
+        </Detail>
       </Example>
       <Example name="XRay">
         <XRay>
@@ -76,6 +97,21 @@ const Demo = props => (
             <option>cyan</option>
           </PropsForm.Select>
         </PropsForm>
+      </Example>
+      <Example name="Cartesian">
+        <Cartesian
+          m={4}
+          fontSize={[1, 2, 3]}
+          bg={['blue', 'pink', 'tomato', 'purple']}
+          children={['Hello, world!', 'Beep']}
+          component={Button}
+        />
+      </Example>
+      <Example name="Diff">
+        <Diff
+          a={<Heading color='pink'>Hello</Heading>}
+          b={<Heading color='purple' fontSize={3} mt={1}>Hello</Heading>}
+        />
       </Example>
     </Library>
   </Provider>

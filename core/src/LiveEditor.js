@@ -37,7 +37,7 @@ class Editor extends Component {
           code={this.state.code}
           transformCode={code => `
             <ThemeProvider theme={theme}>
-              ${code}
+              <div>${code}</div>
             </ThemeProvider>
           `}
         >

@@ -7,8 +7,10 @@ const Input = require('ink-text-input')
 const Spinner = require('ink-spinner')
 const execa = require('execa')
 
+const { log, error, complete } = require('../lib/log')
+
 const Item = importJsx('./ListItem')
-const { projectTemplates } = require('../lib/constants')
+const { projectTemplates, tarUrl } = require('../lib/constants')
 const items = projectTemplates.map(t => ({ label: t, value: t }))
 const ProjectSelect = ({ items, onSelect }) => (
   <div>
@@ -18,7 +20,6 @@ const ProjectSelect = ({ items, onSelect }) => (
   </div>
 )
 
-//mkdir foo && curl https://codeload.github.com/mdx-js/mdx/tar.gz/master | tar -xz -C foo --strip=3 mdx-master/examples/next
 class Init extends Component {
   constructor() {
     super()
@@ -36,7 +37,7 @@ class Init extends Component {
   }
 
   handleTemplateSelect({ label }) {
-    console.log(`✅ Template: ${label}`)
+    complete(`Template: ${label}`)
 
     this.setState({
       template: label,
@@ -52,7 +53,7 @@ class Init extends Component {
     const { name } = this.state
     this.setState({ step: 'initializing' })
 
-    console.log(`✅ Project Name: ${name}`)
+    complete(`Project Name: ${name}`)
     this.initialize()
   }
 
@@ -60,43 +61,25 @@ class Init extends Component {
     const { name, template } = this.state
 
     try {
-      execa.shellSync(`mkdir ${name}`)
+      const commands = [
+        `mkdir -p ${name}`,
+        `curl ${tarUrl} | tar -xz -C ${name} --strip=3 mdx-master/examples/${template}`
+      ]
+
+      const px = commands.map(c => execa.shell(c))
+      await Promise.all(px)
+
+      complete('Code scaffolding')
+      this.setState({ step: 'installing' })
+
+      await execa.shell(`cd ${name} && npm i`)
+      complete('Package install')
     } catch (e) {
-      console.log(e)
+      error(e, `Failed to initialize project`)
       process.exit(1)
     }
 
-    console.log('✅ Directory initialized')
-
-    try {
-      const command = [
-        // From: https://github.com/segmentio/create-next-app/blob/master/lib/utils/load-example.js
-        'curl https://codeload.github.com/mdx-js/mdx/tar.gz/master',
-        `tar -xz -C ${name} --strip=3 mdx-master/examples/${template}`
-      ].join(' | ')
-
-      const result = execa.shellSync(command)
-    } catch (e) {
-      console.log(e)
-      process.exit(1)
-    }
-
-    console.log(`✅ Initialized`)
-    this.setState({ step: 'installing' })
-    this.install(name)
-  }
-
-  async install(name) {
-    try {
-      execa.shellSync(`cd ${name} && npm i`)
-    } catch (e) {
-      console.log(e)
-      process.exit(1)
-    }
-
-    console.log(`✅ Installed`)
-    console.log(`Get started with $ cd ${name}`)
-    console.log('Done!')
+    this.setState({ step: 'done' })
     process.exit(0)
   }
 
@@ -111,7 +94,7 @@ class Init extends Component {
         {step === 'name' && (
           <div>
             <br />
-            <Text>Enter project name</Text>
+            <Text>Enter project name:</Text>
             <br />
             <Input
               value={name}
@@ -129,6 +112,9 @@ class Init extends Component {
           <div>
             <Spinner /> Running <Text bold>npm i</Text>
           </div>
+        )}
+        {step === 'done' && (
+          <Text>Done!</Text>
         )}
       </div>
     )

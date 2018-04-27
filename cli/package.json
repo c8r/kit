@@ -1,11 +1,13 @@
 {
   "name": "@compositor/kit-cli",
-  "version": "0.0.0",
+  "version": "1.0.8",
   "description": "Compositor Kit CLI",
   "license": "MIT",
   "repository": "c8r/kit-cli",
   "author": "Compositor",
-  "bin": "cli.js",
+  "bin": {
+    "kit": "cli.js"
+  },
   "scripts": {
     "start": "./cli.js",
     "format": "prettier --write *.js '{src,lib}/**/*.js'",
@@ -13,11 +15,14 @@
   },
   "files": [
     "cli.js",
-    "ui.js"
+    "ui.js",
+    "lib",
+    "src"
   ],
   "dependencies": {
-    "@compositor/kit-dev": "^1.0.0-0",
+    "@compositor/kit-dev": "^1.0.8",
     "execa": "^0.10.0",
+    "import-jsx": "^1.3.0",
     "ink": "^0.2.1",
     "ink-big-text": "^0.2.0",
     "ink-box": "^0.1.0",
@@ -32,7 +37,6 @@
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "eslint-config-xo-react": "^0.13.0",
     "eslint-plugin-react": "^7.1.0",
-    "import-jsx": "^1.2.0",
     "prettier": "^1.12.1",
     "xo": "^0.18.2"
   },
