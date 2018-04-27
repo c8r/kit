@@ -1,0 +1,30 @@
+{
+  "name": "@compositor/kit-storybook",
+  "version": "1.0.0-2",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "kit-storybook": "./cli.js"
+  },
+  "scripts": {
+    "start": "./cli.js examples --name 'Hello Kit'",
+    "icon": "repng Favicon.js -f favicon.png -w 32 -h 32",
+    "test": "nyc ava"
+  },
+  "keywords": [],
+  "author": "Compositor",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "nyc": "^11.7.1",
+    "repng": "^3.0.0"
+  },
+  "peerDependencies": {},
+  "dependencies": {
+    "@storybook/core": "^4.0.0-alpha.3",
+    "@storybook/react": "^4.0.0-alpha.3",
+    "meow": "^4.0.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
+  }
+}
