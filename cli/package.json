@@ -40,6 +40,9 @@
     "prettier": "^1.12.1",
     "xo": "^0.18.2"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "ava": {
     "babel": {
       "presets": [
