@@ -1,6 +1,6 @@
 {
   "name": "@compositor/webfont",
-  "version": "1.0.1",
+  "version": "1.0.11",
   "description": "Webfont loading utilities",
   "main": "index.js",
   "repository": "c8r/kit",
