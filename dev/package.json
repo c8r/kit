@@ -55,6 +55,9 @@
     "rebass": "^2.0.0-0",
     "refunk": "^3.0.1"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "ava": {
     "require": [
       "babel-register",

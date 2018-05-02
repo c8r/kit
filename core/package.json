@@ -53,6 +53,9 @@
   "peerDependencies": {
     "styled-components": ">=2.0.0 || >=3.0.0"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "ava": {
     "require": [
       "babel-register"
