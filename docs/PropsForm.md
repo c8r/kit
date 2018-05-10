@@ -5,6 +5,8 @@ Add form controls to adjust a component's props.
 Renders the first child element with optional form elements to adjust prop values in browser.
 Default values are extracted from the first child's props
 
+## Usage
+
 ```jsx
 import React from 'react'
 import { PropsForm } from '@compositor/kit'

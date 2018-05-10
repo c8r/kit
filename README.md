@@ -8,7 +8,6 @@ Development and documentation tools for React component libraries, style guides,
 - Zero-config development server
 - Compatible with any React setup
 
-
 ## Getting started
 
 ```sh
@@ -59,7 +58,7 @@ For more on using Kit components see the docs:
 
 ### Development Server
 
-Kit includes a command line interface and development server. 
+Kit includes a command line interface and development server.
 Install the CLI either as a global or local dependency in your project.
 
 ```sh
@@ -90,7 +89,6 @@ Run the `init` command to get started.
 ```sh
 kit init
 ```
-
 
 ## Related
 

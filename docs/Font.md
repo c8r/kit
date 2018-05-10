@@ -26,7 +26,3 @@ Name | Default | Description
 ## Related
 
 - @compositor/webfont
-
-## TODO
-
-Move @compositor/webfont to Kit monorepo, move build deps to devDeps.
