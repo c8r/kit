@@ -40,7 +40,9 @@ const Demo = props => (
           color='tomato'
         />
         <Detail>
-          <Markdown># Hello, world!</Markdown>
+          <Markdown components={Rebass}>
+            {`# Hello, world! <Donut />`}
+          </Markdown>
           <Matrix
             x={[
               { color: 'blue '},
