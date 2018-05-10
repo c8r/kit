@@ -43,7 +43,9 @@ class Editor extends Component {
         >
           <Box>
             <LivePreview />
-            <LiveEditor />
+            <Box mt={2}>
+              <LiveEditor />
+            </Box>
             <Box w={1}>
               <LiveError
                 style={{
