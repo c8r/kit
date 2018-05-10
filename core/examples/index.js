@@ -19,6 +19,7 @@ import {
   TypeScale,
   Cartesian,
   Matrix,
+  Markdown,
   Detail,
   Diff,
   State
@@ -39,6 +40,7 @@ const Demo = props => (
           color='tomato'
         />
         <Detail>
+          <Markdown># Hello, world!</Markdown>
           <Matrix
             x={[
               { color: 'blue '},
