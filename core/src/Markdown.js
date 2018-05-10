@@ -1,12 +1,11 @@
 import React from 'react'
-import Rebass from 'rebass'
 import { transform } from 'buble'
 import mdx from '@mdx-js/mdx'
 import { MDXTag } from '@mdx-js/tag'
 import { ThemeProvider } from 'styled-components'
 
 export default ({ children, components, theme = {} }) => {
-  const jsx = mdx.sync(children).replace('export default ({components}) =>', '' )
+  const jsx = mdx.sync(children).replace('export default ({components}) =>', '')
 
   const { code } = transform(`
     <ThemeProvider theme={theme}>
