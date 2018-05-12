@@ -15,20 +15,61 @@ Tools for developing, documenting, and testing React component libraries
 
 ## Getting started
 
+Kit contains several different ways to incorporate with your existing setup or generate a new project.
+
+- Use the CLI to run an isolated development server for example components.
+- Or use the CLI `init` command to generate a new project.
+- Use the Kit components to customize your existing dev environment, docs, or demos.
+
 ### CLI
 
 ```sh
 npm install --global @compositor/kit-cli
 ```
 
+#### Development Server
+
+The Kit dev server can be passed either a single React component or a folder of example components.
+
+```sh
+kit examples
+```
+
+#### Project Generator
+
+Run `kit init` and follow the prompts to generate a new project based on several different templates.
+
+Read more in the [CLI docs](cli).
+
 ### Components
+
+Kit components can be added to any existing React setup.
+Use these utility components to for development, documentation, and demos.
 
 ```sh
 npm install --save @compositor/kit
 ```
 
-<!--
-### Components
+The Kit component library includes the following:
+
+- [Library](core/docs/Library.md)
+- [XRay](core/docs/XRay.md)
+- [Debug](core/docs/Debug.md)
+- [Responsive](core/docs/Responsive.md)
+- [Frame](core/docs/Frame.md)
+- [Cartesian](core/docs/Cartesian.md)
+- [Matrix](core/docs/Matrix.md)
+- [LiveEditor](core/docs/LiveEditor.md)
+- [PropsForm](core/docs/PropsForm.md)
+- [Markdown](core/docs/Markdown.md)
+- [State](core/docs/State.md)
+- [Diff](core/docs/Diff.md)
+- And more...
+
+Read more in the [component docs](core).
+
+<!-- TODO move to core docs
+### Libary Component
 
 Kit includes several React components for development and documentation.
 The Library and Example components can be used to create a development environment separately from your application's code base.
@@ -61,48 +102,8 @@ const App = props => (
 
 export default App
 ```
+-->
 
-For more on using Kit components see the docs:
-
-- [Library](docs/Library.md)
-- [LiveEditor](docs/LiveEditor.md)
-- [XRay](docs/XRay.md)
-- [Responsive](docs/Responsive.md)
-- [Debug](docs/Debug.md)
-
-### Development Server
-
-Kit includes a command line interface and development server.
-Install the CLI either as a global or local dependency in your project.
-
-```sh
-npm i -g @compositor/kit-cli
-```
-
-Run the dev server pointing to a directory of components or a single component file.
-
-```sh
-kit examples/App.js
-```
-
-Alternatively, add a run script to your `package.json` file.
-
-```json
-"scripts": {
-  "start": "kit examples/App.js"
-}
-```
-
-### Generator
-
-Kit CLI also includes a generator for quickly creating demos, style guides,
-and other setups with no build configuration required.
-
-Run the `init` command to get started.
-
-```sh
-kit init
-```
 
 ## Related
 
@@ -118,7 +119,6 @@ kit init
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
--->
 
 ---
 
