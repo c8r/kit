@@ -13,6 +13,10 @@ import Button from '../src/Button'
 export default props => (
   <Cartesian
     component={Button}
+    m={4}
+    fontSize={[1, 2, 3]}
+    bg={['blue', 'pink', 'tomato', 'purple']}
+    children={['Hello, world!', 'Beep']}
   />
 )
 ```
