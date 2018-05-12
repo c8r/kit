@@ -1,4 +1,7 @@
+
 # Kit
+
+<img width='128' height='128' src='https://compositor.io/logo/dist/kit.png' />
 
 Tools for developing, documenting, and testing React component libraries
 
