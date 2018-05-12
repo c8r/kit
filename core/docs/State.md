@@ -8,6 +8,7 @@ Pass props to initialize state and use the `update` prop to update the state.
 ```jsx
 import React from 'react'
 import { State } from '@compositor/kit'
+import Counter from '../src/Counter'
 
 const example = (
   <State
