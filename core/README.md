@@ -23,6 +23,42 @@ export default props => (
 )
 ```
 
+<!-- TODO
+### Libary Component
+
+Kit includes several React components for development and documentation.
+The Library and Example components can be used to create a development environment separately from your application's code base.
+
+```jsx
+import React from 'react'
+import {
+  Library,
+  Example
+} from '@compositor/kit'
+import {
+  Heading,
+  Text,
+  Button
+} from './src'
+
+const App = props => (
+  <Library>
+    <Example name='Heading'>
+      <Heading>Hello</Heading>
+    </Example>
+    <Example name='Text'>
+      <Text>Hello</Text>
+    </Example>
+    <Example name='Button'>
+      <Button>Hello</Button>
+    </Example>
+  </Library>
+)
+
+export default App
+```
+-->
+
 ## Documentation
 
 - [XRay](docs/XRay.md)
