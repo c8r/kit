@@ -1,6 +1,15 @@
 
 # Kit dev server
 
+Isolated development server for React components
+
+- Zero configuration
+- Hot reloading
+- No entry point or HTML required
+- Isolated from your main application
+- Renders components and elements
+- Supports MDX & JSX formats
+
 ```sh
 npm i -g @compositor/kit-cli
 ```
