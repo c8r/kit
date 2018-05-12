@@ -1,19 +1,30 @@
 # Kit
 
-Development and documentation tools for React component libraries, style guides, and demos
+Tools for developing, documenting, and testing React component libraries
 
-- Components for development and documentation
-- Library view for organizing examples
-- Prompt-based project generator
-- Zero-config development server
-- Compatible with any React setup
+## Features
+
+- Utility components for isolated development
+- Project scaffolding generator
+- Isolated development server
+- Component library viewer
+
 
 ## Getting started
 
+### CLI
+
 ```sh
-npm i -S @compositor/kit
+npm install --global @compositor/kit-cli
 ```
 
+### Components
+
+```sh
+npm install --save @compositor/kit
+```
+
+<!--
 ### Components
 
 Kit includes several React components for development and documentation.
@@ -97,8 +108,6 @@ kit init
 - [react-live][react-live]
 - [styled-system][styled-system]
 
----
-
 ## Contributing
 
 1. Fork it
@@ -106,6 +115,7 @@ kit init
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+-->
 
 ---
 
