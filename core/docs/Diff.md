@@ -18,4 +18,3 @@ export default props => (
 )
 ```
 
-**NOTE: THIS DOES NOT REFLECT THE CURRENT API**
