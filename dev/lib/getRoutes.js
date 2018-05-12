@@ -1,5 +1,7 @@
 import path from 'path'
 import React from 'react'
+import { isElement } from 'react-dom/test-utils'
+import toComponent from './toComponent'
 
 const { filename } = OPTIONS
 const index = filename
@@ -55,7 +57,10 @@ const getRoutes = req =>
       component,
     }
   })
-  .filter(route => typeof route.component === 'function')
-  .map(route => ({ ...route, component: withCatch(route.component) }))
+  .filter(route => typeof route.component === 'function' || isElement(route.component))
+    .map(route => ({
+      ...route,
+      component: withCatch(toComponent(route.component))
+    }))
 
 export default getRoutes
