@@ -2,6 +2,8 @@
 
 Displays a grid and adds outlines to children.
 
+![](images/x-ray.png)
+
 ```jsx
 import React from 'react'
 import { XRay } from '@compositor/kit'

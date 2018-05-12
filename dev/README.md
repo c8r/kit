@@ -1,6 +1,15 @@
 
 # Kit dev server
 
+Isolated development server for React components
+
+- Zero configuration
+- Hot reloading
+- No entry point or HTML required
+- Isolated from your main application
+- Renders components and elements
+- Supports MDX & JSX formats
+
 ```sh
 npm i -g @compositor/kit-cli
 ```
@@ -23,6 +32,7 @@ kit components/Examples.js
 -o --open     Opens development server in default browser
 -p --port     Port for development server
 -c --config   Path to configuration file
+-m --mode     Enable alternative server UI modes
 --webpack     Path to custom webpack.config.js
 ```
 
@@ -82,7 +92,7 @@ To use a custom Provider component, add a `Provider` to your configuration.
 const React = require('react')
 const { ThemeProvider } = require('glamorous')
 
-const Provider = props => 
+const Provider = props =>
   React.createElement(ThemeProvider, {
     theme: props.theme
   },
@@ -94,9 +104,24 @@ module.exports = {
 }
 ```
 
+## Modes
+
+By default, the Kit dev server renders each component in isolation with minimal base styling for the document.
+Use the `--mode` flag to enable alternative modes for the development UI.
+
+### Library Mode
+
+Renders components using the [Kit Library component][Library] component, which displays all components together in a grid and in isolation when clicked.
+
+```sh
+kit examples --mode library
+```
+
+[Library]: ../core/docs/Library.md
+
 ## File Types
 
-The Kit dev server includes experimental support for special [`.mdx`][mdx] and `.jsx` file types.  
+The Kit dev server includes experimental support for special [`.mdx`][mdx] and `.jsx` file types.
 Both formats use front matter to set default props for the rendered component.
 
 To provide components in scope for these formats, use the `components` option in a `kit.config.js` file

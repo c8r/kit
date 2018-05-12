@@ -2,6 +2,8 @@
 
 Add form controls to adjust a component's props.
 
+![](images/props-form.png)
+
 Renders the first child element with optional form elements to adjust prop values in browser.
 Default values are extracted from the first child's props
 

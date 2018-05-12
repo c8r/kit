@@ -29,8 +29,10 @@
     "ink-select-input": "^1.1.0",
     "ink-spinner": "^1.0.0",
     "ink-text-input": "^1.1.1",
-    "meow": "^3.7.0",
-    "prop-types": "^15.5.10"
+    "meow": "^5.0.0",
+    "pkg-conf": "^2.1.0",
+    "prop-types": "^15.5.10",
+    "update-notifier": "^2.5.0"
   },
   "devDependencies": {
     "ava": "^0.20.0",

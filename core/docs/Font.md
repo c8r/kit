@@ -1,11 +1,14 @@
 # Font
 
-`Font` provides basic webfont utilities to wrap your app.
+Set font-family and other typographic styles
+
+The `Font` components provides basic webfont utilities to wrap your app.
 It also provides a convenient webfont loader using [Google Fonts](https://fonts.google.com/).
 
 ## Usage
 
 ```jsx
+import React from 'react'
 import { Font } from '@compositor/kit'
 
 export default props =>
@@ -25,4 +28,4 @@ Name | Default | Description
 
 ## Related
 
-- @compositor/webfont
+- [@compositor/webfont](https://npmjs.com/package/@compositor/webfont)

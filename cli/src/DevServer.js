@@ -14,7 +14,10 @@ module.exports = class extends Component {
   }
 
   componentDidMount() {
-    dev(this.props)
+    const opts = Object.assign({
+      input: this.props.input
+    }, this.props.config, this.props.flags)
+    dev(opts)
       .then(server => {
         this.setState({ server })
       })
