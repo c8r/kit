@@ -1,6 +1,8 @@
 # LiveEditor
 
-The LiveEditor component is a wrapper around [react-live][react-live] components, with basic UI and a [ThemeProvider][theme-provider].
+The LiveEditor component is a wrapper around [react-live][react-live], with basic UI and a [ThemeProvider][theme-provider].
+
+![](images/live-editor.png)
 
 ```jsx
 import React from 'react'
@@ -8,7 +10,7 @@ import { LiveEditor } from '@compositor/kit'
 import { Button, theme } from '../src'
 
 export default () => (
-  <LiveProvider
+  <LiveEditor
     code='<Button>Hello</Button>'
     scope={{
       Button

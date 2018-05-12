@@ -4,7 +4,17 @@ import {
   Box,
   Heading,
   Button,
-  Donut
+  Donut,
+
+  ButtonCircle,
+  ButtonOutline,
+  Card,
+  Image,
+  Avatar,
+  Circle,
+  Badge,
+  Dot,
+  Switch,
 } from 'rebass'
 import * as Rebass from 'rebass'
 import {
@@ -19,25 +29,78 @@ import {
   TypeScale,
   Cartesian,
   Matrix,
+  Markdown,
   Detail,
-  Diff
+  Diff,
+  State
 } from '../src'
 
 const Demo = props => (
   <Provider>
     <Library>
       <Example name="Heading">
-        <Heading>Hello</Heading>
+        <Heading>Heading</Heading>
       </Example>
+
       <Example name="Button">
-        <Button>Hello</Button>
+        <Button>Button</Button>
       </Example>
+      <Example name="ButtonCircle">
+        <ButtonCircle>ButtonCircle</ButtonCircle>
+      </Example>
+      <Example name="ButtonOutline">
+        <ButtonOutline>ButtonOutline</ButtonOutline>
+      </Example>
+      <Example name="Green Button">
+        <Button bg='green'>Button</Button>
+      </Example>
+      <Example name="Red Button">
+        <Button bg='red'>Button</Button>
+      </Example>
+
+      <Example name="Badge">
+        <Badge>Badge</Badge>
+      </Example>
+      <Example name="Circle">
+        <Circle>A</Circle>
+      </Example>
+      <Example name="Switch">
+        <Switch checked />
+      </Example>
+      <Example name="Dot">
+        <Dot bg='black' />
+        <Dot />
+        <Dot />
+      </Example>
+      <Example name='Card'>
+        <Card>
+          Hello Card
+        </Card>
+      </Example>
+      <Example name='Avatar'>
+        <Avatar
+          src='https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=2048&q=20'
+        />
+      </Example>
+      <Example name='Image'>
+        <Image
+          src='https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=2048&q=20'
+        />
+      </Example>
+
+
+
       <Example name="Donut">
         <Donut
           value={2/3}
           color='tomato'
         />
         <Detail>
+          {/* throwing errors
+          <Markdown components={Rebass}>
+            {`# Hello, world! <Donut />`}
+          </Markdown>
+          */}
           <Matrix
             x={[
               { color: 'blue '},
@@ -55,6 +118,7 @@ const Demo = props => (
           />
         </Detail>
       </Example>
+
       <Example name="XRay">
         <XRay>
           <Heading>XRay</Heading>
@@ -108,9 +172,28 @@ const Demo = props => (
         />
       </Example>
       <Example name="Diff">
-        <Diff
-          a={<Heading color='pink'>Hello</Heading>}
-          b={<Heading color='purple' fontSize={3} mt={1}>Hello</Heading>}
+        <Diff>
+          <Heading color='pink'>Hello</Heading>
+          <Heading color='purple' fontSize={3} mt={1}>Hello</Heading>
+        </Diff>
+      </Example>
+      <Example name='State'>
+        <State
+          count={0}
+          render={({ count, update }) => (
+            <React.Fragment>
+              <pre>{'<State />'}</pre>
+              <samp>{count}</samp>
+              <button
+                onClick={e => update(s => ({ count: s.count - 1 }))}>
+                -
+              </button>
+              <button
+                onClick={e => update(s => ({ count: s.count + 1 }))}>
+                +
+              </button>
+            </React.Fragment>
+          )}
         />
       </Example>
     </Library>

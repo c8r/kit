@@ -1,14 +1,17 @@
 # Debug
 
-The `Debug` component can be used to get a formatted JSON printout of an object.
+The Debug component can be used to get a formatted JSON printout of an object.
 It also provides a HOC for logging props when a component uses the implicit return.
+
+![](images/debug.png)
 
 ## Usage
 
-The `Debug` component takes an object as a `children` prop.
+The Debug component takes an object as a `children` prop.
 This can be used to inspect data, props, or any object you might have in state.
 
 ```jsx
+import React from 'react'
 import { Debug } from '@compositor/kit'
 
 export default () =>
@@ -21,16 +24,17 @@ Name | Type | Required | Description
 ---|---|---|---
 `log` | Boolean | `false` | Log object to the console
 
-### `withDebug`
+### withDebug
 
 Sometimes it can be a pain to inspect the props of a component using an explicit return during development.
-`withDebug` is a HOC to log props to the console for inspection.
+withDebug is a HOC to log props to the console for inspection.
 
 ```jsx
+import React from 'react'
 import { withDebug } from '@compositor/kit'
 
 export default withDebug(props =>
-  <MyComponent {...props}
+  <MyComponent {...props} />
 )
 ```
 

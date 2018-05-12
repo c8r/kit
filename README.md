@@ -1,96 +1,74 @@
+
+<img width='192' height='192' src='https://compositor.io/logo/dist/kit.png' />
+
 # Kit
 
-Development and documentation tools for React component libraries, style guides, and demos
+Tools for developing, documenting, and testing React component libraries
 
-- Components for development and documentation
-- Library view for organizing examples
-- Prompt-based project generator
-- Zero-config development server
-- Compatible with any React setup
+## Features
+
+- Utility components for isolated development
+- Project scaffolding generator
+- Isolated development server
+- Component library viewer
 
 
 ## Getting started
 
+Kit contains several different ways to incorporate with your existing setup or generate a new project.
+
+- Use the CLI to run an isolated development server for example components.
+- Or use the CLI `init` command to generate a new project.
+- Use the Kit components to customize your existing dev environment, docs, or demos.
+
+### CLI
+
 ```sh
-npm i -S @compositor/kit
+npm install --global @compositor/kit-cli
 ```
+
+#### Development Server
+
+The Kit dev server can be passed either a single React component or a folder of example components.
+
+```sh
+kit examples
+```
+
+Read more in the [dev server docs](dev).
+
+#### Project Generator
+
+Run `kit init` and follow the prompts to generate a new project based on several different templates.
+
+Read more in the [CLI docs](cli).
 
 ### Components
 
-Kit includes several React components for development and documentation.
-The Library and Example components can be used to create a development environment separately from your application's code base.
-
-```jsx
-import React from 'react'
-import {
-  Library,
-  Example
-} from '@compositor/kit'
-import {
-  Heading,
-  Text,
-  Button
-} from './src'
-
-const App = props => (
-  <Library>
-    <Example name='Heading'>
-      <Heading>Hello</Heading>
-    </Example>
-    <Example name='Text'>
-      <Text>Hello</Text>
-    </Example>
-    <Example name='Button'>
-      <Button>Hello</Button>
-    </Example>
-  </Library>
-)
-
-export default App
-```
-
-For more on using Kit components see the docs:
-
-- [Library](docs/Library.md)
-- [LiveEditor](docs/LiveEditor.md)
-- [XRay](docs/XRay.md)
-- [Responsive](docs/Responsive.md)
-- [Debug](docs/Debug.md)
-
-### Development Server
-
-Kit includes a command line interface and development server. 
-Install the CLI either as a global or local dependency in your project.
+Kit components can be added to any existing React setup.
+Use these utility components to for development, documentation, and demos.
 
 ```sh
-npm i -g @compositor/kit-cli
+npm install --save @compositor/kit
 ```
 
-Run the dev server pointing to a directory of components or a single component file.
+The Kit component library includes the following:
 
-```sh
-kit examples/App.js
-```
+- [Library](core/docs/Library.md)
+- [XRay](core/docs/XRay.md)
+- [Debug](core/docs/Debug.md)
+- [Responsive](core/docs/Responsive.md)
+- [Frame](core/docs/Frame.md)
+- [Cartesian](core/docs/Cartesian.md)
+- [Matrix](core/docs/Matrix.md)
+- [LiveEditor](core/docs/LiveEditor.md)
+- [PropsForm](core/docs/PropsForm.md)
+- [Markdown](core/docs/Markdown.md)
+- [State](core/docs/State.md)
+- [Diff](core/docs/Diff.md)
+- And more...
 
-Alternatively, add a run script to your `package.json` file.
-
-```json
-"scripts": {
-  "start": "kit examples/App.js"
-}
-```
-
-### Generator
-
-Kit CLI also includes a generator for quickly creating demos, style guides,
-and other setups with no build configuration required.
-
-Run the `init` command to get started.
-
-```sh
-kit init
-```
-
+Read more in the [component docs](core).
 
 ## Related
 
@@ -98,8 +76,6 @@ kit init
 - [@mdx-js/mdx][mdx]
 - [react-live][react-live]
 - [styled-system][styled-system]
-
----
 
 ## Contributing
 

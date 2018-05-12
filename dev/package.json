@@ -1,6 +1,6 @@
 {
   "name": "@compositor/kit-dev",
-  "version": "1.0.9",
+  "version": "1.0.13",
   "description": "Zero-config React component development server",
   "main": "lib/index.js",
   "bin": {
@@ -15,23 +15,23 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "dependencies": {
-    "@compositor/kit": "^1.0.9",
-    "@mdx-js/mdx": "^0.7.1",
-    "@mdx-js/tag": "^0.7.0",
-    "babel-core": "^6.26.0",
+    "@compositor/kit": "^1.0.13",
+    "@mdx-js/mdx": "^0.8.1-0",
+    "@mdx-js/tag": "^0.7.2",
+    "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "chalk": "^2.4.0",
+    "chalk": "^2.4.1",
     "connect-history-api-fallback": "^1.5.0",
     "gray-matter": "^4.0.1",
     "koa-connect": "^2.0.1",
     "loader-utils": "^1.1.0",
     "meow": "^5.0.0",
     "mini-html-webpack-plugin": "^0.2.3",
-    "ora": "^2.0.0",
+    "ora": "^2.1.0",
     "pkg-conf": "^2.1.0",
     "react": "^16.3.2",
     "react-dev-utils": "^5.0.1",
@@ -54,6 +54,9 @@
     "react-test-renderer": "^16.3.2",
     "rebass": "^2.0.0-0",
     "refunk": "^3.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "ava": {
     "require": [

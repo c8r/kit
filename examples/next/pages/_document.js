@@ -1,7 +1,12 @@
 import React from 'react'
-import Document, { Head, Main, NextScript } from 'next/document'
 import getConfig from 'next/config'
-import { ServerStyleSheet } from 'styled-components'
+import Document, { Head, Main, NextScript } from 'next/document'
+import { ServerStyleSheet, injectGlobal } from 'styled-components'
+
+injectGlobal`
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: system-ui, sans-serif; }
+`
 
 export default class _Document extends Document {
   static getInitialProps({ renderPage }) {

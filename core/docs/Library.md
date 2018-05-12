@@ -3,6 +3,9 @@
 The Library component manages a list of examples created with the Example component,
 showing a grid view by default and a detailed view when a component is clicked.
 
+![](images/library.png)
+
+## Usage
 
 ```jsx
 import React from 'react'
@@ -21,6 +24,8 @@ const App = props => (
 )
 ```
 
+### Examples array
+
 An array of examples can also be passed as a prop.
 Each example object should have a `name` and `element` field for rendering the example.
 This can be useful for keeping component examples decoupled from the Kit API
@@ -35,13 +40,13 @@ import {
 } from '../src'
 
 const examples = [
-  { 
+  {
     name: 'Button',
     example: (
       <Button>Beep</Button>
     )
   },
-  { 
+  {
     name: 'Heading',
     example: (
       <Heading>Hello</Heading>
@@ -87,13 +92,14 @@ Prop | Type | Description
 examples | array | Optional prop to pass examples in as an array of example objects instead of using children
 title | string | Optional title to display in the side nav
 renderSideNav | function | Optional render prop to customize side nav
-renderCard | function | Optional render prop to customize card in the grid view 
-
+renderCard | function | Optional render prop to customize card in the grid view
 
 ## Example Component
 
 Use the Example component with the Library component to add examples.
 Each Example component requires a unique `name` prop value.
+
+### Usage
 
 ```jsx
 import React from 'react'
@@ -118,6 +124,8 @@ name | string (required) | Unique identifier that will be used for navigation in
 ## Detail Component
 
 Use the Detail component to add additional elements when viewing the example detail view. Elements in the Detail component will not show up in the grid view of the Library.
+
+### Usage
 
 ```jsx
 import React from 'react'
