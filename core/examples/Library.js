@@ -40,9 +40,11 @@ const Demo = props => (
           color='tomato'
         />
         <Detail>
+          {/* throwing errors
           <Markdown components={Rebass}>
             {`# Hello, world! <Donut />`}
           </Markdown>
+          */}
           <Matrix
             x={[
               { color: 'blue '},
@@ -113,10 +115,10 @@ const Demo = props => (
         />
       </Example>
       <Example name="Diff">
-        <Diff
-          a={<Heading color='pink'>Hello</Heading>}
-          b={<Heading color='purple' fontSize={3} mt={1}>Hello</Heading>}
-        />
+        <Diff>
+          <Heading color='pink'>Hello</Heading>
+          <Heading color='purple' fontSize={3} mt={1}>Hello</Heading>
+        </Diff>
       </Example>
       <Example name='State'>
         <State

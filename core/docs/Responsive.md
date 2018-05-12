@@ -2,6 +2,8 @@
 
 Displays children in `<iframe>`s, using the Frame component, at multiple viewport sizes.
 
+![](images/responsive.png)
+
 ```jsx
 import React from 'react'
 import { Responsive } from '@compositor/kit'

@@ -3,6 +3,8 @@
 
 Displays a matrix of component permutations
 
+![](images/matrix.png)
+
 ```jsx
 import React from 'react'
 import { Matrix } from '@compositor/kit'
