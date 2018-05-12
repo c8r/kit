@@ -3,6 +3,8 @@
 The Library component manages a list of examples created with the Example component,
 showing a grid view by default and a detailed view when a component is clicked.
 
+![](images/library.png)
+
 ## Usage
 
 ```jsx

@@ -4,7 +4,17 @@ import {
   Box,
   Heading,
   Button,
-  Donut
+  Donut,
+
+  ButtonCircle,
+  ButtonOutline,
+  Card,
+  Image,
+  Avatar,
+  Circle,
+  Badge,
+  Dot,
+  Switch,
 } from 'rebass'
 import * as Rebass from 'rebass'
 import {
@@ -29,11 +39,57 @@ const Demo = props => (
   <Provider>
     <Library>
       <Example name="Heading">
-        <Heading>Hello</Heading>
+        <Heading>Heading</Heading>
       </Example>
+
       <Example name="Button">
-        <Button>Hello</Button>
+        <Button>Button</Button>
       </Example>
+      <Example name="ButtonCircle">
+        <ButtonCircle>ButtonCircle</ButtonCircle>
+      </Example>
+      <Example name="ButtonOutline">
+        <ButtonOutline>ButtonOutline</ButtonOutline>
+      </Example>
+      <Example name="Green Button">
+        <Button bg='green'>Button</Button>
+      </Example>
+      <Example name="Red Button">
+        <Button bg='red'>Button</Button>
+      </Example>
+
+      <Example name="Badge">
+        <Badge>Badge</Badge>
+      </Example>
+      <Example name="Circle">
+        <Circle>A</Circle>
+      </Example>
+      <Example name="Switch">
+        <Switch checked />
+      </Example>
+      <Example name="Dot">
+        <Dot bg='black' />
+        <Dot />
+        <Dot />
+      </Example>
+      <Example name='Card'>
+        <Card>
+          Hello Card
+        </Card>
+      </Example>
+      <Example name='Avatar'>
+        <Avatar
+          src='https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=2048&q=20'
+        />
+      </Example>
+      <Example name='Image'>
+        <Image
+          src='https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=2048&q=20'
+        />
+      </Example>
+
+
+
       <Example name="Donut">
         <Donut
           value={2/3}
@@ -62,6 +118,7 @@ const Demo = props => (
           />
         </Detail>
       </Example>
+
       <Example name="XRay">
         <XRay>
           <Heading>XRay</Heading>
