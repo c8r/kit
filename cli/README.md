@@ -20,8 +20,20 @@ kit examples/Demo.js
 
 ## Generator
 
+Run the `init` command and follow the prompts to create a new project.
+
+```sh
+kit init
+```
+
 ## Help
 
 ```
 kit --help
 ```
+
+---
+
+[Made by Compositor](https://compositor.io/)
+|
+[MIT License](license)
