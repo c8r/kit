@@ -3,7 +3,9 @@
 
 **Experimental**
 
-Create a [Storybook][storybook] dev environment with a folder of examples 
+Create a [Storybook][storybook] dev environment with a folder of examples
+
+[storybook]: https://github.com/storybooks/storybook/
 
 ```sh
 npm i -g @compositor/kit-storybook
