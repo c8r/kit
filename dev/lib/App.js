@@ -30,7 +30,7 @@ class App extends React.Component {
         <BrowserRouter
           context={{}}
           location={this.props.pathname}>
-          <Provider {...this.props}>
+          <Provider {...this.state}>
             <Switch>
               {routes.map(route => (
                 <Route
