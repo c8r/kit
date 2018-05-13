@@ -16,7 +16,7 @@ class LibraryApp extends React.Component {
     const Provider = this.props.Provider || DefaultProvider
 
     return (
-      <Provider>
+      <Provider {...this.state}>
         <Library
           examples={examples}
         />
