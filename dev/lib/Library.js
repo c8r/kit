@@ -3,8 +3,10 @@ import { Library } from '@compositor/kit'
 import DefaultProvider from './Provider'
 
 class LibraryApp extends React.Component {
+  state = this.props
+
   render () {
-    const { routes = [], components, theme } = this.props
+    const { routes = [], components, theme } = this.state
 
     const examples = routes.map(({ name, component }) => ({
       name,
