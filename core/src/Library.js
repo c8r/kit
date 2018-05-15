@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import nano from 'nano-style'
 import {
   BrowserRouter,
+  HashRouter,
   StaticRouter,
   Route,
   NavLink,
@@ -65,7 +66,7 @@ const NavItem = nano(NavLink)(
 )
 
 const Router = typeof document !== 'undefined'
-  ? BrowserRouter
+  ? HashRouter // BrowserRouter
   : StaticRouter
 
 export class Library extends React.Component {
