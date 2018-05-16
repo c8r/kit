@@ -63,7 +63,7 @@ class Init extends Component {
     try {
       const commands = [
         `mkdir -p ${name}`,
-        `curl ${tarUrl} | tar -xz -C ${name} --strip=3 mdx-master/examples/${template}`
+        `curl ${tarUrl} | tar -xz -C ${name} --strip=3 kit-master/templates/${template}`
       ]
 
       const px = commands.map(c => execa.shell(c))
