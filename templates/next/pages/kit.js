@@ -3,7 +3,7 @@ import { Button } from 'standard-components'
 import { Library, Example, Cartesian } from '@compositor/kit'
 
 export default () =>
-  <Library baseUrl="/kit">
+  <Library basename="/kit">
     <Example name="Button">
       <Button>Hello, world!</Button>
     </Example>
