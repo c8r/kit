@@ -5,19 +5,23 @@
   "scripts": {
     "start": "next start",
     "build": "next build",
+    "clean": "rm -rf out",
     "dev": "next",
-    "format": "prettier --write '{components,pages}/**/*.js'"
+    "export": "next export",
+    "format": "prettier --write '{components,pages}/**/*.js'",
+    "size": "yarn run build && yarn run export && bundlesize"
   },
   "dependencies": {
-    "@compositor/kit": "^1.0.0",
-    "@mdx-js/mdx": "^0.7.1",
-    "@zeit/next-mdx": "^1.0.0",
-    "next": "^5.1.0",
+    "@compositor/kit": "^1.0.19",
+    "@mdx-js/mdx": "^0.9.0",
+    "@zeit/next-mdx": "^1.1.0",
+    "next": "^6.0.3",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "rebass": "^1.0.7",
-    "styled-components": "^3.2.6",
-    "styled-system": "^2.2.1"
+    "remark-emoji": "^2.0.1",
+    "remark-images": "^0.8.1",
+    "remark-unwrap-images": "^0.0.2-0",
+    "standard-components": "^1.0.0-2"
   },
   "devDependencies": {
     "prettier": "^1.12.1"

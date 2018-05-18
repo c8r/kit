@@ -1,8 +1,5 @@
-import React, { Fragment } from 'react'
-import { Provider } from 'rebass'
+import React from 'react'
 
-import { withLayout } from '../components'
+import Readme from '../readme.md'
 
-export default () => withLayout(
-  <h1>hi</h1>
-)
+export default () => <Readme />

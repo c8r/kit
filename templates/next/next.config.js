@@ -1,12 +1,13 @@
-const withMDX = require('@zeit/next-mdx')()
+const emoji = require('remark-emoji')
+const images = require('remark-images')
+const unwrapImages = require('remark-unwrap-images')
 
-module.exports = withMDX({
-  webpack: (config, { defaultLoaders }) => {
-    config.module.rules.push({
-      test: /\.md$/,
-      use: [defaultLoaders.babel, '@mdx-js/loader']
-    })
-
-    return config
+const withMDX = require('@zeit/next-mdx')({
+  extension: /\.mdx?$/,
+  options: {
+    mdPlugins: [emoji, images, unwrapImages],
+    hastPlugins: []
   }
 })
+
+module.exports = withMDX()
