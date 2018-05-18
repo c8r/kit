@@ -70,9 +70,11 @@ const Router = typeof document !== 'undefined'
 
 export class Library extends React.Component {
   render () {
+    const { basename, ...props } = this.props
+
     return (
-      <Router context={{}}>
-        <LibraryApp {...this.props} />
+      <Router basename={basename} context={{}}>
+        <LibraryApp {...props} />
       </Router>
     )
   }
@@ -100,7 +102,7 @@ const LibraryApp = withRouter(class extends React.Component {
     const {
       title,
       renderSideNav,
-      renderCard,
+      renderCard
     } = this.props
 
     const examples = this.props.examples || this.getExampleChildren(this.props)
