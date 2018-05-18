@@ -70,18 +70,18 @@ const Router = typeof document !== 'undefined'
 
 export class Library extends React.Component {
   static propTypes = {
-    baseUrl: PropTypes.string
+    basename: PropTypes.string
   }
 
   static defaultProps = {
-    baseUrl: '/'
+    basename: '/'
   }
 
   render () {
-    const { baseUrl, ...props } = this.props
+    const { basename, ...props } = this.props
 
     return (
-      <Router basename={baseUrl} context={{}}>
+      <Router basename={basename} context={{}}>
         <LibraryApp {...props} />
       </Router>
     )
