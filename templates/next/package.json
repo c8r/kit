@@ -8,8 +8,7 @@
     "clean": "rm -rf out",
     "dev": "next",
     "export": "next export",
-    "format": "prettier --write '{components,pages}/**/*.js'",
-    "size": "yarn run build && yarn run export && bundlesize"
+    "format": "prettier --write '{components,pages}/**/*.js'"
   },
   "dependencies": {
     "@compositor/kit": "^1.0.19",
