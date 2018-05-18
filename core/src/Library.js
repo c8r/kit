@@ -11,11 +11,6 @@ import {
 } from 'react-router-dom'
 import { Grid, Box } from './ui'
 
-const toUrl = (base, component) => {
-  const joinStr = base.endsWith('/') ? '' : '/'
-  return [base, component].join(joinStr)
-}
-
 const Root = nano('div')({
   display: 'flex',
   alignItems: 'flex-start',
@@ -74,10 +69,20 @@ const Router = typeof document !== 'undefined'
   : StaticRouter
 
 export class Library extends React.Component {
+  static propTypes = {
+    baseUrl: PropTypes.string
+  }
+
+  static defaultProps = {
+    baseUrl: '/'
+  }
+
   render () {
+    const { baseUrl, ...props } = this.props
+
     return (
-      <Router context={{}}>
-        <LibraryApp {...this.props} />
+      <Router basename={baseUrl} context={{}}>
+        <LibraryApp {...props} />
       </Router>
     )
   }
@@ -88,12 +93,7 @@ const LibraryApp = withRouter(class extends React.Component {
     title: PropTypes.string,
     examples: PropTypes.array,
     renderSideNav: PropTypes.func,
-    renderCard: PropTypes.func,
-    baseUrl: PropTypes.string
-  }
-
-  static defaultProps = {
-    baseUrl: '/'
+    renderCard: PropTypes.func
   }
 
   getExampleChildren = ({ children }) => (
@@ -110,15 +110,14 @@ const LibraryApp = withRouter(class extends React.Component {
     const {
       title,
       renderSideNav,
-      renderCard,
-      baseUrl
+      renderCard
     } = this.props
 
     const examples = this.props.examples || this.getExampleChildren(this.props)
 
     const sidenav = typeof renderSideNav === 'function'
       ? renderSideNav({ ...this.state, title, examples })
-      : <SideNav title={title} examples={examples} baseUrl={baseUrl} />
+      : <SideNav title={title} examples={examples} />
 
     return (
       <Root>
@@ -128,13 +127,13 @@ const LibraryApp = withRouter(class extends React.Component {
         <Main>
           <Route
             exact
-            path={baseUrl}
+            path='/'
             render={() => (
               <Grid>
                 {examples.map(example => (
                   <Card
                     key={example.name}
-                    to={toUrl(baseUrl, example.name)}>
+                    to={'/' + example.name}>
                     {typeof renderCard === 'function'
                       ? renderCard(example)
                       : (
@@ -151,7 +150,7 @@ const LibraryApp = withRouter(class extends React.Component {
           {examples.map(example => (
             <Route
               key={example.name}
-              path={toUrl(baseUrl, example.name)}
+              path={'/' + example.name}
               render={() => (
                 <Box p={2}>
                   {example.element}
@@ -179,19 +178,18 @@ class SideNav extends React.Component {
   render() {
     const {
       examples,
-      title,
-      baseUrl
+      title
     } = this.props
 
     return (
       <React.Fragment>
-        <NavItem exact to={baseUrl}>
+        <NavItem exact to='/'>
           {title}
         </NavItem>
         {examples.map(example => (
           <NavItem
             key={example.name}
-            to={toUrl(baseUrl, example.name)}>
+            to={'/' + example.name}>
             {example.name}
           </NavItem>
         ))}
