@@ -11,6 +11,11 @@ import {
 } from 'react-router-dom'
 import { Grid, Box } from './ui'
 
+const toUrl = (base, component) => {
+  const joinStr = base.endsWith('/') ? '' : '/'
+  return [base, component].join(joinStr)
+}
+
 const Root = nano('div')({
   display: 'flex',
   alignItems: 'flex-start',
@@ -83,7 +88,12 @@ const LibraryApp = withRouter(class extends React.Component {
     title: PropTypes.string,
     examples: PropTypes.array,
     renderSideNav: PropTypes.func,
-    renderCard: PropTypes.func
+    renderCard: PropTypes.func,
+    baseUrl: PropTypes.string
+  }
+
+  static defaultProps = {
+    baseUrl: '/'
   }
 
   getExampleChildren = ({ children }) => (
@@ -101,6 +111,7 @@ const LibraryApp = withRouter(class extends React.Component {
       title,
       renderSideNav,
       renderCard,
+      baseUrl
     } = this.props
 
     const examples = this.props.examples || this.getExampleChildren(this.props)
@@ -117,13 +128,13 @@ const LibraryApp = withRouter(class extends React.Component {
         <Main>
           <Route
             exact
-            path='/'
+            path={baseUrl}
             render={() => (
               <Grid>
                 {examples.map(example => (
                   <Card
                     key={example.name}
-                    to={'/' + example.name}>
+                    to={toUrl(baseUrl, example.name)}>
                     {typeof renderCard === 'function'
                       ? renderCard(example)
                       : (
