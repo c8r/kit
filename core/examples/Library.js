@@ -37,7 +37,7 @@ import {
 
 const Demo = props => (
   <Provider>
-    <Library>
+    <Library baseUrl="/Library">
       <Example name="Heading">
         <Heading>Heading</Heading>
       </Example>
