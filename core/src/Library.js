@@ -69,14 +69,6 @@ const Router = typeof document !== 'undefined'
   : StaticRouter
 
 export class Library extends React.Component {
-  static propTypes = {
-    basename: PropTypes.string
-  }
-
-  static defaultProps = {
-    basename: '/'
-  }
-
   render () {
     const { basename, ...props } = this.props
 
