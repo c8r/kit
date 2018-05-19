@@ -1,8 +1,6 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
-  "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "name": "kit-gatsby",
+  "description": "Kit and Gatsby",
   "dependencies": {
     "@compositor/kit": "^1.0.20",
     "gatsby": "^1.9.247",
@@ -11,10 +9,6 @@
     "react-helmet": "^5.2.0",
     "standard-components": "^1.0.0-2"
   },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
