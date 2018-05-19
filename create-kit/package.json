@@ -6,7 +6,7 @@
     "create-kit": "./node_modules/@compositor/kit-cli/cli.js"
   },
   "scripts": {
-    "start": "./node_modules/@compositor/kit-cli/cli.js init"
+    "start": "./node_modules/@compositor/kit-cli/cli.js"
   },
   "keywords": [],
   "author": "Compositor",
