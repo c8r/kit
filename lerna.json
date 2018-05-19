@@ -5,6 +5,7 @@
     "cli",
     "core",
     "dev",
+    "create-kit",
     "snapshot",
     "storybook"
   ],

@@ -9,6 +9,8 @@ class App extends Component {
   render() {
     const { cmd, input, flags, help } = this.props
 
+    if (!cmd && !input) return <Init />
+
     switch (cmd) {
       case 'init':
         return <Init />
