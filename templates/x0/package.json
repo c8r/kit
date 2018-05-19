@@ -20,6 +20,7 @@
     "config": "x0.config.js"
   },
   "dependencies": {
+    "@compositor/kit": "^1.0.20",
     "standard-components": "^1.0.0-2"
   }
 }
