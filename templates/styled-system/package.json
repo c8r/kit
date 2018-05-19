@@ -10,6 +10,7 @@
     "test": "jest"
   },
   "devDependencies": {
+    "@compositor/kit-cli": "^1.0.22",
     "@compositor/kit-snapshot": "^1.0.18",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
