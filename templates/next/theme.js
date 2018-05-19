@@ -1,4 +1,3 @@
-// Default values
 const theme = {
   breakpoints: [
     32,
