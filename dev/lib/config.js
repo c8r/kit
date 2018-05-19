@@ -122,12 +122,5 @@ module.exports = opts => {
     })
   )
 
-  if (opts._config) {
-    config.module.rules[2].use[1].options = opts._config
-    config.module.rules[2].use[1].options.config = opts.config
-    config.module.rules[3].use[1].options = opts._config
-    config.module.rules[3].use[1].options.config = opts.config
-  }
-
   return mergeConfigs(config, opts)
 }

@@ -6,14 +6,17 @@ class LibraryApp extends React.Component {
   state = this.props
 
   render () {
-    const { routes = [], components, theme } = this.state
+    const {
+      routes = [],
+      Provider = DefaultProvider,
+      components,
+      theme
+    } = this.state
 
     const examples = routes.map(({ name, component }) => ({
       name,
       element: React.createElement(component)
     }))
-
-    const Provider = this.props.Provider || DefaultProvider
 
     return (
       <Provider {...this.state}>
