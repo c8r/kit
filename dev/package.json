@@ -1,6 +1,6 @@
 {
   "name": "@compositor/kit-dev",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "description": "Zero-config React component development server",
   "main": "lib/index.js",
   "bin": {
@@ -15,7 +15,7 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "dependencies": {
-    "@compositor/kit": "^1.0.20",
+    "@compositor/kit": "^1.0.21",
     "@mdx-js/mdx": "^0.8.1-0",
     "@mdx-js/tag": "^0.7.2",
     "babel-core": "^6.26.3",

@@ -2,7 +2,7 @@
   "name": "@compositor/kit",
   "description": "Components for development environments, style guides, and demos",
   "author": "Compositor",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "main": "dist/index.js",
   "files": [
     "dist"
@@ -40,7 +40,7 @@
     "styled-system": "^2.2.1"
   },
   "devDependencies": {
-    "@compositor/kit-cli": "^1.0.20",
+    "@compositor/kit-cli": "^1.0.21",
     "ava": "^0.25.0",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
