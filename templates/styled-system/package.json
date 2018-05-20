@@ -23,6 +23,9 @@
   "dependencies": {
     "styled-system": "^2.2.5"
   },
+  "peerDependencies": {
+    "styled-components": ">=3.0.0"
+  },
   "jest": {
     "testMatch": [
       "**/tests/**/*.js"
