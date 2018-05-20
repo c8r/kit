@@ -3,6 +3,8 @@
 
 This project was created with [@compositor/kit-cli][https://github.com/c8r/kit]
 
+Built with [Styled System](https://github.com/jxnblk/styled-system) and [styled-components](https://github.com/styled-components/styled-components)
+
 ## Folder Structure
 
 ```
