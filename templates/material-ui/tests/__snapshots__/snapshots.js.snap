@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Box renders 1`] = `null`;
+
+exports[`Button renders 1`] = `null`;
+
+exports[`Flex renders 1`] = `null`;
+
+exports[`RedButton renders 1`] = `null`;
+
+exports[`Text renders 1`] = `null`;
+
+exports[`ThemeProvider renders 1`] = `null`;

@@ -1,0 +1,38 @@
+{
+  "name": "rebass-kit",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Rebass starter kit",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepare": "babel src -d dist",
+    "start": "kit examples --mode library",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@compositor/kit-cli": "^1.0.22",
+    "@compositor/kit-snapshot": "^1.0.18",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "jest": "^22.4.4",
+    "jest-styled-components": "^5.0.1",
+    "styled-components": "^3.2.6"
+  },
+  "dependencies": {
+    "@material-ui/core": "^1.0.0",
+    "rebass": "^1.0.7"
+  },
+  "peerDependencies": {
+    "styled-components": ">=3.0.0"
+  },
+  "jest": {
+    "testMatch": [
+      "**/tests/**/*.js"
+    ],
+    "collectCoverageFrom": [
+      "**/src/**/*.js"
+    ]
+  }
+}
