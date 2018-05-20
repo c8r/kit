@@ -54,18 +54,11 @@ const baseConfig = {
         test: /\.jsx$/,
         use: [
           {
-            loader: require.resolve('babel-loader'),
-            options: babel
-          },
-          {
             loader: require.resolve(
-              path.join(__dirname, './scope-loader')
+              path.join(__dirname, './jsx-loader')
             ),
             options: {}
-          },
-          require.resolve(
-            path.join(__dirname, './jsx-loader')
-          ),
+          }
         ]
       },
       {
@@ -74,12 +67,6 @@ const baseConfig = {
           {
             loader: require.resolve('babel-loader'),
             options: babel
-          },
-          {
-            loader: require.resolve(
-              path.join(__dirname, './scope-loader')
-            ),
-            options: {}
           },
           require.resolve(
             path.join(__dirname, './mdx-loader')
@@ -121,6 +108,11 @@ module.exports = opts => {
       template: htmlTemplate
     })
   )
+
+  if (opts.config) {
+    // add config path for scope
+    config.module.rules[2].use[0].options = opts
+  }
 
   return mergeConfigs(config, opts)
 }
