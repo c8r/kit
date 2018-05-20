@@ -3,6 +3,8 @@
 
 This project was created with [@compositor/kit-cli][https://github.com/c8r/kit]
 
+http://tachyons.io
+
 ## Folder Structure
 
 ```
