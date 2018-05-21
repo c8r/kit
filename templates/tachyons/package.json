@@ -1,0 +1,32 @@
+{
+  "name": "tachyons-kit",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Tachyons starter kit",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepare": "babel src -d dist",
+    "start": "kit examples --mode library",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@compositor/kit-cli": "^1.0.22",
+    "@compositor/kit-snapshot": "^1.0.18",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "jest": "^22.4.4"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5"
+  },
+  "jest": {
+    "testMatch": [
+      "**/tests/**/*.js"
+    ],
+    "collectCoverageFrom": [
+      "**/src/**/*.js"
+    ]
+  }
+}
