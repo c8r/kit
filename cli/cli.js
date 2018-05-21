@@ -65,6 +65,10 @@ const cli = meow(
   }
 })
 
+require('update-notifier')({
+  pkg: cli.pkg
+}).notify()
+
 const [cmd, input] = cli.input
 
 const props = Object.assign({}, cli, {
@@ -95,7 +99,3 @@ if (cmd === 'init') {
       process.exit(0)
     })
 }
-
-require('update-notifier')({
-  pkg: require('./package.json')
-}).notify()
