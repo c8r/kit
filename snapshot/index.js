@@ -2,7 +2,14 @@ const React = require('react')
 const { create: render } = require('react-test-renderer')
 
 const toArray = obj => Object.keys(obj)
-  .map(key => ({ name: key, element: obj[key] }))
+  .map(name => {
+    const example = obj[name]
+    const element = React.isValidElement(example) ? example : React.createElement(example)
+    return {
+      name,
+      element
+    }
+  })
 
 const renderJSON = el => render(el).toJSON()
 
