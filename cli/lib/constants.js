@@ -1,5 +1,5 @@
 const projectTemplates = ['next', 'x0', 'create-react-app', 'styled-system', 'rebass', 'tachyons']
 
-const tarUrl = 'https://codeload.github.com/c8r/kit/tar.gz/master'
+const templatesDir = 'c8r/kit/templates'
 
-module.exports = { projectTemplates, tarUrl }
+module.exports = { projectTemplates, templatesDir }
