@@ -16,15 +16,17 @@ const pkg = require('./package.json')
 const cli = meow(
   `
   Usage
+
     $ kit <command> [options]
 
   Examples
-    $ kit examples/
-    $ kit dev examples/
+    $ kit examples
+    $ kit dev examples
     $ kit Demo.js
     $ kit init
 
-  Dev Options:
+  Options
+
     -o --open     Opens development server in default browser
     -p --port     Port for development server (default: 8080)
     -c --config   Path to configuration file
