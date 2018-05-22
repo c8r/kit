@@ -2,23 +2,16 @@
 
 const importJsx = require('import-jsx')
 const { h, Component, Text } = require('ink')
-const Select = require('ink-select-input')
 const Input = require('ink-text-input')
 const Spinner = require('ink-spinner')
 const initit = require('initit')
+const got = require('got')
 
 const { log, error, complete } = require('../lib/log')
 
+const templatesDir = 'c8r/kit/templates'
 const Item = importJsx('./ListItem')
-const { projectTemplates, templatesDir } = require('../lib/constants')
-const items = projectTemplates.map(t => ({ label: t, value: t }))
-const ProjectSelect = ({ items, onSelect }) => (
-  <div>
-    <Text>Select project template</Text>
-    <br />
-    <Select items={items} itemComponent={Item} onSelect={onSelect} />
-  </div>
-)
+const ProjectSelect = importJsx('./ProjectSelect')
 
 class Init extends Component {
   constructor() {
@@ -27,6 +20,7 @@ class Init extends Component {
     this.state = {
       step: 'template',
       template: 'x0',
+      templates: [],
       name: ''
     }
 
@@ -34,6 +28,13 @@ class Init extends Component {
     this.handleNameChange = this.handleNameChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.initialize = this.initialize.bind(this)
+  }
+
+  async componentDidMount() {
+    const response = await got('https://api.github.com/repos/c8r/kit/contents/templates?ref=master')
+    const templates = response.body.map(t => ({ label: t, value: t }))
+
+    this.setState({ templates })
   }
 
   handleTemplateSelect({ label }) {
