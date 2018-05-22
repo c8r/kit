@@ -105,26 +105,13 @@ const LibraryApp = withRouter(
           element: c.props.children
         }))
 
-
-    renderExample = ({ element }, props) => {
-      const { useFrame } = this.props
-      const { head } = this.state
-      if (!useFrame) {
-        return element
-      }
-      return (
-        <Frame head={head} {...props}>
-          {element}
-        </Frame>
-      )
-    }
-
     render() {
       const {
         title,
         renderSideNav,
         renderCard,
       } = this.props
+      const { head } = this.state
 
       const examples =
         this.props.examples || this.getExampleChildren(this.props)
@@ -151,7 +138,10 @@ const LibraryApp = withRouter(
                     ) : (
                       <Card key={example.name} to={'/' + example.name}>
                         <Box p={2}>
-                          {this.renderExample(example)}
+                          <ExampleFrame
+                            head={head}
+                            example={example}
+                          />
                         </Box>
                       </Card>
                     )
@@ -165,9 +155,11 @@ const LibraryApp = withRouter(
                 path={'/' + example.name}
                 render={() => (
                   <Box>
-                    {this.renderExample(example, {
-                      height: '100vh'
-                    })}
+                    <ExampleFrame
+                      head={head}
+                      example={example}
+                      height='100vh'
+                    />
                   </Box>
                 )}
               />
@@ -178,6 +170,21 @@ const LibraryApp = withRouter(
     }
   }
 )
+
+const ExampleFrame = ({
+  element,
+  useFrame,
+  head,
+}) => {
+  if (!useFrame) {
+    return element
+  }
+  return (
+    <Frame head={head} {...props}>
+      {element}
+    </Frame>
+  )
+}
 
 class SideNav extends React.Component {
   static propTypes = {
