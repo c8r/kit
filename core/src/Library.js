@@ -87,7 +87,7 @@ const LibraryApp = withRouter(
 
     getExampleChildren = ({ children }) =>
       React.Children.toArray(children)
-        .filter(c => c.type === Example)
+        .filter(c => c.type._kitLibraryExample)
         .filter(c => !!c.props.name)
         .map(c => ({
           name: c.props.name,
@@ -172,6 +172,7 @@ class SideNav extends React.Component {
 }
 
 export class Example extends React.Component {
+  static _kitLibraryExample = true
   static propTypes = {
     name: PropTypes.string.isRequired
   }
