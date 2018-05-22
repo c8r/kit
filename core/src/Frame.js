@@ -1,8 +1,18 @@
 import React from 'react'
-import { render } from 'react-dom'
+import PropTypes from 'prop-types'
+import ReactDOM from 'react-dom'
+import { renderToStaticMarkup } from 'react-dom/server'
 import nano from 'nano-style'
 
 class Frame extends React.Component {
+  static propTypes = {
+    head: PropTypes.node,
+    zoom: PropTypes.number,
+    width: PropTypes.string,
+    height: PropTypes.string,
+    css: PropTypes.string,
+  }
+
   static defaultProps = {
     zoom: 1,
     width: '100%',
@@ -18,8 +28,12 @@ class Frame extends React.Component {
     this.div = null
 
     this.getSrc = () => {
-      const { zoom = 1, css = '' } = this.props
-      return `<style>*{box-sizing:border-box}body{margin:0;min-height:100vh;zoom:${zoom}} ${css}</style>
+      const { zoom = 1, css = '', head } = this.props
+      let headHTML = ''
+      if (head) {
+        headHTML = renderToStaticMarkup(head)
+      }
+      return `<style>*{box-sizing:border-box}body{margin:0;min-height:100vh;zoom:${zoom}} ${css}</style>${headHTML}
 <div id='app'></div>`
     }
 
@@ -29,10 +43,20 @@ class Frame extends React.Component {
       this.update(this.props)
     }
 
-    this.update = ({ children }) => {
+    this.update = ({ render, children }) => {
       if (!this.doc) return
       const div = this.doc.getElementById('app')
-      render(children, div)
+      if (typeof render === 'function') {
+        ReactDOM.render(
+          render({
+            document: this.doc,
+            window: this.win
+          }),
+          div
+        )
+      } else {
+        ReactDOM.render(children, div)
+      }
     }
   }
 

@@ -19,6 +19,7 @@ import * as Rebass from 'rebass'
 import {
   Library,
   Example,
+  Head,
   XRay,
   Frame,
   LiveEditor,
@@ -36,13 +37,24 @@ import {
 
 const Demo = props => (
   <Provider>
-    <Library basename="/Library">
+    <Library
+      useFrame={false}
+      basename="/Library">
+
+      {/* renders in iframe when useFrame is true */}
+      <Head>
+        <title>Hello Library</title>
+        <link rel='stylesheet' href='/styles.css' />
+      </Head>
+
       <Example name="Heading">
         <Heading>Heading</Heading>
       </Example>
 
       <Example name="Button">
-        <Button>Button</Button>
+        <Provider>
+          <Button>Button</Button>
+        </Provider>
       </Example>
       <Example name="ButtonCircle">
         <ButtonCircle>ButtonCircle</ButtonCircle>
