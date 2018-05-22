@@ -31,7 +31,8 @@ import {
   Markdown,
   Detail,
   Diff,
-  State
+  State,
+  Colorable
 } from '../src'
 
 const Demo = props => (
@@ -79,6 +80,19 @@ const Demo = props => (
       </Example>
       <Example name="Image">
         <Image src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=2048&q=20" />
+      </Example>
+      <Example name="Colorable">
+        <Colorable
+          colors={['black', 'white', '#07c', 'tomato']}
+          children={combos => combos.map(combo =>
+            <div
+              key={combo.hex}
+              children={combo.combinations.map(c =>
+                <Button key={c.hex} bg={c.hex} color={combo.hex} m={3}>Beep</Button>
+              )}
+            />
+          )}
+        />
       </Example>
 
       <Example name="Donut">
