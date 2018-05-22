@@ -16,10 +16,6 @@ const dev = {
 const start = async (opts = {}) => {
   opts = parseOptions(opts)
 
-  if (opts.config) {
-    opts._config = require(opts.config)
-  }
-
   const config = getConfig(opts)
 
   const serveOptions = {

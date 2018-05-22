@@ -63,7 +63,7 @@ Note: the configuration file should use node modules syntax and be in a *univers
 
 ```js
 // example kit.config.js
-const Rebass = require('rebass')
+import Rebass from 'rebass'
 
 const theme = {
   colors: {
@@ -73,10 +73,9 @@ const theme = {
   }
 }
 
-const components = Object.assign({}, Rebass)
 
-module.exports = {
-  components,
+export default {
+  components: Rebass,
   theme
 }
 ```
@@ -89,17 +88,14 @@ To use a custom Provider component, add a `Provider` to your configuration.
 
 ```js
 // example kit.config.js
-const React = require('react')
-const { ThemeProvider } = require('glamorous')
+import React from 'react'
+import { ThemeProvider } from 'glamorous'
+import theme from '../src/theme'
 
-const Provider = props =>
-  React.createElement(ThemeProvider, {
-    theme: props.theme
-  },
-    props.children
-  )
+const Provider = props => <ThemeProvider {...props} />
 
-module.exports = {
+export default {
+  theme,
   Provider
 }
 ```
@@ -120,6 +116,8 @@ kit examples --mode library
 [Library]: ../core/docs/Library.md
 
 ## File Types
+
+**Experimental**
 
 The Kit dev server includes experimental support for special [`.mdx`][mdx] and `.jsx` file types.
 Both formats use front matter to set default props for the rendered component.
