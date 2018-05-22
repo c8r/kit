@@ -29,9 +29,7 @@ export const Specimen = ({ text, value, n, fontFamily, color }) => (
           color
         }}
       >
-        <StepLabel f={0} mr={2} children={n} />
-        {' '}
-        {text}
+        <StepLabel f={0} mr={2} children={n} /> {text}
       </Step>
       <Flex w={96} style={{ alignSelf: 'baseline' }} align="baseline" ml="auto">
         <Text mr={1}>{value}</Text>

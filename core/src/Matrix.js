@@ -12,15 +12,15 @@ export default ({ component, x = [], y = [], width = 512 }) => {
 
   return (
     <Fragment>
-      {y.map((row, i) =>
+      {y.map((row, i) => (
         <Root key={i}>
-          {x.map((col, j) =>
-            <Box key={[i,j].join()} w={width}>
+          {x.map((col, j) => (
+            <Box key={[i, j].join()} w={width}>
               <Component {...row} {...col} />
             </Box>
-          )}
+          ))}
         </Root>
-      )}
+      ))}
     </Fragment>
   )
 }

@@ -1,8 +1,8 @@
 import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 
-const get = (obj, path, fallback) => path.split('.')
-  .reduce((a, b) => (a && a[b]) ? a[b] : null, obj) || fallback
+const get = (obj, path, fallback) =>
+  path.split('.').reduce((a, b) => (a && a[b] ? a[b] : null), obj) || fallback
 const themeGet = (keys, fallback) => props => get(props.theme, keys, fallback)
 
 const Root = styled.div`
@@ -12,14 +12,12 @@ const Root = styled.div`
 `
 
 class Provider extends React.Component {
-  render () {
+  render() {
     const { components, theme, children } = this.props
 
     return (
       <ThemeProvider theme={theme}>
-        <Root>
-          {children}
-        </Root>
+        <Root>{children}</Root>
       </ThemeProvider>
     )
   }

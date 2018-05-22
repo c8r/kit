@@ -14,14 +14,14 @@ const Editor = nano(LiveEditor)({
   fontSize: '14px',
   padding: '8px',
   backgroundColor: '#f6f6f6',
-  outline: 'none',
+  outline: 'none'
 })
 
 class KitEditor extends Component {
   static propTypes = {
     code: PropTypes.string.isRequired,
     scope: PropTypes.object,
-    theme: PropTypes.object,
+    theme: PropTypes.object
   }
 
   constructor(props, context) {

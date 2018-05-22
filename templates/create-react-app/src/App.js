@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components'
 
 import theme from './theme'
 
-export default () =>
+export default () => (
   <ThemeProvider theme={theme}>
     <Library>
       <Example name="Button">
@@ -13,3 +13,4 @@ export default () =>
       </Example>
     </Library>
   </ThemeProvider>
+)

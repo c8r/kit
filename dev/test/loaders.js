@@ -26,14 +26,8 @@ const testFixture = (loaderName, fixture, options = {}) => {
             {
               loader: 'babel-loader',
               options: {
-                presets: [
-                  'env',
-                  'stage-0',
-                  'react'
-                ],
-                plugins: [
-                  'transform-runtime'
-                ]
+                presets: ['env', 'stage-0', 'react'],
+                plugins: ['transform-runtime']
               }
             },
             {
@@ -66,7 +60,7 @@ test('scope-loader renders', async t => {
     config: 'config.js',
     components: {
       Beep: () => false,
-      Boop: () => false,
+      Boop: () => false
     }
   })
   t.snapshot(result)

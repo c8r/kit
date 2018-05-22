@@ -14,13 +14,8 @@ class State extends React.Component {
 
   update = (...args) => this.setState(...args)
 
-  render () {
-    const {
-      render,
-      component: Component,
-      children,
-      ...props
-    } = this.props
+  render() {
+    const { render, component: Component, children, ...props } = this.props
 
     const renderProps = {
       ...this.state,

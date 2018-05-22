@@ -7,7 +7,7 @@ import {
   Route,
   NavLink,
   Link,
-  withRouter,
+  withRouter
 } from 'react-router-dom'
 import { Grid, Box } from './ui'
 
@@ -44,32 +44,28 @@ const SideBar = nano('div')({
   borderRight: '1px solid #f6f6f6'
 })
 
-const NavItem = nano(NavLink)(
-  {
-    display: 'block',
-    paddingLeft: '8px',
-    paddingRight: '8px',
-    paddingTop: '4px',
-    paddingBottom: '4px',
-    fontSize: '12px',
-    fontWeight: 'bold',
-    textDecoration: 'none',
-    color: 'inherit',
-    WebkitUserSelect: 'none',
-    userSelect: 'none',
-    '&.active': {
-      color: 'white',
-      backgroundColor: 'black'
-    }
+const NavItem = nano(NavLink)({
+  display: 'block',
+  paddingLeft: '8px',
+  paddingRight: '8px',
+  paddingTop: '4px',
+  paddingBottom: '4px',
+  fontSize: '12px',
+  fontWeight: 'bold',
+  textDecoration: 'none',
+  color: 'inherit',
+  WebkitUserSelect: 'none',
+  userSelect: 'none',
+  '&.active': {
+    color: 'white',
+    backgroundColor: 'black'
   }
-)
+})
 
-const Router = typeof document !== 'undefined'
-  ? BrowserRouter
-  : StaticRouter
+const Router = typeof document !== 'undefined' ? BrowserRouter : StaticRouter
 
 export class Library extends React.Component {
-  render () {
+  render() {
     const { basename, ...props } = this.props
 
     return (
@@ -80,81 +76,71 @@ export class Library extends React.Component {
   }
 }
 
-const LibraryApp = withRouter(class extends React.Component {
-  static propTypes = {
-    title: PropTypes.string,
-    examples: PropTypes.array,
-    renderSideNav: PropTypes.func,
-    renderCard: PropTypes.func
-  }
+const LibraryApp = withRouter(
+  class extends React.Component {
+    static propTypes = {
+      title: PropTypes.string,
+      examples: PropTypes.array,
+      renderSideNav: PropTypes.func,
+      renderCard: PropTypes.func
+    }
 
-  getExampleChildren = ({ children }) => (
-    React.Children.toArray(children)
-      .filter(c => c.type === Example)
-      .filter(c => !!c.props.name)
-      .map(c => ({
-        name: c.props.name,
-        element: c.props.children
-      }))
-  )
+    getExampleChildren = ({ children }) =>
+      React.Children.toArray(children)
+        .filter(c => c.type === Example)
+        .filter(c => !!c.props.name)
+        .map(c => ({
+          name: c.props.name,
+          element: c.props.children
+        }))
 
-  render() {
-    const {
-      title,
-      renderSideNav,
-      renderCard
-    } = this.props
+    render() {
+      const { title, renderSideNav, renderCard } = this.props
 
-    const examples = this.props.examples || this.getExampleChildren(this.props)
+      const examples =
+        this.props.examples || this.getExampleChildren(this.props)
 
-    const sidenav = typeof renderSideNav === 'function'
-      ? renderSideNav({ ...this.state, title, examples })
-      : <SideNav title={title} examples={examples} />
+      const sidenav =
+        typeof renderSideNav === 'function' ? (
+          renderSideNav({ ...this.state, title, examples })
+        ) : (
+          <SideNav title={title} examples={examples} />
+        )
 
-    return (
-      <Root>
-        <SideBar>
-          {sidenav}
-        </SideBar>
-        <Main>
-          <Route
-            exact
-            path='/'
-            render={() => (
-              <Grid>
-                {examples.map(example => (
-                  <Card
-                    key={example.name}
-                    to={'/' + example.name}>
-                    {typeof renderCard === 'function'
-                      ? renderCard(example)
-                      : (
-                        <Box p={2}>
-                          {example.element}
-                        </Box>
-                      )
-                    }
-                  </Card>
-                ))}
-              </Grid>
-            )}
-          />
-          {examples.map(example => (
+      return (
+        <Root>
+          <SideBar>{sidenav}</SideBar>
+          <Main>
             <Route
-              key={example.name}
-              path={'/' + example.name}
+              exact
+              path="/"
               render={() => (
-                <Box p={2}>
-                  {example.element}
-                </Box>
+                <Grid>
+                  {examples.map(example => (
+                    <Card key={example.name} to={'/' + example.name}>
+                      {typeof renderCard === 'function' ? (
+                        renderCard(example)
+                      ) : (
+                        <Box p={2}>{example.element}</Box>
+                      )}
+                    </Card>
+                  ))}
+                </Grid>
               )}
             />
-          ))}
-        </Main>
-      </Root>
-    )
+            {examples.map(example => (
+              <Route
+                key={example.name}
+                path={'/' + example.name}
+                render={() => <Box p={2}>{example.element}</Box>}
+              />
+            ))}
+          </Main>
+        </Root>
+      )
+    }
   }
-})
+)
 
 class SideNav extends React.Component {
   static propTypes = {
@@ -168,20 +154,15 @@ class SideNav extends React.Component {
   }
 
   render() {
-    const {
-      examples,
-      title
-    } = this.props
+    const { examples, title } = this.props
 
     return (
       <React.Fragment>
-        <NavItem exact to='/'>
+        <NavItem exact to="/">
           {title}
         </NavItem>
         {examples.map(example => (
-          <NavItem
-            key={example.name}
-            to={'/' + example.name}>
+          <NavItem key={example.name} to={'/' + example.name}>
             {example.name}
           </NavItem>
         ))}
@@ -195,23 +176,20 @@ export class Example extends React.Component {
     name: PropTypes.string.isRequired
   }
 
-  render () {
-    return (
-      <React.Fragment {...this.props} />
-    )
+  render() {
+    return <React.Fragment {...this.props} />
   }
 }
 
-export const Detail = withRouter(class extends React.Component {
-  render () {
-    const { location } = this.props
-    if (location.pathname === '/') return false
+export const Detail = withRouter(
+  class extends React.Component {
+    render() {
+      const { location } = this.props
+      if (location.pathname === '/') return false
 
-    return (
-      <div {...this.props} />
-    )
+      return <div {...this.props} />
+    }
   }
-})
-
+)
 
 export default Library

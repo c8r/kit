@@ -2,11 +2,7 @@ import test from 'ava'
 import React from 'react'
 import { create as render } from 'react-test-renderer'
 import { StaticRouter } from 'react-router-dom'
-import {
-  Library,
-  Example,
-  Detail
-} from '../src'
+import { Library, Example, Detail } from '../src'
 
 const renderJSON = el => render(el).toJSON()
 
@@ -17,7 +13,7 @@ test('Library renders', t => {
 
 test('Example renders', t => {
   const json = renderJSON(
-    <Example name='Hello'>
+    <Example name="Hello">
       <h1>Hello</h1>
     </Example>
   )

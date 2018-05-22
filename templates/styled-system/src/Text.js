@@ -19,8 +19,7 @@ const Text = styled.div`
   ${letterSpacing}
 `
 
-Text.defaultProps = {
-}
+Text.defaultProps = {}
 
 Text.propTypes = {
   ...color.propTypes,

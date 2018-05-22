@@ -9,11 +9,9 @@ const babel = {
   presets: [
     'babel-preset-env',
     'babel-preset-stage-0',
-    'babel-preset-react',
+    'babel-preset-react'
   ].map(require.resolve),
-  plugins: [
-    'babel-plugin-transform-runtime'
-  ].map(require.resolve)
+  plugins: ['babel-plugin-transform-runtime'].map(require.resolve)
 }
 
 const baseConfig = {
@@ -54,9 +52,7 @@ const baseConfig = {
         test: /\.jsx$/,
         use: [
           {
-            loader: require.resolve(
-              path.join(__dirname, './jsx-loader')
-            ),
+            loader: require.resolve(path.join(__dirname, './jsx-loader')),
             options: {}
           }
         ]
@@ -68,9 +64,7 @@ const baseConfig = {
             loader: require.resolve('babel-loader'),
             options: babel
           },
-          require.resolve(
-            path.join(__dirname, './mdx-loader')
-          ),
+          require.resolve(path.join(__dirname, './mdx-loader'))
         ]
       }
     ]
@@ -83,7 +77,10 @@ const baseConfig = {
 
 const mergeConfigs = (config, opts) => {
   const userWebpack = opts.webpack ? require(opts.webpack) : {}
-  const userConfig = typeof userWebpack === 'function' ? userWebpack(Object.assign({}, config)) : {}
+  const userConfig =
+    typeof userWebpack === 'function'
+      ? userWebpack(Object.assign({}, config))
+      : {}
   return merge(config, userConfig)
 }
 
@@ -91,14 +88,14 @@ module.exports = opts => {
   const config = Object.assign({}, baseConfig)
   config.resolve.modules.unshift(
     opts.dirname,
-    path.join(opts.dirname, 'node_modules'),
+    path.join(opts.dirname, 'node_modules')
   )
 
   config.plugins.push(
     new webpack.DefinePlugin({
       DIRNAME: JSON.stringify(opts.dirname),
       CONFIG: JSON.stringify(opts.config),
-      OPTIONS: JSON.stringify(opts),
+      OPTIONS: JSON.stringify(opts)
     })
   )
 

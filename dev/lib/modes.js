@@ -3,5 +3,5 @@ import library from './Library'
 
 export default {
   App,
-  library,
+  library
 }

@@ -11,16 +11,16 @@ test('Matrix renders all examples', t => {
   const result = renderJSON(
     <Matrix
       x={[
-        { color: 'blue '},
+        { color: 'blue ' },
         { color: 'pink' },
         { color: 'tomato' },
         { color: 'purple' }
       ]}
       y={[
-        { value: 1/5 },
-        { value: 1/4 },
-        { value: 1/3 },
-        { value: 3/4 }
+        { value: 1 / 5 },
+        { value: 1 / 4 },
+        { value: 1 / 3 },
+        { value: 3 / 4 }
       ]}
       component={Donut}
     />

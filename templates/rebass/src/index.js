@@ -1,8 +1,4 @@
-export {
-  Box,
-  Flex,
-  Text
-} from 'rebass'
+export { Box, Flex, Text } from 'rebass'
 export { default as theme } from './theme'
 export { default as ThemeProvider } from './ThemeProvider'
 export { default as Heading } from './Heading'

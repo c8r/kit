@@ -5,7 +5,7 @@ import DefaultProvider from './Provider'
 class LibraryApp extends React.Component {
   state = this.props
 
-  render () {
+  render() {
     const {
       routes = [],
       Provider = DefaultProvider,
@@ -20,9 +20,7 @@ class LibraryApp extends React.Component {
 
     return (
       <Provider {...this.state}>
-        <Library
-          examples={examples}
-        />
+        <Library examples={examples} />
       </Provider>
     )
   }

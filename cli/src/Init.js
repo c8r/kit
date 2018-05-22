@@ -5,12 +5,12 @@ const { h, Component, Text } = require('ink')
 const Select = require('ink-select-input')
 const Input = require('ink-text-input')
 const Spinner = require('ink-spinner')
-const execa = require('execa')
+const initit = require('initit')
 
 const { log, error, complete } = require('../lib/log')
 
 const Item = importJsx('./ListItem')
-const { projectTemplates, tarUrl } = require('../lib/constants')
+const { projectTemplates, templatesDir } = require('../lib/constants')
 const items = projectTemplates.map(t => ({ label: t, value: t }))
 const ProjectSelect = ({ items, onSelect }) => (
   <div>
@@ -60,20 +60,10 @@ class Init extends Component {
   async initialize() {
     const { name, template } = this.state
 
+    const fullTemplate = [templatesDir, template].join('/')
+
     try {
-      const commands = [
-        `mkdir -p ${name}`,
-        `curl ${tarUrl} | tar -xz -C ${name} --strip=3 kit-master/templates/${template}`
-      ]
-
-      const px = commands.map(c => execa.shell(c))
-      await Promise.all(px)
-
-      complete('Code scaffolding')
-      this.setState({ step: 'installing' })
-
-      await execa.shell(`cd ${name} && npm i`)
-      complete('Package install')
+      await initit({ name, template: fullTemplate })
     } catch (e) {
       error(e, `Failed to initialize project`)
       process.exit(1)
@@ -113,9 +103,7 @@ class Init extends Component {
             <Spinner /> Running <Text bold>npm i</Text>
           </div>
         )}
-        {step === 'done' && (
-          <Text>Done!</Text>
-        )}
+        {step === 'done' && <Text>Done!</Text>}
       </div>
     )
   }

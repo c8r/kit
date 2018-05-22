@@ -9,8 +9,9 @@ export default props => (
         fontSize: 32,
         fontWeight: 'bold',
         color: 'white',
-        backgroundColor: 'tomato',
-      }}>
+        backgroundColor: 'tomato'
+      }}
+    >
       Hello
     </div>
   </Responsive>

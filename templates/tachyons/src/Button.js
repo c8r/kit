@@ -1,10 +1,7 @@
 import React from 'react'
 import classnames from 'classnames'
 
-const Button = ({
-  className,
-  ...props
-}) => (
+const Button = ({ className, ...props }) => (
   <button
     {...props}
     className={classnames(

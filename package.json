@@ -9,7 +9,7 @@
     "build": "lerna run build",
     "clean": "lerna run clean",
     "bootstrap": "lerna bootstrap",
-    "format": "prettier --no-semi --single-quote --write '{docs,packages,core,cli}/**/*.js'",
+    "format": "prettier --no-semi --single-quote --write '{cli,core,create-kit,dev,docs,packages,snapshot,storybook,templates}/**/*.js'",
     "prepare": "lerna bootstrap && npm run clean && npm run build",
     "publish": "lerna publish",
     "test": "lerna run test"

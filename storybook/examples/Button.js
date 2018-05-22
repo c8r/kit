@@ -1,5 +1,3 @@
 import React from 'react'
 
-export default () => (
-  <button>Beep</button>
-)
+export default () => <button>Beep</button>

@@ -18,12 +18,7 @@ app.prepare().then(async () => {
     const { pathname, query = {} } = parsedUrl
 
     if (isKit(pathname)) {
-      return app.render(
-        req,
-        res,
-        '/kit',
-				query
-      )
+      return app.render(req, res, '/kit', query)
     }
 
     return handle(req, res)
