@@ -31,39 +31,41 @@ const cli = meow(
     -m --mode     Enable different modes for server UI
     --webpack     Path to custom webpack.config.js
 
-`, {
-  version: pkg.version,
-  flags: {
-    version: {
-      type: 'boolean',
-      alias: 'v'
-    },
-    help: {
-      type: 'boolean',
-      alias: 'h'
-    },
-    open: {
-      type: 'boolean',
-      alias: 'o'
-    },
-    port: {
-      type: 'string',
-      alias: 'p',
-      default: 8080
-    },
-    webpack: {
-      type: 'string'
-    },
-    config: {
-      type: 'string',
-      alias: 'c'
-    },
-    mode: {
-      type: 'string',
-      alias: 'm'
+`,
+  {
+    version: pkg.version,
+    flags: {
+      version: {
+        type: 'boolean',
+        alias: 'v'
+      },
+      help: {
+        type: 'boolean',
+        alias: 'h'
+      },
+      open: {
+        type: 'boolean',
+        alias: 'o'
+      },
+      port: {
+        type: 'string',
+        alias: 'p',
+        default: 8080
+      },
+      webpack: {
+        type: 'string'
+      },
+      config: {
+        type: 'string',
+        alias: 'c'
+      },
+      mode: {
+        type: 'string',
+        alias: 'm'
+      }
     }
   }
-})
+)
 
 require('update-notifier')({
   pkg: cli.pkg

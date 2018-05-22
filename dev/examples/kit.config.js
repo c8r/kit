@@ -6,7 +6,7 @@ const components = Object.assign({}, Rebass, {
   Link,
   Refunk,
   h2: Rebass.Heading,
-  h3: Rebass.Heading,
+  h3: Rebass.Heading
 })
 
 const theme = Rebass.theme

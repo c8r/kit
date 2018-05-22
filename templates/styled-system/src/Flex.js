@@ -17,7 +17,7 @@ Flex.propTypes = {
   ...alignItems.propTypes,
   ...justifyContent.propTypes,
   ...flexWrap.propTypes,
-  ...flexDirection.propTypes,
+  ...flexDirection.propTypes
 }
 
 Flex.displayName = 'Flex'

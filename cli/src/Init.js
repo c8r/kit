@@ -103,9 +103,7 @@ class Init extends Component {
             <Spinner /> Running <Text bold>npm i</Text>
           </div>
         )}
-        {step === 'done' && (
-          <Text>Done!</Text>
-        )}
+        {step === 'done' && <Text>Done!</Text>}
       </div>
     )
   }

@@ -1,11 +1,5 @@
 import styled from 'styled-components'
-import {
-  color,
-  space,
-  width,
-  flex,
-  order
-} from 'styled-system'
+import { color, space, width, flex, order } from 'styled-system'
 
 const Box = styled.div`
   ${color}

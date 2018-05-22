@@ -7,7 +7,7 @@ import htmlTemplate from '../lib/html-template'
 const opts = {
   input: '.',
   dirname: path.join(__dirname, './fixtures'),
-  config: path.join(__dirname, './fixtures/config.js'),
+  config: path.join(__dirname, './fixtures/config.js')
 }
 
 test('returns a webpack dev config object', t => {
@@ -26,7 +26,7 @@ test('returns a merged webpack config object', t => {
 test('html-template returns an html string', t => {
   const html = htmlTemplate({
     title: 'Hello',
-    css: 'body{color:tomato}',
+    css: 'body{color:tomato}'
   })
   t.snapshot(html)
 })
@@ -36,14 +36,9 @@ test('html-template returns an html string with options', t => {
     title: 'Hello',
     html: 'hi',
     css: 'body{color:tomato}',
-    meta: [
-      { name: 'twitter:card', content: 'summary' }
-    ],
-    links: [
-      { href: 'base.css', rel: 'stylesheet' }
-    ],
-    stylesheets: [
-    ],
+    meta: [{ name: 'twitter:card', content: 'summary' }],
+    links: [{ href: 'base.css', rel: 'stylesheet' }],
+    stylesheets: [],
     static: true
   })
   t.snapshot(html)

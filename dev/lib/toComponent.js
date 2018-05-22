@@ -1,6 +1,6 @@
 import { isElement } from 'react-dom/test-utils'
 
-export default (elementOrComponent) =>
+export default elementOrComponent =>
   typeof elementOrComponent === 'function'
     ? elementOrComponent
     : isElement(elementOrComponent)

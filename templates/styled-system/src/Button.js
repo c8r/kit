@@ -1,15 +1,10 @@
 import styled from 'styled-components'
-import {
-  color,
-  space,
-  fontSize,
-  borderRadius
-} from 'styled-system'
+import { color, space, fontSize, borderRadius } from 'styled-system'
 
 const Button = styled.button`
   font-family: inherit;
   font-weight: bold;
-  line-height: ${16/14};
+  line-height: ${16 / 14};
   text-align: center;
   display: inline-block;
   vertical-align: middle;

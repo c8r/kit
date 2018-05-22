@@ -1,13 +1,6 @@
-import {
-  map,
-  pipe,
-  xprod,
-  unnest,
-  reduce,
-  mergeAll
-} from 'ramda'
+import { map, pipe, xprod, unnest, reduce, mergeAll } from 'ramda'
 
-const arr = v => Array.isArray(v) ? v : [v]
+const arr = v => (Array.isArray(v) ? v : [v])
 const log = msg => process.env.VERBOSE && console.log(msg)
 const toSrcPath = (docsDir, path) =>
   path
@@ -38,16 +31,11 @@ const extendDefaultProps = (Component, props) => {
 }
 
 const cartesianProduct = ({ theme = {}, ...props }) => {
-   const xproduct = reduce(pipe(xprod, map(unnest)), [[]])
+  const xproduct = reduce(pipe(xprod, map(unnest)), [[]])
 
-   const parsedProps =
-     Object
-       .keys(props)
-       .reduce((acc, k) => {
-         return acc.concat(
-           [arr(props[k]).map(v => ({ [k]: v }))]
-         )
-       }, [])
+  const parsedProps = Object.keys(props).reduce((acc, k) => {
+    return acc.concat([arr(props[k]).map(v => ({ [k]: v }))])
+  }, [])
 
   return map(mergeAll, xproduct(parsedProps))
 }

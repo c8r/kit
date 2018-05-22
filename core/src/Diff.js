@@ -12,17 +12,12 @@ const ComponentBox = nano(Box)(({ blendMode }) => ({
   mixBlendMode: blendMode || 'multiply'
 }))
 
-export default ({
-  blendMode,
-  children
-}) => {
+export default ({ blendMode, children }) => {
   const diffs = React.Children.toArray(children)
   return (
     <DiffBox>
       {diffs.map(el => (
-        <ComponentBox
-          key={el.key}
-          blendMode={blendMode}>
+        <ComponentBox key={el.key} blendMode={blendMode}>
           {el}
         </ComponentBox>
       ))}

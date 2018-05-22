@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components'
 
 import theme from './theme'
 
-export default () =>
+export default () => (
   <ThemeProvider theme={theme}>
     <Library>
       <Library.Nav />
@@ -14,3 +14,4 @@ export default () =>
       </Example>
     </Library>
   </ThemeProvider>
+)

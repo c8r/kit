@@ -5,7 +5,7 @@ import sinon from 'sinon'
 import { State } from '../src'
 
 test('State creates state from props', t => {
-  const instance = render(<State hello='hi' />).getInstance()
+  const instance = render(<State hello="hi" />).getInstance()
   t.is(instance.state.hello, 'hi')
 })
 
@@ -29,8 +29,8 @@ test('State accepts component prop', t => {
 
 test('State passes update method and state to render function', t => {
   const fn = sinon.spy(() => false)
-  render(<State hello='hi' render={fn} />)
-  const [ props ] = fn.args[0]
+  render(<State hello="hi" render={fn} />)
+  const [props] = fn.args[0]
   t.is(props.hello, 'hi')
   t.is(typeof props.update, 'function')
 })

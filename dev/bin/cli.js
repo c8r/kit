@@ -10,13 +10,11 @@ const dev = require('../lib')
 const config = require('pkg-conf').sync('kit')
 
 const log = (...msg) => {
-  console.log(
-    chalk.black.bgCyan(' kit '),
-    chalk.cyan(...msg)
-  )
+  console.log(chalk.black.bgCyan(' kit '), chalk.cyan(...msg))
 }
 
-const cli = meow(`
+const cli = meow(
+  `
   Usage:
 
     $ kit dev hello.mdx
@@ -28,33 +26,35 @@ const cli = meow(`
     -p --port     Port for development server
     -c --config   Path to configuration file
     --webpack     Path to custom webpack.config.js
-`, {
-  booleanDefault: undefined,
-  flags: {
-    open: {
-      type: 'boolean',
-      alias: 'o'
-    },
-    port: {
-      type: 'string',
-      alias: 'p'
-    },
-    webpack: {
-      type: 'string'
-    },
-    config: {
-      type: 'string',
-      alias: 'c'
-    },
-    // enable different modes/Apps for rendering components
-    mode: {
-      type: 'string',
-      alias: 'm'
+`,
+  {
+    booleanDefault: undefined,
+    flags: {
+      open: {
+        type: 'boolean',
+        alias: 'o'
+      },
+      port: {
+        type: 'string',
+        alias: 'p'
+      },
+      webpack: {
+        type: 'string'
+      },
+      config: {
+        type: 'string',
+        alias: 'c'
+      },
+      // enable different modes/Apps for rendering components
+      mode: {
+        type: 'string',
+        alias: 'm'
+      }
     }
   }
-})
+)
 
-const [ input ] = cli.input
+const [input] = cli.input
 const opts = Object.assign({ input }, config, cli.flags)
 
 log(`starting dev server...`)
@@ -74,4 +74,3 @@ dev(opts)
 require('update-notifier')({
   pkg: require('../package.json')
 }).notify()
-

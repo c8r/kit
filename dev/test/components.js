@@ -26,7 +26,7 @@ test('App renders', t => {
 })
 
 test('App renders with routes', t => {
-  const json = renderJSON(<App routes={routes} pathname='/hello' />)
+  const json = renderJSON(<App routes={routes} pathname="/hello" />)
   t.snapshot(json)
 })
 
@@ -37,7 +37,7 @@ test('DirectoryListing renders', t => {
 
 test('DirectoryListing renders with routes', t => {
   const json = renderJSON(
-    <StaticRouter context={{}} location='/'>
+    <StaticRouter context={{}} location="/">
       <DirectoryListing routes={routes} />
     </StaticRouter>
   )

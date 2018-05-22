@@ -1,8 +1,4 @@
-export {
-  Library,
-  Example,
-  Detail
-} from './Library'
+export { Library, Example, Detail } from './Library'
 export { default as LiveEditor } from './LiveEditor'
 export { default as Frame } from './Frame'
 export { default as Catch } from './Catch'

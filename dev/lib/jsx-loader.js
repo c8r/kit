@@ -11,10 +11,12 @@ module.exports = async function(src) {
 
   const parsed = buble.transform(content).code
 
-  const scope = opts.config ? `
+  const scope = opts.config
+    ? `
   import config from '${opts.config}'
   const scope = config.components || {}
-  ` : 'const scope = {}'
+  `
+    : 'const scope = {}'
 
   const code = `
   import React from 'react'

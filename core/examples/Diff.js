@@ -6,7 +6,9 @@ export default props => (
   <Box p={3}>
     <Diff>
       <Button>Hello</Button>
-      <Button bg='red' px={2}>Hello</Button>
+      <Button bg="red" px={2}>
+        Hello
+      </Button>
     </Diff>
   </Box>
 )
