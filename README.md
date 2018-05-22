@@ -66,7 +66,7 @@ The Kit component library includes the following:
 - [Markdown](core/docs/Markdown.md)
 - [State](core/docs/State.md)
 - [Diff](core/docs/Diff.md)
-- And more...
+- And [more](core/docs)...
 
 Read more in the [component docs](core).
 
