@@ -1,4 +1,5 @@
 import React from 'react'
+import { ScopeConsumer } from 'react-scope-provider'
 import {
   LiveProvider,
   LivePreview,
@@ -13,19 +14,23 @@ export default ({
   scope,
   render
 }) => (
-  <LiveProvider
-    code={code}
-    scope={scope}
-    mountStylesheet={false}
-    transformCode={transformCode}>
-    {typeof render === 'function' ? (
-      render({ code, scope })
-    ) : (
-      <React.Fragment>
-        <LivePreview />
-        <LiveEditor />
-        <LiveError />
-      </React.Fragment>
+  <ScopeConsumer defaultScope={scope}>
+    {scope => (
+      <LiveProvider
+        code={code}
+        scope={scope}
+        mountStylesheet={false}
+        transformCode={transformCode}>
+        {typeof render === 'function' ? (
+          render({ code, scope })
+        ) : (
+          <React.Fragment>
+            <LivePreview />
+            <LiveEditor />
+            <LiveError />
+          </React.Fragment>
+        )}
+      </LiveProvider>
     )}
-  </LiveProvider>
+  </ScopeConsumer>
 )

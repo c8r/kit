@@ -17,6 +17,7 @@
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-live": "^1.10.1",
+    "react-scope-provider": "^1.0.0-1",
     "remark": "^9.0.0",
     "remark-react": "^4.0.3",
     "remark-slug": "^5.0.0",

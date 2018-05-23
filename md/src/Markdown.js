@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { ScopeProvider } from 'react-scope-provider'
 import createElement from './createElement'
 
 class Markdown extends React.Component {
@@ -14,8 +15,13 @@ class Markdown extends React.Component {
   }
 
   render() {
-    const element = createElement(this.props)
-    return element
+    return (
+      <ScopeProvider scope={this.props.scope}>
+        <React.Fragment>
+          {createElement(this.props)}
+        </React.Fragment>
+      </ScopeProvider>
+    )
   }
 }
 
