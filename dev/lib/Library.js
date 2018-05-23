@@ -2,21 +2,21 @@ import React from 'react'
 import { Library } from '@compositor/kit'
 import DefaultProvider from './Provider'
 
-class LibraryApp extends React.Component {
+class LibraryMode extends React.Component {
   state = this.props
 
   render() {
     const {
+      render,
       routes = [],
-      Provider = DefaultProvider,
-      components,
-      theme
     } = this.state
 
-    const examples = routes.map(({ name, component }) => ({
+    const examples = routes.map(({ name, Component }) => ({
       name,
-      element: React.createElement(component)
+      element: React.createElement(Component)
     }))
+
+    console.log('Library', examples)
 
     return (
       <Provider {...this.state}>
@@ -26,4 +26,4 @@ class LibraryApp extends React.Component {
   }
 }
 
-export default LibraryApp
+export default LibraryMode
