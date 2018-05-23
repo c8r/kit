@@ -21,10 +21,8 @@ const opts = Object.assign({}, {
   scope: {},
 
   // modes
-  mode: 'library',
-
-  // sandbox mode (.jsx files only for now)
-  // mode: 'sandbox',
+  // mode: 'library',
+  mode: 'sandbox', // (.jsx files only for now)
 })
 
 dev(opts)

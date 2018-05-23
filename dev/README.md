@@ -1,4 +1,7 @@
 
+- [ ] `export { scope }` (jsx-loader)
+- [ ] `route.module` (x0/lib/entry)
+
 # Kit dev server
 
 Isolated development server for React components
