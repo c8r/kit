@@ -3,7 +3,8 @@ const { dev } = require('@compositor/x0')
 
 const modes = {
   library: path.join(__dirname, 'lib/Library'),
-  sandbox: path.join(__dirname, 'lib/Sandbox')
+  sandbox: path.join(__dirname, 'lib/Sandbox'),
+  responsive: path.join(__dirname, 'lib/Responsive')
 }
 
 module.exports = opts => {
