@@ -1,6 +1,6 @@
 {
   "name": "@compositor/md",
-  "version": "1.0.0-9",
+  "version": "1.0.26",
   "description": "React components for rendering markdown",
   "main": "dist/index.js",
   "scripts": {

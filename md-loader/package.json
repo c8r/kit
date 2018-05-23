@@ -1,6 +1,6 @@
 {
   "name": "@compositor/md-loader",
-  "version": "1.0.0-9",
+  "version": "1.0.26",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   "author": "Compositor",
   "license": "MIT",
   "dependencies": {
-    "@compositor/md": "^1.0.0-2",
+    "@compositor/md": "^1.0.26",
     "gray-matter": "^4.0.1",
     "loader-utils": "^1.1.0",
     "stringify-object": "^3.2.2"
