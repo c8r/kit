@@ -23,7 +23,8 @@ const opts = Object.assign({}, {
   // modes
   // mode: 'library',
   // mode: 'sandbox', // (.jsx files only for now)
-  // mode: 'responsive', // needs render prop or other solution for css
+  mode: 'responsive', // needs render prop or other solution for css
+  // mode: 'xray'
 })
 
 dev(opts)
