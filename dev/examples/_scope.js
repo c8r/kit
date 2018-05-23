@@ -12,6 +12,6 @@ const components = Object.assign({}, Rebass, {
 const theme = Rebass.theme
 
 export default {
-  components,
+  ...components,
   theme
 }

@@ -6,37 +6,31 @@ const dev = require('./index')
 const args = process.argv
 const [ , , dir, ...flags ] = args
 
-console.log(dir, flags)
+console.log('FOR TESTING ONLY')
+console.log('install @compositor/kit-cli to use the kit dev server')
 
 const input = path.resolve(dir)
 const dirname = input
-
-console.log(dir, input, dirname)
 
 const opts = Object.assign({}, {
   input,
   dirname,
   filename: null,
-  // stats,
   outDir: 'dist',
   basename: '',
   scope: {},
-  // pkg, // only needed for build
+
+  // modes
+  mode: 'library',
+
+  // sandbox mode (.jsx files only for now)
+  // mode: 'sandbox',
 })
 
-const promise = dev(opts)
-
-const util = require('util')
-console.log(
-  util.inspect(promise)
-)
-
-promise
-  .then((...args) => {
-    // getting undefined here
-    console.log(args)
-    // const { port } = server.options
-    console.log('dev server listening')
+dev(opts)
+  .then(server => {
+    const { port } = server.options
+    console.log('dev server listening', port)
   })
   .catch(err => {
     console.log(err)
