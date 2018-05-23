@@ -1,0 +1,16 @@
+{
+  "name": "iso",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@compositor/kit": "^1.0.25",
+    "rebass": "^1.0.7"
+  }
+}
