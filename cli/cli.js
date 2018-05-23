@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 'use strict'
 
+const fs= require('fs')
+const path = require('path')
 const importJsx = require('import-jsx')
 const { h, render } = require('ink')
 const meow = require('meow')
@@ -12,6 +14,7 @@ const config = require('pkg-conf').sync('kit')
 
 const App = importJsx('./src/App')
 const pkg = require('./package.json')
+const parseArgs = require('./lib/parse-args')
 
 const cli = meow(
   `
@@ -69,20 +72,49 @@ const cli = meow(
   }
 )
 
-require('update-notifier')({
-  pkg: cli.pkg
-}).notify()
+const { cmd, input } = parseArgs(cli.input)
 
-const [cmd, input] = cli.input
+console.log(cmd, input)
 
-const props = Object.assign({}, cli, {
+// normalize options
+const stats = fs.statSync(input)
+const dirname = stats.isDirectory() ? input : path.dirname(input)
+const filename = stats.isDirectory() ? null : input
+
+const opts = Object.assign({
   cmd,
-  config,
-  input
-})
+  input,
+  dirname,
+  filename
+}, config, cli.flags)
 
-if (cmd === 'init') {
-  render(h(App, props))
+console.log(
+  'cmd:', cmd,
+  'input:', input
+)
+console.log('opts:', opts)
+
+switch (cmd) {
+  case 'init':
+  case null:
+    console.log('init')
+    break
+  case 'docs':
+    console.log('docs')
+    break
+  case 'dev':
+  default:
+    console.log('dev')
+    break
+}
+
+process.exit(0)
+
+/*
+if (cmd && !file) {
+  // dev shorthand
+} else if (cmd === 'init' || (!cmd && !input)) {
+  render(h(App, opts))
 } else if (cmd === 'docs') {
   console.log(`
   Compositor Kit Docs
@@ -96,10 +128,16 @@ if (cmd === 'init') {
 
   process.exit(1)
 } else {
-  dev(props)
-    .then(() => open(`http://localhost:${props.port}`))
+  dev(opts)
+    .then(() => open(`http://localhost:${opts.port}`))
     .catch(err => {
       console.error(err)
       process.exit(0)
     })
 }
+*/
+
+require('update-notifier')({
+  pkg: cli.pkg
+}).notify()
+
