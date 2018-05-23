@@ -4,8 +4,10 @@
     "packages/*",
     "cli",
     "core",
-    "dev",
     "create-kit",
+    "dev",
+    "md",
+    "md-loader",
     "snapshot",
     "storybook"
   ],
