@@ -14,16 +14,14 @@ console.log('hi')
 \`\`\`
 
 \`\`\`.jsx
-<Box>
-  <Heading>Hello</Heading>
-</Box>
+<h1>Hello, world!</h1>
 \`\`\`
 `
 
 export default () => (
   <div>
     <Markdown
-      scope={{ ...Rebass }}
+      scope={Rebass}
       src={md}
     />
   </div>
