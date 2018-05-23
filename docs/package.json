@@ -3,15 +3,16 @@
   "name": "kit-landing-page",
   "version": "1.0.0",
   "scripts": {
-    "start": "x0 App.js -o",
-    "prepare": "x0 build App.js -d ."
+    "start": "x0 pages -o",
+    "prepare": "x0 build pages -d ."
   },
   "x0": {
     "cssLibrary": "styled-components"
   },
   "devDependencies": {
+    "@compositor/kit": "^1.0.25",
     "@compositor/logo": "^1.3.3",
-    "@compositor/x0": "^4.0.2",
+    "@compositor/x0": "^5.0.0-11",
     "react": "^16.3.2",
     "rebass": "^2.0.0-2",
     "styled-components": "^3.2.6"

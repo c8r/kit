@@ -1,15 +1,6 @@
 import React from 'react'
 import { Logo, Kit } from '@compositor/logo'
-import {
-  Provider,
-  Box,
-  Flex,
-  Heading,
-  Caps,
-  Text,
-  Button,
-  BlockLink
-} from 'rebass'
+import { Provider, BlockLink, Flex, Heading, Caps } from 'rebass'
 
 const CSS = ({ css }) => <style dangerouslySetInnerHTML={{ __html: css }} />
 
@@ -17,7 +8,7 @@ CSS.defaultProps = {
   css: '*{box-sizing:border-box}body{margin:0}'
 }
 
-export default props => (
+export default Component => props => (
   <React.Fragment>
     <head>
       <meta charSet="utf-8" />
@@ -49,25 +40,7 @@ export default props => (
           </Heading>
         </Flex>
       </BlockLink>
-      <Box color="white" bg="black" px={[3, 4, 5]} py={[4, 5]}>
-        <Kit size={256} />
-        <Heading fontSize={[5, 6, 7, 8]}>Kit</Heading>
-        <Text fontSize={[3, 4]} fontWeight="bold" mb={4}>
-          Tools for developing, documenting, and testing React component
-          libraries
-        </Text>
-        <Button
-          is="a"
-          href="https://github.com/c8r/kit"
-          fontSize={2}
-          px={4}
-          py={3}
-          color="black"
-          bg="white"
-        >
-          GitHub
-        </Button>
-      </Box>
+      <Component {...props} />
     </Provider>
   </React.Fragment>
 )
