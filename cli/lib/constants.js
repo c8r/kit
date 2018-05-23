@@ -4,7 +4,8 @@ const projectTemplates = [
   'create-react-app',
   'styled-system',
   'rebass',
-  'tachyons'
+  'tachyons',
+  'material-ui'
 ]
 
 const templatesDir = 'c8r/kit/templates'
