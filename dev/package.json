@@ -1,6 +1,6 @@
 {
   "name": "@compositor/kit-dev",
-  "version": "1.0.27",
+  "version": "1.0.28",
   "description": "Zero-config React component development server",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "dependencies": {
-    "@compositor/kit": "^1.0.27",
+    "@compositor/kit": "^1.0.28",
     "@compositor/x0": "^5.0.0-13",
     "react": "^16.3.2",
     "react-live": "^1.10.1"
