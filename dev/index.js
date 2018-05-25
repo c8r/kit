@@ -9,8 +9,6 @@ const modes = {
 }
 
 module.exports = opts => {
-  console.log('DEBUG mode:', opts.mode || 'default')
-  opts.app = modes[opts.mode]
-
+  opts.app = modes[opts.mode] || null
   return dev(opts)
 }

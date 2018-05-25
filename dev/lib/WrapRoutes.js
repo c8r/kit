@@ -49,7 +49,5 @@ export default class WrapRoutes extends React.Component {
         />
       </Switch>
     )
-
-    // return render({ })
   }
 }
