@@ -9,7 +9,7 @@
     "kit": "cli.js"
   },
   "scripts": {
-    "start": "./cli.js",
+    "start": "./cli.js examples",
     "format": "prettier --write *.js '{src,lib}/**/*.js'",
     "test": "ava -v"
   },

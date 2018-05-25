@@ -25,16 +25,16 @@ const cli = meow(
   Examples
     $ kit examples
     $ kit dev examples
-    $ kit Demo.js
     $ kit init
 
   Options
 
-    -o --open     Opens development server in default browser
-    -p --port     Port for development server (default: 8080)
-    -c --config   Path to configuration file
-    -m --mode     Enable different modes for server UI
-    --webpack     Path to custom webpack.config.js
+    Dev Server
+
+      -o --open     Opens development server in default browser
+      -p --port     Port for development server (default: 8080)
+      -m --mode     Enable different modes for server UI
+      --webpack     Path to custom webpack.config.js
 
 `,
   {
@@ -74,8 +74,6 @@ const cli = meow(
 
 const { cmd, input } = parseArgs(cli.input)
 
-console.log(cmd, input)
-
 // normalize options
 const stats = fs.statSync(input)
 const dirname = stats.isDirectory() ? input : path.dirname(input)
@@ -88,54 +86,28 @@ const opts = Object.assign({
   filename
 }, config, cli.flags)
 
-console.log(
-  'cmd:', cmd,
-  'input:', input
-)
-console.log('opts:', opts)
-
 switch (cmd) {
   case 'init':
   case null:
-    console.log('init')
-    break
-  case 'docs':
-    console.log('docs')
+    render(h(App, opts))
     break
   case 'dev':
   default:
-    console.log('dev')
+    dev(opts)
+      .then(({ server }) => {
+        const { port } = server.options
+        const url = `http://localhost:${port}`
+
+        if (opts.open) {
+          open(url)
+        }
+      })
+      .catch(err => {
+        console.error(err)
+        process.exit(1)
+      })
     break
 }
-
-process.exit(0)
-
-/*
-if (cmd && !file) {
-  // dev shorthand
-} else if (cmd === 'init' || (!cmd && !input)) {
-  render(h(App, opts))
-} else if (cmd === 'docs') {
-  console.log(`
-  Compositor Kit Docs
-
-    Site:         https://compositor.io/kit
-    Repo:         https://github.com/c8r/kit
-    Components:   https://github.com/c8r/kit/tree/master/core
-    Dev Server:   https://github.com/c8r/kit/tree/master/dev
-    CLI:          https://github.com/c8r/kit/tree/master/cli
-  `)
-
-  process.exit(1)
-} else {
-  dev(opts)
-    .then(() => open(`http://localhost:${opts.port}`))
-    .catch(err => {
-      console.error(err)
-      process.exit(0)
-    })
-}
-*/
 
 require('update-notifier')({
   pkg: cli.pkg
