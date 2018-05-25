@@ -1,0 +1,44 @@
+{
+  "name": "@compositor/md",
+  "version": "1.0.26",
+  "description": "React components for rendering markdown",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepare": "babel src -d dist",
+    "start": "x0 examples",
+    "test": "nyc ava"
+  },
+  "keywords": [],
+  "author": "Compositor",
+  "license": "MIT",
+  "dependencies": {
+    "detab": "^2.0.1",
+    "gray-matter": "^4.0.1",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-live": "^1.10.1",
+    "react-scope-provider": "^1.0.0-1",
+    "remark": "^9.0.0",
+    "remark-react": "^4.0.3",
+    "remark-slug": "^5.0.0",
+    "unist-builder": "^1.0.2"
+  },
+  "devDependencies": {
+    "@compositor/x0": "^5.0.0-3",
+    "ava": "^0.25.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "nyc": "^11.8.0",
+    "react-test-renderer": "^16.3.2",
+    "rebass": "^2.0.0-2"
+  },
+  "ava": {
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  }
+}

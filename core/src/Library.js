@@ -10,6 +10,7 @@ import {
   withRouter
 } from 'react-router-dom'
 import { Grid, Box } from './ui'
+import Frame from './Frame'
 
 const Root = nano('div')({
   display: 'flex',
@@ -82,7 +83,17 @@ const LibraryApp = withRouter(
       title: PropTypes.string,
       examples: PropTypes.array,
       renderSideNav: PropTypes.func,
-      renderCard: PropTypes.func
+      renderCard: PropTypes.func,
+      useFrame: PropTypes.bool,
+    }
+
+    static getDerivedStateFromProps (props) {
+      const [ head ] = React.Children.toArray(props.children)
+        .filter(c => c.type === Head)
+      if (!head) return null
+      return {
+        head: head.props.children
+      }
     }
 
     getExampleChildren = ({ children }) =>
@@ -95,7 +106,12 @@ const LibraryApp = withRouter(
         }))
 
     render() {
-      const { title, renderSideNav, renderCard } = this.props
+      const {
+        title,
+        renderSideNav,
+        renderCard,
+      } = this.props
+      const { head } = this.state
 
       const examples =
         this.props.examples || this.getExampleChildren(this.props)
@@ -117,13 +133,18 @@ const LibraryApp = withRouter(
               render={() => (
                 <Grid>
                   {examples.map(example => (
-                    <Card key={example.name} to={'/' + example.name}>
-                      {typeof renderCard === 'function' ? (
-                        renderCard(example)
-                      ) : (
-                        <Box p={2}>{example.element}</Box>
-                      )}
-                    </Card>
+                    typeof renderCard === 'function' ? (
+                      renderCard({ example, Card, Link })
+                    ) : (
+                      <Card key={example.name} to={'/' + example.name}>
+                        <Box p={2}>
+                          <ExampleFrame
+                            head={head}
+                            example={example}
+                          />
+                        </Box>
+                      </Card>
+                    )
                   ))}
                 </Grid>
               )}
@@ -132,7 +153,15 @@ const LibraryApp = withRouter(
               <Route
                 key={example.name}
                 path={'/' + example.name}
-                render={() => <Box p={2}>{example.element}</Box>}
+                render={() => (
+                  <Box>
+                    <ExampleFrame
+                      head={head}
+                      example={example}
+                      height='100vh'
+                    />
+                  </Box>
+                )}
               />
             ))}
           </Main>
@@ -141,6 +170,21 @@ const LibraryApp = withRouter(
     }
   }
 )
+
+const ExampleFrame = ({
+  element,
+  useFrame,
+  head,
+}) => {
+  if (!useFrame) {
+    return element
+  }
+  return (
+    <Frame head={head} {...props}>
+      {element}
+    </Frame>
+  )
+}
 
 class SideNav extends React.Component {
   static propTypes = {
@@ -192,5 +236,11 @@ export const Detail = withRouter(
     }
   }
 )
+
+export class Head extends React.Component {
+  render () {
+    return false
+  }
+}
 
 export default Library
