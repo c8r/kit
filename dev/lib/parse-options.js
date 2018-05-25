@@ -1,3 +1,4 @@
+// todo: move this logic to kit/cli
 const fs = require('fs')
 const path = require('path')
 const find = require('find-up')
