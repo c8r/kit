@@ -24,26 +24,20 @@ class KitEditor extends Component {
     theme: PropTypes.object
   }
 
-  constructor(props, context) {
-    super()
-
-    const { code, scope, theme = {} } = props
+  render() {
+    const { code, scope, theme = {} } = this.props
     const { content, data = {} } = matter(code)
 
-    this.state = {
-      scope: Object.assign({ ThemeProvider, theme }, scope),
-      code: content,
-      config: data
-    }
-  }
-
-  render() {
     return (
       <Catch>
         <LiveProvider
           mountStylesheet={false}
-          scope={this.state.scope}
-          code={this.state.code}
+          scope={{
+            ThemeProvider,
+            theme,
+            ...scope
+          }}
+          code={content}
           transformCode={code => `
             <ThemeProvider theme={theme}>
               <div>${code}</div>

@@ -4,10 +4,12 @@
     "packages/*",
     "cli",
     "core",
-    "dev",
     "create-kit",
+    "dev",
+    "md",
+    "md-loader",
     "snapshot",
     "storybook"
   ],
-  "version": "1.0.25"
+  "version": "1.0.27"
 }
