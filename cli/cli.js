@@ -7,13 +7,10 @@ const importJsx = require('import-jsx')
 const { h, render } = require('ink')
 const meow = require('meow')
 const open = require('react-dev-utils/openBrowser')
-
-const dev = require('@compositor/kit-dev')
-
+const log = require('@compositor/log')
 const config = require('pkg-conf').sync('kit')
 
 const App = importJsx('./src/App')
-const pkg = require('./package.json')
 const parseArgs = require('./lib/parse-args')
 
 const cli = meow(
@@ -38,7 +35,6 @@ const cli = meow(
 
 `,
   {
-    version: pkg.version,
     flags: {
       version: {
         type: 'boolean',
@@ -93,6 +89,7 @@ switch (cmd) {
     break
   case 'dev':
   default:
+    const dev = require('@compositor/kit-dev')
     dev(opts)
       .then(({ server }) => {
         const { port } = server.options

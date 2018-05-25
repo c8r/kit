@@ -4,8 +4,9 @@ import parse from '../lib/parse-args'
 
 test('returns init for no argument', t => {
   const { cmd, input } = parse([])
+  const here = path.resolve('.')
   t.is(cmd, 'init')
-  t.is(input, null)
+  t.is(input, here)
 })
 
 test('return dev for single argument', t => {

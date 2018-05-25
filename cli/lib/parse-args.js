@@ -1,11 +1,11 @@
 /*
  * parses meow cli object
  *
- * kit dirname        (dev)
- * kit init           (init)
- * kit dev dirname    (dev)
- * kit build dirname  (build)
- * kit publish        (publish)
+ * kit dirname          (dev)
+ * kit init             (init)
+ * kit dev dirname      (dev)
+ * kit build dirname    (build)
+ * kit publish dirname  (publish)
  */
 
 const fs = require('fs')
