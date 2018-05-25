@@ -14,7 +14,6 @@ body {
   max-width: 100%;
   overflow-x: hidden;
   font-family: system-ui, sans-serif;
-  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
 }
