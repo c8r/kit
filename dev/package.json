@@ -15,11 +15,13 @@
     "@compositor/kit": "^1.0.30",
     "@compositor/x0": "^5.0.0-13",
     "react": "^16.3.2",
-    "react-live": "^1.10.1"
+    "react-live": "^1.10.1",
+    "styled-components": ">=2.0.0 || >=3.0.0"
   },
   "devDependencies": {
     "ava": "^0.25.0",
     "babel-cli": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
