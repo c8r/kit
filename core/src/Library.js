@@ -87,15 +87,6 @@ const LibraryApp = withRouter(
       useFrame: PropTypes.bool,
     }
 
-    static getDerivedStateFromProps (props) {
-      const [ head ] = React.Children.toArray(props.children)
-        .filter(c => c.type === Head)
-      if (!head) return null
-      return {
-        head: head.props.children
-      }
-    }
-
     getExampleChildren = ({ children }) =>
       React.Children.toArray(children)
         .filter(c => c.type._kitLibraryExample)
@@ -105,16 +96,23 @@ const LibraryApp = withRouter(
           element: c.props.children
         }))
 
+    getHead = ({ children }) => {
+      const [ head ] = React.Children.toArray(children)
+        .filter(c => c.type === Head)
+      if (!head || !head.props) return null
+      return head.props.children
+    }
+
     render() {
       const {
         title,
         renderSideNav,
         renderCard,
       } = this.props
-      const { head } = this.state
 
       const examples =
         this.props.examples || this.getExampleChildren(this.props)
+      const head = this.getHead(this.props)
 
       const sidenav =
         typeof renderSideNav === 'function' ? (
