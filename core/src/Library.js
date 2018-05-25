@@ -170,16 +170,16 @@ const LibraryApp = withRouter(
 )
 
 const ExampleFrame = ({
-  element,
+  example,
   useFrame,
   head,
 }) => {
   if (!useFrame) {
-    return element
+    return example.element
   }
   return (
     <Frame head={head} {...props}>
-      {element}
+      {example.element}
     </Frame>
   )
 }
