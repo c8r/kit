@@ -1,7 +1,4 @@
 
-- [ ] `export { scope }` (jsx-loader)
-- [ ] `route.module` (x0/lib/entry)
-
 # Kit dev server
 
 Isolated development server for React components
@@ -48,11 +45,6 @@ All command line options can be set in your `package.json` file with a `kit` fie
   }
 }
 ```
-
-<!--
-Add docs for
-- [ ] x0 custom App
--->
 
 ## Modes
 

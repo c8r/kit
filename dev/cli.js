@@ -2,7 +2,7 @@
 const path = require('path')
 const dev = require('./index')
 
-// for testing only
+// FOR TESTING ONLY
 const args = process.argv
 const [ , , dir, ...flags ] = args
 
