@@ -1,74 +1,153 @@
 
 <img width='192' height='192' src='https://compositor.io/logo/dist/kit.png' />
 
-# Kit
+# Compositor Kit
 
 Tools for developing, documenting, and testing React component libraries
 
-## Features
+<img src='docs/demo.gif' />
 
-- Utility components for isolated development
-- Project scaffolding generator
-- Isolated development server
-- Component library viewer
+- Zero-config development server
+- Component library mode
+- Utility components for demos and development
+- Reuse component examples for development, documentation, and testing
 
+## Getting Started
 
-## Getting started
-
-Kit contains several different ways to incorporate with your existing setup or generate a new project.
-
-- Use the CLI to run an isolated development server for example components.
-- Or use the CLI `init` command to generate a new project.
-- Use the Kit components to customize your existing dev environment, docs, or demos.
-
-### CLI
+Install the Kit CLI to get started with isolated component development.
 
 ```sh
-npm install --global @compositor/kit-cli
+npm i -g @compositor/kit-cli
 ```
 
-#### Development Server
+Create an `examples` folder for your components.
+This folder can be used for development, documentation, and testing purposes.
 
-The Kit dev server can be passed either a single React component or a folder of example components.
+An example file should export a single default component for rendering.
+
+```js
+// Button.js example
+import React from 'react'
+import { Button } from '../src'
+
+export default props =>
+  <Button>Button</Button>
+```
+
+Start the development server.
 
 ```sh
 kit examples
 ```
 
-Read more in the [dev server docs](dev).
+The index will show a list of links to each example.
+Each example will have its own route where it can be viewed in isolation.
 
-#### Project Generator
+### Library Mode
 
-Run `kit init` and follow the prompts to generate a new project based on several different templates.
-
-Read more in the [CLI docs](cli).
-
-### Components
-
-Kit components can be added to any existing React setup.
-Use these utility components to for development, documentation, and demos.
+To view all examples in library mode with persistent navigation, use the `--mode` flag.
 
 ```sh
-npm install --save @compositor/kit
+kit examples --mode library
 ```
 
-The Kit component library includes the following:
+## Utility Components
 
-- [Library](core/docs/Library.md)
-- [XRay](core/docs/XRay.md)
-- [Debug](core/docs/Debug.md)
-- [Responsive](core/docs/Responsive.md)
-- [Frame](core/docs/Frame.md)
-- [Cartesian](core/docs/Cartesian.md)
-- [Matrix](core/docs/Matrix.md)
-- [LiveEditor](core/docs/LiveEditor.md)
-- [PropsForm](core/docs/PropsForm.md)
-- [Markdown](core/docs/Markdown.md)
-- [State](core/docs/State.md)
-- [Diff](core/docs/Diff.md)
-- And [more](core/docs)...
+If you already have an existing development setup, or want to enhance your examples, use the [Kit components][core] directly in any React setup.
 
-Read more in the [component docs](core).
+```sh
+npm i @compositor/kit
+```
+
+### Library
+
+Use the [`Library`][library], `Example`, and `Detail` components to create a custom component library view.
+
+<img src='core/docs/images/library.png' />
+
+```jsx
+import React from 'react'
+import { Library, Example } from '@compositor/kit'
+import { Button } from '../src'
+
+export default props =>
+  <Library>
+    <Example name='Button'>
+      <Button>Button</Button>
+    </Example>
+  </Library>
+```
+
+### XRay
+
+Use the [`XRay`][xray] component to outline HTML elements and display a grid to help ensure your UI is visually aligned.
+
+<img src='core/docs/images/x-ray.png' />
+
+```jsx
+import React from 'react'
+import { XRay } from '@compositor/kit'
+import { Button } from '../src'
+
+export default props =>
+  <XRay>
+    <Button>Button</Button>
+  </XRay>
+```
+
+### Cartesian
+
+Use the [`Cartesian`][cartesian] component to render the cartesian product of props.
+
+<img src='core/docs/images/cartesian.png' />
+
+```jsx
+import React from 'react'
+import { Cartesian } from '@compositor/kit'
+import Button from '../src/Button'
+
+export default props => (
+  <Cartesian
+    component={Button}
+    m={4}
+    fontSize={[1, 2, 3]}
+    bg={['blue', 'pink', 'tomato', 'purple']}
+    children={['Hello, world!', 'Beep']}
+  />
+)
+```
+
+### Responsive
+
+Use the [`Responsive`][responsive] component to render components in multiple iframes at different viewport sizes.
+
+<img src='core/docs/images/responsive.png' />
+
+```jsx
+import React from 'react'
+import { Responsive } from '@compositor/kit'
+import PageHeader from '../src/PageHeader'
+
+const example = (
+  <Responsive>
+    <PageHeader />
+  </Responsive>
+)
+```
+
+### Other Components
+
+See the [Kit components][core] package for more components.
+
+## Kit Init
+
+Use the `kit init` command to create a new project based on a growing set of [templates](templates).
+
+## Utlities
+
+- [*kit-snapshot*](snapshot): run Jest snapshot tests for example components
+
+---
 
 ## Related
 
@@ -95,3 +174,9 @@ Read more in the [component docs](core).
 [mdx]: https://github.com/mdx-js/mdx
 [react-live]: https://github.com/FormidableLabs/react-live
 [styled-system]: https://github.com/jxnblk/styled-system
+
+[core]: core
+[xray]: core/docs/XRay.md
+[cartesian]: core/docs/Cartesian.md
+[library]: core/docs/Library.md
+[responsive]: core/docs/Responsive.md
