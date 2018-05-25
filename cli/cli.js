@@ -8,6 +8,8 @@ const { h, render } = require('ink')
 const meow = require('meow')
 const open = require('react-dev-utils/openBrowser')
 const log = require('@compositor/log')
+const chalk = require('chalk')
+const clipboard = require('clipboardy')
 const config = require('pkg-conf').sync('kit')
 
 const App = importJsx('./src/App')
@@ -68,6 +70,10 @@ const cli = meow(
   }
 )
 
+log.name = 'kit'
+
+log(chalk.cyan('@compositor/kit-cli'))
+
 const { cmd, input } = parseArgs(cli.input)
 
 // normalize options
@@ -89,18 +95,25 @@ switch (cmd) {
     break
   case 'dev':
   default:
+    log.start('starting dev server...')
     const dev = require('@compositor/kit-dev')
     dev(opts)
       .then(({ server }) => {
         const { port } = server.options
         const url = `http://localhost:${port}`
+        log.stop(
+          'dev server listening on',
+          chalk.green(url),
+          chalk.gray('(copied to clipboard)')
+        )
+        clipboard.write(url)
 
         if (opts.open) {
           open(url)
         }
       })
       .catch(err => {
-        console.error(err)
+        log.error(err)
         process.exit(1)
       })
     break
