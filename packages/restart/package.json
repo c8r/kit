@@ -1,6 +1,6 @@
 {
   "name": "@compositor/restart",
-  "version": "1.0.1",
+  "version": "1.0.27",
   "description": "A touch of css to get started with modern browsers",
   "main": "index.css"
 }
