@@ -10,6 +10,7 @@ const open = require('react-dev-utils/openBrowser')
 const log = require('@compositor/log')
 const chalk = require('chalk')
 const clipboard = require('clipboardy')
+const findup = require('find-up')
 const config = require('pkg-conf').sync('kit')
 
 const App = importJsx('./src/App')
@@ -95,6 +96,13 @@ switch (cmd) {
     break
   case 'dev':
   default:
+    if (opts.app) {
+      opts.app = path.resolve(opts.app)
+    } else {
+      const app = findup.sync('_app.js', { cwd: dirname })
+      if (app) opts.app = app
+    }
+
     log.start('starting dev server...')
     const dev = require('@compositor/kit-dev')
     dev(opts)
