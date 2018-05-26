@@ -3,7 +3,14 @@ import { Fetch, Debug } from '../src'
 
 export default props => (
   <Fetch url="https://reqres.in/api/users?page=2">
-    {({ loading, error, data }) => (
+    {
+      ({
+        onDataChange,
+        onFetchStateChange,
+        loading,
+        error,
+        data
+      }) => (
       <React.Fragment>
         <h1>Loading</h1>
         <Debug>{loading}</Debug>

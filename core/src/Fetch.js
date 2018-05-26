@@ -6,10 +6,11 @@ export default class Fetch extends Component {
     super()
 
     this.state = {
+      fetchState: 'loading',
       data: null,
       error: null,
       loading: true,
-      fetching: false,
+      fetching: true,
       fetched: false
     }
   }
@@ -17,19 +18,43 @@ export default class Fetch extends Component {
   async componentDidMount() {
     const { url } = this.props
 
-    const res = await fetch(url)
-    const data = await res.json()
+    try {
+      const res = await fetch(url)
+      const data = await res.json()
 
-    this.setState({ data })
-  }
+      this.setState({ data })
+    } catch (error) {
+      this.setState({ error })
+    }
 
-  render() {
-    const { data } = this.state
-
-    return this.props.children({
-      loading: { lol: 'fake' },
-      error: { also: 'fake' },
-      data
+    this.setState({
+      loading: false,
+      fetching: false,
+      fetched: true
     })
   }
+
+  handleDataChange = e => {
+    if (this.state.fetching) {
+      return
+    }
+
+    const { value } = e.target
+    this.setState({ data: value })
+  }
+
+  handleFetchStateChange = e => {
+    if (this.state.fetching) {
+      return
+    }
+
+    const { value } = e.target
+    this.setState({ fetchState: value })
+  }
+
+  render = () => this.props.children({
+    onDataChange: this.handleDataChange,
+    onFetchStateChange: this.handleFetchStateChange,
+    ...this.state
+  })
 }
