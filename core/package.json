@@ -2,7 +2,11 @@
   "name": "@compositor/kit",
   "description": "Components for development environments, style guides, and demos",
   "author": "Compositor",
+<<<<<<< HEAD
   "version": "1.0.35",
+=======
+  "version": "1.0.34",
+>>>>>>> v1.0.34
   "main": "dist/index.js",
   "files": [
     "dist"
@@ -44,7 +48,12 @@
     "styled-system": "^2.2.1"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "@compositor/kit-cli": "^1.0.35",
+=======
+    "@compositor/kit-cli": "^1.0.34",
+    "ava": "^0.25.0",
+>>>>>>> v1.0.34
     "babel-cli": "^6.26.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
