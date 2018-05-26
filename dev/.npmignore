@@ -1,4 +1,5 @@
 .nyc_output
 coverage
 examples
-test.js*
+src
+test

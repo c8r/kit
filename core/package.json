@@ -2,7 +2,7 @@
   "name": "@compositor/kit",
   "description": "Components for development environments, style guides, and demos",
   "author": "Compositor",
-  "version": "1.0.28",
+  "version": "1.0.33",
   "main": "dist/index.js",
   "files": [
     "dist"
@@ -36,12 +36,13 @@
     "nano-style": "^1.0.0",
     "prop-types": "^15.6.1",
     "ramda": "^0.25.0",
+    "react-dom": "^16.0.0",
     "react-live": "^1.10.1",
     "react-router-dom": "^4.2.2",
     "styled-system": "^2.2.1"
   },
   "devDependencies": {
-    "@compositor/kit-cli": "^1.0.28",
+    "@compositor/kit-cli": "^1.0.32",
     "ava": "^0.25.0",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
