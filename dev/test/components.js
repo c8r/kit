@@ -4,7 +4,7 @@ import { create as render } from 'react-test-renderer'
 import { StaticRouter } from 'react-router-dom'
 
 // components
-import Library from '../lib/Library'
+import Library from '../src/Library'
 
 const renderJSON = el => render(el).toJSON()
 
