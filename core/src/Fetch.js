@@ -22,9 +22,16 @@ export default class Fetch extends Component {
       const res = await fetch(url)
       const data = await res.json()
 
-      this.setState({ data })
+      this.setState({
+        fetchState: 'fetched',
+        editedData: data,
+        data
+      })
     } catch (error) {
-      this.setState({ error })
+      this.setState({
+        error,
+        fetchState: 'error'
+      })
     }
 
     this.setState({
@@ -40,7 +47,14 @@ export default class Fetch extends Component {
     }
 
     const { value } = e.target
-    this.setState({ data: value })
+
+    try {
+      const data = JSON.parse(value)
+      this.setState({ data, editedData: data })
+    } catch (e) {
+      this.setState({ editedData: value })
+      return
+    }
   }
 
   handleFetchStateChange = e => {
