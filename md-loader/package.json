@@ -1,15 +1,14 @@
 {
   "name": "@compositor/md-loader",
-  "version": "1.0.27",
+  "version": "1.0.34",
   "description": "",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "keywords": [],
   "author": "Compositor",
   "license": "MIT",
   "dependencies": {
-    "@compositor/md": "^1.0.27",
+    "@compositor/md": "^1.0.34",
     "gray-matter": "^4.0.1",
     "loader-utils": "^1.1.0",
     "stringify-object": "^3.2.2"
