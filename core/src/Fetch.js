@@ -16,6 +16,10 @@ export default class Fetch extends Component {
   }
 
   async componentDidMount() {
+    this.fetchData()
+  }
+
+  fetchData = async () => {
     const { url } = this.props
 
     try {
@@ -24,7 +28,7 @@ export default class Fetch extends Component {
 
       this.setState({
         fetchState: 'fetched',
-        editedData: data,
+        editedData: JSON.stringify(data, null, 2),
         data
       })
     } catch (error) {
@@ -41,6 +45,8 @@ export default class Fetch extends Component {
     })
   }
 
+  handleRefetchClick = () => this.fetchData()
+
   handleDataChange = e => {
     if (this.state.fetching) {
       return
@@ -50,7 +56,7 @@ export default class Fetch extends Component {
 
     try {
       const data = JSON.parse(value)
-      this.setState({ data, editedData: data })
+      this.setState({ data, editedData: value })
     } catch (e) {
       this.setState({ editedData: value })
       return
@@ -67,6 +73,7 @@ export default class Fetch extends Component {
   }
 
   render = () => this.props.children({
+    onRefetchClick: this.handleRefetchClick,
     onDataChange: this.handleDataChange,
     onFetchStateChange: this.handleFetchStateChange,
     ...this.state

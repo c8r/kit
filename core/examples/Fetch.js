@@ -5,6 +5,7 @@ export default props => (
   <Fetch url="https://reqres.in/api/users?page=2">
     {
       ({
+        onRefetchClick,
         onDataChange,
         onFetchStateChange,
         fetchState,
@@ -27,9 +28,12 @@ export default props => (
           {data &&
           <textarea
             onChange={onDataChange}
-            value={JSON.stringify(editedData)}
+            rows={20}
+            style={{ width: '100%'}}
+            value={JSON.stringify(editedData, null, 2)}
           />
         }
+        <button onClick={onRefetchClick}>Refetch</button>
         </React.Fragment>
       )
     }
