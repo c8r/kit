@@ -10,15 +10,15 @@ const modes = {
 }
 
 module.exports = opts => {
-  if (opts.app) {
-    opts.webpack = {
-      plugins: [
-        new webpack.DefinePlugin({
-          USER_APP: JSON.stringify(opts.app)
-        })
-      ]
-    }
+  opts.webpack = {
+    plugins: [
+      new webpack.DefinePlugin({
+        USER_APP: JSON.stringify(opts.app)
+      })
+    ]
   }
+
   opts.app = modes[opts.mode] || null
+
   return dev(opts)
 }
