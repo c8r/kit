@@ -1,6 +1,8 @@
 import React from 'react'
 
-const App = USER_APP ? require(USER_APP).default : props => props.render()
+const App = USER_APP
+  ? require(USER_APP).default || require(USER_APP)
+  : props => props.render()
 
 export default Component => props =>
   <App

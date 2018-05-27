@@ -20,8 +20,6 @@ const opts = Object.assign({}, {
   basename: '',
   scope: {},
 
-  app: path.join(__dirname, '_app'),
-
   // modes
   mode: 'library',
   // mode: 'sandbox', // (.jsx files only for now)
