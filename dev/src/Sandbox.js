@@ -5,17 +5,16 @@ import {
   // use this after core update
   // LiveEditor as Editor
 } from '@compositor/kit'
-
 import {
   LiveProvider,
   LiveEditor,
   LivePreview,
   LiveError
 } from 'react-live'
+import withUserApp from './withUserApp'
 
-// experimental
-// currently only works for jsx files
-export default class Sandbox extends React.Component {
+// experimental - currently only works for jsx files
+class Sandbox extends React.Component {
   render () {
     const { render, routes } = this.props
 
@@ -53,3 +52,5 @@ export default class Sandbox extends React.Component {
     )
   }
 }
+
+export default withUserApp(Sandbox)

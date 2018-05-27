@@ -1,5 +1,6 @@
 const path = require('path')
 const { dev } = require('@compositor/x0')
+const webpack = require('webpack')
 
 const modes = {
   library: path.join(__dirname, 'lib/Library'),
@@ -9,6 +10,15 @@ const modes = {
 }
 
 module.exports = opts => {
+  opts.webpack = {
+    plugins: [
+      new webpack.DefinePlugin({
+        USER_APP: JSON.stringify(opts.app)
+      })
+    ]
+  }
+
   opts.app = modes[opts.mode] || null
+
   return dev(opts)
 }

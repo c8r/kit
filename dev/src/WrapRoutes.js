@@ -4,8 +4,13 @@ import {
   Route,
   Link
 } from 'react-router-dom'
+import withUserApp from './withUserApp'
 
-export default class WrapRoutes extends React.Component {
+class WrapRoutes extends React.Component {
+  static defaultProps = {
+    routes: []
+  }
+
   render () {
     const { Wrapper = 'div', render, routes } = this.props
 
@@ -51,3 +56,4 @@ export default class WrapRoutes extends React.Component {
     )
   }
 }
+export default withUserApp(WrapRoutes)

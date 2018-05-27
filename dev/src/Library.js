@@ -1,11 +1,13 @@
 import React from 'react'
 import { Library } from '@compositor/kit'
+import withUserApp from './withUserApp'
 
 class LibraryMode extends React.Component {
   render() {
     const {
       render,
       routes = [],
+      ...props
     } = this.props
 
     const examples = routes.map(({ name, Component }) => ({
@@ -14,9 +16,9 @@ class LibraryMode extends React.Component {
     }))
 
     return (
-      <Library examples={examples} />
+      <Library {...props} examples={examples} />
     )
   }
 }
 
-export default LibraryMode
+export default withUserApp(LibraryMode)
