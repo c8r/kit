@@ -7,6 +7,10 @@ import {
 import withUserApp from './withUserApp'
 
 class WrapRoutes extends React.Component {
+  static defaultProps = {
+    routes: []
+  }
+
   render () {
     const { Wrapper = 'div', render, routes } = this.props
 

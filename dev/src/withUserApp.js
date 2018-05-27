@@ -1,6 +1,6 @@
 import React from 'react'
 
-const App = USER_APP
+const App = typeof USER_APP !== 'undefined' && USER_APP
   ? require(USER_APP).default || require(USER_APP)
   : props => props.render()
 
