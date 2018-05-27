@@ -1,4 +1,5 @@
 import React from 'react'
+import Editor from '@compositor/react-editor'
 import { Fetch, Debug } from '../src'
 
 export default props => (
@@ -24,16 +25,16 @@ export default props => (
           <Debug>{error}</Debug>
           <hr />
           <h1>Data</h1>
-          <Debug>{data}</Debug>
-          {data &&
-          <textarea
-            onChange={onDataChange}
-            rows={20}
-            style={{ width: '100%'}}
-            value={JSON.stringify(editedData, null, 2)}
-          />
-        }
-        <button onClick={onRefetchClick}>Refetch</button>
+          {data && data.page}
+          <Debug log>{data}</Debug>
+          {editedData && (
+            <Editor
+              value={JSON.stringify(editedData, null, 2)}
+              onChange={onDataChange}
+              lang='jsx'
+            />
+          )}
+          <button onClick={onRefetchClick}>Refetch</button>
         </React.Fragment>
       )
     }

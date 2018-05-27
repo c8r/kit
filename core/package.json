@@ -26,6 +26,7 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "@compositor/react-editor": "0.0.5",
     "@compositor/webfont": "^1.0.11",
     "@mdx-js/mdx": "^0.9.0",
     "@mdx-js/tag": "^0.7.2",

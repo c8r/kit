@@ -28,7 +28,7 @@ export default class Fetch extends Component {
 
       this.setState({
         fetchState: 'fetched',
-        editedData: JSON.stringify(data, null, 2),
+        editedData: data,
         data
       })
     } catch (error) {
@@ -47,12 +47,10 @@ export default class Fetch extends Component {
 
   handleRefetchClick = () => this.fetchData()
 
-  handleDataChange = e => {
+  handleDataChange = value => {
     if (this.state.fetching) {
       return
     }
-
-    const { value } = e.target
 
     try {
       const data = JSON.parse(value)
