@@ -1,6 +1,6 @@
 {
   "name": "create-kit",
-  "version": "1.0.34",
+  "version": "1.0.35",
   "description": "",
   "bin": {
     "create-kit": "./node_modules/@compositor/kit-cli/cli.js"
@@ -12,6 +12,6 @@
   "author": "Compositor",
   "license": "MIT",
   "dependencies": {
-    "@compositor/kit-cli": "^1.0.34"
+    "@compositor/kit-cli": "^1.0.35"
   }
 }
