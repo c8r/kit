@@ -20,15 +20,17 @@ const opts = Object.assign({}, {
   basename: '',
   scope: {},
 
+  app: path.join(__dirname, '_app'),
+
   // modes
-  // mode: 'library',
+  mode: 'library',
   // mode: 'sandbox', // (.jsx files only for now)
-  mode: 'responsive', // needs render prop or other solution for css
+  // mode: 'responsive', // needs render prop or other solution for css
   // mode: 'xray'
 })
 
 dev(opts)
-  .then(server => {
+  .then(({ server }) => {
     const { port } = server.options
     console.log('dev server listening', port)
   })
