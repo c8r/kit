@@ -57,7 +57,6 @@ export default class Fetch extends Component {
       this.setState({ data, editedData: value })
     } catch (e) {
       this.setState({ editedData: value })
-      return
     }
   }
 
