@@ -10,6 +10,7 @@ export default props => (
         onDataChange,
         onFetchStateChange,
         fetchState,
+        fetchStates,
         loading,
         error,
         editedData,
@@ -35,6 +36,17 @@ export default props => (
             />
           )}
           <button onClick={onRefetchClick}>Refetch</button>
+          <select
+            onChange={onFetchStateChange}
+            children={fetchStates.map(state =>
+              <option
+                key={state}
+                value={state}
+                selected={state === fetchState}
+                children={state}
+              />
+            )}
+          />
         </React.Fragment>
       )
     }

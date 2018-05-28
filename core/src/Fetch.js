@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import fetch from 'isomorphic-fetch'
 
+const fetchStates = ['loading', 'fetched', 'error']
+
 export default class Fetch extends Component {
   constructor() {
     super()
@@ -66,10 +68,16 @@ export default class Fetch extends Component {
     }
 
     const { value } = e.target
-    this.setState({ fetchState: value })
+
+    this.setState({
+      fetchState: value,
+      loading: value === 'loading',
+      error: value === 'error'
+    })
   }
 
   render = () => this.props.children({
+    fetchStates,
     onRefetchClick: this.handleRefetchClick,
     onDataChange: this.handleDataChange,
     onFetchStateChange: this.handleFetchStateChange,
