@@ -119,7 +119,6 @@ export default class Fetch extends Component {
     <Fragment>
       {this.props.children(this.state)}
       {this.props.renderEditor({
-        onRefetchClick: this.handleRefetchClick,
         onDataChange: this.handleDataChange,
         onFetchStateChange: this.handleFetchStateChange,
         ...this.state
