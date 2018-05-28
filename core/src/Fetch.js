@@ -1,9 +1,50 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
+import Editor from '@compositor/react-editor'
 import fetch from 'isomorphic-fetch'
 
-const fetchStates = ['loading', 'fetched', 'error']
+import { Box, Divider, Label, Select } from './ui'
+
+const FetchEditor = ({
+  onDataChange,
+  onFetchStateChange,
+  fetchState,
+  editedData = '{}'
+}) => {
+  const fetchStates = ['loading', 'fetched', 'error']
+
+  return (
+    <Fragment>
+      <Divider />
+      <Box p={3}>
+        <Label>Fetch State</Label>
+        <Select
+          mt={1}
+          onChange={onFetchStateChange}
+          children={fetchStates.map(state =>
+            <option
+              key={state}
+              value={state}
+              selected={state === fetchState}
+              children={state}
+            />
+          )}
+        />
+      </Box>
+      <Divider />
+      <Editor
+        value={JSON.stringify(editedData, null, 2)}
+        onChange={onDataChange}
+        lang='jsx'
+      />
+    </Fragment>
+  )
+}
 
 export default class Fetch extends Component {
+  static defaultProps = {
+    renderEditor: FetchEditor
+  }
+
   constructor() {
     super()
 
@@ -47,8 +88,6 @@ export default class Fetch extends Component {
     })
   }
 
-  handleRefetchClick = () => this.fetchData()
-
   handleDataChange = value => {
     if (this.state.fetching) {
       return
@@ -76,11 +115,15 @@ export default class Fetch extends Component {
     })
   }
 
-  render = () => this.props.children({
-    fetchStates,
-    onRefetchClick: this.handleRefetchClick,
-    onDataChange: this.handleDataChange,
-    onFetchStateChange: this.handleFetchStateChange,
-    ...this.state
-  })
+  render = () => (
+    <Fragment>
+      {this.props.children(this.state)}
+      {this.props.renderEditor({
+        onRefetchClick: this.handleRefetchClick,
+        onDataChange: this.handleDataChange,
+        onFetchStateChange: this.handleFetchStateChange,
+        ...this.state
+      })}
+    </Fragment>
+  )
 }

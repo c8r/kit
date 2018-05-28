@@ -6,14 +6,9 @@ export default props => (
   <Fetch url="https://reqres.in/api/users?page=2">
     {
       ({
-        onRefetchClick,
-        onDataChange,
-        onFetchStateChange,
         fetchState,
-        fetchStates,
         loading,
         error,
-        editedData,
         data
       }) => (
         <React.Fragment>
@@ -28,25 +23,6 @@ export default props => (
           <h1>Data</h1>
           {data && data.page}
           <Debug log>{data}</Debug>
-          {editedData && (
-            <Editor
-              value={JSON.stringify(editedData, null, 2)}
-              onChange={onDataChange}
-              lang='jsx'
-            />
-          )}
-          <button onClick={onRefetchClick}>Refetch</button>
-          <select
-            onChange={onFetchStateChange}
-            children={fetchStates.map(state =>
-              <option
-                key={state}
-                value={state}
-                selected={state === fetchState}
-                children={state}
-              />
-            )}
-          />
         </React.Fragment>
       )
     }
