@@ -25,43 +25,71 @@ const Video = styled.video([], {
   borderRadius: '16px',
 })
 
+const features = [
+  'Zero-config isolated development modes',
+  'Maximize code reuse for development, documentation, and testing',
+  'Components over configuration',
+  'No custom API code',
+  'Debugging and utility components',
+  'Works with virtually any React setup'
+]
+
 export default props => (
   <Provider>
     <NavBar>
       <NavLink href='/'>Kit</NavLink>
       <NavLink href='https://github.com/c8r/kit'>GitHub</NavLink>
     </NavBar>
-    <Box color="black" bg="white" px={[3, 4 ]} py={4}>
-      <Container maxWidth={1024}>
-        <Video
-          autoPlay
-          loop
-          muted
-          playsInline
-          poster='demo.gif'
-          src='demo-small.mp4'
-        />
-        <Heading mt={3} fontSize={[5, 6, 7, 8]}>Kit</Heading>
-        <Text fontSize={[3, 4]} fontWeight="bold" mb={4}>
-          Tools for developing, documenting, and testing React component
-          libraries
+    <Container maxWidth={1024} py={4}>
+      <Video
+        autoPlay
+        loop
+        muted
+        playsInline
+        poster='demo.gif'
+        src='demo-small.mp4'
+      />
+      <Flex alignItems='center' py={4}>
+        <Box>
+          <Heading fontSize={[5, 6, 7, 8]}>Kit</Heading>
+          <Text fontSize={[3, 4]} fontWeight="bold" mb={3}>
+            Tools for developing, documenting, and testing React component
+            libraries
+          </Text>
+          <Button
+            is="a"
+            href="https://github.com/c8r/kit"
+            fontSize={2}
+            px={4}
+            py={3}
+            bg="black"
+          >
+            GitHub
+          </Button>
+        </Box>
+        <Box mx={3} />
+        <Kit size={128} />
+      </Flex>
+      <Flex flexWrap='wrap' mx={-3} py={4}>
+        {features.map(feat => (
+          <Box
+            key={feat}
+            width={[ 1, 1/2, 1/3 ]}
+            p={3}>
+            <Text fontWeight='bold'>
+              {feat}
+            </Text>
+          </Box>
+        ))}
+      </Flex>
+      <Flex py={5} mx={-2}>
+        <NavLink href='/'>Kit</NavLink>
+        <NavLink href='https://github.com/c8r/kit'>GitHub</NavLink>
+        <Box mx='auto' />
+        <Text px={2} fontSize={0}>
+          © 2018 Compositor, Inc.
         </Text>
-        <Button
-          is="a"
-          href="https://github.com/c8r/kit"
-          fontSize={2}
-          px={4}
-          py={3}
-          bg="black"
-        >
-          GitHub
-        </Button>
-        <Flex py={4}>
-          <Box mx='auto' />
-          <Kit size={128} />
-          <Box mx='auto' />
-        </Flex>
-      </Container>
-    </Box>
+      </Flex>
+    </Container>
   </Provider>
 )
