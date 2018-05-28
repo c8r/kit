@@ -16,6 +16,7 @@
   },
   "x0": {
     "title": "Compositor Kit",
+    "basename": "/kit",
     "meta": [
       {
         "name": "description",

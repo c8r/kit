@@ -5,6 +5,7 @@ before_deploy:
   - cd docs
   - npm install
   - npm run build
+  - cp demo-small.mp4 demo.gif dist/
 deploy:
   provider: pages
   skip_cleanup: true
