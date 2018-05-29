@@ -18,7 +18,7 @@ const Button = styled.a`
   ${space}
 `
 
-test('Cartesian renders all examples', t => {
+test('Cartesian renders all examples', () => {
   const { container } = render(<Cartesian {...buttonProps} component={Button} />)
 
   expect(container).toMatchSnapshot()

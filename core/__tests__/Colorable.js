@@ -11,7 +11,7 @@ const Button = styled.a`
   ${color}
 `
 
-test('Colorable returns all possible colors', t => {
+test('Colorable returns all possible colors', () => {
   const { container } = render(
     <Colorable
       colors={colors}

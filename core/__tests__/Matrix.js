@@ -4,7 +4,7 @@ import { Donut } from 'rebass'
 
 import { Matrix } from '../src'
 
-test('Matrix renders all examples', t => {
+test('Matrix renders all examples', () => {
   const { container } = render(
     <Matrix
       x={[
