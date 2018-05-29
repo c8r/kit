@@ -3,13 +3,12 @@ import { render } from 'react-testing-library'
 import { StaticRouter } from 'react-router-dom'
 import { Library, Example, Detail } from '../src'
 
-test('Library renders', () => {
-  const { container } = render(<Library />)
-
-  expect(container).toMatchSnapshot()
+test('Library renders', t => {
+  const json = renderJSON(<Library />)
+  t.snapshot(json)
 })
 
-test('Example renders', () => {
+test('Example renders', t => {
   const { container } = render(
     <Example name="Hello">
       <h1>Hello</h1>
@@ -19,7 +18,7 @@ test('Example renders', () => {
   expect(container).toMatchSnapshot()
 })
 
-test('Detail renders', () => {
+test('Detail renders', t => {
   const { container } = render(
     <StaticRouter context={{}}>
       <Detail />
