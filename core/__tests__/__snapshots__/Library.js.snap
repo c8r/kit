@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Detail renders 1`] = `<div />`;
+
+exports[`Example renders 1`] = `
+<div>
+  <h1>
+    Hello
+  </h1>
+</div>
+`;

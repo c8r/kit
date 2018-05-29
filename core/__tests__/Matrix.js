@@ -1,14 +1,11 @@
-import test from 'ava'
 import React from 'react'
-import { create as render } from 'react-test-renderer'
+import { render } from 'react-testing-library'
 import { Donut } from 'rebass'
 
 import { Matrix } from '../src'
 
-const renderJSON = el => render(el).toJSON()
-
 test('Matrix renders all examples', t => {
-  const result = renderJSON(
+  const { container } = render(
     <Matrix
       x={[
         { color: 'blue ' },
@@ -26,5 +23,5 @@ test('Matrix renders all examples', t => {
     />
   )
 
-  t.snapshot(result)
+  expect(container).toMatchSnapshot()
 })

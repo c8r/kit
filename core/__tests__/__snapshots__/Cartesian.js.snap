@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cartesian renders all examples 1`] = `
+<div>
+  <a
+    class="sc-bdVaJa ikbxON"
+    font-size="1"
+  >
+    Hello, world!
+  </a>
+  <a
+    class="sc-bdVaJa ikbxON"
+    font-size="1"
+  >
+    Hello, world!
+  </a>
+  <a
+    class="sc-bdVaJa ikbxON"
+    font-size="1"
+  >
+    Hello, world!
+  </a>
+  <a
+    class="sc-bdVaJa cSmzEW"
+    font-size="1"
+  >
+    Hello, world!
+  </a>
+  <a
+    class="sc-bdVaJa cSmzEW"
+    font-size="1"
+  >
+    Hello, world!
+  </a>
+  <a
+    class="sc-bdVaJa cSmzEW"
+    font-size="1"
+  >
+    Hello, world!
+  </a>
+  <a
+    class="sc-bdVaJa hFxVwo"
+    font-size="2"
+  >
+    Hello, world!
+  </a>
+  <a
+    class="sc-bdVaJa hFxVwo"
+    font-size="2"
+  >
+    Hello, world!
+  </a>
+  <a
+    class="sc-bdVaJa hFxVwo"
+    font-size="2"
+  >
+    Hello, world!
+  </a>
+  <a
+    class="sc-bdVaJa hPCeld"
+    font-size="2"
+  >
+    Hello, world!
+  </a>
+  <a
+    class="sc-bdVaJa hPCeld"
+    font-size="2"
+  >
+    Hello, world!
+  </a>
+  <a
+    class="sc-bdVaJa hPCeld"
+    font-size="2"
+  >
+    Hello, world!
+  </a>
+  <a
+    class="sc-bdVaJa hJuUIp"
+    font-size="3"
+  >
+    Hello, world!
+  </a>
+  <a
+    class="sc-bdVaJa hJuUIp"
+    font-size="3"
+  >
+    Hello, world!
+  </a>
+  <a
+    class="sc-bdVaJa hJuUIp"
+    font-size="3"
+  >
+    Hello, world!
+  </a>
+  <a
+    class="sc-bdVaJa fGNklA"
+    font-size="3"
+  >
+    Hello, world!
+  </a>
+  <a
+    class="sc-bdVaJa fGNklA"
+    font-size="3"
+  >
+    Hello, world!
+  </a>
+  <a
+    class="sc-bdVaJa fGNklA"
+    font-size="3"
+  >
+    Hello, world!
+  </a>
+</div>
+`;

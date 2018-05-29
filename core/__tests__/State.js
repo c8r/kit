@@ -1,6 +1,5 @@
-import test from 'ava'
 import React from 'react'
-import { create as render } from 'react-test-renderer'
+import { render } from 'react-testing-library'
 import sinon from 'sinon'
 import { State } from '../src'
 

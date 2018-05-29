@@ -1,7 +1,6 @@
-import test from 'ava'
 import React from 'react'
 import styled from 'styled-components'
-import { create as render } from 'react-test-renderer'
+import { render } from 'react-testing-library'
 import { color } from 'styled-system'
 
 import { Colorable } from '../src'
@@ -12,10 +11,8 @@ const Button = styled.a`
   ${color}
 `
 
-const renderJSON = el => render(el).toJSON()
-
 test('Colorable returns all possible colors', t => {
-  const result = renderJSON(
+  const { container } = render(
     <Colorable
       colors={colors}
       children={combos => combos.map(combo =>
@@ -29,5 +26,5 @@ test('Colorable returns all possible colors', t => {
     />
   )
 
-  t.snapshot(result)
+  expect(container).toMatchSnapshot()
 })
