@@ -9,3 +9,38 @@ exports[`Example renders 1`] = `
   </h1>
 </div>
 `;
+
+exports[`Library renders 1`] = `
+<div>
+  <div
+    class="nanotx9z16"
+  >
+    <div
+      class="nanolgtq4w"
+    >
+      <a
+        aria-current="false"
+        class="nano19oao6z"
+        href="/"
+      >
+        Kit
+      </a>
+      <style>
+        .nano19oao6z{display:block;padding-left:8px;padding-right:8px;padding-top:4px;padding-bottom:4px;font-size:12px;font-weight:bold;text-decoration:none;color:inherit;-webkit-user-select:none;user-select:none}.nano19oao6z.active{color:white;background-color:black}
+      </style>
+    </div>
+    <style>
+      .nanolgtq4w{width:192px;flex:none;height:100vh;overflow-y:auto;-webkit-overflow-scrolling:touch;border-right:1px solid #f6f6f6}
+    </style>
+    <div
+      class="nano1pfbsnd"
+    />
+    <style>
+      .nano1pfbsnd{flex:1 1 auto;height:100vh;overflow-y:auto;-webkit-overflow-scrolling:touch}
+    </style>
+  </div>
+  <style>
+    .nanotx9z16{display:flex;align-items:flex-start;height:100vh}
+  </style>
+</div>
+`;
