@@ -1,6 +1,6 @@
 {
   "name": "@compositor/kit-cli",
-  "version": "1.0.35",
+  "version": "1.0.36",
   "description": "Compositor Kit CLI",
   "license": "MIT",
   "repository": "c8r/kit-cli",
@@ -20,7 +20,7 @@
     "src"
   ],
   "dependencies": {
-    "@compositor/kit-dev": "^1.0.35",
+    "@compositor/kit-dev": "^1.0.36",
     "@compositor/log": "^1.0.0-0",
     "chalk": "^2.4.1",
     "clipboardy": "^1.2.3",
