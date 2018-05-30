@@ -2,7 +2,7 @@
   "name": "@compositor/kit",
   "description": "Components for development environments, style guides, and demos",
   "author": "Compositor",
-  "version": "1.0.36",
+  "version": "1.0.37",
   "main": "dist/index.js",
   "files": [
     "dist"
@@ -27,7 +27,7 @@
   "license": "MIT",
   "dependencies": {
     "@compositor/react-editor": "0.0.5",
-    "@compositor/webfont": "^1.0.11",
+    "@compositor/webfont": "^1.0.37",
     "@mdx-js/mdx": "^0.9.0",
     "@mdx-js/tag": "^0.7.2",
     "buble": "^0.19.3",
@@ -44,7 +44,7 @@
     "styled-system": "^2.2.1"
   },
   "devDependencies": {
-    "@compositor/kit-cli": "^1.0.36",
+    "@compositor/kit-cli": "^1.0.37",
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-regenerator": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
