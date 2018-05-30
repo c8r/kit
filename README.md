@@ -11,6 +11,9 @@ Tools for developing, documenting, and testing React component libraries
 - Component library mode
 - Utility components for demos and development
 - Reuse component examples for development, documentation, and testing
+- Read more about Kit on our [blog][blog]
+
+[blog]: https://compositor.io/blog/introducing-kit/
 
 ## Getting Started
 
