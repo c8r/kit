@@ -42,13 +42,13 @@ import {
 const examples = [
   {
     name: 'Button',
-    example: (
+    element: (
       <Button>Beep</Button>
     )
   },
   {
     name: 'Heading',
-    example: (
+    element: (
       <Heading>Hello</Heading>
     )
   },
