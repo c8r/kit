@@ -5,7 +5,7 @@
     "react"
   ],
   "plugins": [
-    "transform-runtime",
-    "transform-regenerator"
+    "transform-regenerator",
+    "transform-runtime"
   ]
 }
