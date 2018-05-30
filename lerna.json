@@ -1,7 +1,6 @@
 {
   "lerna": "2.5.1",
   "packages": [
-    "packages/*",
     "cli",
     "core",
     "create-kit",
@@ -9,7 +8,8 @@
     "md",
     "md-loader",
     "snapshot",
-    "storybook"
+    "storybook",
+    "webfont"
   ],
-  "version": "1.0.35"
+  "version": "1.0.37"
 }

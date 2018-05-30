@@ -11,6 +11,7 @@ import {
 } from 'react-router-dom'
 import { Grid, Box } from './ui'
 import Frame from './Frame'
+import Catch from './Catch'
 
 const Root = nano('div')({
   display: 'flex',
@@ -135,12 +136,14 @@ const LibraryApp = withRouter(
                       renderCard({ example, Card, Link })
                     ) : (
                       <Card key={example.name} to={'/' + example.name}>
-                        <Box p={2}>
-                          <ExampleFrame
-                            head={head}
-                            example={example}
-                          />
-                        </Box>
+                        <Catch>
+                          <Box p={2}>
+                            <ExampleFrame
+                              head={head}
+                              example={example}
+                            />
+                          </Box>
+                        </Catch>
                       </Card>
                     )
                   ))}
@@ -153,11 +156,13 @@ const LibraryApp = withRouter(
                 path={'/' + example.name}
                 render={() => (
                   <Box>
-                    <ExampleFrame
-                      head={head}
-                      example={example}
-                      height='100vh'
-                    />
+                    <Catch>
+                      <ExampleFrame
+                        head={head}
+                        example={example}
+                        height='100vh'
+                      />
+                    </Catch>
                   </Box>
                 )}
               />

@@ -1,6 +1,6 @@
 {
   "name": "@compositor/kit-dev",
-  "version": "1.0.35",
+  "version": "1.0.37",
   "description": "Zero-config React component development server",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,7 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "dependencies": {
-    "@compositor/kit": "^1.0.35",
+    "@compositor/kit": "^1.0.37",
     "@compositor/x0": "^5.0.0",
     "react": "^16.3.2",
     "react-live": "^1.10.1",
@@ -21,6 +21,7 @@
   "devDependencies": {
     "ava": "^0.25.0",
     "babel-cli": "^6.26.0",
+    "babel-plugin-transform-regenerator": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",

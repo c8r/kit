@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Colorable returns all possible colors 1`] = `
+<div>
+  <div>
+    <a
+      class="sc-htpNat dblfbH"
+      color="#000000"
+    >
+      Beep
+    </a>
+    <a
+      class="sc-htpNat bRkelE"
+      color="#000000"
+    >
+      Beep
+    </a>
+    <a
+      class="sc-htpNat hCWoAL"
+      color="#000000"
+    >
+      Beep
+    </a>
+    <a
+      class="sc-htpNat dbuxiW"
+      color="#000000"
+    >
+      Beep
+    </a>
+  </div>
+  <div>
+    <a
+      class="sc-htpNat iHRlkx"
+      color="#FFFFFF"
+    >
+      Beep
+    </a>
+    <a
+      class="sc-htpNat kXeVah"
+      color="#FFFFFF"
+    >
+      Beep
+    </a>
+    <a
+      class="sc-htpNat ihGwIW"
+      color="#FFFFFF"
+    >
+      Beep
+    </a>
+    <a
+      class="sc-htpNat bAFdRy"
+      color="#FFFFFF"
+    >
+      Beep
+    </a>
+  </div>
+  <div>
+    <a
+      class="sc-htpNat gQVtPt"
+      color="#FFC0CB"
+    >
+      Beep
+    </a>
+    <a
+      class="sc-htpNat kIfOGd"
+      color="#FFC0CB"
+    >
+      Beep
+    </a>
+    <a
+      class="sc-htpNat iBLqPa"
+      color="#FFC0CB"
+    >
+      Beep
+    </a>
+    <a
+      class="sc-htpNat dpRIBe"
+      color="#FFC0CB"
+    >
+      Beep
+    </a>
+  </div>
+  <div>
+    <a
+      class="sc-htpNat jVWkKd"
+      color="#FF6347"
+    >
+      Beep
+    </a>
+    <a
+      class="sc-htpNat jONCSQ"
+      color="#FF6347"
+    >
+      Beep
+    </a>
+    <a
+      class="sc-htpNat kOZJHn"
+      color="#FF6347"
+    >
+      Beep
+    </a>
+    <a
+      class="sc-htpNat hrigZI"
+      color="#FF6347"
+    >
+      Beep
+    </a>
+  </div>
+  <div>
+    <a
+      class="sc-htpNat exdLno"
+      color="#800080"
+    >
+      Beep
+    </a>
+    <a
+      class="sc-htpNat ljFhXe"
+      color="#800080"
+    >
+      Beep
+    </a>
+    <a
+      class="sc-htpNat jwFnuc"
+      color="#800080"
+    >
+      Beep
+    </a>
+    <a
+      class="sc-htpNat OTHyq"
+      color="#800080"
+    >
+      Beep
+    </a>
+  </div>
+</div>
+`;

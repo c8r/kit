@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cartesian renders all examples 1`] = `
+<div>
+  <a
+    class="sc-htpNat bGRZZd"
+    font-size="1"
+  >
+    Hello, world!
+  </a>
+  <a
+    class="sc-htpNat bGRZZd"
+    font-size="1"
+  >
+    Hello, world!
+  </a>
+  <a
+    class="sc-htpNat bGRZZd"
+    font-size="1"
+  >
+    Hello, world!
+  </a>
+  <a
+    class="sc-htpNat kloolt"
+    font-size="1"
+  >
+    Hello, world!
+  </a>
+  <a
+    class="sc-htpNat kloolt"
+    font-size="1"
+  >
+    Hello, world!
+  </a>
+  <a
+    class="sc-htpNat kloolt"
+    font-size="1"
+  >
+    Hello, world!
+  </a>
+  <a
+    class="sc-htpNat danOEM"
+    font-size="2"
+  >
+    Hello, world!
+  </a>
+  <a
+    class="sc-htpNat danOEM"
+    font-size="2"
+  >
+    Hello, world!
+  </a>
+  <a
+    class="sc-htpNat danOEM"
+    font-size="2"
+  >
+    Hello, world!
+  </a>
+  <a
+    class="sc-htpNat eVTPhI"
+    font-size="2"
+  >
+    Hello, world!
+  </a>
+  <a
+    class="sc-htpNat eVTPhI"
+    font-size="2"
+  >
+    Hello, world!
+  </a>
+  <a
+    class="sc-htpNat eVTPhI"
+    font-size="2"
+  >
+    Hello, world!
+  </a>
+  <a
+    class="sc-htpNat bdqFRZ"
+    font-size="3"
+  >
+    Hello, world!
+  </a>
+  <a
+    class="sc-htpNat bdqFRZ"
+    font-size="3"
+  >
+    Hello, world!
+  </a>
+  <a
+    class="sc-htpNat bdqFRZ"
+    font-size="3"
+  >
+    Hello, world!
+  </a>
+  <a
+    class="sc-htpNat feADao"
+    font-size="3"
+  >
+    Hello, world!
+  </a>
+  <a
+    class="sc-htpNat feADao"
+    font-size="3"
+  >
+    Hello, world!
+  </a>
+  <a
+    class="sc-htpNat feADao"
+    font-size="3"
+  >
+    Hello, world!
+  </a>
+</div>
+`;

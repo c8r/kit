@@ -1,7 +1,6 @@
-import test from 'ava'
 import React from 'react'
 import styled from 'styled-components'
-import { create as render } from 'react-test-renderer'
+import { render } from 'react-testing-library'
 import { color, space, fontSize } from 'styled-system'
 
 import { Cartesian } from '../src'
@@ -19,10 +18,8 @@ const Button = styled.a`
   ${space}
 `
 
-const renderJSON = el => render(el).toJSON()
+test('Cartesian renders all examples', () => {
+  const { container } = render(<Cartesian {...buttonProps} component={Button} />)
 
-test('Cartesian renders all examples', t => {
-  const result = renderJSON(<Cartesian {...buttonProps} component={Button} />)
-
-  t.snapshot(result)
+  expect(container).toMatchSnapshot()
 })
