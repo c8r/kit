@@ -179,7 +179,7 @@ Use the `kit init` command to create a new project based on a growing set of [te
 [styled-system]: https://github.com/jxnblk/styled-system
 
 [core]: core
-[xray]: core/XRay.md
-[cartesian]: core/Cartesian.md
-[library]: core/Library.md
-[responsive]: core/Responsive.md
+[xray]: docs/XRay.md
+[cartesian]: docs/Cartesian.md
+[library]: docs/Library.md
+[responsive]: docs/Responsive.md
