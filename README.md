@@ -5,7 +5,7 @@
 
 Tools for developing, documenting, and testing React component libraries
 
-<img src='docs/demo.gif' />
+<img src='site/demo.gif' />
 
 - Zero-config development server
 - Component library mode
