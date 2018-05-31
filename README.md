@@ -66,7 +66,7 @@ npm i @compositor/kit
 
 Use the [`Library`][library], `Example`, and `Detail` components to create a custom component library view.
 
-<img src='core/docs/images/library.png' />
+<img src='docs/images/library.png' />
 
 ```jsx
 import React from 'react'
@@ -85,7 +85,7 @@ export default props =>
 
 Use the [`XRay`][xray] component to outline HTML elements and display a grid to help ensure your UI is visually aligned.
 
-<img src='core/docs/images/x-ray.png' />
+<img src='docs/images/x-ray.png' />
 
 ```jsx
 import React from 'react'
@@ -102,7 +102,7 @@ export default props =>
 
 Use the [`Cartesian`][cartesian] component to render the cartesian product of props.
 
-<img src='core/docs/images/cartesian.png' />
+<img src='docs/images/cartesian.png' />
 
 ```jsx
 import React from 'react'
@@ -124,7 +124,7 @@ export default props => (
 
 Use the [`Responsive`][responsive] component to render components in multiple iframes at different viewport sizes.
 
-<img src='core/docs/images/responsive.png' />
+<img src='docs/images/responsive.png' />
 
 ```jsx
 import React from 'react'
