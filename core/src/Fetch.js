@@ -19,12 +19,12 @@ const FetchEditor = ({
         <Label>Fetch State</Label>
         <Select
           mt={1}
+          value={fetchState}
           onChange={onFetchStateChange}
           children={fetchStates.map(state =>
             <option
               key={state}
               value={state}
-              selected={state === fetchState}
               children={state}
             />
           )}
