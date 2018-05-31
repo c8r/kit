@@ -146,7 +146,7 @@ See the [Kit components][core] package for more components.
 
 Use the `kit init` command to create a new project based on a growing set of [templates](templates).
 
-## Utlities
+## Utilities
 
 - [*kit-snapshot*](snapshot): run Jest snapshot tests for example components
 
@@ -179,7 +179,7 @@ Use the `kit init` command to create a new project based on a growing set of [te
 [styled-system]: https://github.com/jxnblk/styled-system
 
 [core]: core
-[xray]: core/docs/XRay.md
-[cartesian]: core/docs/Cartesian.md
-[library]: core/docs/Library.md
-[responsive]: core/docs/Responsive.md
+[xray]: docs/XRay.md
+[cartesian]: docs/Cartesian.md
+[library]: docs/Library.md
+[responsive]: docs/Responsive.md

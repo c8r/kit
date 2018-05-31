@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - 10.0
 before_deploy:
-  - cd docs
+  - cd site
   - npm install
   - npm run build
   - cp demo-small.mp4 demo.gif dist/
@@ -10,6 +10,6 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GH_TOKEN
-  local_dir: docs/dist
+  local_dir: site/dist
   on:
     branch: master
