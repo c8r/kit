@@ -1,6 +1,6 @@
 # Kit CLI
 
-Comand line interface for Compositor Kit
+Command line interface for Compositor Kit
 
 ```
 $ npm install --global @compositor/kit-cli
