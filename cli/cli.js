@@ -104,7 +104,7 @@ switch (cmd) {
     }
 
     log.start('starting dev server...')
-    const dev = require('@compositor/kit-dev')
+    const dev = require('./lib/dev')
     dev(opts)
       .then(({ server }) => {
         const { port } = server.options
