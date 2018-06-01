@@ -88,7 +88,7 @@ import { Box, Heading, Text } from './_scope'
 ### JSX
 
 The JSX format uses front matter to set default props for the rendered component.
-To provide components in scope, use the `scope` option in front-matter and include a JavaScript import statment.
+To provide components in scope, use the `scope` option in front-matter and include a JavaScript import statement.
 
 **Example .jsx file**
 ```jsx
