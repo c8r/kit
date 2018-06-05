@@ -128,6 +128,9 @@ Divider.displayName = 'Divider'
 export const Text = nano('div')({}, typeScale)
 Text.displayName = 'Text'
 
+export const Code = nano(Text)({ fontFamily: 'monospace' })
+Code.displayName = 'Code'
+
 export default {
   Box,
   Flex,
