@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button } from 'rebass'
+import contrast from 'get-contrast'
 import { Debug } from '.'
 import { flatten } from './util'
 import { Box, Code, Flex, Text } from './ui'
@@ -9,12 +10,25 @@ export const Swatch = ({ name, value, ...props }) => (
     <Box p={3} {...props}>
       <Box bg={value} p={[3, 4, 5]} />
       <Text>{name}</Text>
-      <Code f={5}>{value}</Code>
+      <Code f={0}>{value}</Code>
     </Box>
   </React.Fragment>
 )
 
-export default ({ colors }) => {
+export const Contrast = ({ color, bg, children }) => (
+  <Box p={[3, 4, 5]} bg={bg} color={color}>
+    <Text f={[5, 6, 128]} fontWeight='bold'>
+      Aa
+    </Text>
+    <Flex alignItems='baseline'>
+      <Code f={6}>{contrast.ratio(bg, color).toFixed(2)}</Code>
+      <Text f={4} fontWeight='bold'>{contrast.score(bg, color)}</Text>
+    </Flex>
+    {children}
+  </Box>
+)
+
+const Color = ({ colors }) => {
   const colorsObj = flatten(colors)
   const colorsArr = Object.keys(colorsObj).reduce((acc, key) =>
     acc.concat([{ key, name: key, value: colorsObj[key] }])
@@ -32,3 +46,8 @@ export default ({ colors }) => {
     />
   )
 }
+
+Color.Swatch = Swatch
+Color.Contrast = Contrast
+
+export default Color

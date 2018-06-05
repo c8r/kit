@@ -20,18 +20,18 @@ exports[`Color returns a color palette 1`] = `
         .nano1xaelp3{background-color:red}.nano1xaelp3{padding:16px}@media screen and (min-width: 40em){.nano1xaelp3{padding:32px}}@media screen and (min-width: 52em){.nano1xaelp3{padding:64px}}
       </style>
       <div
-        class="nano1frwtyz"
+        class="nanodam2oa"
       >
         red
       </div>
       <div
-        class="nano2wtv61"
-        f="5"
+        class="nano1w9c1kb"
+        f="0"
       >
         red
       </div>
       <style>
-        .nano2wtv61{font-family:monospace}
+        .nano1w9c1kb{font-size:12px}.nano1w9c1kb{font-family:monospace}
       </style>
     </div>
     <style>
@@ -51,18 +51,18 @@ exports[`Color returns a color palette 1`] = `
         .nano196y4lx{background-color:#fafafa}.nano196y4lx{padding:16px}@media screen and (min-width: 40em){.nano196y4lx{padding:32px}}@media screen and (min-width: 52em){.nano196y4lx{padding:64px}}
       </style>
       <div
-        class="nano1frwtyz"
+        class="nanodam2oa"
       >
         gray.light.0
       </div>
       <div
-        class="nano2wtv61"
-        f="5"
+        class="nano1w9c1kb"
+        f="0"
       >
         #fafafa
       </div>
       <style>
-        .nano2wtv61{font-family:monospace}
+        .nano1w9c1kb{font-size:12px}.nano1w9c1kb{font-family:monospace}
       </style>
     </div>
     <style>
@@ -82,18 +82,18 @@ exports[`Color returns a color palette 1`] = `
         .nano1s15u4n{background-color:#f5f5f5}.nano1s15u4n{padding:16px}@media screen and (min-width: 40em){.nano1s15u4n{padding:32px}}@media screen and (min-width: 52em){.nano1s15u4n{padding:64px}}
       </style>
       <div
-        class="nano1frwtyz"
+        class="nanodam2oa"
       >
         gray.light.1
       </div>
       <div
-        class="nano2wtv61"
-        f="5"
+        class="nano1w9c1kb"
+        f="0"
       >
         #f5f5f5
       </div>
       <style>
-        .nano2wtv61{font-family:monospace}
+        .nano1w9c1kb{font-size:12px}.nano1w9c1kb{font-family:monospace}
       </style>
     </div>
     <style>
@@ -113,18 +113,18 @@ exports[`Color returns a color palette 1`] = `
         .nano1t3dqvu{background-color:#555}.nano1t3dqvu{padding:16px}@media screen and (min-width: 40em){.nano1t3dqvu{padding:32px}}@media screen and (min-width: 52em){.nano1t3dqvu{padding:64px}}
       </style>
       <div
-        class="nano1frwtyz"
+        class="nanodam2oa"
       >
         gray.dark.0
       </div>
       <div
-        class="nano2wtv61"
-        f="5"
+        class="nano1w9c1kb"
+        f="0"
       >
         #555
       </div>
       <style>
-        .nano2wtv61{font-family:monospace}
+        .nano1w9c1kb{font-size:12px}.nano1w9c1kb{font-family:monospace}
       </style>
     </div>
     <style>
@@ -144,18 +144,18 @@ exports[`Color returns a color palette 1`] = `
         .nano10zut2{background-color:#111}.nano10zut2{padding:16px}@media screen and (min-width: 40em){.nano10zut2{padding:32px}}@media screen and (min-width: 52em){.nano10zut2{padding:64px}}
       </style>
       <div
-        class="nano1frwtyz"
+        class="nanodam2oa"
       >
         gray.dark.1
       </div>
       <div
-        class="nano2wtv61"
-        f="5"
+        class="nano1w9c1kb"
+        f="0"
       >
         #111
       </div>
       <style>
-        .nano2wtv61{font-family:monospace}
+        .nano1w9c1kb{font-size:12px}.nano1w9c1kb{font-family:monospace}
       </style>
     </div>
     <style>
@@ -175,18 +175,18 @@ exports[`Color returns a color palette 1`] = `
         .nano14dth52{background-color:black}.nano14dth52{padding:16px}@media screen and (min-width: 40em){.nano14dth52{padding:32px}}@media screen and (min-width: 52em){.nano14dth52{padding:64px}}
       </style>
       <div
-        class="nano1frwtyz"
+        class="nanodam2oa"
       >
         brand.black
       </div>
       <div
-        class="nano2wtv61"
-        f="5"
+        class="nano1w9c1kb"
+        f="0"
       >
         black
       </div>
       <style>
-        .nano2wtv61{font-family:monospace}
+        .nano1w9c1kb{font-size:12px}.nano1w9c1kb{font-family:monospace}
       </style>
     </div>
     <style>
@@ -206,18 +206,18 @@ exports[`Color returns a color palette 1`] = `
         .nano12ssf5h{background-color:white}.nano12ssf5h{padding:16px}@media screen and (min-width: 40em){.nano12ssf5h{padding:32px}}@media screen and (min-width: 52em){.nano12ssf5h{padding:64px}}
       </style>
       <div
-        class="nano1frwtyz"
+        class="nanodam2oa"
       >
         brand.white
       </div>
       <div
-        class="nano2wtv61"
-        f="5"
+        class="nano1w9c1kb"
+        f="0"
       >
         white
       </div>
       <style>
-        .nano2wtv61{font-family:monospace}
+        .nano1w9c1kb{font-size:12px}.nano1w9c1kb{font-family:monospace}
       </style>
     </div>
     <style>
@@ -237,18 +237,18 @@ exports[`Color returns a color palette 1`] = `
         .nano1vlwojg{background-color:tomato}.nano1vlwojg{padding:16px}@media screen and (min-width: 40em){.nano1vlwojg{padding:32px}}@media screen and (min-width: 52em){.nano1vlwojg{padding:64px}}
       </style>
       <div
-        class="nano1frwtyz"
+        class="nanodam2oa"
       >
         brand.tomato
       </div>
       <div
-        class="nano2wtv61"
-        f="5"
+        class="nano1w9c1kb"
+        f="0"
       >
         tomato
       </div>
       <style>
-        .nano2wtv61{font-family:monospace}
+        .nano1w9c1kb{font-size:12px}.nano1w9c1kb{font-family:monospace}
       </style>
     </div>
     <style>

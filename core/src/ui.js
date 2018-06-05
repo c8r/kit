@@ -9,7 +9,10 @@ import {
   flexDirection,
   flex,
   alignSelf,
-  typeScale,
+  fontSize,
+  fontWeight,
+  lineHeight,
+  maxWidth,
   util
 } from 'styled-system'
 
@@ -125,7 +128,15 @@ export const Divider = nano('hr')({
 })
 Divider.displayName = 'Divider'
 
-export const Text = nano('div')({}, typeScale)
+export const Measure = nano('p')({}, fontSize, lineHeight, maxWidth)
+Measure.displayName = 'Measure'
+Measure.defaultProps = {
+  fontSize: 3,
+  lineHeight: 1.8,
+  maxWidth: '30em'
+}
+
+export const Text = nano('div')({}, fontSize, fontWeight)
 Text.displayName = 'Text'
 
 export const Code = nano(Text)({ fontFamily: 'monospace' })
