@@ -40,6 +40,32 @@ const cartesianProduct = ({ theme = {}, ...props }) => {
   return map(mergeAll, xproduct(parsedProps))
 }
 
+const keyify = keys => keys.join('.')
+const isString = s => typeof s === 'string'
+const isArray = a => Array.isArray(a)
+const isObject = o => typeof o === 'object' && !isArray(o)
+
+const flatten = (obj, parentKeys = []) =>
+  Object.keys(obj)
+    .reduce((acc, key) => {
+      const val = obj[key]
+      const keys = parentKeys.concat([key])
+
+      if (isString(val)) {
+        acc[keyify(keys)] = val
+        return acc
+      } else if (isObject(val)) {
+        return Object.assign(acc, flatten(val, keys))
+      }
+
+      val.forEach((v, i) => {
+        const key = keyify(keys.concat([i]))
+        acc[key] = v
+      })
+
+      return acc
+    }, {})
+
 export {
   log,
   introPage,
@@ -48,5 +74,6 @@ export {
   toSrcPath,
   displayObj,
   extendDefaultProps,
-  cartesianProduct
+  cartesianProduct,
+  flatten
 }

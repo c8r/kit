@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`flatten flattens an object 1`] = `
+Object {
+  "brand.black": "black",
+  "brand.tomato": "tomato",
+  "brand.white": "white",
+  "gray.dark.0": "#555",
+  "gray.dark.1": "#111",
+  "gray.light.0": "#fafafa",
+  "gray.light.1": "#f5f5f5",
+  "red": "red",
+}
+`;
