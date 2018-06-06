@@ -44,7 +44,7 @@ module.exports = opts => {
       })
     ]
   }
-
+  opts.title = 'Kit'
   opts.app = modes[opts.mode] || null
 
   return dev(opts)
