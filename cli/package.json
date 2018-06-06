@@ -20,6 +20,7 @@
     "src"
   ],
   "dependencies": {
+    "@compositor/kit": "^1.0.37",
     "@compositor/log": "^1.0.0-0",
     "@compositor/x0": "^5.0.4",
     "babel-plugin-transform-react-jsx": "^6.24.1",
@@ -47,30 +48,23 @@
   },
   "devDependencies": {
     "ava": "^0.20.0",
+    "browser-env": "^3.2.5",
     "eslint-config-xo-react": "^0.13.0",
     "eslint-plugin-react": "^7.1.0",
     "prettier": "^1.12.1",
+    "react-test-renderer": "^16.4.0",
+    "styled-components": "^3.3.2",
     "xo": "^0.18.2"
   },
   "publishConfig": {
     "access": "public"
   },
   "ava": {
-    "babel": {
-      "presets": [
-        "@ava/stage-4"
-      ],
-      "plugins": [
-        [
-          "transform-react-jsx",
-          {
-            "pragma": "h",
-            "useBuiltIns": true,
-            "pragmaFrag": "h.Fragment"
-          }
-        ]
-      ]
-    }
+    "require": [
+      "babel-register",
+      "./test/helpers/browser.js"
+    ],
+    "babel": "inherit"
   },
   "prettier": {
     "semi": false,

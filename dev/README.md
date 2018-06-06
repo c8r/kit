@@ -1,6 +1,8 @@
 
 # Kit dev server
 
+**DEPRECATED** see [@compositor/kit-cli](../cli)
+
 Isolated development server for React components
 
 - Zero configuration
