@@ -22,7 +22,7 @@
   ],
   "dependencies": {
     "@compositor/log": "^1.0.0-0",
-    "@compositor/x0": "^5.0.4-1",
+    "@compositor/x0": "^5.0.4",
     "chalk": "^2.4.1",
     "clipboardy": "^1.2.3",
     "execa": "^0.10.0",
