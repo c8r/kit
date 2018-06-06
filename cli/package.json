@@ -1,6 +1,6 @@
 {
   "name": "@compositor/kit-cli",
-  "version": "1.0.38-3",
+  "version": "1.0.38-4",
   "description": "Compositor Kit CLI",
   "license": "MIT",
   "repository": "c8r/kit-cli",
@@ -38,6 +38,7 @@
     "meow": "^5.0.0",
     "pkg-conf": "^2.1.0",
     "prop-types": "^15.5.10",
+    "react": "^16.4.0",
     "update-notifier": "^2.5.0"
   },
   "devDependencies": {
