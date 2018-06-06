@@ -37,7 +37,8 @@ export default props =>
   <Button>Button</Button>
 ```
 
-Start the development server.
+Be sure to install any local dependencies, including `react`,
+and start the development server.
 
 ```sh
 kit examples

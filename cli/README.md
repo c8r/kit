@@ -9,6 +9,7 @@ $ npm install --global @compositor/kit-cli
 ## Development Server
 
 Run the Kit dev server with a folder of example components or a single component.
+Be sure that any local dependencies, including `react` are installed.
 
 ```sh
 kit examples
