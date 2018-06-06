@@ -12,6 +12,11 @@ const modes = {
 
 module.exports = opts => {
   opts.webpack = {
+    resolve: {
+      alias: {
+        'webpack-hot-client/client': path.resolve('../node_modules/webpack-hot-client/client')
+      }
+    },
     plugins: [
       new webpack.DefinePlugin({
         USER_APP: JSON.stringify(opts.app)
