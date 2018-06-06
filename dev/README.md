@@ -11,13 +11,21 @@ Isolated development server for React components
 - Supports MDX & JSX formats
 
 ```sh
-npm i -g @compositor/kit-cli
+npm i --save-dev @compositor/kit-cli
 ```
 
-Start the dev server by passing a directory of components as the first argument.
+Add a run script to your `package.json`, passing a directory of components as the first argument.
+
+```json
+"scripts": {
+  "dev": "kit examples"
+}
+```
+
+Start the dev server
 
 ```sh
-kit examples
+npm run dev
 ```
 
 ## Options
