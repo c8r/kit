@@ -4,7 +4,6 @@
     "cli",
     "core",
     "create-kit",
-    "dev",
     "md",
     "md-loader",
     "snapshot",
