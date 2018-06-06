@@ -14,7 +14,7 @@ module.exports = opts => {
   opts.webpack = {
     resolve: {
       alias: {
-        'webpack-hot-client/client': path.resolve('../node_modules/webpack-hot-client/client')
+        'webpack-hot-client/client': path.join(__dirname, '../node_modules/webpack-hot-client/client')
       }
     },
     plugins: [
