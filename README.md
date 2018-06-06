@@ -17,10 +17,10 @@ Tools for developing, documenting, and testing React component libraries
 
 ## Getting Started
 
-Install the Kit CLI to get started with isolated component development.
+Install the Kit CLI in your project to get started with isolated component development.
 
 ```sh
-npm i -g @compositor/kit-cli
+npm i --save-dev @compositor/kit-cli
 ```
 
 Create an `examples` folder for your components.
@@ -37,10 +37,18 @@ export default props =>
   <Button>Button</Button>
 ```
 
+Add a script to your `package.json`
+
+```json
+"scripts": {
+  "dev": "kit examples"
+}
+```
+
 Start the development server.
 
 ```sh
-kit examples
+npm run dev
 ```
 
 The index will show a list of links to each example.
@@ -50,8 +58,10 @@ Each example will have its own route where it can be viewed in isolation.
 
 To view all examples in library mode with persistent navigation, use the `--mode` flag.
 
-```sh
-kit examples --mode library
+```json
+"scripts": {
+  "dev": "kit examples --mode library"
+}
 ```
 
 ## Utility Components
