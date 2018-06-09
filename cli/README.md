@@ -58,6 +58,12 @@ All command line options can be set in your `package.json` file with a `kit` fie
 By default, the Kit dev server renders each component in isolation with minimal base styling for the document.
 Use the `--mode` flag to enable alternative modes for the development UI.
 
+Current modes include:
+- `library`
+- `responsive`
+- `xray`
+- `sandbox` (experimental)
+
 #### Library Mode
 
 Renders components using the [Kit Library component][Library] component, which displays all components together in a grid and in isolation when clicked.
