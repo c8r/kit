@@ -1,6 +1,6 @@
 import path from 'path'
 import test from 'ava'
-import dev from '..'
+import dev from '../lib/dev'
 
 const opts = {
   dirname: path.join(__dirname, './fixtures')

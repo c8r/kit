@@ -20,14 +20,14 @@ const routes = [
 
 global.DIRNAME = 'hello'
 
-test('Library renders', t => {
-  const json = renderJSON(<Library />)
+test.skip('Library renders', t => {
+  const json = renderJSON(<Library examples={[]} />)
   t.snapshot(json)
 })
 
 test('Responsive renders', t => {
   const json = renderJSON(
-    <StaticRouter>
+    <StaticRouter context={{}}>
       <Responsive routes={routes} />
     </StaticRouter>
   )
@@ -36,7 +36,9 @@ test('Responsive renders', t => {
 
 test('Responsive renders with a path', t => {
   const json = renderJSON(
-    <StaticRouter location='/hello'>
+    <StaticRouter
+      context={{}}
+      location='/hello'>
       <Responsive routes={routes} />
     </StaticRouter>
   )

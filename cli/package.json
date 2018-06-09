@@ -1,6 +1,6 @@
 {
   "name": "@compositor/kit-cli",
-  "version": "1.0.37",
+  "version": "1.0.38-7",
   "description": "Compositor Kit CLI",
   "license": "MIT",
   "repository": "c8r/kit-cli",
@@ -20,8 +20,14 @@
     "src"
   ],
   "dependencies": {
-    "@compositor/kit-dev": "^1.0.37",
+    "@compositor/kit": "^1.0.37",
     "@compositor/log": "^1.0.0-0",
+    "@compositor/x0": "^5.0.4",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
     "chalk": "^2.4.1",
     "clipboardy": "^1.2.3",
     "execa": "^0.10.0",
@@ -37,35 +43,30 @@
     "meow": "^5.0.0",
     "pkg-conf": "^2.1.0",
     "prop-types": "^15.5.10",
+    "react": "^16.4.0",
     "update-notifier": "^2.5.0"
   },
   "devDependencies": {
     "ava": "^0.20.0",
-    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "browser-env": "^3.2.5",
     "eslint-config-xo-react": "^0.13.0",
     "eslint-plugin-react": "^7.1.0",
     "prettier": "^1.12.1",
+    "react-test-renderer": "^16.4.0",
+    "rebass": "^2.0.0-2",
+    "refunk": "^3.0.1",
+    "styled-components": "^3.3.2",
     "xo": "^0.18.2"
   },
   "publishConfig": {
     "access": "public"
   },
   "ava": {
-    "babel": {
-      "presets": [
-        "@ava/stage-4"
-      ],
-      "plugins": [
-        [
-          "transform-react-jsx",
-          {
-            "pragma": "h",
-            "useBuiltIns": true,
-            "pragmaFrag": "h.Fragment"
-          }
-        ]
-      ]
-    }
+    "require": [
+      "babel-register",
+      "./test/helpers/browser.js"
+    ],
+    "babel": "inherit"
   },
   "prettier": {
     "semi": false,
