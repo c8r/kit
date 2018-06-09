@@ -9,7 +9,9 @@ $ npm install --global @compositor/kit-cli
 
 ## Development Server
 
-Isolated development server for React components
+Isolated development server for React components, powered by [x0][x0]
+
+[x0]: https://github.com/c8r/x0
 
 - Zero configuration
 - Hot reloading
