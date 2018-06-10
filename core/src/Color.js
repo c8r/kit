@@ -1,5 +1,4 @@
 import React from 'react'
-import { Button } from 'rebass'
 import contrast from 'get-contrast'
 import { Debug } from '.'
 import { flatten } from './util'
