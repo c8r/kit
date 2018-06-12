@@ -1,6 +1,6 @@
 {
   "name": "@compositor/kit-cli",
-  "version": "1.0.39",
+  "version": "1.0.40-1",
   "description": "Compositor Kit CLI",
   "license": "MIT",
   "repository": "c8r/kit-cli",
@@ -22,6 +22,8 @@
   "dependencies": {
     "@compositor/kit": "^1.0.39",
     "@compositor/log": "^1.0.0-0",
+    "@compositor/md": "^1.0.34",
+    "@compositor/md-loader": "^1.0.34",
     "@compositor/x0": "^5.0.4",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-plugin-transform-runtime": "^6.23.0",

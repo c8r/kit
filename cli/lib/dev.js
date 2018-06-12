@@ -30,12 +30,30 @@ module.exports = opts => {
               'babel-plugin-transform-runtime'
             ].map(require.resolve)
           }
+        },
+        {
+          test: /\.md$/,
+          exclude: /node_modules/,
+          use: [
+            {
+              loader: require.resolve('babel-loader'),
+              options: babel
+            },
+            { loader: require.resolve('@compositor/md-loader') }
+          ]
         }
       ],
     },
     resolve: {
+      modules: [
+        __dirname,
+        path.join(__dirname, '../node_modules'),
+        path.relative(process.cwd(), path.join(__dirname, '../node_modules')),
+        'node_modules'
+      ]
       alias: {
-        'webpack-hot-client/client': path.join(__dirname, '../node_modules/webpack-hot-client/client')
+        'webpack-hot-client/client': path.join(__dirname, '../node_modules/webpack-hot-client/client'),
+        '@compositor/md': path.join(__dirname, '../node_modules/@compositor/md')
       }
     },
     plugins: [
