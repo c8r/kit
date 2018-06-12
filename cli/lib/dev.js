@@ -50,7 +50,7 @@ module.exports = opts => {
         path.join(__dirname, '../node_modules'),
         path.relative(process.cwd(), path.join(__dirname, '../node_modules')),
         'node_modules'
-      ]
+      ],
       alias: {
         'webpack-hot-client/client': path.join(__dirname, '../node_modules/webpack-hot-client/client'),
         '@compositor/md': path.join(__dirname, '../node_modules/@compositor/md')
