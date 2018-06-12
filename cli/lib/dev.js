@@ -29,7 +29,7 @@ module.exports = opts => {
         {
           test: /\.js$/,
           exclude: path.resolve(__dirname, '../node_modules'),
-          include: path.resolve(__dirname),
+          include: path.resolve(__dirname, '..'),
           loader: require.resolve('babel-loader'),
           options: babel
         },
