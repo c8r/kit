@@ -1,6 +1,6 @@
 {
   "name": "@compositor/kit-cli",
-  "version": "1.0.40-4",
+  "version": "1.0.40-5",
   "description": "Compositor Kit CLI",
   "license": "MIT",
   "repository": "c8r/kit-cli",
@@ -46,6 +46,7 @@
     "pkg-conf": "^2.1.0",
     "prop-types": "^15.5.10",
     "react": "^16.4.0",
+    "styled-components": "^3.3.2",
     "update-notifier": "^2.5.0"
   },
   "devDependencies": {
@@ -57,7 +58,6 @@
     "react-test-renderer": "^16.4.0",
     "rebass": "^2.0.0-2",
     "refunk": "^3.0.1",
-    "styled-components": "^3.3.2",
     "xo": "^0.18.2"
   },
   "publishConfig": {
