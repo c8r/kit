@@ -17,7 +17,7 @@ module.exports = opts => {
         {
           test: /\.js$/,
           exclude: path.resolve(__dirname, '../node_modules'),
-          include: path.resolve(__dirname),
+          include: path.resolve(__dirname, '..'),
           loader: require.resolve('babel-loader'),
           options: {
             presets: [
@@ -34,6 +34,12 @@ module.exports = opts => {
       ],
     },
     resolve: {
+      modules: [
+        __dirname,
+        path.join(__dirname, '../node_modules'),
+        path.relative(process.cwd(), path.join(__dirname, '../node_modules')),
+        'node_modules'
+      ],
       alias: {
         'webpack-hot-client/client': path.join(__dirname, '../node_modules/webpack-hot-client/client')
       }
