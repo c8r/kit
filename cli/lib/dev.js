@@ -10,6 +10,18 @@ const modes = {
   xray: path.join(dirname, 'XRay'),
 }
 
+const babel = {
+  presets: [
+    'babel-preset-env',
+    'babel-preset-stage-0',
+    'babel-preset-react',
+  ].map(require.resolve),
+  plugins: [
+    'babel-plugin-macros',
+    'babel-plugin-transform-runtime'
+  ].map(require.resolve)
+}
+
 module.exports = opts => {
   opts.webpack = {
     module: {
@@ -19,17 +31,7 @@ module.exports = opts => {
           exclude: path.resolve(__dirname, '../node_modules'),
           include: path.resolve(__dirname),
           loader: require.resolve('babel-loader'),
-          options: {
-            presets: [
-              'babel-preset-env',
-              'babel-preset-stage-0',
-              'babel-preset-react',
-            ].map(require.resolve),
-            plugins: [
-              'babel-plugin-macros',
-              'babel-plugin-transform-runtime'
-            ].map(require.resolve)
-          }
+          options: babel
         },
         {
           test: /\.md$/,
