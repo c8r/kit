@@ -32,7 +32,12 @@ const colors = {
 export default () => (
   <React.Fragment>
     <Color colors={colors} />
-    <Color.Group prefix='indigo' colors={indigo} />
+    <Color.Group
+      prefix='indigo'
+      colors={indigo}
+      lightText={indigo[0]}
+      darkTex={indigo[7]}
+    />
     <Color.Group prefix='indigo' flexDirection='column' colors={indigo} />
     <Color.Contrast bg='tomato' color='black'>
       <Text>Tomato + Black</Text>
