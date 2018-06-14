@@ -9,14 +9,14 @@ const initit = require('initit')
 
 const { log, error, complete } = require('../lib/log')
 
-const Item = importJsx('./ListItem')
 const { projectTemplates, templatesDir } = require('../lib/constants')
 const items = projectTemplates.map(t => ({ label: t, value: t }))
 const ProjectSelect = ({ items, onSelect }) => (
   <div>
-    <Text>Select project template</Text>
-    <br />
-    <Select items={items} itemComponent={Item} onSelect={onSelect} />
+    <div>
+      <Text>Select project template</Text>
+    </div>
+    <Select items={items} onSelect={onSelect} />
   </div>
 )
 
