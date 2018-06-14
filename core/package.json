@@ -2,7 +2,7 @@
   "name": "@compositor/kit",
   "description": "Components for development environments, style guides, and demos",
   "author": "Compositor",
-  "version": "1.0.40",
+  "version": "1.0.41",
   "main": "dist/index.js",
   "files": [
     "dist"
@@ -45,7 +45,7 @@
     "styled-system": "^2.2.1"
   },
   "devDependencies": {
-    "@compositor/kit-cli": "^1.0.40",
+    "@compositor/kit-cli": "^1.0.41",
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-regenerator": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
