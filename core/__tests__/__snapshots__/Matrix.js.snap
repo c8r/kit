@@ -10,7 +10,7 @@ exports[`Matrix renders all examples 1`] = `
       w="512"
     >
       <svg
-        class="sc-eqIVtm gaFCZx"
+        class="sc-cHGsZl dgyxZK"
         height="128"
         stroke-width="2"
         value="0.2"
@@ -47,7 +47,7 @@ exports[`Matrix renders all examples 1`] = `
       w="512"
     >
       <svg
-        class="sc-eqIVtm cZnNKo"
+        class="sc-cHGsZl kHqkDi"
         height="128"
         stroke-width="2"
         value="0.2"
@@ -84,7 +84,7 @@ exports[`Matrix renders all examples 1`] = `
       w="512"
     >
       <svg
-        class="sc-eqIVtm dzHqn"
+        class="sc-cHGsZl iyNBzh"
         height="128"
         stroke-width="2"
         value="0.2"
@@ -121,7 +121,7 @@ exports[`Matrix renders all examples 1`] = `
       w="512"
     >
       <svg
-        class="sc-eqIVtm kiJDuI"
+        class="sc-cHGsZl dEoevi"
         height="128"
         stroke-width="2"
         value="0.2"
@@ -165,7 +165,7 @@ exports[`Matrix renders all examples 1`] = `
       w="512"
     >
       <svg
-        class="sc-eqIVtm gaFCZx"
+        class="sc-cHGsZl dgyxZK"
         height="128"
         stroke-width="2"
         value="0.25"
@@ -202,7 +202,7 @@ exports[`Matrix renders all examples 1`] = `
       w="512"
     >
       <svg
-        class="sc-eqIVtm cZnNKo"
+        class="sc-cHGsZl kHqkDi"
         height="128"
         stroke-width="2"
         value="0.25"
@@ -239,7 +239,7 @@ exports[`Matrix renders all examples 1`] = `
       w="512"
     >
       <svg
-        class="sc-eqIVtm dzHqn"
+        class="sc-cHGsZl iyNBzh"
         height="128"
         stroke-width="2"
         value="0.25"
@@ -276,7 +276,7 @@ exports[`Matrix renders all examples 1`] = `
       w="512"
     >
       <svg
-        class="sc-eqIVtm kiJDuI"
+        class="sc-cHGsZl dEoevi"
         height="128"
         stroke-width="2"
         value="0.25"
@@ -320,7 +320,7 @@ exports[`Matrix renders all examples 1`] = `
       w="512"
     >
       <svg
-        class="sc-eqIVtm gaFCZx"
+        class="sc-cHGsZl dgyxZK"
         height="128"
         stroke-width="2"
         value="0.3333333333333333"
@@ -357,7 +357,7 @@ exports[`Matrix renders all examples 1`] = `
       w="512"
     >
       <svg
-        class="sc-eqIVtm cZnNKo"
+        class="sc-cHGsZl kHqkDi"
         height="128"
         stroke-width="2"
         value="0.3333333333333333"
@@ -394,7 +394,7 @@ exports[`Matrix renders all examples 1`] = `
       w="512"
     >
       <svg
-        class="sc-eqIVtm dzHqn"
+        class="sc-cHGsZl iyNBzh"
         height="128"
         stroke-width="2"
         value="0.3333333333333333"
@@ -431,7 +431,7 @@ exports[`Matrix renders all examples 1`] = `
       w="512"
     >
       <svg
-        class="sc-eqIVtm kiJDuI"
+        class="sc-cHGsZl dEoevi"
         height="128"
         stroke-width="2"
         value="0.3333333333333333"
@@ -475,7 +475,7 @@ exports[`Matrix renders all examples 1`] = `
       w="512"
     >
       <svg
-        class="sc-eqIVtm gaFCZx"
+        class="sc-cHGsZl dgyxZK"
         height="128"
         stroke-width="2"
         value="0.75"
@@ -512,7 +512,7 @@ exports[`Matrix renders all examples 1`] = `
       w="512"
     >
       <svg
-        class="sc-eqIVtm cZnNKo"
+        class="sc-cHGsZl kHqkDi"
         height="128"
         stroke-width="2"
         value="0.75"
@@ -549,7 +549,7 @@ exports[`Matrix renders all examples 1`] = `
       w="512"
     >
       <svg
-        class="sc-eqIVtm dzHqn"
+        class="sc-cHGsZl iyNBzh"
         height="128"
         stroke-width="2"
         value="0.75"
@@ -586,7 +586,7 @@ exports[`Matrix renders all examples 1`] = `
       w="512"
     >
       <svg
-        class="sc-eqIVtm kiJDuI"
+        class="sc-cHGsZl dEoevi"
         height="128"
         stroke-width="2"
         value="0.75"
