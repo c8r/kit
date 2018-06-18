@@ -2,8 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import nano from 'nano-style'
 import {
-  BrowserRouter,
-  StaticRouter,
+  HashRouter,
   Route,
   NavLink,
   Link,
@@ -64,16 +63,14 @@ const NavItem = nano(NavLink)({
   }
 })
 
-const Router = typeof document !== 'undefined' ? BrowserRouter : StaticRouter
-
 export class Library extends React.Component {
   render() {
     const { basename, ...props } = this.props
 
     return (
-      <Router basename={basename} context={{}}>
+      <HashRouter basename={basename}>
         <LibraryApp {...props} />
-      </Router>
+      </HashRouter>
     )
   }
 }
