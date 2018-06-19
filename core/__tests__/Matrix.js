@@ -1,8 +1,9 @@
 import React from 'react'
 import { render } from 'react-testing-library'
-import { Donut } from 'rebass'
-
+import styled from 'nano-style'
 import { Matrix } from '../src'
+
+const Donut = styled('progress')(props => ({ color: props.color }))
 
 test('Matrix renders all examples', () => {
   const { container } = render(

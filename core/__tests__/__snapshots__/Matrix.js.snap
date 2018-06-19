@@ -9,35 +9,14 @@ exports[`Matrix renders all examples 1`] = `
       class="nano1d47vpu"
       w="512"
     >
-      <svg
-        class="sc-cHGsZl dgyxZK"
-        height="128"
-        stroke-width="2"
+      <progress
+        class="nanokmk6w3"
+        color="blue "
         value="0.2"
-        viewBox="0 0 32 32"
-        width="128"
-      >
-        <circle
-          cx="16"
-          cy="16"
-          fill="none"
-          opacity="0.125"
-          r="14"
-          stroke="currentcolor"
-          stroke-width="2"
-        />
-        <circle
-          cx="16"
-          cy="16"
-          fill="none"
-          r="14"
-          stroke="currentcolor"
-          stroke-dasharray="87.96459430051421"
-          stroke-dashoffset="70.37167544041137"
-          stroke-width="2"
-          transform="rotate(-90 16 16)"
-        />
-      </svg>
+      />
+      <style>
+        .nanokmk6w3{color:blue }
+      </style>
     </div>
     <style>
       .nano1d47vpu{width:512px}
@@ -46,35 +25,14 @@ exports[`Matrix renders all examples 1`] = `
       class="nano1d47vpu"
       w="512"
     >
-      <svg
-        class="sc-cHGsZl kHqkDi"
-        height="128"
-        stroke-width="2"
+      <progress
+        class="nano1azdsrl"
+        color="pink"
         value="0.2"
-        viewBox="0 0 32 32"
-        width="128"
-      >
-        <circle
-          cx="16"
-          cy="16"
-          fill="none"
-          opacity="0.125"
-          r="14"
-          stroke="currentcolor"
-          stroke-width="2"
-        />
-        <circle
-          cx="16"
-          cy="16"
-          fill="none"
-          r="14"
-          stroke="currentcolor"
-          stroke-dasharray="87.96459430051421"
-          stroke-dashoffset="70.37167544041137"
-          stroke-width="2"
-          transform="rotate(-90 16 16)"
-        />
-      </svg>
+      />
+      <style>
+        .nano1azdsrl{color:pink}
+      </style>
     </div>
     <style>
       .nano1d47vpu{width:512px}
@@ -83,35 +41,14 @@ exports[`Matrix renders all examples 1`] = `
       class="nano1d47vpu"
       w="512"
     >
-      <svg
-        class="sc-cHGsZl iyNBzh"
-        height="128"
-        stroke-width="2"
+      <progress
+        class="nano3fmwms"
+        color="tomato"
         value="0.2"
-        viewBox="0 0 32 32"
-        width="128"
-      >
-        <circle
-          cx="16"
-          cy="16"
-          fill="none"
-          opacity="0.125"
-          r="14"
-          stroke="currentcolor"
-          stroke-width="2"
-        />
-        <circle
-          cx="16"
-          cy="16"
-          fill="none"
-          r="14"
-          stroke="currentcolor"
-          stroke-dasharray="87.96459430051421"
-          stroke-dashoffset="70.37167544041137"
-          stroke-width="2"
-          transform="rotate(-90 16 16)"
-        />
-      </svg>
+      />
+      <style>
+        .nano3fmwms{color:tomato}
+      </style>
     </div>
     <style>
       .nano1d47vpu{width:512px}
@@ -120,35 +57,14 @@ exports[`Matrix renders all examples 1`] = `
       class="nano1d47vpu"
       w="512"
     >
-      <svg
-        class="sc-cHGsZl dEoevi"
-        height="128"
-        stroke-width="2"
+      <progress
+        class="nano13y9yz"
+        color="purple"
         value="0.2"
-        viewBox="0 0 32 32"
-        width="128"
-      >
-        <circle
-          cx="16"
-          cy="16"
-          fill="none"
-          opacity="0.125"
-          r="14"
-          stroke="currentcolor"
-          stroke-width="2"
-        />
-        <circle
-          cx="16"
-          cy="16"
-          fill="none"
-          r="14"
-          stroke="currentcolor"
-          stroke-dasharray="87.96459430051421"
-          stroke-dashoffset="70.37167544041137"
-          stroke-width="2"
-          transform="rotate(-90 16 16)"
-        />
-      </svg>
+      />
+      <style>
+        .nano13y9yz{color:purple}
+      </style>
     </div>
     <style>
       .nano1d47vpu{width:512px}
@@ -164,35 +80,14 @@ exports[`Matrix renders all examples 1`] = `
       class="nano1d47vpu"
       w="512"
     >
-      <svg
-        class="sc-cHGsZl dgyxZK"
-        height="128"
-        stroke-width="2"
+      <progress
+        class="nanokmk6w3"
+        color="blue "
         value="0.25"
-        viewBox="0 0 32 32"
-        width="128"
-      >
-        <circle
-          cx="16"
-          cy="16"
-          fill="none"
-          opacity="0.125"
-          r="14"
-          stroke="currentcolor"
-          stroke-width="2"
-        />
-        <circle
-          cx="16"
-          cy="16"
-          fill="none"
-          r="14"
-          stroke="currentcolor"
-          stroke-dasharray="87.96459430051421"
-          stroke-dashoffset="65.97344572538566"
-          stroke-width="2"
-          transform="rotate(-90 16 16)"
-        />
-      </svg>
+      />
+      <style>
+        .nanokmk6w3{color:blue }
+      </style>
     </div>
     <style>
       .nano1d47vpu{width:512px}
@@ -201,35 +96,14 @@ exports[`Matrix renders all examples 1`] = `
       class="nano1d47vpu"
       w="512"
     >
-      <svg
-        class="sc-cHGsZl kHqkDi"
-        height="128"
-        stroke-width="2"
+      <progress
+        class="nano1azdsrl"
+        color="pink"
         value="0.25"
-        viewBox="0 0 32 32"
-        width="128"
-      >
-        <circle
-          cx="16"
-          cy="16"
-          fill="none"
-          opacity="0.125"
-          r="14"
-          stroke="currentcolor"
-          stroke-width="2"
-        />
-        <circle
-          cx="16"
-          cy="16"
-          fill="none"
-          r="14"
-          stroke="currentcolor"
-          stroke-dasharray="87.96459430051421"
-          stroke-dashoffset="65.97344572538566"
-          stroke-width="2"
-          transform="rotate(-90 16 16)"
-        />
-      </svg>
+      />
+      <style>
+        .nano1azdsrl{color:pink}
+      </style>
     </div>
     <style>
       .nano1d47vpu{width:512px}
@@ -238,35 +112,14 @@ exports[`Matrix renders all examples 1`] = `
       class="nano1d47vpu"
       w="512"
     >
-      <svg
-        class="sc-cHGsZl iyNBzh"
-        height="128"
-        stroke-width="2"
+      <progress
+        class="nano3fmwms"
+        color="tomato"
         value="0.25"
-        viewBox="0 0 32 32"
-        width="128"
-      >
-        <circle
-          cx="16"
-          cy="16"
-          fill="none"
-          opacity="0.125"
-          r="14"
-          stroke="currentcolor"
-          stroke-width="2"
-        />
-        <circle
-          cx="16"
-          cy="16"
-          fill="none"
-          r="14"
-          stroke="currentcolor"
-          stroke-dasharray="87.96459430051421"
-          stroke-dashoffset="65.97344572538566"
-          stroke-width="2"
-          transform="rotate(-90 16 16)"
-        />
-      </svg>
+      />
+      <style>
+        .nano3fmwms{color:tomato}
+      </style>
     </div>
     <style>
       .nano1d47vpu{width:512px}
@@ -275,35 +128,14 @@ exports[`Matrix renders all examples 1`] = `
       class="nano1d47vpu"
       w="512"
     >
-      <svg
-        class="sc-cHGsZl dEoevi"
-        height="128"
-        stroke-width="2"
+      <progress
+        class="nano13y9yz"
+        color="purple"
         value="0.25"
-        viewBox="0 0 32 32"
-        width="128"
-      >
-        <circle
-          cx="16"
-          cy="16"
-          fill="none"
-          opacity="0.125"
-          r="14"
-          stroke="currentcolor"
-          stroke-width="2"
-        />
-        <circle
-          cx="16"
-          cy="16"
-          fill="none"
-          r="14"
-          stroke="currentcolor"
-          stroke-dasharray="87.96459430051421"
-          stroke-dashoffset="65.97344572538566"
-          stroke-width="2"
-          transform="rotate(-90 16 16)"
-        />
-      </svg>
+      />
+      <style>
+        .nano13y9yz{color:purple}
+      </style>
     </div>
     <style>
       .nano1d47vpu{width:512px}
@@ -319,35 +151,14 @@ exports[`Matrix renders all examples 1`] = `
       class="nano1d47vpu"
       w="512"
     >
-      <svg
-        class="sc-cHGsZl dgyxZK"
-        height="128"
-        stroke-width="2"
+      <progress
+        class="nanokmk6w3"
+        color="blue "
         value="0.3333333333333333"
-        viewBox="0 0 32 32"
-        width="128"
-      >
-        <circle
-          cx="16"
-          cy="16"
-          fill="none"
-          opacity="0.125"
-          r="14"
-          stroke="currentcolor"
-          stroke-width="2"
-        />
-        <circle
-          cx="16"
-          cy="16"
-          fill="none"
-          r="14"
-          stroke="currentcolor"
-          stroke-dasharray="87.96459430051421"
-          stroke-dashoffset="58.643062867009476"
-          stroke-width="2"
-          transform="rotate(-90 16 16)"
-        />
-      </svg>
+      />
+      <style>
+        .nanokmk6w3{color:blue }
+      </style>
     </div>
     <style>
       .nano1d47vpu{width:512px}
@@ -356,35 +167,14 @@ exports[`Matrix renders all examples 1`] = `
       class="nano1d47vpu"
       w="512"
     >
-      <svg
-        class="sc-cHGsZl kHqkDi"
-        height="128"
-        stroke-width="2"
+      <progress
+        class="nano1azdsrl"
+        color="pink"
         value="0.3333333333333333"
-        viewBox="0 0 32 32"
-        width="128"
-      >
-        <circle
-          cx="16"
-          cy="16"
-          fill="none"
-          opacity="0.125"
-          r="14"
-          stroke="currentcolor"
-          stroke-width="2"
-        />
-        <circle
-          cx="16"
-          cy="16"
-          fill="none"
-          r="14"
-          stroke="currentcolor"
-          stroke-dasharray="87.96459430051421"
-          stroke-dashoffset="58.643062867009476"
-          stroke-width="2"
-          transform="rotate(-90 16 16)"
-        />
-      </svg>
+      />
+      <style>
+        .nano1azdsrl{color:pink}
+      </style>
     </div>
     <style>
       .nano1d47vpu{width:512px}
@@ -393,35 +183,14 @@ exports[`Matrix renders all examples 1`] = `
       class="nano1d47vpu"
       w="512"
     >
-      <svg
-        class="sc-cHGsZl iyNBzh"
-        height="128"
-        stroke-width="2"
+      <progress
+        class="nano3fmwms"
+        color="tomato"
         value="0.3333333333333333"
-        viewBox="0 0 32 32"
-        width="128"
-      >
-        <circle
-          cx="16"
-          cy="16"
-          fill="none"
-          opacity="0.125"
-          r="14"
-          stroke="currentcolor"
-          stroke-width="2"
-        />
-        <circle
-          cx="16"
-          cy="16"
-          fill="none"
-          r="14"
-          stroke="currentcolor"
-          stroke-dasharray="87.96459430051421"
-          stroke-dashoffset="58.643062867009476"
-          stroke-width="2"
-          transform="rotate(-90 16 16)"
-        />
-      </svg>
+      />
+      <style>
+        .nano3fmwms{color:tomato}
+      </style>
     </div>
     <style>
       .nano1d47vpu{width:512px}
@@ -430,35 +199,14 @@ exports[`Matrix renders all examples 1`] = `
       class="nano1d47vpu"
       w="512"
     >
-      <svg
-        class="sc-cHGsZl dEoevi"
-        height="128"
-        stroke-width="2"
+      <progress
+        class="nano13y9yz"
+        color="purple"
         value="0.3333333333333333"
-        viewBox="0 0 32 32"
-        width="128"
-      >
-        <circle
-          cx="16"
-          cy="16"
-          fill="none"
-          opacity="0.125"
-          r="14"
-          stroke="currentcolor"
-          stroke-width="2"
-        />
-        <circle
-          cx="16"
-          cy="16"
-          fill="none"
-          r="14"
-          stroke="currentcolor"
-          stroke-dasharray="87.96459430051421"
-          stroke-dashoffset="58.643062867009476"
-          stroke-width="2"
-          transform="rotate(-90 16 16)"
-        />
-      </svg>
+      />
+      <style>
+        .nano13y9yz{color:purple}
+      </style>
     </div>
     <style>
       .nano1d47vpu{width:512px}
@@ -474,35 +222,14 @@ exports[`Matrix renders all examples 1`] = `
       class="nano1d47vpu"
       w="512"
     >
-      <svg
-        class="sc-cHGsZl dgyxZK"
-        height="128"
-        stroke-width="2"
+      <progress
+        class="nanokmk6w3"
+        color="blue "
         value="0.75"
-        viewBox="0 0 32 32"
-        width="128"
-      >
-        <circle
-          cx="16"
-          cy="16"
-          fill="none"
-          opacity="0.125"
-          r="14"
-          stroke="currentcolor"
-          stroke-width="2"
-        />
-        <circle
-          cx="16"
-          cy="16"
-          fill="none"
-          r="14"
-          stroke="currentcolor"
-          stroke-dasharray="87.96459430051421"
-          stroke-dashoffset="21.99114857512855"
-          stroke-width="2"
-          transform="rotate(-90 16 16)"
-        />
-      </svg>
+      />
+      <style>
+        .nanokmk6w3{color:blue }
+      </style>
     </div>
     <style>
       .nano1d47vpu{width:512px}
@@ -511,35 +238,14 @@ exports[`Matrix renders all examples 1`] = `
       class="nano1d47vpu"
       w="512"
     >
-      <svg
-        class="sc-cHGsZl kHqkDi"
-        height="128"
-        stroke-width="2"
+      <progress
+        class="nano1azdsrl"
+        color="pink"
         value="0.75"
-        viewBox="0 0 32 32"
-        width="128"
-      >
-        <circle
-          cx="16"
-          cy="16"
-          fill="none"
-          opacity="0.125"
-          r="14"
-          stroke="currentcolor"
-          stroke-width="2"
-        />
-        <circle
-          cx="16"
-          cy="16"
-          fill="none"
-          r="14"
-          stroke="currentcolor"
-          stroke-dasharray="87.96459430051421"
-          stroke-dashoffset="21.99114857512855"
-          stroke-width="2"
-          transform="rotate(-90 16 16)"
-        />
-      </svg>
+      />
+      <style>
+        .nano1azdsrl{color:pink}
+      </style>
     </div>
     <style>
       .nano1d47vpu{width:512px}
@@ -548,35 +254,14 @@ exports[`Matrix renders all examples 1`] = `
       class="nano1d47vpu"
       w="512"
     >
-      <svg
-        class="sc-cHGsZl iyNBzh"
-        height="128"
-        stroke-width="2"
+      <progress
+        class="nano3fmwms"
+        color="tomato"
         value="0.75"
-        viewBox="0 0 32 32"
-        width="128"
-      >
-        <circle
-          cx="16"
-          cy="16"
-          fill="none"
-          opacity="0.125"
-          r="14"
-          stroke="currentcolor"
-          stroke-width="2"
-        />
-        <circle
-          cx="16"
-          cy="16"
-          fill="none"
-          r="14"
-          stroke="currentcolor"
-          stroke-dasharray="87.96459430051421"
-          stroke-dashoffset="21.99114857512855"
-          stroke-width="2"
-          transform="rotate(-90 16 16)"
-        />
-      </svg>
+      />
+      <style>
+        .nano3fmwms{color:tomato}
+      </style>
     </div>
     <style>
       .nano1d47vpu{width:512px}
@@ -585,35 +270,14 @@ exports[`Matrix renders all examples 1`] = `
       class="nano1d47vpu"
       w="512"
     >
-      <svg
-        class="sc-cHGsZl dEoevi"
-        height="128"
-        stroke-width="2"
+      <progress
+        class="nano13y9yz"
+        color="purple"
         value="0.75"
-        viewBox="0 0 32 32"
-        width="128"
-      >
-        <circle
-          cx="16"
-          cy="16"
-          fill="none"
-          opacity="0.125"
-          r="14"
-          stroke="currentcolor"
-          stroke-width="2"
-        />
-        <circle
-          cx="16"
-          cy="16"
-          fill="none"
-          r="14"
-          stroke="currentcolor"
-          stroke-dasharray="87.96459430051421"
-          stroke-dashoffset="21.99114857512855"
-          stroke-width="2"
-          transform="rotate(-90 16 16)"
-        />
-      </svg>
+      />
+      <style>
+        .nano13y9yz{color:purple}
+      </style>
     </div>
     <style>
       .nano1d47vpu{width:512px}
