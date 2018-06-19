@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'nano-style'
 import { render } from 'react-testing-library'
 import { color } from 'styled-system'
 
@@ -7,9 +7,7 @@ import { Colorable } from '../src'
 
 const colors = ['black', 'white', 'pink', 'tomato', 'purple']
 
-const Button = styled.a`
-  ${color}
-`
+const Button = styled('a')(color)
 
 test('Colorable returns all possible colors', () => {
   const { container } = render(

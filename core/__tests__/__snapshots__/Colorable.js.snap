@@ -4,133 +4,213 @@ exports[`Colorable returns all possible colors 1`] = `
 <div>
   <div>
     <a
-      class="sc-htpNat dblfbH"
+      bg="#FFFFFF"
+      class="nano1rekuk9"
       color="#000000"
     >
       Beep
     </a>
+    <style>
+      .nano1rekuk9{color:#000000;background-color:#FFFFFF}
+    </style>
     <a
-      class="sc-htpNat bRkelE"
+      bg="#FFC0CB"
+      class="nano17lvxwa"
       color="#000000"
     >
       Beep
     </a>
+    <style>
+      .nano17lvxwa{color:#000000;background-color:#FFC0CB}
+    </style>
     <a
-      class="sc-htpNat hCWoAL"
+      bg="#FF6347"
+      class="nano1ysyr7m"
       color="#000000"
     >
       Beep
     </a>
+    <style>
+      .nano1ysyr7m{color:#000000;background-color:#FF6347}
+    </style>
     <a
-      class="sc-htpNat dbuxiW"
+      bg="#800080"
+      class="nano1yc7qir"
       color="#000000"
     >
       Beep
     </a>
+    <style>
+      .nano1yc7qir{color:#000000;background-color:#800080}
+    </style>
   </div>
   <div>
     <a
-      class="sc-htpNat iHRlkx"
+      bg="#000000"
+      class="nano1u851w9"
       color="#FFFFFF"
     >
       Beep
     </a>
+    <style>
+      .nano1u851w9{color:#FFFFFF;background-color:#000000}
+    </style>
     <a
-      class="sc-htpNat kXeVah"
+      bg="#FFC0CB"
+      class="nano1nezllh"
       color="#FFFFFF"
     >
       Beep
     </a>
+    <style>
+      .nano1nezllh{color:#FFFFFF;background-color:#FFC0CB}
+    </style>
     <a
-      class="sc-htpNat ihGwIW"
+      bg="#FF6347"
+      class="nanoifq73u"
       color="#FFFFFF"
     >
       Beep
     </a>
+    <style>
+      .nanoifq73u{color:#FFFFFF;background-color:#FF6347}
+    </style>
     <a
-      class="sc-htpNat bAFdRy"
+      bg="#800080"
+      class="nano18ci12p"
       color="#FFFFFF"
     >
       Beep
     </a>
+    <style>
+      .nano18ci12p{color:#FFFFFF;background-color:#800080}
+    </style>
   </div>
   <div>
     <a
-      class="sc-htpNat gQVtPt"
+      bg="#000000"
+      class="nanojgtyut"
       color="#FFC0CB"
     >
       Beep
     </a>
+    <style>
+      .nanojgtyut{color:#FFC0CB;background-color:#000000}
+    </style>
     <a
-      class="sc-htpNat kIfOGd"
+      bg="#FFFFFF"
+      class="nano11elic6"
       color="#FFC0CB"
     >
       Beep
     </a>
+    <style>
+      .nano11elic6{color:#FFC0CB;background-color:#FFFFFF}
+    </style>
     <a
-      class="sc-htpNat iBLqPa"
+      bg="#FF6347"
+      class="nanox3jx3c"
       color="#FFC0CB"
     >
       Beep
     </a>
+    <style>
+      .nanox3jx3c{color:#FFC0CB;background-color:#FF6347}
+    </style>
     <a
-      class="sc-htpNat dpRIBe"
+      bg="#800080"
+      class="nano1a7fmai"
       color="#FFC0CB"
     >
       Beep
     </a>
+    <style>
+      .nano1a7fmai{color:#FFC0CB;background-color:#800080}
+    </style>
   </div>
   <div>
     <a
-      class="sc-htpNat jVWkKd"
+      bg="#000000"
+      class="nanoo5bn9"
       color="#FF6347"
     >
       Beep
     </a>
+    <style>
+      .nanoo5bn9{color:#FF6347;background-color:#000000}
+    </style>
     <a
-      class="sc-htpNat jONCSQ"
+      bg="#FFFFFF"
+      class="nano12qkm0v"
       color="#FF6347"
     >
       Beep
     </a>
+    <style>
+      .nano12qkm0v{color:#FF6347;background-color:#FFFFFF}
+    </style>
     <a
-      class="sc-htpNat kOZJHn"
+      bg="#FFC0CB"
+      class="nano1ndez1j"
       color="#FF6347"
     >
       Beep
     </a>
+    <style>
+      .nano1ndez1j{color:#FF6347;background-color:#FFC0CB}
+    </style>
     <a
-      class="sc-htpNat hrigZI"
+      bg="#800080"
+      class="nano19toesz"
       color="#FF6347"
     >
       Beep
     </a>
+    <style>
+      .nano19toesz{color:#FF6347;background-color:#800080}
+    </style>
   </div>
   <div>
     <a
-      class="sc-htpNat exdLno"
+      bg="#000000"
+      class="nano19oobb2"
       color="#800080"
     >
       Beep
     </a>
+    <style>
+      .nano19oobb2{color:#800080;background-color:#000000}
+    </style>
     <a
-      class="sc-htpNat ljFhXe"
+      bg="#FFFFFF"
+      class="nanokboarc"
       color="#800080"
     >
       Beep
     </a>
+    <style>
+      .nanokboarc{color:#800080;background-color:#FFFFFF}
+    </style>
     <a
-      class="sc-htpNat jwFnuc"
+      bg="#FFC0CB"
+      class="nanorx2046"
       color="#800080"
     >
       Beep
     </a>
+    <style>
+      .nanorx2046{color:#800080;background-color:#FFC0CB}
+    </style>
     <a
-      class="sc-htpNat OTHyq"
+      bg="#FF6347"
+      class="nano1ct90ib"
       color="#800080"
     >
       Beep
     </a>
+    <style>
+      .nano1ct90ib{color:#800080;background-color:#FF6347}
+    </style>
   </div>
 </div>
 `;
