@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import Editor from '@compositor/react-editor'
+import { Editor } from 'react-live'
 import fetch from 'isomorphic-fetch'
 
 import { Box, Divider, Label, Select } from './ui'
@@ -8,9 +8,10 @@ const FetchEditor = ({
   onDataChange,
   onFetchStateChange,
   fetchState,
-  editedData = '{}'
+  data = {}
 }) => {
   const fetchStates = ['loading', 'fetched', 'error']
+  const code = JSON.stringify(data, null, 2)
 
   return (
     <Fragment>
@@ -32,7 +33,7 @@ const FetchEditor = ({
       </Box>
       <Divider />
       <Editor
-        value={JSON.stringify(editedData, null, 2)}
+        code={code}
         onChange={onDataChange}
         lang='jsx'
       />
@@ -71,7 +72,8 @@ export default class Fetch extends Component {
 
       this.setState({
         fetchState: 'fetched',
-        editedData: data,
+        // this might be duplicative state?
+        code: JSON.stringify(data, null, 2),
         data
       })
     } catch (error) {
@@ -95,9 +97,9 @@ export default class Fetch extends Component {
 
     try {
       const data = JSON.parse(value)
-      this.setState({ data, editedData: value })
+      this.setState({ data })
     } catch (e) {
-      this.setState({ editedData: value })
+      this.setState({ code: value })
     }
   }
 
