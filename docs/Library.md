@@ -85,6 +85,64 @@ examples.forEach(example => {
 })
 ```
 
+### Customizing the Library styles
+
+The Library component's side navigation and cards can be customized using [render props][render-props].
+
+To customize the side navigation, use the `renderSideNav` prop, which receives props for the `title` and an `examples` array.
+
+```jsx
+// custom side nav example
+import React from 'react'
+import { Library } from '@compositor/kit'
+import { NavLink } from 'react-router-dom'
+import examples from '../examples'
+
+export default props =>
+  <Library
+    title='My Library'
+    examples={examples}
+    renderSideNav={({
+      title,
+      examples,
+    }) => (
+      <div>
+        <h1>{title}</h1>
+        <ul>
+          {examples.map(example => (
+            <li key={example.name}>
+              <NavLink to={'/' + example.name}>
+                {example.name}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+  />
+```
+
+To customize the card rendered in the Library grid view, use the `renderCard` prop.
+
+```jsx
+import React from 'react'
+import { Library } from '@compositor/kit'
+import examples from '../examples'
+
+export default props =>
+  <Library
+    title='My Library'
+    examples={examples}
+    renderCard={({ example, Card, Link }) => (
+      <Link
+        key={example.name}
+        to={'/' + example.name}>
+        {example.element}
+      </Link>
+    )}
+  />
+```
+
 ## Library Component
 
 Prop | Type | Description
@@ -145,3 +203,5 @@ const App = props => (
   </Library>
 )
 ```
+
+[render-props]: https://reactjs.org/docs/render-props.html
