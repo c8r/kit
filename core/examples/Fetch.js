@@ -1,5 +1,4 @@
 import React from 'react'
-import Editor from '@compositor/react-editor'
 
 import { Fetch, Debug } from '../src'
 
