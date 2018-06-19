@@ -14,6 +14,36 @@ export const Swatch = ({ name, value, ...props }) => (
   </React.Fragment>
 )
 
+export const Group = ({
+  colors,
+  prefix,
+  lightText = 'white',
+  darkText = 'black',
+  ...props
+}) => (
+  <Flex {...props}>
+    {colors.map((c, i) => {
+      let name = null
+      let value = null
+      if (typeof c === 'object') {
+        name = Object.keys(c)[0]
+        value = c[name]
+      } else {
+        name = prefix ? `${prefix}.${i}` : c
+        value = c
+      }
+
+      const color = contrast.isAccessible(value, 'white') ? lightText : darkText
+
+      return (
+        <Box key={name} bg={value} color={color} p={3}>
+          <Text >{name}</Text>
+        </Box>
+      )
+    })}
+  </Flex>
+)
+
 export const Contrast = ({ color, bg, children }) => (
   <Box p={[3, 4, 5]} bg={bg} color={color}>
     <Text f={[5, 6, 128]} fontWeight='bold'>
@@ -46,6 +76,7 @@ const Color = ({ colors }) => {
   )
 }
 
+Color.Group = Group
 Color.Swatch = Swatch
 Color.Contrast = Contrast
 

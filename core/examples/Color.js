@@ -3,6 +3,19 @@ import { Button } from 'rebass'
 import { Text, Measure } from '../src/ui'
 import { Color } from '../src'
 
+const indigo = [
+  '#eaebfa',
+  '#d2d5f6',
+  '#b7bbf0',
+  '#959ce9',
+  '#6872e0',
+  '#0011cc',
+  '#000fb7',
+  '#000da0',
+  '#000a83',
+  '#00075c'
+]
+
 const colors = {
   red: 'red',
   gray: {
@@ -19,6 +32,13 @@ const colors = {
 export default () => (
   <React.Fragment>
     <Color colors={colors} />
+    <Color.Group
+      prefix='indigo'
+      colors={indigo}
+      lightText={indigo[0]}
+      darkTex={indigo[7]}
+    />
+    <Color.Group prefix='indigo' flexDirection='column' colors={indigo} />
     <Color.Contrast bg='tomato' color='black'>
       <Text>Tomato + Black</Text>
       <Measure>

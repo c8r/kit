@@ -13,11 +13,10 @@ const clipboard = require('clipboardy')
 const findup = require('find-up')
 const config = require('pkg-conf').sync('kit')
 
-const App = importJsx('./src/App')
+const Init = importJsx('./src/Init')
 const parseArgs = require('./lib/parse-args')
 
-const cli = meow(
-  `
+const cli = meow(`
   Usage
 
     $ kit <command> [options]
@@ -78,9 +77,13 @@ log(chalk.cyan('@compositor/kit-cli'))
 const { cmd, input } = parseArgs(cli.input)
 
 // normalize options
-const stats = fs.statSync(input)
-const dirname = stats.isDirectory() ? input : path.dirname(input)
-const filename = stats.isDirectory() ? null : input
+let stats, dirname, filename = null
+
+if (cmd !== 'init' || cmd !== null) {
+  stats = fs.statSync(input)
+  dirname = stats.isDirectory() ? input : path.dirname(input)
+  filename = stats.isDirectory() ? null : input
+}
 
 const opts = Object.assign({
   cmd,
@@ -92,7 +95,7 @@ const opts = Object.assign({
 switch (cmd) {
   case 'init':
   case null:
-    render(h(App, opts))
+    render(h(Init, opts))
     break
   case 'dev':
   default:
@@ -130,4 +133,3 @@ switch (cmd) {
 require('update-notifier')({
   pkg: cli.pkg
 }).notify()
-
