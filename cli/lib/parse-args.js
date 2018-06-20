@@ -14,7 +14,7 @@ const path = require('path')
 module.exports = args => {
   const [ a, b ] = args
 
-  if (!a && !b) {
+  if (!a && !b || a === 'init') {
     return {
       cmd: 'init',
       input: path.resolve('.')
