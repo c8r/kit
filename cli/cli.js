@@ -79,7 +79,7 @@ const { cmd, input } = parseArgs(cli.input)
 // normalize options
 let stats, dirname, filename = null
 
-if (cmd !== 'init' || cmd !== null) {
+if (cmd !== 'init') {
   stats = fs.statSync(input)
   dirname = stats.isDirectory() ? input : path.dirname(input)
   filename = stats.isDirectory() ? null : input
