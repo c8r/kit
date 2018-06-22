@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import matter from 'gray-matter'
-import { ThemeProvider } from 'styled-components'
 import nano from 'nano-style'
 
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
@@ -33,16 +32,11 @@ class KitEditor extends Component {
         <LiveProvider
           mountStylesheet={false}
           scope={{
-            ThemeProvider,
             theme,
             ...scope
           }}
           code={content}
-          transformCode={code => `
-            <ThemeProvider theme={theme}>
-              <div>${code}</div>
-            </ThemeProvider>
-          `}
+          transformCode={code => `<div>${code}</div>`}
         >
           <Box>
             <LivePreview />

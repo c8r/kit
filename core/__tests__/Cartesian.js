@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'nano-style'
 import { render } from 'react-testing-library'
 import { color, space, fontSize } from 'styled-system'
 
@@ -12,11 +12,11 @@ const buttonProps = {
   backgroundColor: ['pink', 'tomato', 'purple']
 }
 
-const Button = styled.a`
-  ${color}
-  ${fontSize}
-  ${space}
-`
+const Button = styled('a')(
+  color,
+  fontSize,
+  space,
+)
 
 test('Cartesian renders all examples', () => {
   const { container } = render(<Cartesian {...buttonProps} component={Button} />)

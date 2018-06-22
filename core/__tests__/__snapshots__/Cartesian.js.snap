@@ -3,112 +3,202 @@
 exports[`Cartesian renders all examples 1`] = `
 <div>
   <a
-    class="sc-bdVaJa ikbxON"
+    backgroundcolor="pink"
+    class="nano1kwchfs"
     font-size="1"
+    px="2"
   >
     Hello, world!
   </a>
+  <style>
+    .nano1kwchfs{font-size:14px}.nano1kwchfs{padding-left:8px;padding-right:8px}
+  </style>
   <a
-    class="sc-bdVaJa ikbxON"
+    backgroundcolor="tomato"
+    class="nano1kwchfs"
     font-size="1"
+    px="2"
   >
     Hello, world!
   </a>
+  <style>
+    .nano1kwchfs{font-size:14px}.nano1kwchfs{padding-left:8px;padding-right:8px}
+  </style>
   <a
-    class="sc-bdVaJa ikbxON"
+    backgroundcolor="purple"
+    class="nano1kwchfs"
     font-size="1"
+    px="2"
   >
     Hello, world!
   </a>
+  <style>
+    .nano1kwchfs{font-size:14px}.nano1kwchfs{padding-left:8px;padding-right:8px}
+  </style>
   <a
-    class="sc-bdVaJa cSmzEW"
+    backgroundcolor="pink"
+    class="nanoxw9r4l"
     font-size="1"
+    px="3"
   >
     Hello, world!
   </a>
+  <style>
+    .nanoxw9r4l{font-size:14px}.nanoxw9r4l{padding-left:16px;padding-right:16px}
+  </style>
   <a
-    class="sc-bdVaJa cSmzEW"
+    backgroundcolor="tomato"
+    class="nanoxw9r4l"
     font-size="1"
+    px="3"
   >
     Hello, world!
   </a>
+  <style>
+    .nanoxw9r4l{font-size:14px}.nanoxw9r4l{padding-left:16px;padding-right:16px}
+  </style>
   <a
-    class="sc-bdVaJa cSmzEW"
+    backgroundcolor="purple"
+    class="nanoxw9r4l"
     font-size="1"
+    px="3"
   >
     Hello, world!
   </a>
+  <style>
+    .nanoxw9r4l{font-size:14px}.nanoxw9r4l{padding-left:16px;padding-right:16px}
+  </style>
   <a
-    class="sc-bdVaJa hFxVwo"
+    backgroundcolor="pink"
+    class="nano1cf2zn1"
     font-size="2"
+    px="2"
   >
     Hello, world!
   </a>
+  <style>
+    .nano1cf2zn1{font-size:16px}.nano1cf2zn1{padding-left:8px;padding-right:8px}
+  </style>
   <a
-    class="sc-bdVaJa hFxVwo"
+    backgroundcolor="tomato"
+    class="nano1cf2zn1"
     font-size="2"
+    px="2"
   >
     Hello, world!
   </a>
+  <style>
+    .nano1cf2zn1{font-size:16px}.nano1cf2zn1{padding-left:8px;padding-right:8px}
+  </style>
   <a
-    class="sc-bdVaJa hFxVwo"
+    backgroundcolor="purple"
+    class="nano1cf2zn1"
     font-size="2"
+    px="2"
   >
     Hello, world!
   </a>
+  <style>
+    .nano1cf2zn1{font-size:16px}.nano1cf2zn1{padding-left:8px;padding-right:8px}
+  </style>
   <a
-    class="sc-bdVaJa hPCeld"
+    backgroundcolor="pink"
+    class="nanowuhht0"
     font-size="2"
+    px="3"
   >
     Hello, world!
   </a>
+  <style>
+    .nanowuhht0{font-size:16px}.nanowuhht0{padding-left:16px;padding-right:16px}
+  </style>
   <a
-    class="sc-bdVaJa hPCeld"
+    backgroundcolor="tomato"
+    class="nanowuhht0"
     font-size="2"
+    px="3"
   >
     Hello, world!
   </a>
+  <style>
+    .nanowuhht0{font-size:16px}.nanowuhht0{padding-left:16px;padding-right:16px}
+  </style>
   <a
-    class="sc-bdVaJa hPCeld"
+    backgroundcolor="purple"
+    class="nanowuhht0"
     font-size="2"
+    px="3"
   >
     Hello, world!
   </a>
+  <style>
+    .nanowuhht0{font-size:16px}.nanowuhht0{padding-left:16px;padding-right:16px}
+  </style>
   <a
-    class="sc-bdVaJa hJuUIp"
+    backgroundcolor="pink"
+    class="nanoxcuqpe"
     font-size="3"
+    px="2"
   >
     Hello, world!
   </a>
+  <style>
+    .nanoxcuqpe{font-size:20px}.nanoxcuqpe{padding-left:8px;padding-right:8px}
+  </style>
   <a
-    class="sc-bdVaJa hJuUIp"
+    backgroundcolor="tomato"
+    class="nanoxcuqpe"
     font-size="3"
+    px="2"
   >
     Hello, world!
   </a>
+  <style>
+    .nanoxcuqpe{font-size:20px}.nanoxcuqpe{padding-left:8px;padding-right:8px}
+  </style>
   <a
-    class="sc-bdVaJa hJuUIp"
+    backgroundcolor="purple"
+    class="nanoxcuqpe"
     font-size="3"
+    px="2"
   >
     Hello, world!
   </a>
+  <style>
+    .nanoxcuqpe{font-size:20px}.nanoxcuqpe{padding-left:8px;padding-right:8px}
+  </style>
   <a
-    class="sc-bdVaJa fGNklA"
+    backgroundcolor="pink"
+    class="nano1ahjv9n"
     font-size="3"
+    px="3"
   >
     Hello, world!
   </a>
+  <style>
+    .nano1ahjv9n{font-size:20px}.nano1ahjv9n{padding-left:16px;padding-right:16px}
+  </style>
   <a
-    class="sc-bdVaJa fGNklA"
+    backgroundcolor="tomato"
+    class="nano1ahjv9n"
     font-size="3"
+    px="3"
   >
     Hello, world!
   </a>
+  <style>
+    .nano1ahjv9n{font-size:20px}.nano1ahjv9n{padding-left:16px;padding-right:16px}
+  </style>
   <a
-    class="sc-bdVaJa fGNklA"
+    backgroundcolor="purple"
+    class="nano1ahjv9n"
     font-size="3"
+    px="3"
   >
     Hello, world!
   </a>
+  <style>
+    .nano1ahjv9n{font-size:20px}.nano1ahjv9n{padding-left:16px;padding-right:16px}
+  </style>
 </div>
 `;
