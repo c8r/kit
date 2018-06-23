@@ -112,3 +112,80 @@ exports[`Cartesian renders all examples 1`] = `
   </a>
 </div>
 `;
+
+exports[`Cartesian renders all examples in a container 1`] = `
+<div>
+  <div
+    class="sc-bwzfXH UBTUY"
+    data-testid="container"
+  />
+  <div
+    class="sc-bwzfXH UBTUY"
+    data-testid="container"
+  />
+  <div
+    class="sc-bwzfXH UBTUY"
+    data-testid="container"
+  />
+  <div
+    class="sc-bwzfXH UBTUY"
+    data-testid="container"
+  />
+  <div
+    class="sc-bwzfXH UBTUY"
+    data-testid="container"
+  />
+  <div
+    class="sc-bwzfXH UBTUY"
+    data-testid="container"
+  />
+  <div
+    class="sc-bwzfXH UBTUY"
+    data-testid="container"
+  />
+  <div
+    class="sc-bwzfXH UBTUY"
+    data-testid="container"
+  />
+  <div
+    class="sc-bwzfXH UBTUY"
+    data-testid="container"
+  />
+  <div
+    class="sc-bwzfXH UBTUY"
+    data-testid="container"
+  />
+  <div
+    class="sc-bwzfXH UBTUY"
+    data-testid="container"
+  />
+  <div
+    class="sc-bwzfXH UBTUY"
+    data-testid="container"
+  />
+  <div
+    class="sc-bwzfXH UBTUY"
+    data-testid="container"
+  />
+  <div
+    class="sc-bwzfXH UBTUY"
+    data-testid="container"
+  />
+  <div
+    class="sc-bwzfXH UBTUY"
+    data-testid="container"
+  />
+  <div
+    class="sc-bwzfXH UBTUY"
+    data-testid="container"
+  />
+  <div
+    class="sc-bwzfXH UBTUY"
+    data-testid="container"
+  />
+  <div
+    class="sc-bwzfXH UBTUY"
+    data-testid="container"
+  />
+</div>
+`;
