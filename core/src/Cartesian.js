@@ -11,8 +11,8 @@ export default ({ component, container, ...props }) => {
     return (
       <Fragment>
         {combinations.map((props, i) => (
-          <Container>
-            <Component key={i} {...props} />
+          <Container key={i} >
+            <Component {...props} />
           </Container>
         ))}
       </Fragment>
