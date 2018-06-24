@@ -13,3 +13,6 @@ deploy:
   local_dir: site/dist
   on:
     branch: master
+cache:
+  directories:
+    - "node_modules"
