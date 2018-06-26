@@ -74,4 +74,21 @@ PropsForm.Select = ({ update, name, props = {}, ...rest }) => (
 )
 PropsForm.Select.isForm = true
 
+PropsForm.Checkbox = ({ update, name, props = {}, ...rest }) => (
+  <Box mb={2}>
+    <Label>{name}</Label>
+    <Input
+      {...rest}
+      name={name}
+      type="checkbox"
+      checked={!!props[name]}
+      onChange={e => {
+        const { checked } = e.target
+        update({ [name]: checked })
+      }}
+    />
+  </Box>
+)
+PropsForm.Checkbox.isForm = true
+
 export default PropsForm
