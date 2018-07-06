@@ -58,7 +58,7 @@ const Home = props => (
           </Text>
           <Button
             is="a"
-            href="getting-started"
+            href="introduction"
             fontSize={2}
             px={4}
             py={3}
