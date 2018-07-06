@@ -1,6 +1,6 @@
 # Cartesian
 
-Display the cartesian product of component props.
+Display the Cartesian product of component props.
 
 ```.jsx
 <Cartesian
@@ -12,3 +12,10 @@ Display the cartesian product of component props.
   children={'Beep'}
 />
 ```
+
+## Props
+
+name | type | description
+---|---|---
+`component` | React component | the component to render
+`...props` | Props for Cartesian product | Only arrays are computed in the product

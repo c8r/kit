@@ -2,7 +2,17 @@
 
 Displays a grid and adds outlines to children.
 
-![](images/x-ray.png)
+### Demo
+
+```.jsx
+<XRay>
+  <Box p={3}>
+    <Heading my={4}>Hello, world!</Heading>
+  </Box>
+</XRay>
+```
+
+### Full example
 
 ```jsx
 import React from 'react'
@@ -15,6 +25,8 @@ const example = (
   </XRay>
 )
 ```
+
+## Props
 
 Prop | Type | Description
 ---|---|---

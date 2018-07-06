@@ -8,6 +8,7 @@
   "scripts": {
     "start": "x0 docs -o",
     "build": "lerna run build",
+    "build:docs": "x0 build docs -d dist && cp -r docs/images dist",
     "clean": "lerna run clean",
     "bootstrap": "lerna bootstrap",
     "format": "prettier --no-semi --single-quote --write '{cli,core,create-kit,dev,docs,packages,snapshot,storybook,templates}/**/*.js'",
@@ -22,5 +23,7 @@
     "lerna": "^2.11.0",
     "prettier": "^1.12.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "styled-components": "^3.3.3"
+  }
 }

@@ -1,6 +1,12 @@
 # Style
 
-__This should never be used with user created content__
+```!jsx
+<Box bg="orange" p={3}>
+  <Text color="white">
+    ⚠️ This should never be used with user created content
+  </Text>
+</Box>
+```
 
 Embed styles to an app with a clean API.
 

@@ -2,8 +2,6 @@
 
 Displays children in `<iframe>`s, using the Frame component, at multiple viewport sizes.
 
-![](images/responsive.png)
-
 ```jsx
 import React from 'react'
 import { Responsive } from '@compositor/kit'
@@ -18,11 +16,12 @@ const example = (
 
 Prop | Type | Description
 ---|---|---
-viewports | array | Array of `width` and `height` objects for each viewport size
+viewports | array | Array of objects with `width` and `height` properties for each viewport size
 zoom | number | Zoom level for the Frame component
 
+### Custom viewports
+
 ```jsx
-// using custom viewports
 const example = (
   <Responsive
     viewports={[

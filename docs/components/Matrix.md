@@ -1,31 +1,22 @@
-
 # Matrix
 
-Displays a matrix of component permutations
+Displays a matrix of component permutations.
 
-![](images/matrix.png)
-
-```jsx
-import React from 'react'
-import { Matrix } from '@compositor/kit'
-import Button from '../src/Button'
-
-export default props => (
-  <Matrix
-    component={Button}
-    x={[
-      { children: 'Hello' },
-      { children: 'Hello', primary: true },
-      { children: 'Hello', secondary: true },
-      { children: 'Hello', error: true },
-    ]}
-    y={[
-      {  size: 'small' },
-      {  size: 'medium' },
-      {  size: 'large' },
-    ]}
-  />
-)
+```.jsx
+<Matrix
+  component={Button}
+  x={[
+    { children: 'Hello' },
+    { children: 'Hello', bg: 'tomato' },
+    { children: 'Hello', bg: 'black' },
+    { children: 'Hello', bg: 'white', color: 'black' },
+  ]}
+  y={[
+    {  size: 'small' },
+    {  size: 'medium', mt: 2 },
+    {  size: 'large', mt: 2 },
+  ]}
+/>
 ```
 
 ## Props

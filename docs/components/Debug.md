@@ -3,7 +3,9 @@
 The Debug component can be used to get a formatted JSON printout of an object.
 It also provides a HOC for logging props when a component uses the implicit return.
 
-![](images/debug.png)
+```.jsx
+<Debug>{{ some: 'object', to: 'debug' }}</Debug>
+```
 
 ## Usage
 

@@ -1,17 +1,19 @@
-
 # Markdown
 
-Render markdown strings as React elements with [MDX][mdx]
+```!jsx
+<Box bg="orange" p={3}>
+  <Text color="white">
+    ⚠️ This should never be used with user created content
+  </Text>
+</Box>
+```
 
-```jsx
-import React from 'react'
-import { Markdown } from '@compositor/kit'
+Render [MDX][mdx] strings as React elements.
 
-export default props => (
-  <Markdown>
-    {`# Hello`}
-  </Markdown>
-)
+```.jsx
+<Markdown>
+  {`# Hello`}
+</Markdown>
 ```
 
 [mdx]: https://github.com/mdx-js/mdx

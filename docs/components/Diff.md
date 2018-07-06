@@ -1,20 +1,12 @@
-
 # Diff
 
-Shows a visual diff between two elements
+Shows a visual diff between two elements.
 
-![](images/diff.png)
-
-```jsx
-import React from 'react'
-import { Diff } from '@compositor/kit'
-import Button from '../src/Button'
-
-export default props => (
+```.jsx
+<Box mb={4}>
   <Diff>
-    <Button>Hello</Button>
-    <Button pill>Hello</Button>
+    <Text fontSize={3}>Hi</Text>
+    <Text fontSize={4} color="red">Hey</Text>
   </Diff>
-)
+</Box>
 ```
-

@@ -1,6 +1,6 @@
 # Font
 
-Set font-family and other typographic styles
+Set font-family and other typographic styles.
 
 The `Font` components provides basic webfont utilities to wrap your app.
 It also provides a convenient webfont loader using [Google Fonts](https://fonts.google.com/).

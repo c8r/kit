@@ -3,25 +3,23 @@
 The Library component manages a list of examples created with the Example component,
 showing a grid view by default and a detailed view when a component is clicked.
 
-![](images/library.png)
-
 ## Usage
 
-```jsx
-import React from 'react'
-import { Library, Example } from '@compositor/kit'
-import { Button, Heading } from '../src'
-
-const App = props => (
-  <Library>
-    <Example name='Button'>
-      <Button>Beep</Button>
-    </Example>
-    <Example name='Heading'>
-      <Heading>Hello</Heading>
-    </Example>
-  </Library>
-)
+```.jsx
+<Library basename="/components/Library">
+  <Example name='Button'>
+    <Button>Beep</Button>
+  </Example>
+  <Example name='Donut'>
+    <Donut />
+  </Example>
+  <Example name='Badge'>
+    <Badge bg='tomato'>Boop</Badge>
+  </Example>
+  <Example name='Heading'>
+    <Heading>Hello</Heading>
+  </Example>
+</Library>
 ```
 
 ### Examples array
@@ -143,7 +141,7 @@ export default props =>
   />
 ```
 
-## Library Component
+### Library Component Props
 
 Prop | Type | Description
 ---|---|---
@@ -152,12 +150,12 @@ title | string | Optional title to display in the side nav
 renderSideNav | function | Optional render prop to customize side nav
 renderCard | function | Optional render prop to customize card in the grid view
 
-## Example Component
+### Example Component
 
 Use the Example component with the Library component to add examples.
 Each Example component requires a unique `name` prop value.
 
-### Usage
+#### Usage
 
 ```jsx
 import React from 'react'
@@ -175,15 +173,17 @@ const App = props => (
 )
 ```
 
+#### Example Component Props
+
 Prop | Type | Description
 ---|---|---
 name | string (required) | Unique identifier that will be used for navigation in the Library
 
-## Detail Component
+### Detail Component
 
 Use the Detail component to add additional elements when viewing the example detail view. Elements in the Detail component will not show up in the grid view of the Library.
 
-### Usage
+#### Usage
 
 ```jsx
 import React from 'react'
