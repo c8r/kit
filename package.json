@@ -6,6 +6,7 @@
   "license": "MIT",
   "repository": "c8r/kit",
   "scripts": {
+    "start": "x0 docs -o",
     "build": "lerna run build",
     "clean": "lerna run clean",
     "bootstrap": "lerna bootstrap",
@@ -15,7 +16,13 @@
     "test": "lerna run test"
   },
   "devDependencies": {
+    "@compositor/mono": "^1.0.0-14",
+    "@compositor/x0": "^6.0.1",
+    "@rebass/mdx": "^1.0.0-1",
     "lerna": "^2.11.0",
     "prettier": "^1.12.1"
+  },
+  "dependencies": {
+    "@compositor/logo": "^1.4.0"
   }
 }
