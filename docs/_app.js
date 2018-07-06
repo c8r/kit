@@ -1,14 +1,17 @@
 import React from 'react'
 import RebassMDX from '@rebass/mdx'
 import * as Rebass from 'rebass'
+import { Flex, Box, Container } from 'rebass'
 import sortBy from 'lodash.sortby'
 import { Link } from 'react-router-dom'
 import { SidebarLayout as Layout } from '@compositor/x0/components'
-import { Flex, Box, Container } from 'rebass'
+import { Kit as KitLogo } from '@compositor/logo'
+
 import * as Kit from '../core/src'
 
 const navOrder = [
   'index',
+  'introduction',
   'getting-started'
 ]
 
@@ -48,6 +51,7 @@ export default class App extends React.Component {
         {disableLayout ? children : (
           <Layout
             {...this.props}
+            logo={<KitLogo size={30} />}
             routes={nav}
           />
         )}

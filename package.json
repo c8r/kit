@@ -22,7 +22,5 @@
     "lerna": "^2.11.0",
     "prettier": "^1.12.1"
   },
-  "dependencies": {
-    "@compositor/logo": "^1.4.0"
-  }
+  "dependencies": {}
 }
