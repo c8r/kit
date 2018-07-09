@@ -19,8 +19,9 @@ exports[`Library renders 1`] = `
       class="nanolgtq4w"
     >
       <a
-        class="nano19oao6z"
-        href="/"
+        aria-current="page"
+        class="nano19oao6z active"
+        href="#/"
       >
         Kit
       </a>
@@ -33,7 +34,16 @@ exports[`Library renders 1`] = `
     </style>
     <div
       class="nano1pfbsnd"
-    />
+    >
+      <div
+        class="nano1moj4mh"
+        height="192"
+        width="256"
+      />
+      <style>
+        .nano1moj4mh{display:grid}.nano1moj4mh{grid-template-columns:repeat(auto-fit, minmax(256px, 1fr))}.nano1moj4mh{grid-auto-rows:192px}
+      </style>
+    </div>
     <style>
       .nano1pfbsnd{flex:1 1 auto;height:100vh;overflow-y:auto;-webkit-overflow-scrolling:touch}
     </style>

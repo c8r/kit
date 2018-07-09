@@ -38,9 +38,7 @@ import {
 
 const Demo = props => (
   <Provider>
-    <Library
-      useFrame={false}
-      basename="/Library">
+    <Library useFrame={false}>
 
       {/* renders in iframe when useFrame is true */}
       <Head>
