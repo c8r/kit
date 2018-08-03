@@ -10,7 +10,9 @@ exports[`Matrix renders all examples 1`] = `
       w="512"
     >
       <svg
+        blacklist="color,bg,m,mt,mr,mb,ml,mx,my,p,pt,pr,pb,pl,px,py,css"
         class="sc-cHGsZl dgyxZK"
+        color="blue "
         height="128"
         stroke-width="2"
         value="0.2"
@@ -47,7 +49,9 @@ exports[`Matrix renders all examples 1`] = `
       w="512"
     >
       <svg
+        blacklist="color,bg,m,mt,mr,mb,ml,mx,my,p,pt,pr,pb,pl,px,py,css"
         class="sc-cHGsZl kHqkDi"
+        color="pink"
         height="128"
         stroke-width="2"
         value="0.2"
@@ -84,7 +88,9 @@ exports[`Matrix renders all examples 1`] = `
       w="512"
     >
       <svg
+        blacklist="color,bg,m,mt,mr,mb,ml,mx,my,p,pt,pr,pb,pl,px,py,css"
         class="sc-cHGsZl iyNBzh"
+        color="tomato"
         height="128"
         stroke-width="2"
         value="0.2"
@@ -121,7 +127,9 @@ exports[`Matrix renders all examples 1`] = `
       w="512"
     >
       <svg
+        blacklist="color,bg,m,mt,mr,mb,ml,mx,my,p,pt,pr,pb,pl,px,py,css"
         class="sc-cHGsZl dEoevi"
+        color="purple"
         height="128"
         stroke-width="2"
         value="0.2"
@@ -165,7 +173,9 @@ exports[`Matrix renders all examples 1`] = `
       w="512"
     >
       <svg
+        blacklist="color,bg,m,mt,mr,mb,ml,mx,my,p,pt,pr,pb,pl,px,py,css"
         class="sc-cHGsZl dgyxZK"
+        color="blue "
         height="128"
         stroke-width="2"
         value="0.25"
@@ -202,7 +212,9 @@ exports[`Matrix renders all examples 1`] = `
       w="512"
     >
       <svg
+        blacklist="color,bg,m,mt,mr,mb,ml,mx,my,p,pt,pr,pb,pl,px,py,css"
         class="sc-cHGsZl kHqkDi"
+        color="pink"
         height="128"
         stroke-width="2"
         value="0.25"
@@ -239,7 +251,9 @@ exports[`Matrix renders all examples 1`] = `
       w="512"
     >
       <svg
+        blacklist="color,bg,m,mt,mr,mb,ml,mx,my,p,pt,pr,pb,pl,px,py,css"
         class="sc-cHGsZl iyNBzh"
+        color="tomato"
         height="128"
         stroke-width="2"
         value="0.25"
@@ -276,7 +290,9 @@ exports[`Matrix renders all examples 1`] = `
       w="512"
     >
       <svg
+        blacklist="color,bg,m,mt,mr,mb,ml,mx,my,p,pt,pr,pb,pl,px,py,css"
         class="sc-cHGsZl dEoevi"
+        color="purple"
         height="128"
         stroke-width="2"
         value="0.25"
@@ -320,7 +336,9 @@ exports[`Matrix renders all examples 1`] = `
       w="512"
     >
       <svg
+        blacklist="color,bg,m,mt,mr,mb,ml,mx,my,p,pt,pr,pb,pl,px,py,css"
         class="sc-cHGsZl dgyxZK"
+        color="blue "
         height="128"
         stroke-width="2"
         value="0.3333333333333333"
@@ -357,7 +375,9 @@ exports[`Matrix renders all examples 1`] = `
       w="512"
     >
       <svg
+        blacklist="color,bg,m,mt,mr,mb,ml,mx,my,p,pt,pr,pb,pl,px,py,css"
         class="sc-cHGsZl kHqkDi"
+        color="pink"
         height="128"
         stroke-width="2"
         value="0.3333333333333333"
@@ -394,7 +414,9 @@ exports[`Matrix renders all examples 1`] = `
       w="512"
     >
       <svg
+        blacklist="color,bg,m,mt,mr,mb,ml,mx,my,p,pt,pr,pb,pl,px,py,css"
         class="sc-cHGsZl iyNBzh"
+        color="tomato"
         height="128"
         stroke-width="2"
         value="0.3333333333333333"
@@ -431,7 +453,9 @@ exports[`Matrix renders all examples 1`] = `
       w="512"
     >
       <svg
+        blacklist="color,bg,m,mt,mr,mb,ml,mx,my,p,pt,pr,pb,pl,px,py,css"
         class="sc-cHGsZl dEoevi"
+        color="purple"
         height="128"
         stroke-width="2"
         value="0.3333333333333333"
@@ -475,7 +499,9 @@ exports[`Matrix renders all examples 1`] = `
       w="512"
     >
       <svg
+        blacklist="color,bg,m,mt,mr,mb,ml,mx,my,p,pt,pr,pb,pl,px,py,css"
         class="sc-cHGsZl dgyxZK"
+        color="blue "
         height="128"
         stroke-width="2"
         value="0.75"
@@ -512,7 +538,9 @@ exports[`Matrix renders all examples 1`] = `
       w="512"
     >
       <svg
+        blacklist="color,bg,m,mt,mr,mb,ml,mx,my,p,pt,pr,pb,pl,px,py,css"
         class="sc-cHGsZl kHqkDi"
+        color="pink"
         height="128"
         stroke-width="2"
         value="0.75"
@@ -549,7 +577,9 @@ exports[`Matrix renders all examples 1`] = `
       w="512"
     >
       <svg
+        blacklist="color,bg,m,mt,mr,mb,ml,mx,my,p,pt,pr,pb,pl,px,py,css"
         class="sc-cHGsZl iyNBzh"
+        color="tomato"
         height="128"
         stroke-width="2"
         value="0.75"
@@ -586,7 +616,9 @@ exports[`Matrix renders all examples 1`] = `
       w="512"
     >
       <svg
+        blacklist="color,bg,m,mt,mr,mb,ml,mx,my,p,pt,pr,pb,pl,px,py,css"
         class="sc-cHGsZl dEoevi"
+        color="purple"
         height="128"
         stroke-width="2"
         value="0.75"
