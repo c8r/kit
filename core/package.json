@@ -70,5 +70,8 @@
       "babel-register"
     ],
     "babel": "inherit"
+  },
+  "jest": {
+    "testURL": "http://localhost"
   }
 }
