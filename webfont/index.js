@@ -13,7 +13,7 @@ const getURL = (stack, weights = []) => {
   if (!isWebfont(name)) return false
 
   const family = weights.length
-    ? [plusify(name), ...weights].join(':')
+    ? [plusify(name), weights.join(',') ].join(':')
     : plusify(name)
 
   return [apiURL, '?family=', family].join('')
