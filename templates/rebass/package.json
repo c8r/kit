@@ -32,6 +32,7 @@
     ],
     "collectCoverageFrom": [
       "**/src/**/*.js"
-    ]
+    ],
+    "testURL": "http://localhost"
   }
 }
