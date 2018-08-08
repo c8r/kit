@@ -221,11 +221,13 @@ class SideNav extends React.Component {
 export class Example extends React.Component {
   static _kitLibraryExample = true
   static propTypes = {
-    name: PropTypes.string.isRequired
+    name: PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired
   }
 
   render() {
-    return <React.Fragment {...this.props} />
+    const { children } = this.props
+    return <React.Fragment>{children}</React.Fragment>
   }
 }
 
