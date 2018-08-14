@@ -26,9 +26,11 @@ module.exports = opts => {
               'babel-preset-react',
             ].map(require.resolve),
             plugins: [
-              'babel-plugin-macros',
-              'babel-plugin-transform-runtime'
-            ].map(require.resolve)
+              require.resolve('babel-plugin-macros'),
+              [require.resolve('babel-plugin-transform-runtime'), {
+                moduleName: path.join(__dirname, '../node_modules/babel-runtime')
+              }]
+            ]
           }
         }
       ],
