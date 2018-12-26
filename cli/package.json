@@ -42,7 +42,8 @@
     "pkg-conf": "^2.1.0",
     "prop-types": "^15.6.1",
     "react": "^16.4.1",
-    "update-notifier": "^2.5.0"
+    "update-notifier": "^2.5.0",
+    "webpack-merge": "^4.1.5"
   },
   "devDependencies": {
     "ava": "^0.25.0",

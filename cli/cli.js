@@ -92,6 +92,10 @@ const opts = Object.assign({
   filename
 }, config, cli.flags)
 
+if (opts.webpack) {
+  opts.webpack = require(path.resolve(process.cwd(), opts.webpack))
+}
+
 switch (cmd) {
   case 'init':
   case null:

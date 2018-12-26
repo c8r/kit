@@ -1,6 +1,7 @@
 const path = require('path')
 const { dev } = require('@compositor/x0')
 const webpack = require('webpack')
+const merge = require('webpack-merge')
 
 const dirname = path.join(__dirname, '../src')
 const modes = {
@@ -11,7 +12,7 @@ const modes = {
 }
 
 module.exports = opts => {
-  opts.webpack = {
+  opts.webpack = merge({
     module: {
       rules: [
         {
@@ -43,7 +44,7 @@ module.exports = opts => {
         USER_APP: JSON.stringify(opts.app)
       })
     ]
-  }
+  }, opts.webpack)
   opts.title = 'Kit'
   opts.app = modes[opts.mode] || null
 
