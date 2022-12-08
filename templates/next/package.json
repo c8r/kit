@@ -14,7 +14,7 @@
     "@compositor/kit": "^1.0.20",
     "@mdx-js/mdx": "^0.9.0",
     "@zeit/next-mdx": "^1.1.0",
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "next": "^6.0.3",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
